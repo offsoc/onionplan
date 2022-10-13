@@ -9,6 +9,9 @@ slides:
     aspect-ratio: 169
     font-size: 11pt
     table-of-contents: false
+header-includes: |
+    \usepackage{longtable}
+
 ---
 
 # Intro
@@ -25,15 +28,7 @@ technologies?***
 
 ***And that our job consists in making it even cooler?***
 
-## But beware!
-
-* Here follows a non-orthodox strategy to improve Onion Services UX.
-* It's meant to balance between the present and urgent user needs and
-  the wish to have fully distributed Onion Names in the future.
-* It's an incremental roadmap, focusing on what's more feasible to do first
-  instead of targeting in systems that still need to mature.
-
-## And now imagine
+## Now imagine
 
 **Imagine** a **communication technology** that has:
 
@@ -68,7 +63,39 @@ This plan is split into the following roadmap tracks:
 3. Tooling: Onionbalance, Onionprobe, Oniongroove etc.
 4. Outreach: documentation, support, usage/adoption campaigns etc.
 
+# Usability
+
+Proposals grouped in these categories:
+
+1. **Address translation**: links a "traditional" domain name with an Onion
+   Service address. Examples: _Onion-Location_; _Sauteed Onions_;
+   _DNS-based_, _Alt-Svc_.
+2. **Onion Names**: alternative schemes for human-friendly names linked with
+   Onion Services. Examples: ruleset-based (like _Secure Drop's Onion Names_);
+   blockchain-based (like _Namecoin_); other P2P-based (like GNUnet's _LSD_); etc.
+3. **HTTPS certificates**: easier integration of CA-validated TLS certificates
+   into Onion Services. Examples: _ACME for .onion_; _X.509 for .onion_
+   (self-signed by the .onion address).
+
+## Status
+
+1. **Address translation**: some implemented (_Onion-Location_, _Alt-Svc_), others
+   are still research (_Sauteed-Onions_).
+2. **Onion Names**: many proposals, difficult to evaluate, difficult to decide.
+3. **HTTPS certificates**: needs work and currently the Let's Encrypt team may
+   not be available for this.
+
+So... what can we do???
+
 # Usability Roadmap
+
+## Disclaimer
+
+* Here follows a **non-orthodox strategy** to improve Onion Services UX.
+* It's meant to **balance** between the present and **urgent user needs** and
+  the wish to have **fully distributed Onion Names in the future**.
+* It's an **incremental** roadmap, focusing on what's more **feasible** to do
+  first instead of targeting in systems that still need to mature.
 
 ## Usability Roadmap
 
@@ -81,23 +108,51 @@ This plan is split into the following roadmap tracks:
 
 ## Phases
 
-* Phase 1: accessing URLs like `https://torproject.org` directly using Onion
-  Services and HTTPs!
-* Phase 2: _opportunistic discovery_ of .onion addresses (increased
+* **Phase 0**: current functionality.
+* **Phase 1**: ***accessing URLs*** like `https://torproject.org` **directly**
+  using Onion Services and HTTPS!
+* **Phase 2**: ***opportunistic discovery*** of .onion addresses (increased
   censorship resistance).
-* Phase 3: bringing "pure" Onion Names into Tor.
+* **Phase 3**: bringing "pure" ***Onion Names*** into Tor.
+
+## Phases comparison
+
+    Phase Category     Method                     Technology     Status
+    ----- ------------ -------------------------- -------------- --------
+      0   Addr. trans. Onion-Location v1, Alt-Svc HTTP           Done
+      1   Addr. trans. DNS-based discovery        DNS            Planning
+      2   Addr. trans. Sauteed Onions             CT Logs        Research
+      3   Onion Names  ?                          P2P/Blockchain Research
+
+## Decentralization comparison
+
+    Phase Technology     Decentralization
+    ----- ------------   ----------------------------------------------
+      0   HTTP headers   Centralized (a single point of failure)
+      1   DNS            Very decentralized, but hierarchical
+      2   CT Logs        Decentralized, non-hierarchical, but few nodes
+      3   P2P/Blockchain Decentralized, non-hierarchical, many nodes
+
+## Censorship resistance comparison
+
+    Phase Technology     Censorship resistance
+    ----- ------------   -------------------------------------------
+      0   HTTP headers   Does not work when the site is blocked
+      1   DNS            Even if site is blocked, not if DNS is
+      2   CT Logs        Even if site/DNS blocked, not if CT Logs is
+      3   P2P/Blockchain Should be fully censorship resistant
 
 ## Phase 0
 
 We're at Phase 0, but not starting from zero! :)
 
-* We have Onion Services v3!
-* We have accumulated lots of discussions, proposals and analisys.
+* We have **Onion Services v3**!
+* We have accumulated lots of **discussions**, **proposals** and **analyses**.
 
 ## Phase 1
 
-Objective: accessing URLs like `https://torproject.org` directly using Onion
-Services and HTTPs!
+**Objective**: accessing URLs like `https://torproject.org` directly using Onion
+Services and HTTPS!
 
 That means:
 
@@ -115,30 +170,32 @@ inform users:
 
 * How the connection to the site is happening.
 * Which available connection options exists for the site (regular or via
-  .onion).
+  .onion) as an **improved ".onion available" widget**.
 
 ## But how it would work?
 
-1. Transparent resolution of `torproject.org` into
+1. **Transparent resolution** of `torproject.org` into
    `2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion` using
-   DNS via Tor.
+   **DNS via Tor** with (optional?) **signature checking** (DNSSEC?).
 
-2. Use the _existing_ HTTPs certificate for `torproject.org`, with no need to have
+2. Use the **existing HTTPS certificate** for `torproject.org`, with no need to have
    `2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion` in the
    certificate!
 
-3. TLS SNI connection to `https://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion`
+3. **Transparent** TLS SNI (**Server Name Indication**) connection to
+   `https://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion`
    using `torproject.org` as the server name.
 
 ## What it needs to work?
 
 1. Transparent resolution:
-    * [Proposal 279][] (2016) - specs for a Tor Name System API: review and implementation.
+    * [Proposal 279][] - specs for a Tor Name System API: review and implementation.
     * Define a way to securely add Onion Service addresses entries into the DNS.
     * Write a Tor NS API plugin that securely maps regular domains into Onion Services.
     * Minimum UX changes in the Tor Browser.
 
-2. HTTPS Certificates: Already supported!
+2. HTTPS Certificates: Already supported! No need to coordinate with Let's
+   Encrypt or any other Certificate Authority.
 
 3. TLS SNI: Already supported!
 
@@ -146,8 +203,8 @@ inform users:
 
 ## Phase 2
 
-Objective: _increase the censorship resistance_ of accessing URLs like
-`https://torproject.org` directly using Onion Services and HTTPs!
+**Objective**: _increase the censorship resistance_ of accessing URLs like
+`https://torproject.org` directly using Onion Services and HTTPS!
 
 That means:
 
@@ -160,7 +217,7 @@ That means:
 
 ## Phase 3
 
-Objective: bring "pure"/"real" Onion Names into Tor.
+**Objective**: bring "pure"/"real" Onion Names into Tor.
 
 That means:
 
@@ -204,9 +261,9 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 ## What if...?
 
     # New torrc(5) config
-    OnionNamePlugin  0 .some.onion /usr/bin/some-onion-resolver     # Phase 3
-    OnionNamePlugin 98 *           /usr/bin/dns-to-onion-resolver   # Phase 1
-    OnionNamePlugin 99 *           /usr/bin/sauteed-onion-resolver  # Phase 2
+    OnionNamePlugin  0 .some.onion /usr/bin/some-onion-resolver    # Phase 3
+    OnionNamePlugin 98 *           /usr/bin/dns-to-onion-resolver  # Phase 1
+    OnionNamePlugin 99 *           /usr/bin/sauteed-onion-resolver # Phase 2
 
 ## Which means
 
@@ -217,20 +274,24 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 5. For non-.onion TLDs, priority will be from the DNS to the Sauteed Onion (or
    other fancier methods).
 
+# A proof of concept
+
 ## DNS, TLS SNI and .onion: proof of concept
 
-* Using an existing site: https://autodefesa.org
-* Using it's existing Onion Service: autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion
+Setup:
+
+* An existing site: https://autodefesa.org.
+* It's existing Onion Service: `autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion`.
 
 ## Today's behavior
 
-* Accessing: https://autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion
+* Attempt to access https://autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion.
 * Address is hard to remember.
-* HTTPS connection will fail since the certificate is not valid for the .onion addr.
+* HTTPS connection will fail since the certificate is not valid for the .onion address.
 
 ## Testing SNI
 
-If we use OpenSSL via Tor, we can get the cert via Onion Service:
+If we use OpenSSL via Tor, we can get the cert via Onion Service using TLS SNI:
 
     torsocks openssl s_client -servername autodefesa.org \
       -tlsextdebug -connect \
@@ -238,17 +299,25 @@ If we use OpenSSL via Tor, we can get the cert via Onion Service:
 
 ## Using curl
 
-This could work in theory to fetch the site via Onion Services:
+This could work in theory to fetch the site via Onion Services using TLS SNI:
 
     torsocks curl -vik --resolve \
       autodefesa.org:443:autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion \
       https://autodefesa.org
 
-But won't work, since `curl(1)`'s `--resolve` requires an IP address.
+But it won't work, since `curl(1)`'s `--resolve` requires an IP address.
 
 ## Using OpenSSL
+
+Workaround with OpenSSL:
 
     echo -e \
       "GET / HTTP/1.1\r\nHost:autodefesa.org\r\n\r\nConnection: Close\r\n\r\n" | \
       torsocks openssl s_client -quiet -servername autodefesa.org -connect \
       autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion:443
+
+Result: page is fetched via Onion Service and HTTPS with a validated certificate!
+
+# More information
+
+Check the full Onion Plan Usability Roadmap Proposal.
