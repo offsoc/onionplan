@@ -1,6 +1,6 @@
 ---
 title: Onion Plan
-subtitle: Usability Roadmap Proposal
+subtitle: Usability Roadmap DRAFT Proposal
 date: 2022.Q4
 institute: Onion Support Group - The Tor Project
 author:
@@ -63,6 +63,12 @@ This plan is split into the following roadmap tracks:
 3. Tooling: Onionbalance, Onionprobe, Oniongroove etc.
 4. Outreach: documentation, support, usage/adoption campaigns etc.
 
+# Health, tooling and outreach
+
+* Onion Services DoS: biggest issue right now, highest priority.
+* But this presentation does not cover any proposals for solving this track,
+  nor tooling or outreach, to be handled by another proposal(s).
+
 # Usability
 
 Proposals grouped in these categories:
@@ -87,7 +93,29 @@ Proposals grouped in these categories:
 
 So... what can we do???
 
+# The Zen Approach
+
+* More meditation and reflection.
+* Wait until [draft-ietf-dnsop-svcb-https-10][] (similar to _Alt-Svc_, but in the
+  DNS) gets RFC status and Firefox fully implements it (needs risk assessment
+  for that).
+* Then recommend [HTTP DNS resource records for Onion Services][].
+
+If that works out, it will be a **huge usability improvement without having to
+develop anything by ourselves**.
+
+But will it work? And how long we'll have to wait for that?
+
+Also, this approach does not pave a way for Onion Names or opportunist
+discovery of .onion addresses.
+
+[draft-ietf-dnsop-svcb-https-10]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/10/
+[HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
+
 # Usability Roadmap
+
+As an alternative, the following roadmap is proposed without counting on any
+further/uncertain upstream improvement.
 
 ## Disclaimer
 
