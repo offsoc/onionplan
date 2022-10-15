@@ -114,8 +114,9 @@ discovery of .onion addresses.
 
 # Usability Roadmap
 
-As an alternative, the following roadmap is proposed without counting on any
-further/uncertain upstream improvement.
+As an alternative, the following roadmap is proposed **without counting on any
+further/uncertain upstream improvement and without focusing only on Tor Browser**
+or Firefox.
 
 ## Disclaimer
 
