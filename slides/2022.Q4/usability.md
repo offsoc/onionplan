@@ -159,7 +159,7 @@ or Firefox.
     ----- ------------   ----------------------------------------------
       0   HTTP headers   Centralized (a single point of failure)
       1   DNS            Very decentralized, but hierarchical
-      2   CT Logs        Decentralized, non-hierarchical, but few nodes
+      2   CT Logs        Decentralized, less hierarchical, but few nodes
       3   P2P/Blockchain Decentralized, non-hierarchical, many nodes
 
 ## Censorship resistance comparison
