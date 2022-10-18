@@ -144,6 +144,9 @@ or Firefox.
   censorship resistance).
 * **Phase 3**: bringing "pure" ***Onion Names*** into Tor.
 
+At any Phase, low-hanging fruit can be included, such as fixes and
+improvements to existing features like `Onion-Location`.
+
 ## Phases comparison
 
     Phase Category     Method                     Technology     Status
@@ -226,9 +229,11 @@ inform users:
 2. HTTPS Certificates: Already supported! No need to coordinate with Let's
    Encrypt or any other Certificate Authority.
 
-3. TLS SNI: Already supported!
+3. TLS SNI: Already supported! Should be fully compatible with ECH (Encrypted
+   Client Hello) when [draft-ietf-tls-esni-15][] gets approved and implemented.
 
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
+[draft-ietf-tls-esni-15]: https://datatracker.ietf.org/doc/draft-ietf-tls-esni/
 
 ## Phase 2
 
