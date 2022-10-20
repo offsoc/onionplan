@@ -287,10 +287,16 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
     OnionNamePlugin 2 .bit.onion      /usr/local/bin/namecoin-tor-wrapper
     OnionNamePlugin 3 .scallion.onion /usr/local/bin/community-hosts-file
 
-## TorNS (2017-2019)
+## Implementations
 
-* Tor NS API proof of concept.
-* https://github.com/meejah/torns
+* TorNS (2017-2019):
+    * Tor NS API proof of concept using txtorcon.
+    * https://github.com/meejah/torns
+* StemNS:
+    * TorNS fork using Stem.
+    * https://github.com/namecoin/StemNS
+* C Tor, arti and Tor Browser:
+    * Still to be developed.
 
 ## What if...?
 
