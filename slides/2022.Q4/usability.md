@@ -9,8 +9,6 @@ slides:
     aspect-ratio: 169
     font-size: 11pt
     table-of-contents: false
-header-includes: |
-    \usepackage{longtable}
 
 ---
 
@@ -101,10 +99,18 @@ So... what can we do???
   for that).
 * Then recommend [HTTP DNS resource records for Onion Services][].
 
+## HTTPS records
+
+\includegraphics[width=0.6\textwidth]{images/using-https-records.png}
+
+## Is this enough?
+
 If that works out, it will be a **huge usability improvement without having to
 develop anything by ourselves**.
 
 But will it work? And how long we'll have to wait for that?
+
+And how long for all clients to implement this (not just Tor Browser)?
 
 Also, this approach does not pave a way for Onion Names or opportunist
 discovery of .onion addresses.
@@ -361,3 +367,7 @@ Result: page is fetched via Onion Service and HTTPS with a validated certificate
 # More information
 
 Check the full Onion Plan Usability Roadmap Proposal.
+
+# Questions?
+
+    rhatto@torproject.org
