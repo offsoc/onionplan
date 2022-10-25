@@ -1,5 +1,7 @@
 # Onion Plan: Health Roadmap DRAFT Proposal - v2022.Q4
 
+[[_TOC_]]
+
 ## DoS defenses
 
 * Focus on needed develop to mitigate DoS.

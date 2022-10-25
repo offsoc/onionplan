@@ -1,5 +1,7 @@
 # Onion Plan: Usability Roadmap DRAFT Proposal - v2022.Q4
 
+[[_TOC_]]
+
 ## Summary
 
 * **Focus:** ***human-friendly*** names for Onion Services with ***HTTPS

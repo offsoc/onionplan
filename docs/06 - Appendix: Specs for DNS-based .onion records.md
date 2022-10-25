@@ -3,6 +3,8 @@
 Documents a alternatives and requirements to be considered when creating an
 specification for Onion Services address entries using the DNS.
 
+[[_TOC_]]
+
 ## Requirements
 
 1. DNSSEC should be mandatory?

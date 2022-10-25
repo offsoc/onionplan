@@ -1,5 +1,7 @@
 # Onion Plan: Tooling Roadmap DRAFT Proposal - 2022.Q4
 
+[[_TOC_]]
+
 ## Onionbalance (scaling)
 
 * Improvements package. Which

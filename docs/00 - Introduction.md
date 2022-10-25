@@ -3,6 +3,8 @@
 An ongoing holistic strategy to increase the adoption an enhance the usability
 of [Onion Services](https://community.torproject.org/onion-services/).
 
+[[_TOC_]]
+
 ## Summary
 
 ***Have you ever considered that we work with one of the coolest technologies?***
