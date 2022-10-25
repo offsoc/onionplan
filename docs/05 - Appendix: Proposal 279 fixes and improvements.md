@@ -19,16 +19,16 @@ or "supported" implementations (and leaving the users and operators to
 configure their [own non-standard resolution schemes][] on their systems):
 
 * [ ] Require all address suffixes to end with .onion (Sections 2.1, 3.1 and
-  elsewhere) ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html)).
+      elsewhere) (initial discussion: [require-suffixes-end][]).
 * [ ] Reserve part of the namespace (Section 2.1 and elsewhere)
-      ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html)):
+      (initial discussion: [reserve-namespace][]).
   * [ ] For standardized namespaces (like `.onion)`.
   * [ ] Some for experimental or local ones (like `.x.onion)`.
-* [ ] Distinguish names that are supposed to be global from ones that aren't (Section 2.1 and elsewhere)
-      ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html)).
+* [ ] Distinguish names that are supposed to be global from ones that aren't
+      (Section 2.1 and elsewhere) (initial discussion: [distinguish-names][]).
 * [ ] Require that the second-level domain be 10 characters or less, to avoid
-      confusion with existing onion addresses (Section 3.1)
-      ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html)).
+      confusion with existing onion addresses (Section 3.1) (initial discussion:
+      [require-second-level][]).
   * [ ] Reasoning for limiting domain size:
     * [ ] Cannot conflict with the existing .onion service address syntax.
   * [ ] Suggestions for limiting domain size:
@@ -37,16 +37,21 @@ configure their [own non-standard resolution schemes][] on their systems):
     * [ ] Exclude domains with exactly the size of the public key.
 * [ ] Make credible arguments that whatever exists under ".onion" is somehow
       cryptographic, attested by certs, blockchains, and shit like that, rather
-      than "authorities" to avoid issues with DNSOP ([initial
-      discussion](https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html)).
+      than "authorities" to avoid issues with DNSOP
+      (initial discussion: [credible-arguments][]).
 * [ ] Require the use of restricted (maybe DNS-compliant) syntax, including but
-      not limited to ([initial
-      discussion](https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html)):
+      not limited to (initial discussion: [restricted-syntax][]).
   * [ ] Acceptable max length, max label length, charset and composition.
   * [ ] Declare a registry of short, valid labels, in the second-from-right position in the name.
   * [ ] Reserve "tor" and "name" in that registry (ie: .tor.onion, .name.onion).
 
 [own non-standard resolution schemes]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012172.html
+[require-suffixes-end]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
+[reserve-namespace]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
+[distinguish-names]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
+[require-second-level]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
+[credible-arguments]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html
+[restricted-syntax]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html
 
 ## Syntax
 
