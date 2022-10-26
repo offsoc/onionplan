@@ -94,7 +94,7 @@ So... what can we do???
 # The Zen Approach
 
 * More meditation and reflection.
-* Wait until [draft-ietf-dnsop-svcb-https-10][] (similar to _Alt-Svc_, but in the
+* Wait until [draft-ietf-dnsop-svcb-https-11][] (similar to _Alt-Svc_, but in the
   DNS) gets RFC status and Firefox fully implements it (needs risk assessment
   for that).
 * Then recommend [HTTP DNS resource records for Onion Services][].
@@ -112,11 +112,15 @@ But will it work? And how long we'll have to wait for that?
 
 And how long for all clients to implement this (not just Tor Browser)?
 
-Also, this approach does not pave a way for Onion Names or opportunist
-discovery of .onion addresses.
+Also, this approach:
 
-[draft-ietf-dnsop-svcb-https-10]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/10/
+* Seems highly dependent on whether [RFC 7686][] will be honored by clients to
+  either use or skip .onion addresses found in HTTPS DNS records.
+* Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
+
+[draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/10/
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
+[RFC 7686]: https://www.rfc-editor.org/info/rfc7686
 
 # Usability Roadmap
 
