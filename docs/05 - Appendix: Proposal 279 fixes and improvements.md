@@ -44,6 +44,7 @@ configure their [own non-standard resolution schemes][] on their systems):
   * [ ] Acceptable max length, max label length, charset and composition.
   * [ ] Declare a registry of short, valid labels, in the second-from-right position in the name.
   * [ ] Reserve "tor" and "name" in that registry (ie: .tor.onion, .name.onion).
+* [ ] Support for [internationalized domain names][].
 
 [own non-standard resolution schemes]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012172.html
 [require-suffixes-end]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
@@ -52,6 +53,7 @@ configure their [own non-standard resolution schemes][] on their systems):
 [require-second-level]: https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html
 [credible-arguments]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html
 [restricted-syntax]: https://lists.torproject.org/pipermail/tor-dev/2017-April/012171.html
+[internationalized domain names]: https://en.wikipedia.org/wiki/Internationalized_domain_name
 
 ## Syntax
 
@@ -133,6 +135,9 @@ configure their [own non-standard resolution schemes][] on their systems):
       This seems like a minor issue, since petnames are somehow a corner case and not the main goal right now.
 * [ ] Use `MapAddress` for at least the prototype implementation
       ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2016-October/011517.html)).
+* [ ] If some of the requirements and features are not feasible to the initial
+      implementation, write the specification in a way that it can still support
+      them in future versions.
 
 ## Security
 

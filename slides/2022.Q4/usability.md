@@ -117,6 +117,8 @@ Also, this approach:
 * Seems highly dependent on whether [RFC 7686][] will be honored by clients to
   either use or skip .onion addresses found in HTTPS DNS records.
 * Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
+* Still needs a further and thorough security analysis to evaluate it's
+  security properties, attack scenarios and mitigations.
 
 [draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/10/
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
@@ -338,6 +340,21 @@ Setup:
 * Attempt to access https://autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion.
 * Address is hard to remember.
 * HTTPS connection will fail since the certificate is not valid for the .onion address.
+
+## Querying for an `onion` TXT record
+
+Just an example, without DNSSEC, output formatted for readability:
+
+    $ dig autodefesa.org TXT
+
+    [...]
+
+    ;; ANSWER SECTION:
+    autodefesa.org.		3600	IN	TXT
+      "onion=autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion"
+
+    ;; Query time: 60 msec
+    [...]
 
 ## Testing SNI
 

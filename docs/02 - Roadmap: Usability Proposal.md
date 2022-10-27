@@ -64,6 +64,8 @@ Also, this approach:
 * Seems highly dependent on whether [RFC 7686][] will be honored by clients to
   either use or skip .onion addresses found in HTTPS DNS records.
 * Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
+* Still needs a further and thorough security analysis to evaluate it's security properties,
+  attack scenarios and mitigations (see [this initial discussion about HTTPS RRs][]).
 
 As an alternative, the following roadmap is proposed **without counting on any
 further/uncertain upstream improvement and without focusing only on Tor
@@ -72,6 +74,7 @@ Browser** or Firefox.
 [draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/11/
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [RFC 7686]: https://www.rfc-editor.org/info/rfc7686
+[this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
 
 ## Phase 1: Onion Service discovery using DNS
 
