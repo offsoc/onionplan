@@ -114,6 +114,9 @@ configure their [own non-standard resolution schemes][] on their systems):
         approach for the matter: in the first version of the spec/implementation, only
         allow Onion Service addresses to be returned, like a simple mapping. Further
         versions can be expanded to other addresses and to even include recursion.
+  * [ ] Think about what to do with disagreements in the discovery methods. Should plugins evaluating
+        a given namespace to accept the first valid result or always try to fetch all matching plugins
+        and compare the results?
 
 ## Implementation
 

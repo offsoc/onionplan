@@ -81,7 +81,13 @@ Consider the following additional measures against censorship in the DNS level:
 * Do 2-3 circuit resolution (multiple DNS queries from different "perspectives"
   -- exit nodes) in the `[DNSONION]` NS plugin. Then check results against one
   another to detect inconsistencies. This can minimize the probability of failed
-  resolutions.
+  resolutions:
+  * Doing 3 lookups in the DNS may bring problems: lots broken DNS resolvers in
+    exit nodes and also can have an impact in the network (by tripling the
+    number or DNS requests).
+  * As an alternative, we could consider an algorithm that do 3 lookups only if
+    a first lookup results in invalid response such as `NXDOMAIN`.
+
 * Automatic reportback of resolution errors. But what qualifies as an "error"?
 * Support DNSSEC authenticated `NXDOMAIN`responses somehow.
 * Enhanced Network Health scanners for DNS resolution issues.
