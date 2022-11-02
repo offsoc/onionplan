@@ -37,6 +37,7 @@ Fixes:
 * [We should make HSv3 desc upload less frequent (#163) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/163 "We should make HSv3 desc upload less frequent")
 * [Tor  node that is not part of the consensus should not be used as rendezvous  point with the onion service (#33129) · Issues · The Tor Project / Core  / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/33129 "Tor node that is not part of the consensus should not be used as rendezvous point with the onion service")
 * [hs: Do not allow more than one control cell on a circuit (#157) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/157 "hs: Do not allow more than one control cell on a circuit")
+* [Long circuit build times when connecting to onion services (#40570) · Core / Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40570)
 
 Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/):
 
