@@ -38,6 +38,19 @@
 | 2       | CT Logs         | Site and DNS entry can be blocked, CT Logs must not | 2                   |
 | 3       | P2P, Blockchain | Should be fully censorship resistant                | 3                   |
 
+### Client support
+
+| Client                                   | Status phase 1 (DNS-based addresses) | Status phase 2 (Sauteed Onions) | Status phase 2 (Onion Names)                                                |
+| ---------------------------------------- | ------------------------------------ | ------------------------------- | --------------------------------------------------------------------------- |
+| Tor Browser                              | Fully supported + UI indicator       | Fully supported + UI indicator  | Fully supported + UI indicator                                              |
+| Other web browsers                       | Fully supported                      | Fully supported                 | Fully supported                                                             |
+| HTTP clients (curl, wget etc)            | Fully supported                      | Fully supported                 | Fully supported                                                             |
+| "VPN-alike" clients (Orbot etc)          | Fully supported if ported to mobile  | Fully supported                 | Fully supported                                                             |
+| Onionshare                               | No use case for DNS-based addresses  | No use case for Sauteed Onions  | Could allow for have human-readable download codes, like [magic-wormhole][] |
+| Chat clients (Briar, Gosling, Quiet etc) | No use case for DNS-based addresses  | No use case for Sauteed Onions  | Could allow for human-readable "nicknames" built atop Onion Names           |
+
+[magic-wormhole]: https://pypi.org/project/magic-wormhole/
+
 ## Phase 0: where we are right now
 
 We're at Phase 0, but not starting from zero! :)
