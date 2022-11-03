@@ -313,6 +313,10 @@ The roadmap for this phase may also includes fixes and low-hanging fruits.
    detect/avoid censorship?
    * Check the [Appendix: Specs for DNS-based .onion records][] document for
      details.
+8. How to prevent abuse in the DNS queries? How the DNS-based methods would
+   handle an excess of requests?
+   * Check the [Appendix: Specs for DNS-based .onion records][] document for
+     details.
 8. Tor Browser specific:
    1. Would connections be by default and automatically upgraded to the Onion
       Service if the regular one is not available? Or shall it respect the

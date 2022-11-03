@@ -94,6 +94,20 @@ Consider the following additional measures against censorship in the DNS level:
 
 ## Security and privacy considerations
 
+### DNS amplification attacks (DoS)
+
+The following attack scenario needs to be considered when devising a DNS-based
+resolution procedure (quoting @ahf from an e-mail exchange):
+
+> Currently the Tor network's DNS capabilities only allows A, AAAA, and PTR
+> (reverse DNS) resolution and not any other objects. The amplification ratio
+> between request and response is interesting here because large DNS objects
+> can potentially be used to DoS an exit-relay if an adversary is able to make
+> many tiny requests that yields a very large response towards the resolving
+> Exit node and thus fill up its inbound network connection.
+
+### Other considerations
+
 Consider also:
 
 1. The analysis made by the [DoHoT project][], which is from a different scope
