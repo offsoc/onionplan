@@ -205,7 +205,7 @@ The roadmap for this phase may also includes fixes and low-hanging fruits.
 
 ### User stories
 
-Operator history:
+#### Operator story 1 (Phase 1)
 
 1. Operator has https://something.example.org with a valid HTTPS certificate.
 2. Operator setups an Onion Service.
@@ -214,9 +214,9 @@ Operator history:
 4. Operator ensures that `something.example.org`also responds with the Onion
    Service address (server alias).
 
-User history:
+#### User story 1 (generic HTTP clients or web browsers using Tor as a socks5h proxy, Phase 1)
 
-1. User types `something.example.org` in the Tor Browser.
+1. User ask the HTTP client to access `something.example.org`.
 2. Request is passed to the Tor daemon.
 3. The Tor daemon uses the Tor DNS API to query for `something.example.org` using
    `[DNSONION]`.
@@ -233,12 +233,32 @@ User history:
        and with the `TLS SNI=something.example.org` right like in the [Alt-Svc
        method][], so https://something.example.org happens transparently via an Onion
        Service.
+5. That means full HTTPS support:
+  * When the Tor NS API returns and Onion Service address and the Tor daemon
+    connects to it via HTTPS, TLS SNI happens, which means that the certificate
+    does not need to be issued for the .onion address!
 
-That means full HTTPS support:
+#### User story 2 (Tor Browser, Phase 1)
 
-1. When the Tor NS API returns and Onion Service address and the Tor daemon
-   connects to it via HTTPS, TLS SNI happens, which means that the certificate
-   does not need to be issued for the .onion address!
+1. Same as the previous user story, with:
+2. Additional UI indicator/widget to interact with the technology.
+
+#### User story 3 (Orbot, Phase 1)
+
+1. If Phase 1 is implemented also for mobile clients, the behavior should be
+   the same as User story 1.
+
+#### User story 4 (Onionshare, Phase 1)
+
+1. On Phase 1, the user won't have support for accessing shared files or
+   folders using address translation, because that would require Onionshare to
+   configure regular domain names, which is out of scope.
+
+#### User story 5 (Chat client using Onion Services, Phase 1)
+
+1. On Phase 1, the user won't have support for finding other users via address
+   translation, because that would require clients such as Briar, Quiet or
+   Ricochet-Refresh to configure regular domain names, which is out of scope.
 
 [Alt-Svc method]: https://blog.cloudflare.com/cloudflare-onion-service/
 
@@ -381,7 +401,7 @@ The roadmap for this phase may also includes fixes and low-hanging fruits.
 
 ### User stories
 
-Operator history:
+#### Operator story 2 (Phase 2)
 
 1. Operator need an additional DNS entry for the *sauteed onion* domain related
    to their existing site. The Operator can then choose to have either the
@@ -392,9 +412,9 @@ Operator history:
    domain into their HTTPS certificates as a Subject Alternative Name (SAN),
    which is supported right now by the existing Let's Encrypt infra.
 
-User history:
+#### User story 6 (generic HTTP clients or web browsers using Tor as a socks5h proxy, Phase 2)
 
-1. User types `something.example.org` in the Tor Browser.
+1. User ask the HTTP client to access `something.example.org`.
 2. Request is passed to the Tor daemon.
 3. The Tor daemon uses the Tor DNS API to query for `something.example.org`
    using `[DNSONION]` or, if that does not succeeds, to the [Sauteed Onions][]
@@ -404,6 +424,29 @@ User history:
      with the TLS `SNI=something.example.org` right like in the [Alt-Svc
      method][], so https://something.example.org happens transparently via an Onion
      Service.
+
+#### User story 7 (Tor Browser, Phase 2)
+
+1. Same as the previous user story, with:
+2. Additional UI indicator/widget to interact with the technology.
+
+#### User story 8 (Orbot, Phase 2)
+
+1. If Phase 2 is implemented also for mobile clients, the behavior should be
+   the same as User story 6.
+
+#### User story 8 (Onionshare, Phase 2)
+
+1. On Phase 2, the user won't have support for accessing shared files or
+   folders using address translation, because that would require Onionshare to
+   configure Sauteed Onions certificates, which is out of scope.
+
+#### User story 9 (Chat client using Onion Services, Phase 2)
+
+1. On Phase 2, the user won't have support for finding other users via address
+   translation, because that would require clients such as Briar, Quiet or
+   Ricochet-Refresh to configure Sauteed Onions certificates, which is out of
+   scope.
 
 ### Questions
 
@@ -474,7 +517,60 @@ TLD.
 
 ### User stories
 
-* To be written.
+#### Operator story 3 (Phase 3)
+
+1. The operator has additional ways to create human-friendly mappings to Onion
+   Services, some of then being independent of DNS entries or HTTPS
+   certificates.
+2. The operator is not restricted to have a single human-friendly mapping,
+   being able to create many mappings using different implementations.
+
+#### User story 10 (generic HTTP clients or web browsers using Tor as a socks5h proxy, Phase 3)
+
+1. User ask the HTTP client to access some address (don't have to be a DNS-based name).
+2. Request is passed to the Tor daemon.
+3. The Tor daemon uses the Tor DNS API to query for the address based on the available plugins.
+4. For DNS-based addreses, story goes like on Phases 1 and 2.
+5. For "pure" Onion Names, the appropriate plugin is called. HTTPS certificate
+   validation support for this case is not covered in the current proposal.
+
+#### User story 11 (Tor Browser, Phase 3)
+
+1. Same as the previous user story, with:
+2. Additional UI indicator/widget to interact with the technology.
+
+#### User story 12 (Orbot, Phase 3)
+
+1. If Phase 2 is implemented also for mobile clients, the behavior should be
+   the same as User story 10.
+
+#### User story 13 (Onionshare, Phase 3)
+
+User story considering that Onionshare is updated to support the improvements
+in this phase:
+
+1. User sharing files:
+  1. User selects files on Onionshare.
+  2. User can ask Onionshare to generate a secret code like [magic-wormhole][] does.
+  3. User can share either the .onion address or the secret codes to another user.
+2. User downloading files:
+  1. User may enter the secret code instead of the .onion address to download files.
+
+This user story depends on the existence of a given Onion Name implementation
+that allows for such Onion Names registrations.
+
+#### User story 14 (Chat client using Onion Services, Phase 3)
+
+User story considering that Tor-based chat clients are  updated to support the
+improvements in this phase:
+
+1. Users registers "nicknames" (i.e, Onion Names).
+2. Users exchanges their nicknames.
+3. Users can add each other on their chat applications using these nicknames
+   instead of an .onion address.
+
+This user story depends on the existence of a given Onion Name implementation
+that allows for such Onion Names registrations.
 
 ### Questions
 
