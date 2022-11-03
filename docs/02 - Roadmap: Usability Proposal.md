@@ -205,7 +205,7 @@ User history:
 
 1. User types `something.example.org` in the Tor Browser.
 2. Request is passed to the Tor daemon.
-3. The Tor daemon uses the Tor DNS API to query for something.example.org using
+3. The Tor daemon uses the Tor DNS API to query for `something.example.org` using
    `[DNSONION]`.
 4. `[DNSONION]` checks for a special .onion entry in the DNS; the query MUST
    happen via the Tor network, for privacy considerations but also to avoid
