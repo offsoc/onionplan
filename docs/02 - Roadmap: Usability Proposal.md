@@ -294,7 +294,7 @@ That means full HTTPS support:
 [329 for C Tor]: https://gitlab.torproject.org/tpo/core/tor/-/issues
 [TorNS]: https://github.com/meejah/torns
 [StemNS]: https://github.com/namecoin/StemNS
-[Appendix: Proposal 279 fixes and improvements]: 02%20-%20Roadmap:%20Usability%20Proposal.md
+[Appendix: Proposal 279 fixes and improvements]: 05%20-%20Appendix:%20Proposal%20279%20fixes%20and%20improvements.md
 [Appendix: Specs for DNS-based .onion records]: 06%20-%20Appendix:%20Specs%20for%20DNS-based%20.onion%20records.md
 
 ## Phase 2: Opportunistic Discoverability
