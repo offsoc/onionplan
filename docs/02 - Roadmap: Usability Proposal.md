@@ -40,7 +40,7 @@
 
 ### Client support
 
-| Client                                    | Status phase 1 (DNS-based addresses) | Status phase 2 (Sauteed Onions) | Status phase 2 (Onion Names)                                                |
+| Client                                    | Phase 1 (DNS-based addresses)        | Phase 2 (Sauteed Onions)        | Phase 2 (Onion Names)                                                       |
 | ----------------------------------------- | ------------------------------------ | ------------------------------- | --------------------------------------------------------------------------- |
 | Tor Browser                               | Fully supported + UI indicator       | Fully supported + UI indicator  | Fully supported + UI indicator                                              |
 | Other web browsers                        | Fully supported                      | Fully supported                 | Fully supported                                                             |
