@@ -190,7 +190,7 @@ arti team is working in the Rendezvous v3 implementation?
 
 The roadmap for this phase may also includes fixes and low-hanging fruits.
 
-### User histories
+### User stories
 
 Operator history:
 
@@ -361,7 +361,7 @@ Same as those from the previous phase, plus:
 
 The roadmap for this phase may also includes fixes and low-hanging fruits.
 
-### User histories
+### User stories
 
 Operator history:
 
@@ -454,7 +454,7 @@ TLD.
 
 * To be written.
 
-### User histories
+### User stories
 
 * To be written.
 
