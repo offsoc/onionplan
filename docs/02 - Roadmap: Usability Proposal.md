@@ -272,12 +272,15 @@ That means full HTTPS support:
    * In the other hand, is this a good architecture choice? From a security
      perspective, that would require to expose the `ControlPort` to a naming
      system middleware, which can be unsafe.
-6. Will (or how) to detect/avoid censorship in the DNS level? Will (or how) the
+6. What needs to be changed in [Proposal 279][] in order for this plan to work?
+   * Check the [Appendix: Proposal 279 fixes and improvements][] document for
+     details.
+7. Will (or how) to detect/avoid censorship in the DNS level? Will (or how) the
    DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
    detect/avoid censorship?
-   1. Check the *Appendix: Specs for DNS-based .onion records* document for
-      details.
-7. Tor Browser specific:
+   * Check the [Appendix: Specs for DNS-based .onion records][] document for
+     details.
+8. Tor Browser specific:
    1. Would connections be by default and automatically upgraded to the Onion
       Service if the regular one is not available? Or shall it respect the
       "Prioritize .onion sites when known" Tor Browser config and just offer the
@@ -291,6 +294,8 @@ That means full HTTPS support:
 [329 for C Tor]: https://gitlab.torproject.org/tpo/core/tor/-/issues
 [TorNS]: https://github.com/meejah/torns
 [StemNS]: https://github.com/namecoin/StemNS
+[Appendix: Proposal 279 fixes and improvements]: 05 - Appendix: Proposal 279 fixes and improvements.md
+[Appendix: Specs for DNS-based .onion records]: 06 - Appendix: Specs for DNS-based .onion records.md
 
 ## Phase 2: Opportunistic Discoverability
 
