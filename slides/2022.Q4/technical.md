@@ -12,26 +12,30 @@ slides:
 
 ---
 
-# Technical details
+# Summary
 
 1. Context.
 2. What really matters?
 3. What can easily be replaced or thrown away?
 4. Why pluggable?
-5. Proposal 279 overview.
-6. Phase 1 proof of concept.
+5. The Tor NS API.
+6. Phase 1 Proof of Concept.
 
 # 1. Context
 
-* Onion Services being used by major actors; narrative shift;
-  possibility of funding to do Onion Services development.
+* This presentation covers the technical details for [Onion Plan's usability
+  proposal][] ([slides][]) focusing in the long term.
 
-* Increasing team members focused on Onion Services.
+* It needs further discussion, ideas an especially some stress analysis to
+  ensure it's doable.
 
-* Might be a good time to plan this, considering the upcoming arti
-  2.0 roadmap focusing on Onion Services.
+* Also needs syncing with the upcoming arti 1.2.0 and C Tor maintenance
+  roadmaps.
 
-# 2. What realy matters in this proposal?
+[Onion Plan's usability proposal]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/02%20-%20Roadmap:%20Usability%20Proposal.md
+[slides]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/usability.pdf
+
+# 2. What really matters in the usability proposal?
 
 * Basic properties: incremental, modular etc.
 
@@ -41,14 +45,34 @@ slides:
 
 # 3. What can easily be replaced or thrown away?
 
+1. [Proposal 279][] is not a MUST, but having a Tor Name System API would make
+   naming systems and service discovery development, testing and adoption way
+   easier.
+
+2. The proposed phases can be changed and re-arranged.
+
+3. Implementation on C Tor can be excluded from the roadmap or have a lower
+   priority. This may make sense given the current development availability. In
+   the other hand, it can slow down the timeframe to put things into production.
+
+[Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
+
 # 4. Why pluggable?
 
-* Allow third parties to provide their own discovery methods
-  regardless of what Tor ship by default as supported technology.
+1. Allow third parties to provide their own discovery methods
+   regardless of what Tor ship by default as supported technology.
 
-* Technical and governance criteria.
+2. The community could contribute more and the roadmap could be split between
+   teams with only minimum point of contact.
 
-# 5. Proposal 279
+3. Technical and governance criteria: aiding decision-making in what should
+   be officially supported (and enabled by default) and what should
+   leave as unofficial, third-party plugins or disabled by default.
+
+4. After Phase 1 is implemented, the community may also contribute unofficially
+   with their own resolvers.
+
+# 5. The Tor NS API
 
 ## Proposal 279 (2016)
 
@@ -72,15 +96,21 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 ## Implementations
 
 * TorNS (2017-2019):
-    * Tor NS API proof of concept using txtorcon.
+    * Tor NS API based on [Proposal 279][]
+    * Proof of concept using [txtorcon][].
     * https://github.com/meejah/torns
 * StemNS:
-    * TorNS fork using Stem.
+    * TorNS fork using [Stem][].
     * https://github.com/namecoin/StemNS
 * C Tor, arti and Tor Browser:
-    * Still to be developed.
+    * No built-in implementation exists.
+
+[txtorcon]: https://txtorcon.readthedocs.io
+[Stem]: https://stem.torproject.org/
 
 ## What if...?
+
+An hypothetical example:
 
     # New torrc(5) config
     OnionNamePlugin  0 .some.onion /usr/bin/some-onion-resolver    # Phase 3
@@ -89,20 +119,46 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 
 ## Which means
 
-1. In Phase 1, the DNS-based address translation is implemented.
-2. In Phase 2, the Sauteed Onions address translation is implemented.
+1. In Phase 1, the DNS-based address translation is implemented, with a
+   catch-all rule for all domains.
+2. In Phase 2, the Sauteed Onions or other address translation method is
+   implemented with a fallback catch-all rule for all domains if the DNS
+   resolver fails for some reason.
 3. In Phase 3, "pure" Onion Name plugins can be officially included.
 4. Matching will happen from the specific (like `.some.onion`) to the general (`*`).
 5. For non-.onion TLDs, priority will be from the DNS to the Sauteed Onion (or
    other fancier methods).
 
-## Does prop279 should be amended or replaced?
+## Does Proposal 279 should be amended or replaced?
 
-* Extensive [evaluation of what needs to be defined/done][].
+* There's an extensive [evaluation of what needs to be defined/done][] to make
+  [Proposal 279][] work with the current Onion Plan.
+
+* Given the stability of arti's API and the support for Rust's [Foreign
+  Function Interface][] (FFI), it's worth thinking in different ways to plug
+  a Tor NS API not considered by the time [Proposal 279][] was written.
 
 [evaluation of what needs to be defined/done]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/05%20-%20Appendix%3A%20Proposal%20279%20fixes%20and%20improvements.md
+[Foreign Function Interface]: https://doc.rust-lang.org/nomicon/ffi.html
 
-# 6. Phase 1 proof of concept
+## Some possibilities
+
+1. Have Tor NS API as a library and a configuration format similar to
+   [Proposal 279][]. Build on arti only the point of contact with this
+   library (the same if a C Tor implementation is to be considered).
+
+2. Build the Tor NS API it directly on arti (which can be safer), supporting
+   pluggable, external resolvers.
+
+3. Support only resolver plugins that can be included using FFI (during
+   compilation). Trade off: not very pluggable but may be easier to maintain.
+   Can make iteration faster an does not block having an additional pluggable
+   NS API in the future.
+
+# 6. Phase 1 Proof of Concept (PoC)
+
+Putting aside any Tor NS specifics, let's think about a resolver method for a
+moment.
 
 ## DNS, TLS SNI and .onion: proof of concept
 
@@ -142,21 +198,37 @@ If we use OpenSSL via Tor, we can get the cert via Onion Service using TLS SNI:
 
 ## Using curl
 
-This could work in theory to fetch the site via Onion Services using TLS SNI:
+Almost working PoC: fetching the site via Onion Services using TLS SNI using curl:
 
     torsocks curl -vik --resolve \
       autodefesa.org:443:autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion \
       https://autodefesa.org
 
-But it won't work, since `curl(1)`'s `--resolve` requires an IP address.
+But it won't work with `curl(1)`, since `--resolve` requires an IP address.
 
 ## Using OpenSSL
 
-Workaround with OpenSSL:
+Working PoC with OpenSSL:
 
     echo -e \
       "GET / HTTP/1.1\r\nHost:autodefesa.org\r\n\r\nConnection: Close\r\n\r\n" | \
       torsocks openssl s_client -quiet -servername autodefesa.org -connect \
       autodefcecpx2mut5medmyjxjg2wb6lwkbt3enl74frthemyoyclpiad.onion:443
 
+What it does:
+
+1. Opens a TLS connection to the Onion Service using Tor.
+2. During handshake, asks for the `autodefesa.org` certificate.
+3. Do a regular HTTP `GET` after the connection is established.
+
 Result: page is fetched via Onion Service and HTTPS with a validated certificate!
+
+## What else for DNS support?
+
+Check the [Appendix: Specs for DNS-based .onion records][].
+
+[Appendix: Specs for DNS-based .onion records]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/06%20-%20Appendix%3A%20Specs%20for%20DNS-based%20.onion%20records.md
+
+# Questions?
+
+    rhatto@torproject.org

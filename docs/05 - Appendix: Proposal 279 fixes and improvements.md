@@ -4,6 +4,10 @@ This is a list of open questions and suggestions for [Proposal 279][], which
 can be eventually included in the Section 3 of the proposal or converted to
 actionable ticket issues.
 
+This can be useful either if [Proposal 279][] is selected as the specification
+for the Tor Name System API (Tor NS API) or if another specification is to be
+written.
+
 [[_TOC_]]
 
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt

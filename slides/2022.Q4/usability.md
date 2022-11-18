@@ -161,20 +161,20 @@ improvements to existing features like `Onion-Location`.
 
 ## Phases comparison
 
-    Phase Category     Method                     Technology     Status
-    ----- ------------ -------------------------- -------------- --------
-      0   Addr. trans. Onion-Location v1, Alt-Svc HTTP           Done
-      1   Addr. trans. DNS-based discovery        DNS            Planning
-      2   Addr. trans. Sauteed Onions             CT Logs        Research
-      3   Onion Names  ?                          P2P/Blockchain Research
+    Phase Category     Method                     Technology       Status
+    ----- ------------ -------------------------- --------------   --------
+      0   Addr. trans. Onion-Location v1, Alt-Svc HTTP             Done
+      1   Addr. trans. DNS-based discovery        DNS              Planning
+      2   Addr. trans. Sauteed Onions or other    CT Logs or other Research
+      3   Onion Names  ?                          P2P/Blockchain   Research
 
 ## Decentralization comparison
 
     Phase Technology     Decentralization
-    ----- ------------   ----------------------------------------------
+    ----- ------------   -------------------------------------------
       0   HTTP headers   Centralized (a single point of failure)
       1   DNS            Very decentralized, but hierarchical
-      2   CT Logs        Decentralized, less hierarchical, but few nodes
+      2   CT Logs?       Decentralized, less hierarchical, few nodes
       3   P2P/Blockchain Decentralized, non-hierarchical, many nodes
 
 ## Censorship resistance comparison
@@ -183,7 +183,7 @@ improvements to existing features like `Onion-Location`.
     ----- ------------   -------------------------------------------
       0   HTTP headers   Does not work when the site is blocked
       1   DNS            Even if site is blocked, not if DNS is
-      2   CT Logs        Even if site/DNS blocked, not if CT Logs is
+      2   CT Logs?       Even if site/DNS blocked, not if CT Logs is
       3   P2P/Blockchain Should be fully censorship resistant
 
 ## Phase 0
@@ -203,9 +203,9 @@ That means:
 1. It _can be transparent_, either by always preferring the Onion Service or
    using it automatically if the regular site is blocked.
 
-2. Users will not need to know the actual Onion Service address!
+2. Users will _not need to know the actual Onion Service address_!
 
-3. Can work for all clients and not only Tor Browser.
+3. Can _work for all clients_ and not only Tor Browser.
 
 ## Tor Browser
 
@@ -233,10 +233,11 @@ inform users:
 ## What it needs to work?
 
 1. Transparent resolution:
-    * [Proposal 279][] - specs for a Tor Name System API: review and implementation.
-    * Define a way to securely add Onion Service addresses entries into the DNS.
-    * Write a Tor NS API plugin that securely maps regular domains into Onion Services.
-    * Minimum UX changes in the Tor Browser.
+    1. A pluggable interface, maybe [Proposal 279][] (Tor Name System API):
+       specification and implementation.
+    2. Define a way to securely add Onion Service addresses entries into the DNS.
+    3. Write a Tor NS API plugin that securely maps regular domains into Onion Services.
+    4. The minimum UX changes needed in the Tor Browser.
 
 2. HTTPS Certificates: Already supported! No need to coordinate with Let's
    Encrypt or any other Certificate Authority.
@@ -257,7 +258,8 @@ That means:
 * Implementing _opportunistic discovery_ of Onion Service addresses by having
   an additional method to get the .onion address for `torproject.org`.
 
-* In this phase, a [Sauteed Onions][] Tor NS plugin will be created.
+* In this phase, another Tor NS plugin is created, like one for [Sauteed
+  Onions][].
 
 [Sauteed Onions]: https://www.sauteed-onions.org
 
@@ -275,7 +277,9 @@ That means:
 
 # More information
 
-Check the full Onion Plan Usability Roadmap Proposal.
+Check the full [Onion Plan Usability Roadmap Proposal][].
+
+[Onion Plan Usability Roadmap Proposal]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/02%20-%20Roadmap:%20Usability%20Proposal.md
 
 # Questions?
 
