@@ -39,13 +39,19 @@ Alternatives:
          addresses for implementing load balancing at the DNS level.
    2. Cons:
       1. It's not a dedicated resource record.
-      2. Might need a RFC anyways (even if stays as a *Proposed standard* or *Informational*).
+      2. It does not limit by service: a `TXT` record point to an Onion Service
+         would work for any protocol (HTTP, SMTP etc). Could cause trouble if a
+         service is not well supported by the service discovery approach; would
+         not support different .onion addresses for different services.
+      3. Might need a RFC anyways (even if stays as a *Proposed standard* or *Informational*).
 3. Use `SRV` records ([RFC 2782][]):
   1. Pros:
       1. Minimum work on specs. Can be similar to the [convention used][] by [OnionRouter][]:
          `_onion._tcp.example.com. 3600 IN SRV 0 5 443 testk4ae7qr6nhlgahvyicxy7nsrmfmhigtdophufo3vumisvop2gryd.onion.`.
       2. Could be used for load balancing: multiple `SRV` entries for
          `example.org` for different Onion Service endpoints.
+      3. Different services from the same domain could have distinct .onion addresses.
+      4. Fine-grained control of supported services/ports.
   2. Cons:
       1. The `service` field from the `SRV` record are meant (by [RFC 2782][])
          to indicate services already [assigned by IANA][], something that does
@@ -55,14 +61,15 @@ Alternatives:
          that it should be accessed by some protocol like `https`. How to
          accommodate entries for `http` for even other services? One solution is to use
          a composite `service` fields like `onion-https`, `onion-http` etc, exactly like
-         the [convention user][] by [Onion Router][].
+         the [convention used][] by [Onion Router][].
 3. Use a custom `ONION` RR by submitting an RFC proposal to the IETF.
    1. Pros:
       1. It's a dedicated resource record.
       2. More flexibility?
    2. Cons:
-      1. May take a long time to be a standard.
-      2. Even if gets approved, may take time for software to implement (ossification)?
+      1. A lot more work involved in drafting a standard and evaluating all corner cases.
+      2. May take a long time to be a standard.
+      3. Even if gets approved, may take time for software to implement (ossification)?
 
 [proposed HTTPS record]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
