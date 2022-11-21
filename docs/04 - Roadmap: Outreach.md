@@ -9,7 +9,7 @@
 * We need to review and improve the first guide to ensure it's comprehensive and easy to follow.
 * This guide is also only available in English, Russian, and Turkish. There's an opportunity to invest in localization.
 
-## Highlight benefits of Onion Services
+## Highlight benefits of Onion Services (on community portal)
 * Here: https://community.torproject.org/onion-services/talk/
 * Above page needs to be elaborated to highlight all [arguments](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/166) for promoting Onion Services.
 
