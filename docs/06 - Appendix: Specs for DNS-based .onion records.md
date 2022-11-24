@@ -1,6 +1,6 @@
 # Appendix: Specs for DNS-based .onion records
 
-Documents a alternatives and requirements to be considered when creating an
+Documents options, requirements etc to be considered when creating a
 specification for Onion Services address entries using the DNS.
 
 [[_TOC_]]
