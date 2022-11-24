@@ -143,7 +143,8 @@ Browser** or Firefox.
    resistant than a direct block in the site from the point of view of a Tor
    exit node (which would render the `Onion-Location` and the `Alt-Svc` methods
    useless).
-3. Do not work with .onion-only sites.
+3. Service discovery usually involves additional rountrips.
+4. Do not work with .onion-only sites.
 
 ### Opportunities
 

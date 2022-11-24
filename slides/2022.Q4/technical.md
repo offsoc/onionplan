@@ -95,11 +95,11 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 
 ## Implementations
 
-* TorNS (2017-2019):
+* [TorNS][] (2017-2019):
     * Tor NS API based on [Proposal 279][]
     * Proof of concept using [txtorcon][].
     * https://github.com/meejah/torns
-* StemNS:
+* [StemNS][]:
     * TorNS fork using [Stem][].
     * https://github.com/namecoin/StemNS
 * C Tor, arti and Tor Browser:
@@ -107,6 +107,33 @@ See https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-nam
 
 [txtorcon]: https://txtorcon.readthedocs.io
 [Stem]: https://stem.torproject.org/
+[TorNS]: https://github.com/meejah/torns
+[StemNS]: https://github.com/namecoin/StemNS
+
+## How they work
+
+For the prop279 implementations based on the control spec -- [TorNS][] and
+[StemNS][], discovery happens in the following way at the client side:
+
+1. They require `__LeaveStreamsUnattached` to be set.
+2. Once a new stream appears, they proceed doing a name resolution.
+3. If a name is found, they proceed with a `REDIRECTSTREAM` before
+   attaching the stream to a circuit.
+
+## Transparent connections
+
+This is completely transparent to the HTTP client relying on SOCKS5h.
+
+Maybe a custom `REP` field from the SOCKS response could indicate to clients
+that an opportunistic Onion Service discovery happened.
+
+Or maybe the HTTP client like Tor Browser could detect whether BND.ADDR from
+the SOCKS reply is a Onion Service and offer some UI indicator.
+
+Check [socks-extensions.txt][] and [RFC 1928][] for details.
+
+[RFC 1928]: https://www.ietf.org/rfc/rfc1928.txt
+[socks-extensions.txt]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/socks-extensions.txt
 
 ## What if...?
 

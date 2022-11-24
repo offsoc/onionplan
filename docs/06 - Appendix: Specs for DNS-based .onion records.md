@@ -99,7 +99,41 @@ Consider the following additional measures against censorship in the DNS level:
 * Support DNSSEC authenticated `NXDOMAIN`responses somehow.
 * Enhanced Network Health scanners for DNS resolution issues.
 
+## Alleviating excessive roundtrips
+
+A downside for opportunistic discovery is that it involves additional
+roundtrip.
+
+It's possible to alleviate this by considering behaviors controlled by an user
+setting, like the following:
+
+1. The service discovery feature is disabled (by default?).
+
+2. The feature can be enabled and will look for .onion on the DNS (or
+   any other methods) only if the site is unreachable.
+
+3. Feature is enabled for the whole browsing experience: whenever a
+   stream for domains (and not IPs) opens, DNS resolution happens, with the
+   benefit of automatic discovery but with the downside of an additional
+   DNS roundtrip (and an additional circuit to make that roundtrip) at every
+   (uncached) request.
+
 ## Security and privacy considerations
+
+### Keeping the self-authentication property
+
+It's important to devise a scheme where DNS records for Onion Services keep
+the self-authentication property of .onion addresses.
+
+That could be implemented by signing somehow the DNS entry using the Onion
+Service private key.
+
+### DNSSEC requirement
+
+This section discusses whether DNSSEC should be mandatory:
+
+1. Could it be optional when TLS is enforced and the Onion Service DNS entry
+   is signed by the .onion? What's the trade-off here?
 
 ### DNS amplification attacks (DoS)
 
