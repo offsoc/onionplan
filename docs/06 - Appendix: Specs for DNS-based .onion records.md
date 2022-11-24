@@ -20,56 +20,69 @@ Alternatives:
 
 1. Adopt the [proposed HTTPS record][], in the hope that it gets approved so no
    need for an additional record is needed.
-   1. Pros:
-      1. No need to work on specs.
-      2. Reuses an existing an compatible proposal.
-   2. Cons:
-      1. Proposal might not get approved and the field stays as a non-standard.
-      2. Seems highly dependent on whether [RFC 7686][] will be honored by clients to
-         either use or skip .onion addresses found in HTTPS DNS records.
-      3. Still needs a further and thorough security analysis to evaluate it's
-         security properties, attack scenarios and mitigations (see [this
-         initial discussion about HTTPS RRs][]).
+    1. Pros:
+        1. No need to work on specs.
+        2. Reuses an existing an compatible proposal.
+    2. Cons:
+        1. Proposal might not get approved and the field stays as a non-standard.
+        2. Seems highly dependent on whether [RFC 7686][] will be honored by clients to
+           either use or skip .onion addresses found in HTTPS DNS records.
+        3. Still needs a further and thorough security analysis to evaluate it's
+           security properties, attack scenarios and mitigations (see [this
+           initial discussion about HTTPS RRs][]).
+        4. Cannot include a signature from the .onion key (no Onion Service
+           self-authentication property).
 2. Use`TXT` records ([RFC 1464][]):
-   1. Pros:
-      1. Minimum work on specs.
-      2. Supported by existing software.
-      3. Syntax can easily allow for many fields like versioning.
-      4. May allow multiple records pointing to different Onion Service
-         addresses for implementing load balancing at the DNS level.
-   2. Cons:
-      1. It's not a dedicated resource record.
-      2. It does not limit by service: a `TXT` record point to an Onion Service
-         would work for any protocol (HTTP, SMTP etc). Could cause trouble if a
-         service is not well supported by the service discovery approach; would
-         not support different .onion addresses for different services.
-      3. Might need a RFC anyways (even if stays as a *Proposed standard* or *Informational*).
+    1. Pros:
+        1. Minimum work on specs.
+        2. Supported by existing software.
+        3. Syntax could allow for many fields like versioning.
+        4. May allow multiple records pointing to different Onion Service
+           addresses for implementing load balancing at the DNS level.
+        5. May include an optional field for port/service like in the `SRV` field.
+        6. May include a signature from the .onion key, which preserves the Onion
+           Services' self-authentication property.
+    2. Cons:
+        1. It's not a dedicated resource record.
+        2. It does not limit by service: a `TXT` record point to an Onion Service
+           would work for any protocol (HTTP, SMTP etc). Could cause trouble if a
+           service is not well supported by the service discovery approach; would
+           not support different .onion addresses for different services.
+        3. Might need a RFC anyways (even if stays as a *Proposed standard* or *Informational*).
 3. Use `SRV` records ([RFC 2782][]):
-  1. Pros:
-      1. Minimum work on specs. Can be similar to the [convention used][] by [OnionRouter][]:
-         `_onion._tcp.example.com. 3600 IN SRV 0 5 443 testk4ae7qr6nhlgahvyicxy7nsrmfmhigtdophufo3vumisvop2gryd.onion.`.
-      2. Could be used for load balancing: multiple `SRV` entries for
-         `example.org` for different Onion Service endpoints.
-      3. Different services from the same domain could have distinct .onion addresses.
-      4. Fine-grained control of supported services/ports.
-  2. Cons:
-      1. The `service` field from the `SRV` record are meant (by [RFC 2782][])
-         to indicate services already [assigned by IANA][], something that does
-         not make sense to do with Onion Services. Then, if adopting `SRV` record,
-         would we be respecting or perverting the RFC? Is this a concern at all?
-      2. Using the `service` field for Onion Services would assume implicitly
-         that it should be accessed by some protocol like `https`. How to
-         accommodate entries for `http` for even other services? One solution is to use
-         a composite `service` fields like `onion-https`, `onion-http` etc, exactly like
-         the [convention used][] by [Onion Router][].
+    1. Pros:
+        1. Minimum work on specs. Can be similar to the [convention used][] by [OnionRouter][]:
+           `_onion._tcp.example.com. 3600 IN SRV 0 5 443 testk4ae7qr6nhlgahvyicxy7nsrmfmhigtdophufo3vumisvop2gryd.onion.`.
+        2. Could be used for load balancing: multiple `SRV` entries for
+           `example.org` for different Onion Service endpoints.
+        3. Different services from the same domain could have distinct .onion addresses.
+        4. Fine-grained control of supported services/ports.
+    2. Cons:
+        1. The `service` field from the `SRV` record are meant (by [RFC 2782][])
+           to indicate services already [assigned by IANA][], something that does
+           not make sense to do with Onion Services. Then, if adopting `SRV` record,
+           would we be respecting or perverting the RFC? Is this a concern at all?
+        2. Using the `service` field for Onion Services would assume implicitly
+           that it should be accessed by some protocol like `https`. How to
+           accommodate entries for `http` for even other services? One solution is to use
+           a composite `service` fields like `onion-https`, `onion-http` etc, exactly like
+           the [convention used][] by [Onion Router][].
+        3. Cannot include a signature from the .onion key (no Onion Service
+           self-authentication property).
 3. Use a custom `ONION` RR by submitting an RFC proposal to the IETF.
-   1. Pros:
-      1. It's a dedicated resource record.
-      2. More flexibility?
-   2. Cons:
-      1. A lot more work involved in drafting a standard and evaluating all corner cases.
-      2. May take a long time to be a standard.
-      3. Even if gets approved, may take time for software to implement (ossification)?
+    1. Pros:
+        1. It's a dedicated resource record.
+        2. More flexibility?
+        3. Syntax could allow for many fields like versioning.
+        4. May allow multiple records pointing to different Onion Service
+           addresses for implementing load balancing at the DNS level.
+        5. May include an optional field for port/service like in the `SRV` field.
+        6. May include a signature from the .onion key, which preserves the Onion
+           Services' self-authentication property.
+    2. Cons:
+        1. A lot more work involved in drafting a standard and evaluating all corner cases.
+        2. May take a long time to be a standard.
+        3. Even if gets approved, may take time for software to implement (ossification)?
 
 [proposed HTTPS record]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
