@@ -8,7 +8,7 @@ specification for Onion Services address entries using the DNS.
 ## Requirements
 
 1. DNSSEC should be mandatory?
-2. Resolution should happen only via DNS-over-HTTPS (DoH)?
+2. Resolution should happen only via DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT)?
 3. Support for bi-directionality?
 4. Entry(es) should be signed using the Onion Service private key?
 5. Entry(es) should signed using the HTTPS private key?
@@ -147,7 +147,7 @@ resolution procedure (quoting @ahf from an e-mail exchange):
 > many tiny requests that yields a very large response towards the resolving
 > Exit node and thus fill up its inbound network connection.
 
-### Other considerations
+### Other security considerations
 
 Consider also:
 
@@ -155,3 +155,40 @@ Consider also:
    but might have common points to consider.
 
 [DoHoT project]: https://github.com/alecmuffett/dohot
+
+## Implementation considerations
+
+### Specifications
+
+Relevant [Tor specifications][] for DNS resolution:
+
+* [Tor Protocol Specification][]: section "6.4. Remote hostname lookup".
+* [Tor's extensions to the SOCKS protocol][]: section "2. Name lookup".
+
+[Tor specifications]: https://gitlab.torproject.org/tpo/core/torspec
+[Tor Protocol Specification]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/tor-spec.txt
+[Tor's extensions to the SOCKS protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/socks-extensions.txt
+
+### C Tor
+
+Currently (as of 2022-11), DNS resolution at C Tor exit nodes happens in the
+following way:
+
+In `tor/src/feature/relay/dns.c`:
+
+* `launch_resolve()`, which uses:
+* `launch_one_resolve()`, which calls:
+* [libevent's DNS resolution functions][] (at [evdns.c][]), which currently does not support:
+    * TCP lookups.
+    * DNSSEC.
+    * Arbitrary record types.
+
+[libevent's DNS resolution functions]: https://libevent.org/libevent-book/Ref9_dns.html
+[evdns.c]: https://github.com/libevent/libevent/blob/master/evdns.c
+
+### Arti
+
+Currently (as of 2022-11), [Arti][] does not have relay implementation (and
+hence no DNS resolution at the exit nodes).
+
+[Arti]: https://gitlab.torproject.org/tpo/core/arti/
