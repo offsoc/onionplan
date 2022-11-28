@@ -74,11 +74,16 @@ And how long for all clients to implement this (not just Tor Browser)?
 
 Also, this approach:
 
+* May not work since DNS resolution via SOCKS5 (used by Tor Browser) does not
+  currently support arbitrary RR besides basic hostname lookup.
+* Could work if Tor Browser starts to use [DNS-over-HTTPS (DoH)][], which have
+  it's on set of problems to be considered first (performance impact; reduces
+  decentralizadion; blocking happening at DoH providers; etc).
 * Seems highly dependent on whether [RFC 7686][] will be honored by clients to
   either use or skip .onion addresses found in HTTPS DNS records.
-* Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
 * Still needs a further and thorough security analysis to evaluate it's security properties,
   attack scenarios and mitigations (see [this initial discussion about HTTPS RRs][]).
+* Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
 
 As an alternative, the following roadmap is proposed **without counting on any
 further/uncertain upstream improvement and without focusing only on Tor
@@ -88,6 +93,7 @@ Browser** or Firefox.
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [RFC 7686]: https://www.rfc-editor.org/info/rfc7686
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
+[DNS-over-HTTPS (DoH)]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
 
 ## Phase 1: Onion Service discovery using DNS
 

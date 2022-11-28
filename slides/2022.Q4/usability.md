@@ -114,15 +114,18 @@ And how long for all clients to implement this (not just Tor Browser)?
 
 Also, this approach:
 
-* Seems highly dependent on whether [RFC 7686][] will be honored by clients to
-  either use or skip .onion addresses found in HTTPS DNS records.
+* May not work since DNS resolution via SOCKS5 only supports basic lookups.
+* Could work if Tor Browser starts to use [DNS-over-HTTPS (DoH)][], which have
+  it's on set of problems to be considered first.
+* Depends on clients honoring [RFC 7686][] to either use or skip .onion
+  addresses found in HTTPS DNS records.
+* Needs a thorough security analysis to evaluate it's impact.
 * Does not pave a way for Onion Names or opportunist discovery of .onion addresses.
-* Still needs a further and thorough security analysis to evaluate it's
-  security properties, attack scenarios and mitigations.
 
 [draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/10/
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [RFC 7686]: https://www.rfc-editor.org/info/rfc7686
+[DNS-over-HTTPS (DoH)]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
 
 # Usability Roadmap
 
