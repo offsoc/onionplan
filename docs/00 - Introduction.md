@@ -15,7 +15,7 @@ of [Onion Services](https://community.torproject.org/onion-services/).
 
 1. Built-in resistance against surveillance, censorship and denial of service.
 2. Built-in end-to-end encryption.
-3. An address space bigger than IPv6 and without allocation authority.
+3. A huge address space (maybe bigger than IPv6) without allocation authority.
 4. Support for multiple, pluggable naming systems.
 5. And that also works as an anonymization layer.
 
