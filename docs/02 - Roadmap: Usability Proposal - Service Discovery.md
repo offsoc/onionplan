@@ -1,4 +1,4 @@
-# Onion Plan: Usability Roadmap DRAFT Proposal - v2022.Q4
+# Onion Plan: Usability Roadmap - Service Discovery DRAFT Proposal - v2022.Q4
 
 [[_TOC_]]
 

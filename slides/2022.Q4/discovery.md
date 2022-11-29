@@ -1,6 +1,6 @@
 ---
 title: Onion Plan
-subtitle: Usability Roadmap DRAFT Proposal
+subtitle: Usability Roadmap - Service Discovery DRAFT Proposal
 date: 2022.Q4
 institute: Onion Support Group - The Tor Project
 author:
@@ -86,8 +86,7 @@ Proposals grouped in these categories:
 1. **Address translation**: some implemented (_Onion-Location_, _Alt-Svc_), others
    are still research (_Sauteed-Onions_).
 2. **Onion Names**: many proposals, difficult to evaluate, difficult to decide.
-3. **HTTPS certificates**: needs work and currently the Let's Encrypt team may
-   not be available for this.
+3. **HTTPS certificates**: needs a lot of work and don't bring service discovery by itself.
 
 So... what can we do???
 
