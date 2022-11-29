@@ -1,6 +1,6 @@
 ---
 title: Onion Plan
-subtitle: Usability Roadmap - Technical details
+subtitle: Usability Roadmap - Service Discovery - Technical details
 date: 2022.Q4
 institute: Onion Support Group - The Tor Project
 author:
@@ -24,7 +24,7 @@ slides:
 # 1. Context
 
 * This presentation covers the technical details for [Onion Plan's usability
-  proposal][] ([slides][]) focusing in the long term.
+  proposal for service discovery][] ([slides][]) focusing in the long term.
 
 * It needs further discussion, ideas an especially some stress analysis to
   ensure it's doable.
@@ -32,8 +32,8 @@ slides:
 * Also needs syncing with the upcoming arti 1.2.0 and C Tor maintenance
   roadmaps.
 
-[Onion Plan's usability proposal]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/02%20-%20Roadmap:%20Usability%20Proposal.md
-[slides]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/usability.pdf
+[Onion Plan's usability proposal for service discovery]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/docs/02%20-%20Roadmap%3A%20Usability%20Proposal%20-%20Service%20Discovery.md
+[slides]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery.pdf
 
 # 2. What really matters in the usability proposal?
 
