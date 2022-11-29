@@ -182,6 +182,18 @@ Relevant [Tor specifications][] for DNS resolution:
 [Tor Protocol Specification]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/tor-spec.txt
 [Tor's extensions to the SOCKS protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/socks-extensions.txt
 
+### DNS record
+
+1. Need to check the response size for a query on a non-existent TXT record, to
+   evaluate the cost of always doing this kind of query.
+2. Need to draft a `TXT` record format:
+    * Woudn't need to include the '.onion' extension.
+    * Could encode the .onion address using base64.
+    * Could include a signature by the .onion service itself, signing:
+        * Hash with the DNS.
+        * The .onion address itself.
+    * Could include port/service (optional field).
+
 ### C Tor
 
 Currently (as of 2022-11), DNS resolution at C Tor exit nodes happens in the
