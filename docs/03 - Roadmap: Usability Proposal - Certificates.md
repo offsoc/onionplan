@@ -38,11 +38,11 @@ Level requirement:
 
 Effort estimates the amount of work involved for each level.
 
-Proposal                              | Engineering effort       | Operation effort        | Governance effort       |
---------------------------------------|--------------------------|-------------------------|-------------------------|
-Existing CA validation                | None (already done)      | None (already there)    | None (already done)     |
+Proposal                              | Engineering effort       | Operation effort        | Governance effort       | Overall assessment
+--------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
+Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | High                     | Medium                  | High                    |
-Self-signed X.509 for .onion          | High                     | None                    | Very High               |
+Self-signed X.509 for .onion          | Very High                | None                    | Very High               |
 Same Origin Onion Certificates (SOOC) | High                     | None                    | Very High               |
 DANE for .onion                       | High                     | None                    | Very High               |
 Onion-only CAs                        | Low                      | High                    | High                    |
@@ -51,22 +51,22 @@ Onion-only CAs                        | Low                      | High         
 
 Estimate the difficulty in solving open questions while implementing a given proposal.
 
-Proposal                              | Engineering challenge    | Operation challenge     | Governance challenge    |
---------------------------------------|--------------------------|-------------------------|-------------------------|
-Existing CA validation                | None (already done)      | None (already there)    | None (already done)     |
+Proposal                              | Engineering challenge    | Operation challenge     | Governance challenge    | Overall assessment
+--------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
+Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | Low                      | Low                     | Medium (adoption)       |
 Self-signed X.509 for .onion          | High                     | None                    | High                    |
-Same Origin Onion Certificates (SOOC) | Medium                   | None                    | High                    |
-DANE for .onion                       | High                     | None                    | High                    |
+Same Origin Onion Certificates (SOOC) | Low                      | None                    | High                    |
+DANE for .onion                       | Low                      | None                    | High                    |
 Onion-only CAs                        | High                     | High                    | High                    |
 
 ## Risk
 
 Estimates the risk involved in the proposal not be successfully implemented in a given level.
 
-Proposal                              | Engineering risks        | Operation risks         | Governance risks        |
---------------------------------------|--------------------------|-------------------------|-------------------------|
-Existing CA validation                | None (already done)      | None (already there)    | None (already done)     |
+Proposal                              | Engineering risks        | Operation risks         | Governance risks        | Overall assessment
+--------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
+Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | Low                      | Low                     | Medium                  |
 Self-signed X.509 for .onion          | High                     | None                    | ?                       |
 Same Origin Onion Certificates (SOOC) | Low                      | None                    | ?                       |
