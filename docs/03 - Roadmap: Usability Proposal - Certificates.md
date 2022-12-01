@@ -14,3 +14,36 @@
 4. Then some prioritization/decision is needed.
 
 [certificate proposals]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/Documentation/OnionPlan/Usability/Certification
+
+## Challenges
+
+Procedure                             | Enginnering challenges   | Managerial challenges   | Governance challenges   |
+--------------------------------------|--------------------------|-------------------------|-------------------------|
+Existing CA validation                | None (already done)      |                         |                         |
+ACME for .onion                       |                          |                         |                         |
+Self-signed X.509 for .onion          |                          |                         |                         |
+Same Origin Onion Certificates (SOOC) |                          |                         |                         |
+DANE for .onion                       |                          |                         |                         |
+Onion-only CAs                        |                          |                         |                         |
+
+## Difficulties
+
+Procedure                             | Enginnering difficulties | Managerial difficulties | Governance difficulties |
+--------------------------------------|--------------------------|-------------------------|-------------------------|
+Existing CA validation                | None (already done)      |                         |                         |
+ACME for .onion                       |                          |                         |                         |
+Self-signed X.509 for .onion          |                          |                         |                         |
+Same Origin Onion Certificates (SOOC) |                          |                         |                         |
+DANE for .onion                       |                          |                         |                         |
+Onion-only CAs                        |                          |                         |                         |
+
+## Risks
+
+Procedure                             | Enginnering risks        | Managerial risks        | Governance risks        |
+--------------------------------------|--------------------------|-------------------------|-------------------------|
+Existing CA validation                | None (already done)      |                         |                         |
+ACME for .onion                       |                          |                         |                         |
+Self-signed X.509 for .onion          |                          |                         |                         |
+Same Origin Onion Certificates (SOOC) |                          |                         |                         |
+DANE for .onion                       |                          |                         |                         |
+Onion-only CAs                        |                          |                         |                         |
