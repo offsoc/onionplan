@@ -1,6 +1,9 @@
-# Onion Plan: Health Roadmap DRAFT Proposal - v2022.Q4
+# Health Roadmap
 
-[[_TOC_]]
+* Status: DRAFT
+* Version: v2022.Q4
+
+<!--[[_TOC_]]-->
 
 ## DoS defenses
 

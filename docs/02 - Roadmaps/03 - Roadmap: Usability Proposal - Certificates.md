@@ -1,6 +1,9 @@
-# Onion Plan: Usability Roadmap - Certificates DRAFT Proposal - v2022.Q4
+# Usability Roadmap - Certificates
 
-[[_TOC_]]
+* Status: DRAFT
+* Version: v2022.Q4
+
+<!--[[_TOC_]]-->
 
 ## Summary
 

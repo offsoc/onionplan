@@ -1,15 +1,14 @@
-# The Onion Plan
+# Introduction
 
-An ongoing holistic strategy to increase the adoption an enhance the usability
-of [Onion Services](https://community.torproject.org/onion-services/).
+<!--[[_TOC_]]-->
 
-[[_TOC_]]
-
+<!--
 ## Summary
 
 ***Have you ever considered that we work with one of the coolest technologies?***
 
 ***And that our job consists in making it even cooler?***
+-->
 
 **Imagine** a **communication technology** that has:
 
@@ -21,19 +20,21 @@ of [Onion Services](https://community.torproject.org/onion-services/).
 
 We may call this technology **Enhanced Onion Services**!
 
-Note a shift in how the technology is presented: instead of first stating that
-it's an anonymization technology, now the focus is *protection against
+Onion Services is not just an anonymization technology, but much more than
+that: it's a communication layer that can offer *protection against
 surveillance, censorship and DoS* with *built-in anonymity in the Onion Service
-protocol*. This can make it easier to showcase the techology and attract
-potential funders as more properties are highlighted.
+protocol*.
 
-Which features are still missing:
+## What is still missing?
+
+Not all these properties are currently implemented or functional Some building
+blocks and enhancements are still missing:
 
 1. Built-in DoS resistance.
 2. Pluggable discoverability (multiple naming systems).
 3. Many other enhancements in usability and tooling.
 
-The rest of this document/folder deals with **how to get there**!
+The rest of this research deals with **how to get these in place**!
 
 ## Motivation
 

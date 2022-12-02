@@ -1,0 +1,27 @@
+#
+# Mkdocs configuration
+#
+
+site_name: The Onion Plan
+docs_dir : docs
+site_dir : site
+
+# Site address is bind to 0.0.0.0 so it works find inside a Docker container.
+# A better config would be desirable.
+#dev_addr : '0.0.0.0:8031'
+
+theme:
+  name               : material
+  collapse_navigation: true
+  titles_only        : false
+  #logo: assets/onion-services.png    
+  logo: assets/tor-logo1x.png    
+
+extra_css:
+  - site.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - footnotes

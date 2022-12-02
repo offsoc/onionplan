@@ -1,0 +1,12 @@
+---
+image: debian:bullseye
+
+pages:
+  script:
+    - scripts/provision-build
+    - make compile
+  artifacts:
+    paths:
+      - site
+  only:
+    - main

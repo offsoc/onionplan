@@ -1,6 +1,20 @@
-# Onion Plan: Tooling Roadmap DRAFT Proposal - 2022.Q4
+# Tooling Roadmap
 
-[[_TOC_]]
+* Status: DRAFT
+* Version: v2022.Q4
+
+<!--[[_TOC_]]-->
+
+## About
+
+* The [Onion Services][] technology currently is not very well integrated into
+  DevOps solutions.
+* Toolset and configurations are needed to make system administration life
+  easier, including Onion Services' keys life cycle.
+* This document is still a placeholder to outline tooling improvements to make
+  easier to manage [Onion Services][].
+
+[Onion Services]: https://community.torproject.org/onion-services
 
 ## Onionbalance (scaling)
 

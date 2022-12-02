@@ -1,0 +1,19 @@
+.wy-menu-vertical li a {
+  color: #fff!important;
+}
+
+.wy-menu-vertical li.current a {
+  color: #000!important;
+}
+
+.wy-nav-content {
+  max-width: 100%;
+}
+
+.wy-side-nav-search {
+  background-color: inherit;
+}
+
+.md-header {
+  background-color: #7D4698;
+}

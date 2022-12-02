@@ -1,11 +1,11 @@
-# Appendix: Low-hanging fruit
+# Low-hanging fruit
 
 This appendix contains tasks considered with low complexity that can
 significantly improve Onion Services usability.
 
 They can be included in the roadmap from any phase.
 
-[[_TOC_]]
+<!--[[_TOC_]]-->
 
 ## Usability
 

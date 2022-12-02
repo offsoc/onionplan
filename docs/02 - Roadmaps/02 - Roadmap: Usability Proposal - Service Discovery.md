@@ -1,6 +1,9 @@
-# Onion Plan: Usability Roadmap - Service Discovery DRAFT Proposal - v2022.Q4
+# Usability Roadmap - Service Discovery
 
-[[_TOC_]]
+* Status: DRAFT
+* Version: v2022.Q4
+
+<!--[[_TOC_]]-->
 
 ## Summary
 

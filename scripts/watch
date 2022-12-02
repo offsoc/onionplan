@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Inotify builder
+#
+
+# Parameters
+BASENAME="`basename $0`"
+DIRNAME="$(cd `dirname $0` &> /dev/null && pwd)"
+BASEDIR="$DIRNAME/.."
+WATCHED="docs"
+
+# Got to the base folder
+cd $BASEDIR
+
+# Dispatch
+while inotifywait -r $WATCHED; do
+  #mkdocs build
+  kvmx ssh make -C /srv/shared compile
+done

@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Provisioner for the building environment.
+#
+
+# Basic dependencies
+DEPENDENCIES="make mkdocs python3-pip"
+
+# PyPI dependencies
+DEPENDENCIES_PIP="mkdocs-material"
+
+# Ensure an up-to-date system
+sudo apt-get update && sudo apt-get dist-upgrade -y && \
+  sudo apt-get autoremove -y && sudo apt-get clean
+
+# Install dependencies
+sudo apt install -y $DEPENDENCIES || exit 1
+
+# Install python dependencies
+pip3 install $DEPENDENCIES_PIP || exit 1

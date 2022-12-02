@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# Provisioner for the self-hosted environment.
+#
+
+# Basic dependencies
+DEPENDENCIES="apache2"
+
+# Ensure an up-to-date system
+sudo apt-get update && sudo apt-get dist-upgrade -y && \
+  sudo apt-get autoremove -y && sudo apt-get clean
+
+# Install dependencies
+sudo apt install -y $DEPENDENCIES
+
+# Configure an onion service
+trashman install tor-onion-service
+
+# Configure virtual host for the Onion Service
+cat <<-EOF | sudo tee /etc/apache2/sites-available/onion.conf > /dev/null
+<VirtualHost *:80>
+    ServerName localhost
+    ServerAlias *.onion
+    DocumentRoot "/srv/shared/site"
+
+    <Directory /srv/shared/site>
+      AuthType Basic
+      AuthName "Protected"
+      AuthUserFile /srv/shared/.htpasswd
+      Require valid-user
+    </Directory>
+</VirtualHost>
+EOF
+
+# Configure virtual host for the local service
+cat <<-EOF | sudo tee /etc/apache2/sites-available/local.conf > /dev/null
+<VirtualHost *:80>
+    ServerName onionplan.local
+    DocumentRoot "/srv/shared/site"
+
+    <Directory /srv/shared/site>
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Require all granted
+    </Directory>
+</VirtualHost>
+EOF
+
+# Enable virtual host
+sudo a2ensite onion local
+sudo systemctl reload apache2
+
+# Configure PATH
+mkdir -p ~/.custom
+echo 'export PATH=$PATH:/srv/shared/scripts' > ~/.custom/profile
