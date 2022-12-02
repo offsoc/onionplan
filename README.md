@@ -1,9 +1,8 @@
 # The Onion Plan
 
-This is the repository for the [Onion Plan][], a self-contained roadmap for
-enhancing the Onion Services experience:
+This is the repository for a self-contained research and roadmap to enhancing
+the Onion Services experience:
 
+* [web version](https://tpo.pages.torproject.net/onion-services/onionplan/).
 * [docs/](docs): current plan.
 * [slides/](slides): presentations.
-
-[Onion Plan]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/Documentation/OnionPlan

@@ -38,7 +38,7 @@ cat <<-EOF | sudo tee /etc/apache2/sites-available/local.conf > /dev/null
     ServerName onionplan.local
     DocumentRoot "/srv/shared/public"
 
-    <Directory /srv/shared/site>
+    <Directory /srv/shared/public>
       Options Indexes FollowSymLinks
       AllowOverride All
       Require all granted
