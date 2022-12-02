@@ -9,12 +9,17 @@ DEPENDENCIES="make mkdocs python3-pip"
 # PyPI dependencies
 DEPENDENCIES_PIP="mkdocs-material"
 
+# Check for sudo
+if [ "`whoami`" != "root" ]; then
+  SUDO="sudo"
+fi
+
 # Ensure an up-to-date system
-sudo apt-get update && sudo apt-get dist-upgrade -y && \
-  sudo apt-get autoremove -y && sudo apt-get clean
+$SUDO apt-get update && $SUDO apt-get dist-upgrade -y && \
+  $SUDO apt-get autoremove -y && $SUDO apt-get clean
 
 # Install dependencies
-sudo apt install -y $DEPENDENCIES || exit 1
+$SUDO apt install -y $DEPENDENCIES || exit 1
 
 # Install python dependencies
 pip3 install $DEPENDENCIES_PIP || exit 1
