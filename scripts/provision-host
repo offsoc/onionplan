@@ -21,9 +21,9 @@ cat <<-EOF | sudo tee /etc/apache2/sites-available/onion.conf > /dev/null
 <VirtualHost *:80>
     ServerName localhost
     ServerAlias *.onion
-    DocumentRoot "/srv/shared/site"
+    DocumentRoot "/srv/shared/public"
 
-    <Directory /srv/shared/site>
+    <Directory /srv/shared/public>
       AuthType Basic
       AuthName "Protected"
       AuthUserFile /srv/shared/.htpasswd
@@ -36,7 +36,7 @@ EOF
 cat <<-EOF | sudo tee /etc/apache2/sites-available/local.conf > /dev/null
 <VirtualHost *:80>
     ServerName onionplan.local
-    DocumentRoot "/srv/shared/site"
+    DocumentRoot "/srv/shared/public"
 
     <Directory /srv/shared/site>
       Options Indexes FollowSymLinks

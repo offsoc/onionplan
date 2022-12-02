@@ -1,1 +1,1 @@
-docs/04 - Meta/CREDITS.md
+docs/04 - About/CREDITS.md
