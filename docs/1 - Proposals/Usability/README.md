@@ -7,10 +7,10 @@
 This section summarizes the relevant proposals related to improve Onion
 Services usability by offering:
 
-1. [Service discovery](Documentation/OnionPlan/Usability/Discovery): address
+1. [Service discovery](Discovery): address
    translation or alternative naming systems for censorship and forgery
    resistant name discovery/lookup.
-2. [Certification](Documentation/OnionPlan/Usability/Certification): to
+2. [Certification](Certification): to
    securely tie a TLS/HTTPS certificate (and optionally an organization) to a
    given onion service.
 

@@ -18,7 +18,7 @@
 5. This document presents is a summarized comparison between proposals.
 6. This needs further review and discussion.
 
-[certificate proposals]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/Documentation/OnionPlan/Usability/Certification
+[certificate proposals]: /1%20-%20Proposals/Usability/Certification/
 
 ## Development cycle
 

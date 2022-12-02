@@ -1,4 +1,4 @@
-# Introduction
+# Service discovery
 
 <!--[[_TOC_]]-->
 
@@ -37,20 +37,20 @@ which are categorized and described below.
 There are many ways to sort all proposals, especially by what type of problems
 they try to solve. In this documentation they're grouped by:
 
-* 1. [Address translation][]: links a "traditional" domain name with an Onion
+1. [Address translation][]: links a "traditional" domain name with an Onion
    Service address. Examples:
     * Onion-Location Header.
     * Sauteed Onions.
     * DNS or DNSSEC-based.
     * Alt-Svc.
-* 2. [Onion Names][]: alternative schemes for human-friendly names linked with
+2. [Onion Names][]: alternative schemes for human-friendly names linked with
    Onion Services. Examples:
     * Ruleset-based (like Secure Drop's list).
     * Blockchain-based (like Namecoin).
     * Other P2P-based (like GNUnet's LSD).
 
-[Address translation]: Documentation/OnionPlan/Usability/Discovery/Address-Translation
-[Onion Names]: Documentation/OnionPlan/Usability/Discovery/Onion-Names
+[Address translation]: Address-Translation
+[Onion Names]: Onion-Names
 
 ## Coexistence between proposals
 
