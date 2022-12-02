@@ -2,6 +2,10 @@
 
 * Status: DRAFT
 * Version: v2022.Q4
+* Companion slides: [2022.Q4/discovery.pdf][] and [2022.Q4/discovery-technical.pdf][].
+
+[2022.Q4/discovery.pdf]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery.pdf
+[2022.Q4/discovery-technical.pdf]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery-technical.pdf
 
 <!--[[_TOC_]]-->
 

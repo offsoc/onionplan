@@ -7,18 +7,18 @@
 This section summarizes the relevant proposals related to improve Onion
 Services usability by offering:
 
-1. [Service discovery](Discovery): address
-   translation or alternative naming systems for censorship and forgery
-   resistant name discovery/lookup.
-2. [Certification](Certification): to
+1. [Certification](Certification): to
    securely tie a TLS/HTTPS certificate (and optionally an organization) to a
    given onion service.
+2. [Service discovery](Discovery): address
+   translation or alternative naming systems for censorship and forgery
+   resistant name discovery/lookup.
 
 ## Coexistence between implementations
 
 It's possible to make implementations to coexist, which needs:
 
-1. **Tech specs**: for proposing and implementing service discovery and
+1. **Technical specs**: for proposing and implementing service discovery and
    certification methods. What a proposal should have in order to be valid?
 2. **Governance specs**: criteria and decision making procedures to
    accept or reject proposals.
