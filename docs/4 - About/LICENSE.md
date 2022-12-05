@@ -17,4 +17,4 @@ licenses](https://support.torproject.org/about/distribute-tor/).
 
 See [Tor Project's copyright and trademark page][] for more information.
 
-[Tor Project's copyright and trademark page][]: https://www.torproject.org/about/trademark/
+[Tor Project's copyright and trademark page]: https://www.torproject.org/about/trademark/
