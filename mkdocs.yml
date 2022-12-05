@@ -25,3 +25,8 @@ plugins:
 
 markdown_extensions:
   - footnotes
+
+copyright: Copyright &copy; 2022 The Tor Project Inc. See LICENSE for details.
+
+extra:
+  generator: false
