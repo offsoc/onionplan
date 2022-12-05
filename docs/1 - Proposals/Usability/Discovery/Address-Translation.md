@@ -172,10 +172,14 @@ Onion Services. It relies on custom DNS entries, CA issued certificates and
 
 * [Sauteed Onions][] project page.
 * [Sauteed Onions draft paper](https://www.sauteed-onions.org/doc/paper.pdf).
-* [Sauteed Onions GitLab group](https://gitlab.torproject.org/tpo/onion-services/sauteed-onions) with reference implementations.
-* [Sauteed Week](https://gitlab.torproject.org/rhatto/sauteed-week) 2022 Tor Hackweek project researching and discussing the proposal.
+* [Sauteed Onions GitLab group](https://gitlab.torproject.org/tpo/onion-services/sauteed-onions)
+  with reference implementations.
+* [Sauteed Week](https://rhatto.pages.torproject.net/sauteed-week/)
+  ([repository](https://gitlab.torproject.org/rhatto/sauteed-week)),
+  a 2022 Tor Hackweek project researching and discussing the proposal.
 * [satalite.org/db/index](https://www.satalite.org/db/index): a sample CT Logs database dump.
-* [crt.sh | www.sauteed-onions.org](https://crt.sh/?q=www.sauteed-onions.org): CT Logs query of an existing sauteed onions certificate.
+* [crt.sh | www.sauteed-onions.org](https://crt.sh/?q=www.sauteed-onions.org):
+  CT Logs query of an existing sauteed onions certificate.
 * [Example Sauteed Onions API Query](https://api.sauteed-onions.org/search?in=blocked.sauteed-onions.org).
 * [Attacks on Onion Discovery and Remedies via Self-Authenticating Traditional Addresses](https://dl.acm.org/doi/10.1145/3463676.3485610)
 * Check also [TPA issue](https://gitlab.torproject.org/tpo/tpa/team/-/issues/40677) about how to monitor CT Logs.
