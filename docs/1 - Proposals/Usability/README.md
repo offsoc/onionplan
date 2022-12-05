@@ -1,4 +1,4 @@
-# Introduction
+# Usability intro
 
 <!--[[_TOC_]]-->
 
@@ -75,9 +75,9 @@ listed here due to it's relevance or to be included in future:
 This research is heavily inspired by previous documentation:
 
 * [202209MeetingOnionPlan](https://gitlab.torproject.org/tpo/team/-/wikis/202209MeetingOnionPlan).
-* [S27: Onion Services Project Planning · Wiki · Organization](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2019/2019Stockholm/Notes/S27).
-* [OnionV3ux · Organization · GitLab](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2018/2018MexicoCity/Notes/OnionV3ux).
-* [OnionServiceNamingSystems · Wiki · Legacy / Trac · GitLab](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/OnionServiceNamingSystems).
+* [S27: Onion Services Project Planning](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2019/2019Stockholm/Notes/S27).
+* [OnionV3ux](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2018/2018MexicoCity/Notes/OnionV3ux).
+* [OnionServiceNamingSystems](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/OnionServiceNamingSystems).
 
 ### Other research
 
