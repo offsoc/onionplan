@@ -1,3 +1,13 @@
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title[for="__drawer"] {
+    background-color: #7D4698;
+  }
+}
+
+.md-header {
+  background-color: #7D4698;
+}
+
 .wy-menu-vertical li a {
   color: #fff!important;
 }
@@ -12,8 +22,4 @@
 
 .wy-side-nav-search {
   background-color: inherit;
-}
-
-.md-header {
-  background-color: #7D4698;
 }
