@@ -75,3 +75,9 @@ Self-signed X.509 for .onion          | High                     | None         
 Same Origin Onion Certificates (SOOC) | Low                      | None                    | ?                       |
 DANE for .onion                       | High                     | None                    | ?                       |
 Onion-only CAs                        | Low                      | Medium                  | ?                       |
+
+## Requirements and prioritizations
+
+1. Prioritize what can be done without client or library modifications, as
+   these are harder to implement, maintain, upstream and standardize.
+2. Consider the _paths of least resistance_ when pursuing a solution.

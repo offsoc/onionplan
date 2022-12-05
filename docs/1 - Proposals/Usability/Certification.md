@@ -14,12 +14,6 @@ transactions.
 
 [Certificate Authorities]: https://en.wikipedia.org/wiki/Certificate_authority
 
-## General requirements and prioritizations
-
-1. Prioritize what can be done without client or library modifications, as
-   these are harder to implement, maintain, upstream and standardize.
-2. Consider the _paths of least resistance_ when pursuing a solution.
-
 ## Overview
 
 Proposal                              | Certification                                         | Validation                                        | Status

@@ -26,8 +26,9 @@ protocol*.
 
 ## What is still missing?
 
-Not all these properties are currently implemented or functional Some building
-blocks and enhancements are still missing:
+While some of these properties are already implemented for [Tor Onion
+Services][], there are still some building blocks and enhancements
+still missing:
 
 1. Built-in DoS resistance.
 2. Pluggable discoverability (multiple naming systems).
@@ -40,7 +41,7 @@ The rest of this research deals with **how to get these in place**!
 As of December 2022,
 
 * The usability improvements of Onion Services still presents outstanding
-  challenges that are being discussed for years. Now that the protocol v3 is
+  challenges that are being discussed for years. Now that the [protocol v3][] is
   successfully deployed, it may be the time to think in the roadmap for the next
   steps.
 * There's a common feeling similar to when the privacy-aware internet was
@@ -49,8 +50,8 @@ As of December 2022,
 * But the roadmap seems to be stalled, not only for the lack of developers but
   also because we're missing a "perfect" solution that we never (and may never)
   find.
-* And we don't have an Onion Service team at Tor: right now Onion Service
-  development is split in multiple teams.
+* There's no Onion Service team at Tor: right now Onion Service
+  development is split in multiple teams with their own existing roadmaps.
 * At the same time, Tor cannot be responsible for things like domain issuance:
   it cannot be authoritative (Tor just makes the software, don't run the
   network and cannot issue Onion Names) and it's a non-profit (cannot have a
@@ -60,3 +61,6 @@ As of December 2022,
 
 Converging the planning, the fundraising strategy and an adoption campaign can
 help put things moving forward again.
+
+[Tor Onion Services]: https://community.torproject.org/onion-services/
+[protocol v3]: https://spec.torproject.org/rend-spec-v3

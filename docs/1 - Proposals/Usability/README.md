@@ -16,7 +16,9 @@ Services usability by offering:
 
 ## Coexistence between implementations
 
-It's possible to make implementations to coexist, which needs:
+This research analyzes many different proposals, which at first may not be
+compatible with each other. Here we try see whether implementations can coexist
+and what should be the minimum requirements for a proposal, in two levels:
 
 1. **Technical specs**: for proposing and implementing service discovery and
    certification methods. What a proposal should have in order to be valid?
@@ -27,14 +29,15 @@ These specs does not exist right now. Creating them is part of the plan.
 
 ## Towards prioritization criteria
 
-Suggestions about how to prioritize:
+Having valid proposals is just part of the plan: prioritizing which ones should
+be implemented first is the next step in roadmapping. Here we give some suggestions:
 
 0. Rule out experimental or disruptive technology.
 1. What can be implement by Tor developers?
 2. What depends in other people/groups/community?
 3. What depends on discussing/consensus due to different "world views" at Tor?
 4. What depends on little-Tor implementation (specially due to current
-   prioritization on arti)?
+   prioritization on [Arti][])?
 5. What significantly increases the Tor Browser package size and then should be
    considered with care?
 6. What is most important?
@@ -44,26 +47,39 @@ Suggestions about how to prioritize:
 9. Which (or part) of all proposals can be combined in a long-term (or
    incremental) solution?
 
+[Arti]: https://gitlab.torproject.org/tpo/core/arti/
+
 ## Further references
 
 ### Other relevant usability proposals
 
-* [Verification of onion service integrity (#41041) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041).
-* [URI scheme for Tor (#41017) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41017).
-* [Onion Service Revocation](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87)..
-* [prop224: Implement offline keys for v3 onion services (#29054)](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054).
+There are some proposals currently not evaluated in this research, but are
+listed here due to it's relevance or to be included in future:
 
+* Onion Services implementation:
+    * [Onion Service Revocation](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87).
+    * [prop224: Implement offline keys for v3 onion services (#29054)](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054).
+* Tor Browser:
+    * [Verification of onion service integrity (#41041) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041).
+    * [URI scheme for Tor (#41017) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41017).
+
+<!--
 ### Related issues
 
 * [Organize documentation about Onion Services UX improvements](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/64).
 * [Create Onion alias url for torproject.org sites](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/67).
+-->
 
 ### Past discussions
+
+This research is heavily inspired by previous documentation:
 
 * [202209MeetingOnionPlan](https://gitlab.torproject.org/tpo/team/-/wikis/202209MeetingOnionPlan).
 * [S27: Onion Services Project Planning · Wiki · Organization](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2019/2019Stockholm/Notes/S27).
 * [OnionV3ux · Organization · GitLab](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2018/2018MexicoCity/Notes/OnionV3ux).
+* [OnionServiceNamingSystems · Wiki · Legacy / Trac · GitLab](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/OnionServiceNamingSystems).
 
-### Talks
+### Other research
 
-* [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg).
+* [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg)
+  ([paper](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf)).

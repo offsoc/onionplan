@@ -1,9 +1,9 @@
 # The research
 
-For an overview of the Onion Plan, check the [presentation held at the 2022 Tor
-Meeting][] and the [originating ticket][].
+* For an overview of the Onion Plan, check the [presentation held at the 2022 Tor
+  Meeting][] and the [originating ticket][].
 
-The Onion Plan repository is hosted at [https://gitlab.torproject.org/tpo/onion-services/onionplan][].
+* The Onion Plan repository is hosted at [https://gitlab.torproject.org/tpo/onion-services/onionplan][].
 
 [presentation held at the 2022 Tor Meeting]: https://gitlab.torproject.org/tpo/team/-/wikis/202209MeetingOnionPlan
 [originating ticket]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/135
