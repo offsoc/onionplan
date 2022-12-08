@@ -1,5 +1,5 @@
 #
-# Custom Makefile for The Onion Plan
+# Custom Makefile for MkDocs
 #
 
 compile:

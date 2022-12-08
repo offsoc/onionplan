@@ -75,7 +75,7 @@ shared_folders="shared:.:/srv/shared"
 #provision_command="/usr/local/share/kvmx/provision/debian/development"
 #provision_command="/usr/local/share/kvmx/provision/debian/trashman"
 #provision_command="/usr/local/share/kvmx/provision/debian/desktop-basic"
-provision_command="/usr/local/share/kvmx/provision/debian/development && /srv/shared/scripts/provision-host && /srv/shared/scripts/provision-build"
+provision_command="/usr/local/share/kvmx/provision/debian/development && /srv/shared/scripts/provision-docs-host && /srv/shared/scripts/provision-docs-build"
 
 # Startup command
 #startup_command="/path/to/custom/command"

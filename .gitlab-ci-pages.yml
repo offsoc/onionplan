@@ -1,0 +1,10 @@
+pages:
+  image: debian:bullseye
+  script:
+    - scripts/provision-docs-build
+    - make compile
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
