@@ -207,9 +207,14 @@ Where should DNS queries happen?
     * Cons:
         * No guarantees for bypassing eventual censorship at the DNS level
           happening at the exit node perspective.
+        * Additional logic is needed to allow the exit node should check or
+          favor an existing .onion DNS record, since this is something more for
+          the client to control (at the Tor NS API level).
 2. DNS query originating at the client side as an alternative approach:
     * Pros:
-        * ?
+        * Easier to implement the Tor NS API, as easilly allows the client
+          configuration to control how the opportunistic discovery should
+          happen: no need to signal/negotiate that to the exit node.
     * Cons:
         * DNS is a [pretty error-prone protocol to implement][].
         * Requires a lot of work and touching lots of parts at each Tor
@@ -222,7 +227,8 @@ Then, after an initial analysis, it seems to be that **the best approach is to
 leave resolution at the exit node**.
 
 But **that may conflict if DNS-over-HTTPS (DoH) is enabled on clients** such as
-Tor Browser (see next section).
+Tor Browser (see next section). And it may be **harder to guess** if the exit
+node should favor an existing .onion record for a site.
 
 [pretty error-prone protocol to implement]: https://gitlab.torproject.org/tpo/core/tor/-/issues/33687#note_2510496
 
