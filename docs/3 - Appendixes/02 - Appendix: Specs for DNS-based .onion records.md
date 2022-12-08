@@ -248,18 +248,18 @@ Whether DoH or DoT should be used for resolution?
 Some relevant issues with complement or may impact this discussion:
 
 * For core Tor:
-    * [Create rotating DNS DoH/DoT server list option Trr Core Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33687)
+    * [Create rotating DNS DoH/DoT server list option Trr Core Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33687).
 * For Tor Browser:
     * [Using HTTPS records for onion services](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325),
       which is not exactly about but may require DoH in the client side in order to work.
-    * [Think about using DNS over HTTPS for Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753)
-    * [DoH/TRR disabled by network.dns.disabled makes it unsafe to test DoH](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40034)
-    * [Disable various ESR78 features via prefs](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40048)
-    * [Firefox's integration with Cloudflare for DNS-over-HTTPS](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/31671)
-    * [Review Mozilla 1730418: Blocked network requests still reach a custom DoH resolver](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41123)
+    * [Think about using DNS over HTTPS for Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753).
+    * [DoH/TRR disabled by network.dns.disabled makes it unsafe to test DoH](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40034).
+    * [Disable various ESR78 features via prefs](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40048).
+    * [Firefox's integration with Cloudflare for DNS-over-HTTPS](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/31671).
+    * [Review Mozilla 1730418: Blocked network requests still reach a custom DoH resolver](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41123).
 * For documentation in general:
-    * [Add question: "What's the difference between Tor and DoH (DNS over HTTPS)?" to HTTPS section](https://gitlab.torproject.org/tpo/web/support/-/issues/65)
-    * [Add What's the difference between Tor and DoH by highflyer910](https://github.com/torproject/support/pull/67)
+    * [Add question: "What's the difference between Tor and DoH (DNS over HTTPS)?" to HTTPS section](https://gitlab.torproject.org/tpo/web/support/-/issues/65).
+    * [Add What's the difference between Tor and DoH by highflyer910](https://github.com/torproject/support/pull/67).
 
 ### C Tor
 
@@ -269,11 +269,11 @@ following way:
 In `tor/src/feature/relay/dns.c`:
 
 * `launch_resolve()`, which uses:
-* `launch_one_resolve()`, which calls:
-* [libevent's DNS resolution functions][] (at [evdns.c][]), which currently does not support:
-    * TCP lookups.
-    * DNSSEC.
-    * Arbitrary record types.
+    * `launch_one_resolve()`, which calls:
+        * [libevent's DNS resolution functions][] (at [evdns.c][]), which currently does not support:
+            * TCP lookups.
+            * DNSSEC.
+            * Arbitrary record types (`TXT`, `SRV`, `HTTPS` etc).
 
 [libevent's DNS resolution functions]: https://libevent.org/libevent-book/Ref9_dns.html
 [evdns.c]: https://github.com/libevent/libevent/blob/master/evdns.c
@@ -284,3 +284,13 @@ Currently (as of 2022-11), [Arti][] does not have relay implementation (and
 hence no DNS resolution at the exit nodes).
 
 [Arti]: https://gitlab.torproject.org/tpo/core/arti/
+
+## References
+
+### SOCKS
+
+* [RFC 1928 - SOCKS Protocol Version 5](https://www.ietf.org/rfc/rfc1928.txt).
+* [How does SOCK 5 proxy-ing of DNS work in browsers? - Stack Overflow](https://stackoverflow.com/questions/33099569/how-does-sock-5-proxy-ing-of-dns-work-in-browsers).
+* For Firefox:
+    * [Network.proxy.socks remote dns - MozillaZine Knowledge Base](http://kb.mozillazine.org/Network.proxy.socks_remote_dns).
+    * [ssh - How to do DNS through a proxy in Firefox? - Super User](https://superuser.com/questions/103593/how-to-do-dns-through-a-proxy-in-firefox).
