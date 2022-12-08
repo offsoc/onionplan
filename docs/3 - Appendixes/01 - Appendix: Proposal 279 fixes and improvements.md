@@ -8,9 +8,11 @@ This can be useful either if [Proposal 279][] is selected as the specification
 for the Tor Name System API (Tor NS API) or if another specification is to be
 written.
 
-[TOC]
-
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
+
+## Index
+
+[TOC]
 
 ## Allocation
 

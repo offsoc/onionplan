@@ -5,6 +5,8 @@ significantly improve Onion Services usability.
 
 They can be included in the roadmap from any phase.
 
+## Index
+
 [TOC]
 
 ## Usability

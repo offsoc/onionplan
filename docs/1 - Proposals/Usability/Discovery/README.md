@@ -1,5 +1,7 @@
 # Service discovery
 
+## Index
+
 [TOC]
 
 ## About

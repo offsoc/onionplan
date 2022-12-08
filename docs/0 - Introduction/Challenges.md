@@ -1,5 +1,7 @@
 # The challenges
 
+## Index
+
 [TOC]
 
 ## Objetives

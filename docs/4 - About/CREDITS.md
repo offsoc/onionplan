@@ -1,5 +1,7 @@
 # Credits
 
+## Index
+
 [TOC]
 
 ## Acknowledgements

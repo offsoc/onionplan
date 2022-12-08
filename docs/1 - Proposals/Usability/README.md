@@ -1,5 +1,7 @@
 # Usability intro
 
+## Index
+
 [TOC]
 
 ## About
