@@ -9,7 +9,7 @@
 [originating ticket]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/135
 [https://gitlab.torproject.org/tpo/onion-services/onionplan]: https://gitlab.torproject.org/tpo/onion-services/onionplan
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## Goals
 

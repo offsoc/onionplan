@@ -3,7 +3,7 @@
 * Status: DRAFT
 * Version: v2022.Q4
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## DoS defenses
 

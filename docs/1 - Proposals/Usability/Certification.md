@@ -1,6 +1,6 @@
 # Certification
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## About
 

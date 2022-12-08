@@ -3,6 +3,8 @@
 * Status: DRAFT
 * Version: v2022.Q4
 
+[TOC]
+
 ## About
 
 This document outlines the outreach strategy for [Onion Services][] adoption

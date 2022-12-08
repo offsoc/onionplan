@@ -1,6 +1,6 @@
 # Service discovery
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## About
 

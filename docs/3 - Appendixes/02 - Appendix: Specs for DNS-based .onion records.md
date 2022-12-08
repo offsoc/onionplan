@@ -3,7 +3,7 @@
 Documents options, requirements etc to be considered when creating a
 specification for Onion Services address entries using the DNS.
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## Requirements
 

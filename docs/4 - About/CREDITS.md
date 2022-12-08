@@ -1,5 +1,7 @@
 # Credits
 
+[TOC]
+
 ## Acknowledgements
 
 This research would not be possible without the help from and discussions with

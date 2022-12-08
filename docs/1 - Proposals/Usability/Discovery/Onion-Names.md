@@ -1,6 +1,6 @@
 # Onion Names
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## About
 

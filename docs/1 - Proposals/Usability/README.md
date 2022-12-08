@@ -1,6 +1,6 @@
 # Usability intro
 
-<!--[[_TOC_]]-->
+[TOC]
 
 ## About
 
