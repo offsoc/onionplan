@@ -10,8 +10,8 @@ specification for Onion Services address entries using the DNS.
 1. DNSSEC should be mandatory?
 2. Resolution should happen only via DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT)?
 3. Support for bi-directionality?
-4. Entry(es) should be signed using the Onion Service private key?
-5. Entry(es) should signed using the HTTPS private key?
+4. Entries should be signed using the Onion Service private key?
+5. Entries should signed using the HTTPS private key?
 6. Should implement additional censorship resistance measures?
 
 ## Record types
@@ -193,6 +193,67 @@ Relevant [Tor specifications][] for DNS resolution:
         * Hash with the DNS.
         * The .onion address itself.
     * Could include port/service (optional field).
+
+### Client side versus exit node side resolution
+
+Where should DNS queries happen?
+
+1. With the current approach (DNS queries happens at the exit nodes):
+    * Pros:
+        * May rely only on the exit node's system for name resolution,
+          alleviating the need for the Tor relay code to have it's own DNS
+          client implementation.
+        * Can detect DNS censorship happening at the exit node perspective.
+    * Cons:
+        * No guarantees for bypassing eventual censorship at the DNS level
+          happening at the exit node perspective.
+2. DNS query originating at the client side as an alternative approach:
+    * Pros:
+        * ?
+    * Cons:
+        * DNS is a [pretty error-prone protocol to implement][].
+        * Requires a lot of work and touching lots of parts at each Tor
+          implementation.
+        * If not implemented at the Tor client, would need to be implemented in
+          a per-client basis. Firefox already supports it, but requires more
+          evaluation and work (as of Dec 2022) to make it work at the Tor Browser.
+
+Then, after an initial analysis, it seems to be that **the best approach is to
+leave resolution at the exit node**.
+
+But **that may conflict if DNS-over-HTTPS (DoH) is enabled on clients** such as
+Tor Browser (see next section).
+
+[pretty error-prone protocol to implement]: https://gitlab.torproject.org/tpo/core/tor/-/issues/33687#note_2510496
+
+### DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT) support
+
+Whether DoH or DoT should be used for resolution?
+
+* For queries originating at the exit node:
+    * This may be up to the exit node operator to decide and configure her
+      system do do so?
+    * If Tor has it's own DNS client (apart from the system's native
+      implementation), shall this be mandatory?
+* For queries originating at the client side:
+    * Would possibly be a requirement to use DNS over TCP (or also over TLS /
+      HTTPS) if UDP is still unsupported.
+
+Some relevant issues with complement or may impact this discussion:
+
+* For core Tor:
+    * [Create rotating DNS DoH/DoT server list option Trr Core Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33687)
+* For Tor Browser:
+    * [Using HTTPS records for onion services](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325),
+      which is not exactly about but may require DoH in the client side in order to work.
+    * [Think about using DNS over HTTPS for Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753)
+    * [DoH/TRR disabled by network.dns.disabled makes it unsafe to test DoH](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40034)
+    * [Disable various ESR78 features via prefs](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40048)
+    * [Firefox's integration with Cloudflare for DNS-over-HTTPS](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/31671)
+    * [Review Mozilla 1730418: Blocked network requests still reach a custom DoH resolver](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41123)
+* For documentation in general:
+    * [Add question: "What's the difference between Tor and DoH (DNS over HTTPS)?" to HTTPS section](https://gitlab.torproject.org/tpo/web/support/-/issues/65)
+    * [Add What's the difference between Tor and DoH by highflyer910](https://github.com/torproject/support/pull/67)
 
 ### C Tor
 
