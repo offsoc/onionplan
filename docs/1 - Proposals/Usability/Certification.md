@@ -256,6 +256,13 @@ Implementation considerations:
   browsers/clients in the foreseeable future (see discussion above at the
   [Self-signed X.509 for .onion][] section), issuance should probably follow the
   Appendix B of the [CA/B Baseline Requirements][].
+* The entire certification procedure could happen via Onion Services.
+* Actually the whole CA infostructure (website, APIs, OCSP etc) could be
+  interacted only via Onion Services, to reduce the attack surface and protect
+  the service location.
+* Important to consider whether would be possible to organizatins setup and
+  maintain a Onion-only CA that's as most automated as possible, including root
+  certificate packaging/distribution/rotation?
 
 Pros:
 
@@ -277,11 +284,16 @@ Cons:
 
 Open questions:
 
-0. Need to check [Certificate Revocation Lists (CRLs)][] are needed.
+0. Need to check if [Certificate Revocation Lists (CRLs)][] are needed,
+   and how to handle it.
 1. Need to figure out how [OCSP][] and [OCSP Stapling][] could happen. OSCP
    connection could be available behind an Onion Service.
 2. Does sending certificates to [CT Logs][] still makes sense for this special
    type of certification?
+3. Needs built-in DoS/service abuse protection:
+    * An idea for that: implement a simple PoW by additionaly requiring that
+      service operators provide a proof-ownership of another .onion address
+      made by an specific vanity address (like limited to 5 or 6 chars).
 
 References:
 
