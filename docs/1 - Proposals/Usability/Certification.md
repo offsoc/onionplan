@@ -260,9 +260,9 @@ Implementation considerations:
 * Actually the whole CA infostructure (website, APIs, OCSP etc) could be
   interacted only via Onion Services, to reduce the attack surface and protect
   the service location.
-* Important to consider whether would be possible to organizatins setup and
+* Important to consider whether would be possible to organizations setup and
   maintain a Onion-only CA that's as most automated as possible, including root
-  certificate packaging/distribution/rotation?
+  certificate packaging/distribution/rotation.
 
 Pros:
 
