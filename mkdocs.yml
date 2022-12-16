@@ -6,6 +6,7 @@ site_name: The Onion Plan
 docs_dir : docs
 site_dir : public
 repo_url : https://gitlab.torproject.org/tpo/onion-services/onionplan/
+edit_url : ''
 
 # Site address is bind to 0.0.0.0 so it works find inside a Docker container.
 # A better config would be desirable.
