@@ -323,4 +323,8 @@ References:
   * Part four: what do we think about an https cert for a .onion address?
   * Part five: What remains to be done?
 
+### Related issues
+
+* [.onion indicator for non-self-signed but non-trusted sites (#27636) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/27636)
+
 ## Notes
