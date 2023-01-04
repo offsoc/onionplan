@@ -93,16 +93,19 @@ Requirements][] for .onion addresses is still a manual, or in the best-case
 scenario, semi-automated task.
 
 The Automatic Certificate Management Environment (ACME) standard ([RFC 8555][])
-solves exactly the automation problem, but currently (as of 2022) it does not
-support the methods for validation Onion Services.
-
-Proposals such [draft-suchan-acme-onion-00][] -- an "Automated Certificate
-Management Environment (ACME) Onion Identifier Validation Extension" tries to
-fill exactly this gap.
+solves part of the automation problem, but currently (as of 2022) it does not
+support the methods for validating Onion Services.
 
 Having support for .onion address in the ACME standard is the first step for
 projects like [Let's Encrypt][] to offer free certificates for Onion Services,
 without financial transactions.
+
+Existing proposals:
+
+* [draft-suchan-acme-onion-00][] -- an "Automated Certificate
+  Management Environment (ACME) Onion Identifier Validation Extension":
+    * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
+    * [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
 
 [RFC 8555]: https://www.rfc-editor.org/rfc/rfc8555
 [draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
