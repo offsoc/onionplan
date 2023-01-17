@@ -114,7 +114,7 @@ Check [this article][] for an introduction and [this one][] for an overview
 about the HTTPS RRs security benefits and attack surface.
 
 If that proposal succeeds, t may open the possibility to [use HTTPS records for
-Onion Services][] in a way that clients such as Tor Browser to stablish HTTPS
+Onion Services][] in a way that clients such as Tor Browser to establish HTTPS
 connections directly to Onion Services in a transparent way: users would still
 be presented to the regular domain name of a service (such as `torproject.org`)
 but Tor-capable clients would automatically and transparently upgrade the
@@ -145,7 +145,7 @@ fully support it, but recent Firefox versions [shows HTTPS RRs in about:networki
 Another way to include Onion Services addresses into the DNS is to standardize
 by either:
 
-1. Have a custom Onion Service DNS resouce record (like `ONION`).
+1. Have a custom Onion Service DNS resource record (like `ONION`).
 2. Use the `TXT` record as stated by [RFC 1464][].
 3. Use the `SRV` record ([RFC 2782][]).
 
@@ -162,7 +162,7 @@ certificate logs as a way to audit the issuance of digital certificates.
 
 These logs may however be monitored for other purposes, such as to discover
 domains and services. With some additional conventions, CT Logs can be used
-to stablish links between traditional domain names and Onion Service addresses.
+to establish links between traditional domain names and Onion Service addresses.
 
 [Certificate Transparency]: https://certificate.transparency.dev/
 

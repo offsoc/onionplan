@@ -149,7 +149,7 @@ proposals with the following types:
 
 * *Required*: basic requirements.
 * *Desired*: what would be nice to have.
-* *Dream/Bluesky*: what would be great, but currently not practial or achievable.
+* *Dream/Bluesky*: what would be great, but currently not practical or achievable.
 
 ### Common for both Traditional address translation and Onion Names
 
@@ -158,7 +158,7 @@ Property                       | Type     | Description                         
 Privacy-enhanced queries       | Required | Querying for an address does not leaks user-identifiable information                                    | This document
 Self-authentication            | Desired  | Approaches that lose the self-authenticating property should have a high bar for deployment[^self-auth] | This document
 Censorship resistance          | Desired  | Censorship-resistant service discovery (censors cannot block lookup)                                    | This document
-Human-friendliness             | Required | Suport for names that are easy to remember and to type                                                  | [Sauteed Week - Applications][]
+Human-friendliness             | Required | Support for names that are easy to remember and to type                                                  | [Sauteed Week - Applications][]
 Discoverability                | ?        | ?                                                                                                       | [Sauteed Week - Applications][]
 Anonymity                      | ?        | ?                                                                                                       | [Sauteed Week - Applications][]
 Hijacking resistance           | ?        | ?                                                                                                       | [OnionV3ux - 2018 Mexico Meeting][]
@@ -190,7 +190,7 @@ Certified service discovery    | ?        | There is some way to check the domai
 (Retro-)Compatibility          | ?        | (Backwards-)Compatible with existing naming schemes                                          | This document
 Future-proof                   | ?        | Should be future-proof or present scenarios for migrating names to new systems in the future | This document
 Anonymous registrations        | Required | Name registration and configuration without disclosing user/service identifiable information | This document
-Solves [Zooko's triangle][]    | Desired  | Provides human-meaningful names, system is descentralized and secude                         | This document
+Solves [Zooko's triangle][]    | Desired  | Provides human-meaningful names, system is decentralized and secure                         | This document
 Phishing resistance            | Desired  | Naming system offer protections against phishing attacks                                     | [OnionV3ux - 2018 Mexico Meeting][]
 Enumeration resistance         | ?        | The naming system cannot provide an (easy) way to enumerate existing names                   | [OnionV3ux - 2018 Mexico Meeting][]
 

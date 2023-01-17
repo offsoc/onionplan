@@ -75,7 +75,7 @@ Tor Browser addon          | Other      | -                                     
     assign namespaces?
   * Organization/federation based: like Secure Drop: list instances from a widely
     known and relevant platform. Trust the organization. How could be a criteria
-    and procees for a widely know and relevant orgabizatiin to have it's ruleset
+    and process for a widely known and relevant organization to have it's ruleset
     namespace?
 
 ### Onion Names for SecureDrop
