@@ -61,7 +61,7 @@ Some existing commercial providers already provide this service.
 
 The Appendix B of the [CA/B Baseline Requirements][] (current [repository
 version][]) for the Issuance and Management of Publicly‐Trusted Certificates
-(since Version 1.7.4, released in 2021) stablishes two validation methods to ensure
+(since Version 1.7.4, released in 2021) establishes two validation methods to ensure
 that someone request the certificate really control a given .onion address:
 
 1. An "Agreed‑Upon Change to Website", where the service operator must include
@@ -193,7 +193,7 @@ See [this SOOC document][] for details.
 
 Another option is to use [DNS-based Authentication of Named Entities][] (DANE),
 with DNS records like this to associate an Onion Service address with a given
-HTTPS cerficate's public key hash:
+HTTPS certificate's public key hash:
 
     _443._tcp.testk4ae7qr6nhlgahvyicxy7nsrmfmhigtdophufo3vumisvop2gryd.onion. TSLA 3 1 1 AB9BEB9919729F3239AF08214C1EF6CCA52D2DBAE788BB5BE834C13911292ED9
 
@@ -260,7 +260,7 @@ Implementation considerations:
   [Self-signed X.509 for .onion][] section), issuance should probably follow the
   Appendix B of the [CA/B Baseline Requirements][].
 * The entire certification procedure could happen via Onion Services.
-* Actually the whole CA infostructure (website, APIs, OCSP etc) could be
+* Actually the whole CA infrastructure (website, APIs, OCSP etc) could be
   interacted only via Onion Services, to reduce the attack surface and protect
   the service location.
 * Important to consider whether would be possible to organizations setup and
@@ -294,7 +294,7 @@ Open questions:
 2. Does sending certificates to [CT Logs][] still makes sense for this special
    type of certification?
 3. Needs built-in DoS/service abuse protection:
-    * An idea for that: implement a simple PoW by additionaly requiring that
+    * An idea for that: implement a simple PoW by additionally requiring that
       service operators provide a proof-ownership of another .onion address
       made by an specific vanity address (like limited to 5 or 6 chars).
 
