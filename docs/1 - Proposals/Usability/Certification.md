@@ -57,7 +57,12 @@ addresses][] (in 2015), later [extended for Onion Services v3][] (in 2020),
 standardizing the way [Certificate Authorities][] can issue certificates for
 .onion addresses and supports wildcards.
 
-Some existing commercial providers already provide this service.
+A few commercial providers already provide this service[^existing-certifiers].
+
+[^existing-certifiers]: As of January 2023, there are only two CAs issuing
+                        certificates for .onion domains:
+                        [DigiCert providing only Extended Validation (EV) certs][]
+                        and [HARICA providing only Domain Validated (DV) certs][].
 
 The Appendix B of the [CA/B Baseline Requirements][] (current [repository
 version][]) for the Issuance and Management of Publicly‐Trusted Certificates
@@ -82,6 +87,8 @@ identifiable information during the purchase of the certificates.
 [consortium that produces guidelines for X.509 (TLS/HTTPS) certification]: https://en.wikipedia.org/wiki/CA/Browser_Forum
 [validation rules for Onion Service v2 addresses]: https://cabforum.org/2015/02/18/ballot-144-validation-rules-dot-onion-names/
 [extended for Onion Services v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
+[DigiCert providing only Extended Validation (EV) certs]: https://www.digicert.com/blog/ordering-a-onion-certificate-from-digicert
+[HARICA providing Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
 [CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.4.pdf
 [repository version]: https://github.com/cabforum/servercert/blob/main/docs/BR.md
 [onion-csr]: https://github.com/HARICA-official/onion-csr
