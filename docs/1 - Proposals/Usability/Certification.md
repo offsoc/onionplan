@@ -88,7 +88,7 @@ identifiable information during the purchase of the certificates.
 [validation rules for Onion Service v2 addresses]: https://cabforum.org/2015/02/18/ballot-144-validation-rules-dot-onion-names/
 [extended for Onion Services v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
 [DigiCert providing only Extended Validation (EV) certs]: https://www.digicert.com/blog/ordering-a-onion-certificate-from-digicert
-[HARICA providing Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
+[HARICA providing only Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
 [CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.4.pdf
 [repository version]: https://github.com/cabforum/servercert/blob/main/docs/BR.md
 [onion-csr]: https://github.com/HARICA-official/onion-csr
