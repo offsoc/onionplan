@@ -330,8 +330,8 @@ References:
 ### Blog posts
 
 * [Facebook, hidden services, and https certs | The Tor Project](https://blog.torproject.org/facebook-hidden-services-and-https-certs/):
-  * Part four: what do we think about an https cert for a .onion address?
-  * Part five: What remains to be done?
+    * Part four: what do we think about an https cert for a .onion address?
+    * Part five: What remains to be done?
 
 ### Related issues
 
