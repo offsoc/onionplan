@@ -57,7 +57,7 @@ addresses][] (in 2015), later [extended for Onion Services v3][] (in 2020),
 standardizing the way [Certificate Authorities][] can issue certificates for
 .onion addresses and supports wildcards.
 
-A few commercial providers already provide this service[^existing-certifiers].
+Only a few commercial providers currently provide this service[^existing-certifiers].
 
 [^existing-certifiers]: As of January 2023, there are only two CAs issuing
                         certificates for .onion domains:
