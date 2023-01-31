@@ -412,7 +412,7 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
 Same as those from the previous phase, plus:
 
 1. The technology gets hard to scale. Mitigations:
-    1. Increase the evaluation period to try optimize.
+    1. Increase the evaluation period to try to optimize.
     2. If the implemented domain discovery method doesn't not scale, it can be
        phased out (or discouraged) by the end of the evaluation period.
 2. Privacy concerned Onion Service operators may not want their .onion address
