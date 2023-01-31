@@ -11,13 +11,13 @@
 
 1. All existing [certificate proposals][] are non-conflicting!
 2. That means they could be pursued in parallel, so there's no block in here
-   for people whishing to invest on any.
+   for people wishing to invest on any.
 3. What _is_ limited though:
     1. Each proposal feasibility.
     2. Available resources.
     3. Results.
 4. Then some prioritization/decision is needed.
-5. This document presents is a summarized comparison between proposals.
+5. This document presents a summarized comparison between proposals.
 6. This needs further review and discussion.
 
 [certificate proposals]: /1%20-%20Proposals/Usability/Certification/

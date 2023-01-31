@@ -22,8 +22,8 @@ and usage.
 * Currently we have the following guide on the community portal which lays out
   steps for deploying Onion Services:
   https://community.torproject.org/onion-services/setup/
-* We also guide people who wish to "onionize" their website to the Alec
-  Muffet's EOTK repository on GitHub.
+* We also guide people who wish to "onionize" their website to Alec Muffet's
+  EOTK repository on GitHub.
 * We need to review and improve the first guide to ensure it's comprehensive
   and easy to follow.
 * This guide is also only available in English, Russian, and Turkish. There's
@@ -41,19 +41,19 @@ and usage.
 * Here: https://community.torproject.org/training/resources/
 * We already published one general training resource introducing Onion Services
   very broadly.
-* We aim to build more resources to support trainings for those wishing to
+* We aim to build more resources to support training for those wishing to
   deploy Onion Services, as well as those who're maintaining them.
 * We also need to cater to user groups of Onion Services, highlighting the
   benefits of Onion Services for different contexts.
 
-## Deliver trainings and broaden onion support
+## Deliver training and broaden onion support
 
 * Supporting media organizations with deploying Onion Services.
 * Build conversations with organizations that are already expressing a need for
   secure and private browsing and information sharing alternatives.
 * Training about Tor and Onion Services (high level understanding).
 * Work to communicate the benefits of Onion Services and frame these benefits
-  based on the specifice audience needs.
+  based on the specific audience needs.
 * The training resources should be accompanied by on-demand training sessions
   (or awareness sessions).
 * Sessions should be made available for both service operators and users of

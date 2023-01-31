@@ -11,7 +11,7 @@
 
 * Focus on needed develop to mitigate DoS.
 * Needs input from the Network Team for what can be included here.
-* Might include deliverables from the "Onion Services resource coalition"
+* Might include deliverable from the "Onion Services resource coalition"
   project.
 
 ## Performance improvements
@@ -29,7 +29,7 @@
 * [Understand code performance of onion services under DoS (#33704) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/33704 "Understand code performance of onion services under DoS")
 * [Research  approaches for improving the availability of services under DoS  (#31223) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/31223 "Research approaches for improving the availability of services under DoS")
 * [attacker can force intro point rotation by ddos (#26294) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294 "attacker can force intro point rotation by ddos")
-* [DoS resistence measures from C tor (#351) · Issues · The Tor Project / Core / Arti · GitLab](https://gitlab.torproject.org/tpo/core/arti/-/issues/351 "DoS resistence measures from C tor")
+* [DoS resistence measures from C tor (#351) · Issues · The Tor Project / Core / Arti · GitLab](https://gitlab.torproject.org/tpo/core/arti/-/issues/351 "DoS resistance measures from C tor")
 
 Check also the [Onion Service DoS issue
 queue](https://gitlab.torproject.org/groups/tpo/-/issues/?sort=created_date&state=opened&label_name%5B%5D=DoS&label_name%5B%5D=Onion%20Services&first_page_size=20).
@@ -48,7 +48,7 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 
 * [\[Feature  proposal\] Verification of onion service integrity (#41041) · Issues ·  The Tor Project / Applications / Tor Browser · GitLab](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041 "[Feature proposal] Verification of onion service integrity")
 * [Proposal: Hidden Service Revocation (#87) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87 "Proposal: Hidden Service Revocation")
-* ['Hidden' Authenticatd Onion Services (#119) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119 "'Hidden' Authenticatd Onion Services")
+* ['Hidden' Authenticatd Onion Services (#119) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119 "'Hidden' Authenticated Onion Services")
 * [prop224: Implement offline keys for v3 onion services (#29054)](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054 "prop224: Implement offline keys for v3 onion services")
 
 ## References
