@@ -417,6 +417,16 @@ Same as those from the previous phase, plus:
        phased out (or discouraged) by the end of the evaluation period.
 2. Privacy concerned Onion Service operators may not want their .onion address
    to be listed in public CT logs.
+3. Big onion sites may not want to get a single certificate with both their
+   .com name and their onion name in it, because they don't want to spend those
+   extra 100 bytes times billions of handshakes per day. Maybe they could show the
+   cert just to Tor exit IP addresses, but that is extra complexity too.
+5. When the site includes its own Onion-Location header, they can easily remove
+   it if the onion site has problems; but if instead Tor Browser users get the
+   mapping from the Certificate Transparency log, what if there is a mapping from
+   two weeks ago that the site doesn't want people to use anymore? It seems we
+   might need some kind of "try the onion but be able to notice if it's not
+   working and fall back to the main site" mechanism in the browser.
 
 ### Roadmap
 
