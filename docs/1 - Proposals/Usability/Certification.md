@@ -109,6 +109,7 @@ without financial transactions.
 
 Existing proposals:
 
+* [draft-misell-acme-onion](https://github.com/AS207960/acme-onion)
 * [draft-suchan-acme-onion-00][] -- an "Automated Certificate
   Management Environment (ACME) Onion Identifier Validation Extension":
     * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
