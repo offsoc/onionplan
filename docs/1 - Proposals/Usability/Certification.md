@@ -109,13 +109,15 @@ without financial transactions.
 
 Existing proposals:
 
-* [draft-misell-acme-onion](https://github.com/AS207960/acme-onion)
-* [draft-suchan-acme-onion-00][] -- an "Automated Certificate
-  Management Environment (ACME) Onion Identifier Validation Extension":
+* [draft-misell-acme-onion-00][] - Automated Certificate Management Environment (ACME) Extensions for ".onion" Domain Names:
+    * [ACME for .onion domains](https://acmeforonions.org/)
+    * [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
+* [draft-suchan-acme-onion-00][] - Automated Certificate Management Environment (ACME) Onion Identifier Validation Extension:
     * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
     * [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
 
 [RFC 8555]: https://www.rfc-editor.org/rfc/rfc8555
+[draft-misell-acme-onion-00]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
 [draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
 [Let's Encrypt]: https://letsencrypt.org/
 
