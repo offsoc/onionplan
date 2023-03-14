@@ -100,7 +100,7 @@ So... what can we do???
 
 ## HTTPS records
 
-\includegraphics[width=0.6\textwidth]{images/using-https-records.png}
+\includegraphics[width=0.6\textwidth]{2022.Q4/images/using-https-records.png}
 
 ## Is this enough?
 
