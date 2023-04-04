@@ -191,33 +191,33 @@ Browser** or Firefox.
 ### Threats
 
 1. Lack of interested funders. Mitigations:
-   1. Slower development, focusing on a Proof-of-Concept to attract attention
-      and showcase the potential.
+    1. Slower development, focusing on a Proof-of-Concept to attract attention
+       and showcase the potential.
 2. Lack of developers. Mitigations:
-   1. Break the roadmap in smaller actionables so it's easier to split in a
-      team and find available developers.
+    1. Break the roadmap in smaller actionables so it's easier to split in a
+       team and find available developers.
 3. Lack of traction:
-   1. If the implemented domain discovery method does not get adopted enough,
-      it can be phased out (or discouraged) by the end of the evaluation
-      period.
+    1. If the implemented domain discovery method does not get adopted enough,
+       it can be phased out (or discouraged) by the end of the evaluation
+       period.
 
 ### Roadmap
 
 1. Work in a Tor NS API specification: review and finish [Proposal 279][] or
    work on a new one:
-   * Decide on open issues.
-   * Should be changed to:
-     * REQUIRE that plugins use Tor to do their queries if those are made
-       outside their local network, to increase privacy and censorship
-       resistance.
-     * Allow for wildcard plugins enable opportunistic service discovery.
-   * Keep the "priority" config in order to allow multiple plugins handling
-     discoveries of regular domains using different methods.
+    * Decide on open issues.
+    * Should be changed to:
+        * REQUIRE that plugins use Tor to do their queries if those are made
+          outside their local network, to increase privacy and censorship
+          resistance.
+        * Allow for wildcard plugins enable opportunistic service discovery.
+        * Keep the "priority" config in order to allow multiple plugins handling
+          discoveries of regular domains using different methods.
 2. Implement the Tor NS API on C Tor if it's possible to include that in the C
    Tor roadmap and if there's developer availability for that.
 3. Implement address translation plugins:
-   * `[DNSONION]` for .onion on DNS(SEC) with the proper verifications (and
-     write a standard for it).
+    * `[DNSONION]` for .onion on DNS(SEC) with the proper verifications (and
+      write a standard for it).
 4. Build an experimental Tor Browser shipped with a Tor daemon configured with
    `[DNSONION]`.
 5. Evaluation period with early adoption and funding campaigns.
