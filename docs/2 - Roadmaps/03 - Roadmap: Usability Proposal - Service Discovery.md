@@ -311,6 +311,15 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
       `[DNSONION]` as quickly as possible, leaving other approaches to be
       implemented as plugins once the Tor NS API is implemented in a later
       phase.
+4. Could both built-in (non-NS API) and pluggable methods (NS API) be supported?
+    * Yes, it's possible to consider a roadmap were both built-in and pluggable
+      method are supported, allowing for:
+        * More decoupling during development (eg., one team could work doing
+          the Tor NS API while another team could code a discovery method, in
+          parallel).
+        * More speed and flexibility in the roadmap, since the release of a
+          service discovery feature would not be blocked by an ongoing Tor NS
+          API development.
 
 #### DNS questions
 
