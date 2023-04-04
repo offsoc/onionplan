@@ -10,11 +10,14 @@ specification for Onion Services address entries using the DNS.
 ## Requirements
 
 1. DNSSEC should be mandatory?
-2. Resolution should happen only via DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT)?
+2. Resolution should happen only via [DNS-over-HTTPS (DoH)][] or [DNS-over-TLS (DoT)][]?
 3. Support for bi-directionality?
 4. Entries should be signed using the Onion Service private key?
 5. Entries should signed using the HTTPS private key?
 6. Should implement additional censorship resistance measures?
+
+[DNS-over-HTTPS (DoH)]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
+[DNS-over-TLS (DoT)]: https://en.wikipedia.org/wiki/DNS_over_TLS
 
 ## Record types
 
@@ -95,26 +98,24 @@ Alternatives:
 [OnionRouter]: https://github.com/ehloonion/onionrouter
 [assigned by IANA]: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
 
-## Censorship resistance
+## Performance considerations
 
-Consider the following additional measures against censorship in the DNS level:
+### Query and response size
 
-* Assume that any exit node may fail in the DNS resolution.
-* Do 2-3 circuit resolution (multiple DNS queries from different "perspectives"
-  -- exit nodes) in the `[DNSONION]` NS plugin. Then check results against one
-  another to detect inconsistencies. This can minimize the probability of failed
-  resolutions:
-  * Doing 3 lookups in the DNS may bring problems: lots broken DNS resolvers in
-    exit nodes and also can have an impact in the network (by tripling the
-    number or DNS requests).
-  * As an alternative, we could consider an algorithm that do 3 lookups only if
-    a first lookup results in invalid response such as `NXDOMAIN`.
+1. DNS record size should be designed to the minimum, considering things like:
+    1. Not including the `.onion` suffix in the response, since it may be
+       redundant.
+    2. Serializing the Onion Service public key (i.e, it's base address)
+       using and encoding like base64 instead of base32, and without padding,
+       reducing the record size up to 20%.
 
-* Automatic reportback of resolution errors. But what qualifies as an "error"?
-* Support DNSSEC authenticated `NXDOMAIN`responses somehow.
-* Enhanced Network Health scanners for DNS resolution issues.
+2. Need to check also the response size limit.
 
-## Alleviating excessive roundtrips
+3. A practical research is needed to check the response size for a query on a
+   non-existent record, to evaluate the cost of always doing this kind of
+   query.
+
+### Alleviating excessive roundtrips
 
 A downside for opportunistic discovery is that it involves additional
 roundtrip.
@@ -170,6 +171,38 @@ Consider also:
    but might have common points to consider.
 
 [DoHoT project]: https://github.com/alecmuffett/dohot
+
+## Censorship considerations
+
+### Censorship resistance
+
+Consider the following additional measures against censorship in the DNS level:
+
+* Assume that any exit node may fail in the DNS resolution.
+* Do 2-3 circuit resolution (multiple DNS queries from different "perspectives"
+  -- exit nodes) in the `[DNSONION]` NS plugin. Then check results against one
+  another to detect inconsistencies. This can minimize the probability of failed
+  resolutions:
+  * Doing 3 lookups in the DNS may bring problems: lots broken DNS resolvers in
+    exit nodes and also can have an impact in the network (by tripling the
+    number or DNS requests).
+  * As an alternative, we could consider an algorithm that do 3 lookups only if
+    a first lookup results in invalid response such as `NXDOMAIN`.
+
+* Automatic reportback of resolution errors. But what qualifies as an "error"?
+* Support DNSSEC authenticated `NXDOMAIN`responses somehow.
+* Enhanced Network Health scanners for DNS resolution issues.
+
+### Censorship techniques
+
+Existing censorship techniques should also be evaluated to determine the
+overall resistance of the DNS method, like those discussed on
+[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10][]
+
+Some of these techniques could be mitigated by relying on [DNS-over-HTTPS
+(DoH)][] and [DNS-over-TLS (DoT)][].
+
+[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10]: https://datatracker.ietf.org/doc/html/draft-irtf-pearg-censorship#name-dns-interference
 
 ## Implementation considerations
 
