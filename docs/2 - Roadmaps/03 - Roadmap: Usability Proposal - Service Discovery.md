@@ -88,7 +88,7 @@ Also, this approach:
 * Could work if Tor Browser starts to use [DNS-over-HTTPS (DoH)][], which has
   its own set of problems to be considered first (performance impact; reduces
   decentralization; blocking happening at DoH providers; etc); the same for
-  [DNS-over-TLS (DoT][], which is not even being considered by Mozilla.
+  [DNS-over-TLS (DoT)][], which is not even being considered by Mozilla.
 * Seems highly dependent on whether [RFC 7686][] will be honored by clients
   to either use or skip .onion addresses found in HTTPS DNS records.
 * Still needs a further and thorough security analysis to evaluate its security properties,
