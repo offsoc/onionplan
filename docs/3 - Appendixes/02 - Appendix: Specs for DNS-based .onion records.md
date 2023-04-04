@@ -3,6 +3,10 @@
 Documents options, requirements etc to be considered when creating a
 specification for Onion Services address entries using the DNS.
 
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to
+be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14).
+
 ## Index
 
 [TOC]
@@ -98,112 +102,6 @@ Alternatives:
 [OnionRouter]: https://github.com/ehloonion/onionrouter
 [assigned by IANA]: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
 
-## Performance considerations
-
-### Query and response size
-
-1. DNS record size should be designed to the minimum, considering things like:
-    1. Not including the `.onion` suffix in the response, since it may be
-       redundant.
-    2. Serializing the Onion Service public key (i.e, it's base address)
-       using and encoding like base64 instead of base32, and without padding,
-       reducing the record size up to 20%.
-
-2. Need to check also the response size limit.
-
-3. A practical research is needed to check the response size for a query on a
-   non-existent record, to evaluate the cost of always doing this kind of
-   query.
-
-### Alleviating excessive roundtrips
-
-A downside for opportunistic discovery is that it involves additional
-roundtrip.
-
-It's possible to alleviate this by considering behaviors controlled by an user
-setting, like the following:
-
-1. The service discovery feature is disabled (by default?).
-
-2. The feature can be enabled and will look for .onion on the DNS (or
-   any other methods) only if the site is unreachable.
-
-3. Feature is enabled for the whole browsing experience: whenever a
-   stream for domains (and not IPs) opens, DNS resolution happens, with the
-   benefit of automatic discovery but with the downside of an additional
-   DNS roundtrip (and an additional circuit to make that roundtrip) at every
-   (uncached) request.
-
-## Security and privacy considerations
-
-### Keeping the self-authentication property
-
-It's important to devise a scheme where DNS records for Onion Services keep
-the self-authentication property of .onion addresses.
-
-That could be implemented by signing somehow the DNS entry using the Onion
-Service private key.
-
-### DNSSEC requirement
-
-This section discusses whether DNSSEC should be mandatory:
-
-1. Could it be optional when TLS is enforced and the Onion Service DNS entry
-   is signed by the .onion? What's the trade-off here?
-
-### DNS amplification attacks (DoS)
-
-The following attack scenario needs to be considered when devising a DNS-based
-resolution procedure (quoting @ahf from an e-mail exchange):
-
-> Currently the Tor network's DNS capabilities only allows A, AAAA, and PTR
-> (reverse DNS) resolution and not any other objects. The amplification ratio
-> between request and response is interesting here because large DNS objects
-> can potentially be used to DoS an exit-relay if an adversary is able to make
-> many tiny requests that yields a very large response towards the resolving
-> Exit node and thus fill up its inbound network connection.
-
-### Other security considerations
-
-Consider also:
-
-1. The analysis made by the [DoHoT project][], which is from a different scope
-   but might have common points to consider.
-
-[DoHoT project]: https://github.com/alecmuffett/dohot
-
-## Censorship considerations
-
-### Censorship resistance
-
-Consider the following additional measures against censorship in the DNS level:
-
-* Assume that any exit node may fail in the DNS resolution.
-* Do 2-3 circuit resolution (multiple DNS queries from different "perspectives"
-  -- exit nodes) in the `[DNSONION]` NS plugin. Then check results against one
-  another to detect inconsistencies. This can minimize the probability of failed
-  resolutions:
-  * Doing 3 lookups in the DNS may bring problems: lots broken DNS resolvers in
-    exit nodes and also can have an impact in the network (by tripling the
-    number or DNS requests).
-  * As an alternative, we could consider an algorithm that do 3 lookups only if
-    a first lookup results in invalid response such as `NXDOMAIN`.
-
-* Automatic reportback of resolution errors. But what qualifies as an "error"?
-* Support DNSSEC authenticated `NXDOMAIN`responses somehow.
-* Enhanced Network Health scanners for DNS resolution issues.
-
-### Censorship techniques
-
-Existing censorship techniques should also be evaluated to determine the
-overall resistance of the DNS method, like those discussed on
-[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10][]
-
-Some of these techniques could be mitigated by relying on [DNS-over-HTTPS
-(DoH)][] and [DNS-over-TLS (DoT)][].
-
-[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10]: https://datatracker.ietf.org/doc/html/draft-irtf-pearg-censorship#name-dns-interference
-
 ## Implementation considerations
 
 ### Specifications
@@ -219,15 +117,16 @@ Relevant [Tor specifications][] for DNS resolution:
 
 ### DNS record
 
-1. Need to check the response size for a query on a non-existent TXT record, to
-   evaluate the cost of always doing this kind of query.
-2. Need to draft a `TXT` record format:
-    * Woudn't need to include the '.onion' extension.
-    * Could encode the .onion address using base64.
-    * Could include a signature by the .onion service itself, signing:
-        * Hash with the DNS.
+1. Need to draft a record format:
+    1. Without the `.onion` suffix in the response, since it may be
+       redundant.
+    2. The Onion Service public key (i.e, it's base address) using an encoding
+       like base64 instead of base32, and without padding, reducing the record
+       size up to 20%.
+    3. Include a signature by the .onion service itself, signing:
+        * The hash with the DNS.
         * The .onion address itself.
-    * Could include port/service (optional field).
+    4. Include port/service (optional field).
 
 ### Client side versus exit node side resolution
 
@@ -319,6 +218,143 @@ Currently (as of 2022-11), [Arti][] does not have relay implementation (and
 hence no DNS resolution at the exit nodes).
 
 [Arti]: https://gitlab.torproject.org/tpo/core/arti/
+
+## Performance considerations
+
+### Query and response size
+
+1. DNS record size should be designed to the minimum.
+
+2. Need to check also the response size limit.
+
+3. A practical research is needed to check the response size for a query on a
+   non-existent record, to evaluate the cost of always doing this kind of
+   query.
+
+### Alleviating excessive roundtrips
+
+A downside for opportunistic discovery is that it involves additional
+roundtrip.
+
+It's possible to alleviate this by considering behaviors controlled by an user
+setting, like the following:
+
+1. The service discovery feature is disabled (by default?).
+
+2. The feature can be enabled and will look for .onion on the DNS (or
+   any other methods) only if the site is unreachable.
+
+3. Feature is enabled for the whole browsing experience: whenever a
+   stream for domains (and not IPs) opens, DNS resolution happens, with the
+   benefit of automatic discovery but with the downside of an additional
+   DNS roundtrip (and an additional circuit to make that roundtrip) at every
+   (uncached) request.
+
+## Security and privacy considerations
+
+### Onion Service identity key usage
+
+It's important to note that the current (as of 2023-04-04) Onion Services v3
+specification does not allow the Master Onion Service identity key to be used
+for purposes other than generating blinded signing keys (see Section 1.9 from
+the [rend-spec-v3.txt][]):
+
+> Master (hidden service) identity key -- A master signing keypair
+>   used as the identity for a hidden service.  This key is long
+>   term and not used on its own to sign anything; it is only used
+>   to generate blinded signing keys as described in [KEYBLIND]
+>   and [SUBCRED]. The public key is encoded in the ".onion"
+>   address according to [NAMING].
+>   KP_hs_id, KS_hs_id.
+
+Having the Onion Service master identity key to sign the DNS zone would require
+an update in the Onion Services v3 spec, allowing the Onion Service identity to
+also be used to:
+
+1. Sign the required DNS entries.
+2. Derive long-term (1 year?) blinded keys to be used to sign the DNS, maybe
+   using the same approach described by Appendix A (`[KEYBLIND]`) from
+   [rend-spec-v3.txt][] but covering the needed use case of a long-term key, i.e,
+   depending in a long-term nonce and not in `[TIME-PERIODS]`.
+
+[rend-spec-v3.txt]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
+
+### Keeping the self-authentication property
+
+It's important to devise a scheme where DNS records for Onion Services keep
+the self-authentication property of .onion addresses.
+
+That could be implemented by signing somehow the DNS entry using the Onion
+Service private key.
+
+### DNSSEC requirement
+
+This section discusses whether DNSSEC should be mandatory:
+
+1. Could it be optional when TLS is enforced and the Onion Service DNS entry
+   is signed by the .onion? What's the trade-off here?
+
+### DNS amplification attacks (DoS)
+
+The following attack scenario needs to be considered when devising a DNS-based
+resolution procedure (quoting @ahf from an e-mail exchange):
+
+> Currently the Tor network's DNS capabilities only allows A, AAAA, and PTR
+> (reverse DNS) resolution and not any other objects. The amplification ratio
+> between request and response is interesting here because large DNS objects
+> can potentially be used to DoS an exit-relay if an adversary is able to make
+> many tiny requests that yields a very large response towards the resolving
+> Exit node and thus fill up its inbound network connection.
+
+### Onion Service address leakage into the DNS
+
+This approach does leak info to the DNS, but the whole point in doing this is
+to publish the relationship betwen a regular domain and the .onion address for
+operators that want to have this feature.
+
+This behavior MUST be documented and DNS-based address discovery MUST be
+OPTIONAL.
+
+### Other security considerations
+
+Consider also:
+
+1. The analysis made by the [DoHoT project][], which is from a different scope
+   but might have common points to consider.
+
+[DoHoT project]: https://github.com/alecmuffett/dohot
+
+## Censorship considerations
+
+### Censorship resistance
+
+Consider the following additional measures against censorship in the DNS level:
+
+* Assume that any exit node may fail in the DNS resolution.
+* Do 2-3 circuit resolution (multiple DNS queries from different "perspectives"
+  -- exit nodes) in the `[DNSONION]` NS plugin. Then check results against one
+  another to detect inconsistencies. This can minimize the probability of failed
+  resolutions:
+  * Doing 3 lookups in the DNS may bring problems: lots broken DNS resolvers in
+    exit nodes and also can have an impact in the network (by tripling the
+    number or DNS requests).
+  * As an alternative, we could consider an algorithm that do 3 lookups only if
+    a first lookup results in invalid response such as `NXDOMAIN`.
+
+* Automatic reportback of resolution errors. But what qualifies as an "error"?
+* Support DNSSEC authenticated `NXDOMAIN`responses somehow.
+* Enhanced Network Health scanners for DNS resolution issues.
+
+### Censorship techniques
+
+Existing censorship techniques should also be evaluated to determine the
+overall resistance of the DNS method, like those discussed on
+[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10][]
+
+Some of these techniques could be mitigated by relying on [DNS-over-HTTPS
+(DoH)][] and [DNS-over-TLS (DoT)][].
+
+[Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10]: https://datatracker.ietf.org/doc/html/draft-irtf-pearg-censorship#name-dns-interference
 
 ## References
 
