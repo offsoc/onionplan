@@ -85,12 +85,11 @@ Also, this approach:
 
 * May not work because DNS resolution via SOCKS5 (used by Tor Browser) does not
   currently support arbitrary RR besides basic hostname lookup.
-* Could work if Tor Browser starts to use [DNS-over-HTTPS (DoH)][https://www.rfc-editor.org/rfc/rfc8484], which has
+* Could work if Tor Browser starts to use [DNS-over-HTTPS (DoH)][], which has
   its own set of problems to be considered first (performance impact; reduces
   decentralization; blocking happening at DoH providers; etc); the same for
   [DNS-over-TLS (DoT][], which is not even being considered by Mozilla.
-* Seems highly dependent on whether [RFC
-  7686][https://www.rfc-editor.org/rfc/rfc7686.html] will be honored by clients
+* Seems highly dependent on whether [RFC 7686][] will be honored by clients
   to either use or skip .onion addresses found in HTTPS DNS records.
 * Still needs a further and thorough security analysis to evaluate its security properties,
   attack scenarios and mitigations (see [this initial discussion about HTTPS RRs][]).
@@ -173,10 +172,8 @@ Browser** or Firefox.
 2. Reuse the existing discussions and proposals about where and how to
    implement alternative naming systems (like [Proposal 279][]).
 3. Take advantage of the TLS SNI extension to reuse existing HTTPS certificates
-   with Onion Services and should be fully compatible with ECH (Encrypted Client
-   Hello) after
-   [draft-ietf-tls-esni-15][https://datatracker.ietf.org/doc/draft-ietf-tls-esni/]
-   gets approved and implemented.
+   with Onion Services and should be fully compatible with ECH (Encrypted
+   Client Hello) after [draft-ietf-tls-esni-15][] gets approved and implemented.
 4. Give time for other implementations to mature ([Sauteed Onions][]; Onion
    Names) while providing to the community a practical way to solve the
    human-readability issue of Onion Service addresses.
