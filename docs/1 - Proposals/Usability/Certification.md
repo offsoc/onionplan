@@ -130,14 +130,28 @@ future is to use Onion Service keypair to self-validate an HTTPS certificate:
   be constructed.
 * There's also a ticket requesting to [add support for self-signed HTTPS onion
   sites derived from onion service's ed25519 key][].
-* For an overview of Ed25519, check [How do Ed5519 keys work?][]. For details
-  about how Tor implements Ed25519, check [prop220][] (and [rend-spec-v3.txt][]
-  for how it implements at the Onion Services level).
+
+For an overview of Ed25519, check [How do Ed5519 keys work?][]. For details
+about how Tor implements Ed25519, check [prop220][] (and [rend-spec-v3.txt][]
+for how it implements at the Onion Services level).
 
 This proposal has the advantage to not rely on Certificate Authorities, but the
 disadvantage that needs additional logic both server and client side to make it
 work, since a CA would needed to be installed for every visited Onion Service
 using this scheme.
+
+It's important to note that the current (as of 2023-04-04) Onion Services v3
+specification does not allow the Master Onion Service identity key to be used
+for purposes other than generating blinded signing keys (see Section 1.9 from
+the [rend-spec-v3.txt][]):
+
+> Master (hidden service) identity key -- A master signing keypair
+>   used as the identity for a hidden service.  This key is long
+>   term and not used on its own to sign anything; it is only used
+>   to generate blinded signing keys as described in [KEYBLIND]
+>   and [SUBCRED]. The public key is encoded in the ".onion"
+>   address according to [NAMING].
+>   KP_hs_id, KS_hs_id.
 
 Also, while [many TLS libraries support the Ed25519 signing scheme][] used for
 certificates (like in [OpenSSL since version 1.1.1][]), [major web browsers
@@ -168,6 +182,29 @@ Baseline Requirements][]:
 >   or NIST P‐521 elliptic curve.
 >
 > No other algorithms or key sizes are permitted.
+
+In summary, implementing this proposal would require pushing at least two
+specification changes:
+
+1. A ballot with CA/B Forum about including Ed25519 support.
+2. An update in the Onion Services v3 spec, allowing the Onion Service identity
+   keys to either:
+    1. Also act as Certificate Authority root keys for the service.
+    2. Derive long-term (1 year) blinded keys to be used as a Certificate
+       Authority for the service, maybe using the same approach described by
+       Appendix A (`[KEYBLIND]`) from [rend-spec-v3.txt][] but covering the needed
+       use case of a long-term key, i.e, depending in a long-term nonce and not in
+       `[TIME-PERIODS]`.
+
+It's also important to avoid using the Onion Service key directly as the HTTPS
+certificate. That would:
+
+* Expose the Onion Service secret key material to more software than it's
+  needed, like a web server.
+* Make it very difficult to manage offline Onion Service master keys.
+
+Instead, it's better to use the Onion Service keypair to act as a CA that then
+certifies a separate key pair to be used with HTTPS.
 
 [^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key agreement scheme no to be confused with [Ed25519][].
 [^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][]
