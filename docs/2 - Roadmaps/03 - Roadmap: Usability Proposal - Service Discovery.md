@@ -291,24 +291,6 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
 
 ### Questions
 
-#### DNS questions
-
-1. In which sense is this better than simply using the `Onion-Location` or the
-   `Alt-Svc` headers?
-    * DNS queries that happen via Tor are less prone to censorship than trying to
-      access the site directly via and exit node (the exit node may be under
-      censorship).
-    * DNS queries tend to be faster than waiting for HTTP headers.
-2. How to detect/avoid censorship in the DNS level? How does the
-   DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
-   detect/avoid censorship?
-    * Check the [Appendix: Specs for DNS-based .onion records][] document for
-      details.
-3. How to prevent abuse in the DNS queries? How the DNS-based methods would
-   handle an excess of requests?
-    * Check the [Appendix: Specs for DNS-based .onion records][] document for
-      details.
-
 #### Roadmap questions
 
 1. Can this phase be skipped to the next?
@@ -329,6 +311,30 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
       `[DNSONION]` as quickly as possible, leaving other approaches to be
       implemented as plugins once the Tor NS API is implemented in a later
       phase.
+
+#### DNS questions
+
+1. In which sense is this better than simply using the `Onion-Location` or the
+   `Alt-Svc` headers?
+    * DNS queries that happen via Tor are less prone to censorship than trying to
+      access the site directly via and exit node (the exit node may be under
+      censorship).
+    * DNS queries tend to be faster than waiting for HTTP headers.
+2. How to detect/avoid censorship in the DNS level? How does the
+   DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
+   detect/avoid censorship?
+    * Check the [Appendix: Specs for DNS-based .onion records][] document for
+      details.
+3. How to prevent abuse in the DNS queries? How the DNS-based methods would
+   handle an excess of requests?
+    * Check the [Appendix: Specs for DNS-based .onion records][] document for
+      details.
+
+#### Tor NS API questions
+
+1. What needs to be changed in [Proposal 279][] in order for this plan to work?
+    * Check the [Appendix: Proposal 279 fixes and improvements][] document for
+      details.
 
 #### Tor and arti questions
 
@@ -362,12 +368,6 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
     * On the other hand, is this a good architecture choice? From a security
       perspective, that would require to expose the `ControlPort` to a naming
       system middleware, which can be unsafe.
-
-#### Proposal 279 questions
-
-1. What needs to be changed in [Proposal 279][] in order for this plan to work?
-    * Check the [Appendix: Proposal 279 fixes and improvements][] document for
-      details.
 
 #### Tor Browser questions
 
