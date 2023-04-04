@@ -334,19 +334,25 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
     * Yes, but then we would not have anything official and functional to
       ship to users, except if the community commits to write some plugins,
       which is uncertain.
-7. What needs to be changed in [Proposal 279][] in order for this plan to work?
+7. Can we implement the `[DNSONION]` as a built-in discovery mechanism inside
+   the Tor daemon, and leave the Tor NS API to be developed to a next phase?
+    * Yes, that could be an alternative pathway to save time and implementing
+      `[DNSONION]` as quickly as possible, leaving other approaches to be
+      implemented as plugins once the Tor NS API is implemented in a later
+      phase.
+8. What needs to be changed in [Proposal 279][] in order for this plan to work?
     * Check the [Appendix: Proposal 279 fixes and improvements][] document for
       details.
-8. How to detect/avoid censorship in the DNS level? How does the
+9. How to detect/avoid censorship in the DNS level? How does the
    DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
    detect/avoid censorship?
     * Check the [Appendix: Specs for DNS-based .onion records][] document for
       details.
-9. How to prevent abuse in the DNS queries? How the DNS-based methods would
+10. How to prevent abuse in the DNS queries? How the DNS-based methods would
    handle an excess of requests?
     * Check the [Appendix: Specs for DNS-based .onion records][] document for
       details.
-10. Tor Browser specific:
+11. Tor Browser specific:
     1. Would connections be by default and automatically upgraded to the Onion
        Service if the regular one is not available? Or shall it respect the
        "Prioritize .onion sites when known" Tor Browser config and just offer the
