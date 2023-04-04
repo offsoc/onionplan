@@ -1,7 +1,7 @@
 # Usability Roadmap - Service Discovery
 
 * Status: DRAFT
-* Version: v2022.Q4
+* Version: v2023.Q2
 * Companion slides: [2022.Q4/discovery.pdf][] and [2022.Q4/discovery-technical.pdf][].
 
 [2022.Q4/discovery.pdf]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery.pdf
@@ -69,7 +69,7 @@ We're at Phase 0, but not starting from zero! :)
 
 We can try a lean/zen approach to the problem:
 
-* Wait until [draft-ietf-dnsop-svcb-https-11][] (similar to *Alt-Svc*, but in
+* Wait until [draft-ietf-dnsop-svcb-https-12][] (similar to *Alt-Svc*, but in
   the DNS) gets RFC status and Firefox fully implements it (needs risk
   assessment for that).
 * Then recommend [HTTP DNS resource records for Onion Services][].
@@ -99,7 +99,7 @@ As an alternative, the following roadmap is proposed **without counting on any
 further/uncertain upstream improvement and without focusing only on Tor
 Browser** or Firefox.
 
-[draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/11/
+[draft-ietf-dnsop-svcb-https-12]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/12/
 [HTTP DNS resource records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [RFC 7686]: https://www.rfc-editor.org/info/rfc7686
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
@@ -200,26 +200,33 @@ Browser** or Firefox.
 
 ### Roadmap
 
+Tor NS API:
+
 1. Work in a Tor NS API specification: review and finish [Proposal 279][] or
    work on a new one:
-    * Decide on open issues.
-    * Should be changed to:
-        * REQUIRE that plugins use Tor to do their queries if those are made
-          outside their local network, to increase privacy and censorship
-          resistance.
-        * Allow for wildcard plugins enable opportunistic service discovery.
-        * Keep the "priority" config in order to allow multiple plugins handling
-          discoveries of regular domains using different methods.
+    * In the case [Proposal 279][] is chosen, it's important to:
+        * Decide on open issues (see the [Appendix: Proposal 279 fixes and
+          improvements][]).
+        * Make some changes to:
+            * REQUIRE that plugins use Tor to do their queries if those are made
+              outside their local network, to increase privacy and censorship
+              resistance.
+            * Allow for wildcard plugins to enable opportunistic service discovery.
+            * Keep the "priority" config in order to allow multiple plugins handling
+              discoveries of regular domains using different methods.
 2. Implement the Tor NS API on C Tor if it's possible to include that in the C
    Tor roadmap and if there's developer availability for that.
-3. Implement address translation plugins:
+3. Implement the Tor NS API on arti, perhaps syncing the roadmap when the
+   arti team is working in the Rendezvous v3 implementation?
+
+DNS-based Onion Service discovery:
+
+1. Implement address translation mechanisms:
     * `[DNSONION]` for .onion on DNS(SEC) with the proper verifications (and
       write a standard for it).
-4. Build an experimental Tor Browser shipped with a Tor daemon configured with
+2. Build an _experimental_ Tor Browser shipped with a Tor daemon configured with
    `[DNSONION]`.
-5. Evaluation period with early adoption and funding campaigns.
-6. Implement the Tor NS API on arti, perhaps syncing the roadmap when the
-arti team is working in the Rendezvous v3 implementation?
+3. Evaluation period with early adoption and funding campaigns.
 
 The roadmap for this phase may also includes fixes and low-hanging fruit.
 
@@ -284,19 +291,48 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
 
 ### Questions
 
+#### DNS questions
+
 1. In which sense is this better than simply using the `Onion-Location` or the
    `Alt-Svc` headers?
     * DNS queries that happen via Tor are less prone to censorship than trying to
       access the site directly via and exit node (the exit node may be under
       censorship).
     * DNS queries tend to be faster than waiting for HTTP headers.
-2. Can this phase be skipped to the next?
-    * The `[DNSONION]` plugin can be safely skipped or postponed to a later phase.
-    * What is really required in this phase is to implement the Tor NS API which
-      may be used in the following phases, but having no plugin at this phase
-      won't start solving the usability problem, but instead leaving setting up
-      plugins to the community.
-3. Why insist on changes in the Tor daemon code instead of focusing just in the
+2. How to detect/avoid censorship in the DNS level? How does the
+   DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
+   detect/avoid censorship?
+    * Check the [Appendix: Specs for DNS-based .onion records][] document for
+      details.
+3. How to prevent abuse in the DNS queries? How the DNS-based methods would
+   handle an excess of requests?
+    * Check the [Appendix: Specs for DNS-based .onion records][] document for
+      details.
+
+#### Roadmap questions
+
+1. Can this phase be skipped to the next?
+    * The `[DNSONION]` plugin can be safely skipped or postponed to a later
+      phase, focusing only in developing the Tor NS API which would be used in
+      the following phases, but having no plugin at this phase won't start solving
+      the usability problem, but instead leaving setting up plugins to the community.
+    * Another alternative would be to implement `[DNSONION]` as a built-in mechanism
+      in the Tor daemon, and leave the Tor NS API to be developed in a later phase.
+2. Can we only implement the Tor NS API in this phase, and skip any plugin
+   implementation to a later phase?
+    * Yes, but then we would not have anything official and functional to
+      ship to users, except if the community commits to write some plugins,
+      which is uncertain.
+3. Can we implement the `[DNSONION]` as a built-in discovery mechanism inside
+   the Tor daemon, and leave the Tor NS API to be developed to a next phase?
+    * Yes, that could be an alternative pathway to save time and implementing
+      `[DNSONION]` as quickly as possible, leaving other approaches to be
+      implemented as plugins once the Tor NS API is implemented in a later
+      phase.
+
+#### Tor and arti questions
+
+1. Why insist on changes in the Tor daemon code instead of focusing just in the
    Tor Browser?
     * Besides the fact the we should avoid implementing new features into C Tor
       in favor of arti, it's harder and harder to keep pace with the Firefox
@@ -308,7 +344,7 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
     * Having the implementation at the daemon level ensures that any client (and
       not only the Tor Browser) can benefit from transparent Onion Service
       discovery.
-4. Can the Tor NS API be implemented only on arti?
+2. Can the Tor NS API be implemented only on arti?
     * Yes. For a development-centric perspective it might be better to only
       implement it for arti during or after its 1.2.0 roadmap which is focused
       on Onion Services.
@@ -317,7 +353,7 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
     * If the choice is to do whatever is speedier for deployment in the
       mid-term, then implementing first in C Tor might make more sense, but
       depends on the actual schedules for all these integrations.
-5. Can we instead implement the Tor NS API outside the Tor daemon
+3. Can we instead implement the Tor NS API outside the Tor daemon
    implementations, using standalone controllers like [TorNS][] and [StemNS][]
    or a wrapper around the Tor daemons?
     * Possibly yes, and that could be easier to implement, since it can be
@@ -326,38 +362,23 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
     * On the other hand, is this a good architecture choice? From a security
       perspective, that would require to expose the `ControlPort` to a naming
       system middleware, which can be unsafe.
-6. Can we only implement the Tor NS API in this phase, and skip any plugin
-   implementation to a later phase?
-    * Yes, but then we would not have anything official and functional to
-      ship to users, except if the community commits to write some plugins,
-      which is uncertain.
-7. Can we implement the `[DNSONION]` as a built-in discovery mechanism inside
-   the Tor daemon, and leave the Tor NS API to be developed to a next phase?
-    * Yes, that could be an alternative pathway to save time and implementing
-      `[DNSONION]` as quickly as possible, leaving other approaches to be
-      implemented as plugins once the Tor NS API is implemented in a later
-      phase.
-8. What needs to be changed in [Proposal 279][] in order for this plan to work?
+
+#### Proposal 279 questions
+
+1. What needs to be changed in [Proposal 279][] in order for this plan to work?
     * Check the [Appendix: Proposal 279 fixes and improvements][] document for
       details.
-9. How to detect/avoid censorship in the DNS level? How does the
-   DNS-based method handle proof of non-existence (`NXDOMAIN` proofs), to
-   detect/avoid censorship?
-    * Check the [Appendix: Specs for DNS-based .onion records][] document for
-      details.
-10. How to prevent abuse in the DNS queries? How the DNS-based methods would
-   handle an excess of requests?
-    * Check the [Appendix: Specs for DNS-based .onion records][] document for
-      details.
-11. Tor Browser specific:
-    1. Would connections be by default and automatically upgraded to the Onion
-       Service if the regular one is not available? Or shall it respect the
-       "Prioritize .onion sites when known" Tor Browser config and just offer the
-       ".onion available" badge?
-    2. How will the user know (UX indicators) that the connection is being done
-       via Onion Services if the Tor NS API handles everything transparently?
-       Can this be inferred by the circuit information or obtained via the Tor control
-       protocol? Does it matter at all except for debugging/verification?
+
+#### Tor Browser questions
+
+1. Would connections be by default and automatically upgraded to the Onion
+   Service if the regular one is not available? Or shall it respect the
+   "Prioritize .onion sites when known" Tor Browser config and just offer the
+   ".onion available" badge?
+2. How will the user know (UX indicators) that the connection is being done
+   via Onion Services if the Tor NS API handles everything transparently?
+   Can this be inferred by the circuit information or obtained via the Tor
+   control protocol? Does it matter at all except for debugging/verification?
 
 [829 open issues for Tor Browser]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues
 [329 for C Tor]: https://gitlab.torproject.org/tpo/core/tor/-/issues
@@ -433,7 +454,7 @@ Same as those from the previous phase, plus:
 
 ### Roadmap
 
-1. Implement address translation plugins:
+1. Implement address translation mechanisms:
     1. For [Sauteed Onions][], using the latest API version and SCT/certificate
        verification.
 2. Implement distributed [Sauteed Onions][] resolvers:
@@ -498,6 +519,8 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
 
 ### Questions
 
+#### Roadmap questions
+
 1. Can this phase be skipped to the next?
     * Yes, this phase can be safely skipped or postponed as a later phase.
 2. Can this phase be developed before the previous?
@@ -510,14 +533,17 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
 3. Can this phase be implemented after or in parallel to others?
     * Yes, this phase can be implemented anytime as long as there is a working
       Tor NS API implementation.
-4. Who can operate [Sauteed Onions][] resolvers? Anyone?
+
+#### Sauteed Onions questions
+
+1. Who can operate [Sauteed Onions][] resolvers? Anyone?
     * The [Sauteed Onions][] proposal currently does not specify who can run a
       query node. It could be relays configured to do so or even some distributed
       set of Onion Services.
-5. How is the list of available resolvers updated?
+2. How is the list of available resolvers updated?
     * In the short to mid term: via Tor Browser updates?
     * In the future: via consensus?
-6. How much resources we're talking about for each resolver?
+3. How much resources we're talking about for each resolver?
     * Needs research an estimation on this.
 
 ## Phase 3: Pure Onion Names
@@ -628,6 +654,8 @@ This user story depends on the existence of a given Onion Name implementation
 that allows for such Onion Names registrations.
 
 ### Questions
+
+#### Onion Names questions
 
 1. How tools like Briar, Ricochet and Onionshare could automatically create
    Onion Names for nicknames or handles?
