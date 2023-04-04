@@ -338,8 +338,11 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
    handle an excess of requests?
     * Check the [Appendix: Specs for DNS-based .onion records][] document for
       details.
-4. Non-HTTP (like SMTP) would also be supported for the DNS method (or
-   opportunistic discovery in general)?
+
+#### TLS questions
+
+1. Non-HTTP (like SMTP) with TLS would also be supported for the DNS method (or
+   other opportunistic discovery methods relying on DNS-based names)?
     * It may need a per-protocol analysis to be sure, but is believed that it
       should work as long as there is TLS SNI involved or if the default
       certificate sent by the server matches the one from the domain the user wants
