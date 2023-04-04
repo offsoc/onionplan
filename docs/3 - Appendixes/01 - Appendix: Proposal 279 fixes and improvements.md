@@ -1,5 +1,8 @@
 # Proposal 279 fixes and improvements
 
+* Status: DRAFT
+* Version: v2022.Q4
+
 This is a list of open questions and suggestions for [Proposal 279][], which
 can be eventually included in the Section 3 of the proposal or converted to
 actionable ticket issues.

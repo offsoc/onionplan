@@ -1,5 +1,8 @@
 # Low-hanging fruit
 
+* Status: DRAFT
+* Version: v2022.Q4
+
 This appendix contains tasks considered with lower complexity that can
 significantly improve Onion Services usability.
 
