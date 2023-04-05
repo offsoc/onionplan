@@ -31,9 +31,6 @@
 * [attacker can force intro point rotation by ddos (#26294) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294)
 * [DoS resistence measures from C tor (#351) · Arti](https://gitlab.torproject.org/tpo/core/arti/-/issues/351)
 
-Check also the [Onion Service DoS issue
-queue](https://gitlab.torproject.org/groups/tpo/-/issues/?sort=created_date&state=opened&label_name%5B%5D=DoS&label_name%5B%5D=Onion%20Services&first_page_size=20).
-
 ## Non DoS-related health improvements for Onion Services
 
 Fixes:
@@ -54,6 +51,14 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 ## Onion Service support in Arti
 
 See [Arti 1.1.3 release notes](https://blog.torproject.org/arti_113_released/).
+
+## Relevant issue boards
+
+* [Onion Services in general](https://gitlab.torproject.org/groups/tpo/-/boards?label_name[]=Onion%20Services)
+* Onion Services performance issues:
+    * [Performance Impact](https://gitlab.torproject.org/groups/tpo/-/boards?label_name[]=Onion%20Services&label_name[]=Performance%20Impact)
+    * [Performance](https://gitlab.torproject.org/groups/tpo/-/boards?label_name[]=Onion%20Services&label_name[]=Performance)
+    * [DoS](https://gitlab.torproject.org/groups/tpo/-/boards?label_name[]=Onion%20Services&label_name[]=DoS)
 
 ## References
 
