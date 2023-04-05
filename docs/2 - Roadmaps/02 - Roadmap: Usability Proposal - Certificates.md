@@ -1,7 +1,7 @@
 # Usability Roadmap - Certificates
 
 * Status: DRAFT
-* Version: v2022.Q4
+* Version: v2023.Q2
 
 ## Index
 
@@ -83,3 +83,33 @@ Onion-only CAs                        | Low                      | Medium       
 1. Prioritize what can be done without client or library modifications, as
    these are harder to implement, maintain, upstream and standardize.
 2. Consider the _paths of least resistance_ when pursuing a solution.
+
+## Enhancements for the Tor Browser
+
+Additionally to implementing new methods for HTTPS certification, users could
+benefit from Tor Browser improvements in the UI widgets resposible for
+displaying connection security information.
+
+As pointed by [this comment about previously-tested scenarios][], some
+additional results could be considered to expand the [current behavior][], like
+the following:
+
+Scenario Name                        | Result
+-------------------------------------|------------------------------------------
+HTTP  Onion                          | Onion Icon
+HTTPS Onion Self-Signed              | Onion Icon + connection security details
+HTTPS Onion Self-Signed [SOOC][]     | Onion Icon + connection security details
+HTTPS Onion Unknown CA               | Onion Icon + connection security details
+HTTPS Onion EV                       | Onion Icon + EV Name
+HTTPS Onion Wrong Domain             | Onion Warning Icon, Warning Splash Screen
+HTTPS Onion Expired Self-Signed Cert | Onion Warning Icon, Warning Splash Screen
+HTTP(S) Onion + HTTP  Script         | Onion Slash Icon
+HTTP(S) Onion + HTTP  Content        | Onion Warning Icon
+HTTP(S) Onion + HTTPS Content        | Onion Icon
+HTTPS   Onion + HTTP  Form           | Onion Icon + Warning Popup on Form Submit
+
+Perhaps the Onion Icon could be customized to have a different appearance according to the scenario.
+
+[current behavior]: https://support.torproject.org/onionservices/onionservices-5/
+[SOOC]: https://github.com/alecmuffett/onion-dv-certificate-proposal/blob/master/text/draft-muffett-same-origin-onion-certificates.txt
+[this comment about previously-tested scenarios]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410#note_2616846
