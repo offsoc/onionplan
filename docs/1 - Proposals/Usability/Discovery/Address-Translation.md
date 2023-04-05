@@ -13,7 +13,7 @@ bi-directional.
 See [this discussion][] for an example about how opportunistic service
 discovery could work.
 
-[this discussion]: https://gitlab.torproject.org/rhatto/sauteed-week/-/blob/main/docs/discovery.md
+[this discussion]: https://rhatto.pages.torproject.net/sauteed-week/discovery/
 
 ## Transparent versus non-transparent
 
@@ -28,6 +28,12 @@ not to the user:
 Some of the current proposals are non-transparent (Onion-Location, Sauteed
 Onions), while others are transparent (Alt-Svc). It's mostly an UX decision
 here which does not impact in the core idea of each proposal.
+
+For the transparent address translation, it's important to consider @richard's
+remark about having a way to signal to the application that the connection is
+encrypted e2e (for websites that are HTTP on an onion service vs HTTP clearnet
+websites). Browser cares about this to warn users about mixed-mode content,
+whether the page is "secure" etc.
 
 ## Overview
 
