@@ -24,12 +24,12 @@
 
 ## Relevant DoS-related issues
 
-* [Design a PoW scheme for HS DoS defence (#134) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/134 "Design a PoW scheme for HS DoS defence")
-* [prop327: Implement PoW over Introduction Circuits (#40634) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634 "prop327: Implement PoW over Introduction Circuits")
-* [Understand code performance of onion services under DoS (#33704) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/33704 "Understand code performance of onion services under DoS")
-* [Research  approaches for improving the availability of services under DoS  (#31223) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/31223 "Research approaches for improving the availability of services under DoS")
-* [attacker can force intro point rotation by ddos (#26294) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294 "attacker can force intro point rotation by ddos")
-* [DoS resistence measures from C tor (#351) · Issues · The Tor Project / Core / Arti · GitLab](https://gitlab.torproject.org/tpo/core/arti/-/issues/351 "DoS resistance measures from C tor")
+* [Design a PoW scheme for HS DoS defence (#134) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/134)
+* [prop327: Implement PoW over Introduction Circuits (#40634) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
+* [Understand code performance of onion services under DoS (#33704) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33704)
+* [Research  approaches for improving the availability of services under DoS  (#31223) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/31223)
+* [attacker can force intro point rotation by ddos (#26294) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294)
+* [DoS resistence measures from C tor (#351) · Arti](https://gitlab.torproject.org/tpo/core/arti/-/issues/351)
 
 Check also the [Onion Service DoS issue
 queue](https://gitlab.torproject.org/groups/tpo/-/issues/?sort=created_date&state=opened&label_name%5B%5D=DoS&label_name%5B%5D=Onion%20Services&first_page_size=20).
@@ -38,22 +38,22 @@ queue](https://gitlab.torproject.org/groups/tpo/-/issues/?sort=created_date&stat
 
 Fixes:
 
-* [Make it even harder to become HSDir (#19162) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/19162 "Make it even harder to become HSDir")
-* [We should make HSv3 desc upload less frequent (#163) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/163 "We should make HSv3 desc upload less frequent")
-* [Tor  node that is not part of the consensus should not be used as rendezvous  point with the onion service (#33129) · Issues · The Tor Project / Core  / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/33129 "Tor node that is not part of the consensus should not be used as rendezvous point with the onion service")
-* [hs: Do not allow more than one control cell on a circuit (#157) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/157 "hs: Do not allow more than one control cell on a circuit")
-* [Long circuit build times when connecting to onion services (#40570) · Core / Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40570)
+* [Make it even harder to become HSDir (#19162) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/19162)
+* [We should make HSv3 desc upload less frequent (#163) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/163)
+* [Tor  node that is not part of the consensus should not be used as rendezvous  point with the onion service (#33129) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33129)
+* [hs: Do not allow more than one control cell on a circuit (#157) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/157)
+* [Long circuit build times when connecting to onion services (#40570) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40570)
 
 Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/):
 
-* [\[Feature  proposal\] Verification of onion service integrity (#41041) · Issues ·  The Tor Project / Applications / Tor Browser · GitLab](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041 "[Feature proposal] Verification of onion service integrity")
-* [Proposal: Hidden Service Revocation (#87) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87 "Proposal: Hidden Service Revocation")
-* ['Hidden' Authenticatd Onion Services (#119) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119 "'Hidden' Authenticated Onion Services")
-* [prop224: Implement offline keys for v3 onion services (#29054)](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054 "prop224: Implement offline keys for v3 onion services")
+* [Verification of onion service integrity (#41041) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041)
+* [Proposal: Hidden Service Revocation (#87) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87)
+* ['Hidden' Authenticatd Onion Services (#119) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119)
+* [prop224: Implement offline keys for v3 onion services (#29054) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054)
 
 ## Onion Service support in Arti
 
-See [Arti 1.1.3 release notes ](https://blog.torproject.org/arti_113_released/).
+See [Arti 1.1.3 release notes](https://blog.torproject.org/arti_113_released/).
 
 ## References
 
