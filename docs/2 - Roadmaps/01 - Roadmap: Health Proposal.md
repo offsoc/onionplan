@@ -1,7 +1,7 @@
 # Health Roadmap
 
 * Status: DRAFT
-* Version: v2022.Q4
+* Version: v2023.Q2
 
 ## Index
 
@@ -50,6 +50,10 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 * [Proposal: Hidden Service Revocation (#87) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87 "Proposal: Hidden Service Revocation")
 * ['Hidden' Authenticatd Onion Services (#119) · Issues · The Tor Project / Core / Tor Specifications · GitLab](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119 "'Hidden' Authenticated Onion Services")
 * [prop224: Implement offline keys for v3 onion services (#29054)](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054 "prop224: Implement offline keys for v3 onion services")
+
+## Onion Service support in Arti
+
+See [Arti 1.1.3 release notes ](https://blog.torproject.org/arti_113_released/).
 
 ## References
 
