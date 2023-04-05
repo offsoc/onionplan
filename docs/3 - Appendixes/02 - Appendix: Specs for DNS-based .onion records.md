@@ -169,6 +169,15 @@ node should favor an existing .onion record for a site.
 
 [pretty error-prone protocol to implement]: https://gitlab.torproject.org/tpo/core/tor/-/issues/33687#note_2510496
 
+### DNSSEC
+
+To be taken into account if choosing the DNSSEC pathway:
+
+1. Possible ways to distribute the DNSSEC root zone keys still need to be
+   discussed.
+
+2. A DNSSEC stapling mechanism could make safer to use DNSSEC.
+
 ### DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT) support
 
 Whether DoH or DoT should be used for resolution?
@@ -221,6 +230,17 @@ Currently (as of 2022-11), [Arti][] does not have relay implementation (and
 hence no DNS resolution at the exit nodes).
 
 [Arti]: https://gitlab.torproject.org/tpo/core/arti/
+
+### Both C Tor and arti
+
+* It's worth noting that implementing the DNS discovery mechanism could
+  also bring enhancements to the general DNS support for the Tor network
+  as a positive side effect / low hanging fruit.
+
+* It would be possible to write the implementation for both C Tor and arti
+  using [ldns](https://www.nlnetlabs.nl/projects/ldns/about/), which "supports
+  all low-level DNS and DNSSEC operations. It also defines a higher level API
+  which allows a programmer to for instance create or sign packets".
 
 ## Performance considerations
 
@@ -343,8 +363,8 @@ Consider the following additional measures against censorship in the DNS level:
     number or DNS requests).
   * As an alternative, we could consider an algorithm that do 3 lookups only if
     a first lookup results in invalid response such as `NXDOMAIN`.
-
 * Automatic reportback of resolution errors. But what qualifies as an "error"?
+  And what would characterize a "match" in the discovery procedure?
 * Support DNSSEC authenticated `NXDOMAIN`responses somehow.
 * Enhanced Network Health scanners for DNS resolution issues.
 
