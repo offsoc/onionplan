@@ -367,7 +367,9 @@ The roadmap for this phase may also includes fixes and low-hanging fruit.
       to keep this logic in a client whose future is not as certain as the daemons.
     * Having the implementation at the daemon level ensures that any client (and
       not only the Tor Browser) can benefit from transparent Onion Service
-      discovery.
+      discovery. As @richard commented, in general, the lower in the stack we
+      can put the code for this the better, rather than in-browser/per app things to
+      avoid capability fragmentation across the platform.
 2. Can the Tor NS API be implemented only on arti?
     * Yes. For a development-centric perspective it might be better to only
       implement it for arti during or after its 1.2.0 roadmap which is focused
