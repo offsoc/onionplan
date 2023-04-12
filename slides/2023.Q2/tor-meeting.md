@@ -223,6 +223,7 @@ Phase Technology     Censorship resistance
 
 ## Service Discovery - Next Steps
 
+* Current goal is not to implement any of this, but first to create a feasible roadmap proposal.
 * Need more research time to progress. **No time is allocated right now to do this, despite being an strategic priority for 2023**.
 * Still need to discuss roadmap with the Arti (and maybe with the C Tor) team.
 
