@@ -4,7 +4,7 @@ subtitle: 2023 Tor Meeting
 date: 2023.Q2
 institute: Onion Support and Working Group - The Tor Project
 author:
-  - name: Raya, Rhatto, your-name-here
+  - name: Raya, Rhatto, David Goulet
 slides:
     aspect-ratio: 169
     font-size: 11pt
@@ -66,7 +66,7 @@ Source: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/D
 
 Four tracks:
 
-1. Network Layer (formely _Health_).
+1. Network Layer (formerly _Health_).
 2. Usability.
 3. Tooling.
 4. Outreach.
@@ -92,15 +92,15 @@ Since the Limerick session, i.e, from 2022.Q4 to 2023.Q2:
 
 ## Onion Services Coalition
 
-...
+* [Tor is slow right now. Here is what is happening. | The Tor Project](https://blog.torproject.org/tor-network-ddos-attack/)
 
 ## Recent progress on PoW
 
-...
+* [prop327: Implement PoW over Introduction Circuits (#40634) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
 
 ## Onion Services roadmap on Arti
 
-...
+* [Arti 1.1.3 is released: More onion service development | The Tor Project](https://blog.torproject.org/arti_113_released/)
 
 # Usability
 
@@ -133,7 +133,7 @@ Proposals are currently grouped as:
 
 ## Certificates - Effort
 
-Amount of work involved for each level (initial assesment).
+Amount of work involved for each level (initial assessment).
 
 Proposal                              | Engineering effort       | Operation effort        | Governance effort       | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
@@ -146,7 +146,7 @@ Onion-only CAs                        | Low                      | High         
 
 ## Certificates - Challenge
 
-Difficulty in solving open questions while implementing a given proposal  (initial assesment).
+Difficulty in solving open questions while implementing a given proposal  (initial assessment).
 
 Proposal                              | Engineering challenge    | Operation challenge     | Governance challenge    | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
@@ -159,7 +159,7 @@ Onion-only CAs                        | High                     | High         
 
 ## Certificates - Risk
 
-Risk involved in the proposal not be successfully implemented in a given level  (initial assesment).
+Risk involved in the proposal not be successfully implemented in a given level  (initial assessment).
 
 Proposal                              | Engineering risks        | Operation risks         | Governance risks        | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
@@ -172,7 +172,7 @@ Onion-only CAs                        | Low                      | Medium       
 
 ## Certificates - Next Steps
 
-* Continue to pursuing [ACME for Onions][]: trying to connect Q Missel with Let's Encrypt. This alternative has the minimal effort for Tor.
+* Continue to pursuing [ACME for Onions][]: trying to connect Q Misell with Let's Encrypt. This alternative has the minimal effort for Tor.
 * Some Onion Service operators may not like to have their .onion addresses published into CT Logs, so having an alternative .onion-only Certificate Authority is also being considered, but that requires a lot more effort to implement beyond having an [ACME for Onions][] implementation.
 
 ## Service discovery
@@ -221,33 +221,46 @@ Phase Technology     Censorship resistance
 
 ## Service Discovery - Next Steps
 
-* Need more research time to progress.
+* Need more research time to progress. **No time is allocated right now to do this, despite being an strategic priority for 2023**.
 * Still need to discuss roadmap with the Arti (and maybe with the C Tor) team.
 
 ## User Experience
 
 * UX improvements for Tor Browser and mobile.
-* Quality Assurance for Tor Browser regarding Onion Services.
-* Input from UX and Applications Teams on what to include in the plan?
+* Quality Assurance for Tor Browser regarding Onion Services (initial workload estimate for 2 moths full time during 2023).
+* May need input from UX and Applications Teams on what to include in the plan.
 
 # Tooling
 
 ## Onionprobe improvements
 
 * [Onionprobe][]: a tool for testing and monitoring status of Tor Onion Services.
-* There are many improvements towards making it kind of a swiss army knife for Onion Services testing and debugging.
+* There are many improvements towards making it kind of a multi-tool for Onion Services testing and debugging.
 * For 2023, the initial workload estimate for Onionprobe sums up to 1 month full time dedication.
 
 [Onionprobe]: https://tpo.pages.torproject.net/onion-services/onionprobe/
 
 ## Oniongroove roadmap
 
-* [Oniongroove][]: a suite for Onion Service deployment.
+* [Oniongroove][]: a suite for Onion Services deployment.
 * Right now it's only an specification, and we hope to make a prototype still on 2023.
 * Shall it be built with Arti from start?
 * For 2023, the initial workload estimate for Onionprobe sums up to 2 months full time dedication.
 
 [Oniongroove]: https://tpo.pages.torproject.net/onion-services/oniongroove/
+
+## Other tools
+
+* [Onionbalance][]: unmaintained.
+* [Stem][]: unmaintained.
+* Interesting contributions from the community:
+    * [https://github.com/bugfest/tor-controller][]
+    * [https://codeberg.org/systemfailure.net/ansible_onion_services][]
+
+[Onionbalance]: https://onionbalance.readthedocs.io/en/latest/
+[Stem]: https://stem.torproject.org/
+[https://github.com/bugfest/tor-controller]: https://github.com/bugfest/tor-controller
+[https://codeberg.org/systemfailure.net/ansible_onion_services]: https://codeberg.org/systemfailure.net/ansible_onion_services
 
 # Outreach
 
