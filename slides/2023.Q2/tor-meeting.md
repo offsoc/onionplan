@@ -172,8 +172,10 @@ Onion-only CAs                        | Low                      | Medium       
 
 ## Certificates - Next Steps
 
-* Continue to pursuing [ACME for Onions][]: trying to connect Q Misell with Let's Encrypt. This alternative has the minimal effort for Tor.
+* Continue to pursuing [ACME for Onions][]: trying to connect Q Misell with Let's Encrypt. This alternative has the minimal effort for Tor, since the specs are being [funded by OTF][] and Let's Encrypt may implement a version for themselves.
 * Some Onion Service operators may not like to have their .onion addresses published into CT Logs, so having an alternative .onion-only Certificate Authority is also being considered, but that requires a lot more effort to implement beyond having an [ACME for Onions][] implementation.
+
+[funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
 
 ## Service discovery
 

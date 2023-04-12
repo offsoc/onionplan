@@ -112,6 +112,7 @@ Existing proposals:
 * [draft-misell-acme-onion-00][] - Automated Certificate Management Environment (ACME) Extensions for ".onion" Domain Names:
     * [ACME for .onion domains](https://acmeforonions.org/)
     * [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
+    * [Work funded by OTF][https://www.opentech.fund/internet-freedom-news/april-2023/#acme]
 * [draft-suchan-acme-onion-00][] - Automated Certificate Management Environment (ACME) Onion Identifier Validation Extension:
     * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
     * [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
