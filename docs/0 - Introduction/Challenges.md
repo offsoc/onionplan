@@ -4,7 +4,7 @@
 
 [TOC]
 
-## Objetives
+## Objectives
 
 <!--
 ***Have you ever considered that we work with one of the coolest technologies?***
