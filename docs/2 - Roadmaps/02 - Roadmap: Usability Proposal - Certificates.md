@@ -20,7 +20,7 @@
 5. This document presents a summarized comparison between proposals.
 6. This needs further review and discussion.
 
-[certificate proposals]: /1%20-%20Proposals/Usability/Certification/
+[certificate proposals]: ../1%20-%20Proposals/Usability/Certification.md
 
 ## Development cycle
 
