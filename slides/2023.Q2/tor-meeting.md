@@ -279,6 +279,7 @@ Onion support work for organizations working on human rights:
 
 * Online campaigns talking about onions, their features.
 * A shift in the discourse: gathering arguments for promoting the technology: anonymity is only one of many interesting Onion Service properties.
+* Onion Services 20th Anniversary Campaign? We could think about some "anniversary media campaign" along the year, considering things happening like PoW protection, ACME for Onions etc.
 
 # Q&A
 
