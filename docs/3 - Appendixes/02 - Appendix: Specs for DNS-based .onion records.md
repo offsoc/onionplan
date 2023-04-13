@@ -178,6 +178,13 @@ To be taken into account if choosing the DNSSEC pathway:
 
 2. A DNSSEC stapling mechanism could make safer to use DNSSEC.
 
+3. A DNSSEC chaining mechanism could reduce the number of queries and
+   responses. There are specs out there in different stages of maturity:
+    * [RFC 9102 - TLS DNSSEC Chain Extension](https://datatracker.ietf.org/doc/html/rfc9102)
+    * [draft-shore-tls-dnssec-chain-extension-02](https://datatracker.ietf.org/doc/html/draft-shore-tls-dnssec-chain-extension)
+    * [draft-ietf-tls-dnssec-chain-extension-00](https://datatracker.ietf.org/doc/html/draft-ietf-tls-dnssec-chain-extension-00)
+    * [draft-ietf-dnsop-edns-chain-query-02](https://datatracker.ietf.org/doc/html/draft-ietf-dnsop-edns-chain-query-02)
+
 ### DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT) support
 
 Whether DoH or DoT should be used for resolution?
