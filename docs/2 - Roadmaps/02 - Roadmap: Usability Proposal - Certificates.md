@@ -110,6 +110,12 @@ HTTPS   Onion + HTTP  Form           | Onion Icon + Warning Popup on Form Submit
 
 Perhaps the Onion Icon could be customized to have a different appearance according to the scenario.
 
+It's also important to discuss whether to [disable self-signed certificate
+warnings when visiting .onion sites][], considering the consequences for the
+choice, as certificates are important to authenticate that a site really
+belongs to the expected peer etc.
+
 [current behavior]: https://support.torproject.org/onionservices/onionservices-5/
 [SOOC]: https://github.com/alecmuffett/onion-dv-certificate-proposal/blob/master/text/draft-muffett-same-origin-onion-certificates.txt
 [this comment about previously-tested scenarios]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410#note_2616846
+[disable self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
