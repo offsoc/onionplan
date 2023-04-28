@@ -97,6 +97,7 @@ Since the Limerick session, i.e, from 2022.Q4 to 2023.Q2:
 ## Recent progress on PoW
 
 * [prop327: Implement PoW over Introduction Circuits (#40634) · Issues · The Tor Project / Core / Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
+* UX issue: mobile clients would no be able to solve fast enough (maybe only the high end will). Needs more discussion on how PoW would impact legitimate mobile users during an ongoing DoS.
 
 ## Onion Services roadmap on Arti
 
@@ -280,6 +281,22 @@ Onion support work for organizations working on human rights:
 * Online campaigns talking about onions, their features.
 * A shift in the discourse: gathering arguments for promoting the technology: anonymity is only one of many interesting Onion Service properties.
 * Onion Services 20th Anniversary Campaign? We could think about some "anniversary media campaign" along the year, considering things happening like PoW protection, ACME for Onions etc.
+
+# Summary
+
+## Challenges
+
+* Getting feedback without getting drowned.
+
+* Keeping discussions well documented.
+
+* We are only X% (halfway?) there. The underlying layer exists but now needs plenty of usability improvements in many areas.
+
+## Opportunities
+
+* Turn Onion Services into a platform for other solutions/platforms.
+
+* Wide adoption of Onion Services technologies may lead to network growth and increase the número of relays.
 
 # Q&A
 
