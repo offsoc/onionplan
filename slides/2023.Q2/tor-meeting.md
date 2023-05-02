@@ -2,7 +2,7 @@
 title: Onion Plan
 subtitle: 2023 Tor Meeting
 date: 2023.Q2
-institute: Onion Support and Working Group - The Tor Project
+institute: Onion Support and Onion Services Working Groups - The Tor Project
 author:
   - name: Raya, Rhatto, David Goulet
 slides:
