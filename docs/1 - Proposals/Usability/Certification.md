@@ -16,6 +16,41 @@ transactions.
 
 [Certificate Authorities]: https://en.wikipedia.org/wiki/Certificate_authority
 
+## Benefits
+
+It may be argued that Onion Services connections are already
+_self-authenticated_, -- since the public key and the URL are tied together and
+the connection is peer-to-peer encrypted --, and thus making the need for HTTPS
+pointless, or at most giving only an impression on users of additional security.
+
+But having valid HTTPS connection in Onion Services could enable many other
+enhancements, such as:
+
+1. Some browser features are available only with HTTPS, like [Content Security
+   Policy][] (CSP) and [Secure cookies][].
+
+2. Allows for the usage of [HTTP/2][], since some browsers only support it if on
+   HTTPS[^http3-availability].
+
+2. It could be argued that this is also security-in-depth by having yet another
+   layer of encryption atop of other existing encryption layers. Even if the
+   theoretical gain in terms of interception and tampering resistance is not
+   relevant, it would still allow for service operators to split their encryption
+   keys in different servers -- like one with the Onion Service keys and a backend
+   having the TLS keys, thus making a compromise in one of the servers exposing
+   only the cryptographic material of one of the communication layers.
+
+The following discussion is not yet conclusive, and the problem space may be
+hard to solve.
+
+[Secure cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#security
+[Content Security Policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+[HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
+[HTTP/3]: https://en.wikipedia.org/wiki/HTTP/3
+
+[^http3-availability]: But not [HTTP/3][] yet, since it uses UDP not available
+                       via Tor (as of 2023-05).
+
 ## Overview
 
 Proposal                              | Certification                                         | Validation                                        | Status
