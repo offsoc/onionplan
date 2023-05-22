@@ -57,7 +57,8 @@ Proposal                              | Certification                           
 --------------------------------------|-------------------------------------------------------|---------------------------------------------------|-----------------------------------------------
 Existing CA validation                | CA/B Baseline Requirements for .onion                 | CA chain                                          | Implemented, fully supported
 ACME for .onion                       | CA/B Baseline Requirements for .onion                 | CA chain                                          | Proposed specification
-Self-signed X.509 for .onion          | Signed by a "CA" derived from the .onion private key  | Check if cert is issued by the .onion private key | Proof-of-concept, no browser integration
+Self-signed certificates              | Self-signed certificate                               | None                                              | Depends on per-application support
+Self-signed X.509 from .onion         | Signed by a "CA" derived from the .onion private key  | Check if cert is issued by the .onion private key | Proof-of-concept, no browser integration
 Same Origin Onion Certificates (SOOC) | Self-signed certs                                     | Skip for .onion addresses when conditions match   | Proposal (not yet submitted for specification)
 DANE for .onion                       | Self-signed certs                                     | DNSSEC                                            | Concept, no proposal yet
 Onion-only CAs                        | Checks SAN and an .onion signature in an extension    | CA chain                                          | Concept, no proposal yet
@@ -157,7 +158,48 @@ Existing proposals:
 [draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
 [Let's Encrypt]: https://letsencrypt.org/
 
-## Self-signed X.509 for .onion (self-signed by the .onion address)
+## Self-signed certificates
+
+This proposal consists in basically allowing for the use of self-signed
+certificates with Onion Services:
+
+1. For the Tor Browser and other software maintained by Tor, this would consist
+   in [disabling self-signed certificate warnings when visiting .onion
+   sites][].
+2. For third party software, this would probably require patches or
+   documentation instructing users to accept non-CA signed certificates when
+   accessing Onion Services, which is very hard to provide and to maintain
+   for a wide ranging of tools.
+
+This proposal _would not provide_:
+
+1. _A self-authentication mechanism_ (since the certificate is self-signed).
+   This have a huge weight since an important piece of security provided
+   by HTTPS is not just end-to-end encryption but also authentication.
+
+Supporting self-signed certificates with Onion Services has a huge gain,
+but also introduces an authentication complexity. That's why proper UI
+indicators and hints are needed:
+
+1. For the encryption state of the site (HTTP and various HTTPS situations).
+2. For the authentication state of the site, telling how it was (not)
+   authenticated.
+
+There are already sketches for [different scenarios][] for how various user
+interface hints and indicators could exist for Tor Browser and other software
+maintained by Tor, as well as existing certificate proposals that can change
+the certificate landscape for Onion Services in the future, which could be
+adopted by operators instead of relying on self-signed certs.
+
+But all these enhancements would still limit the practical application domain
+of this proposal, since it would be readily available only to a small set
+of applications like Tor Browser, except if by pursuing some standardization
+such as the SOOC proposal below.
+
+[disabling self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
+[different scenarios]: ../1%20-%20Roadmaps/02%20-%20Roadmap:%20Usability%20Proposal%20-%20Certificates.md
+
+## Self-signed X.509 from .onion (self-signed by the .onion address)
 
 Another option for having HTTPS in Onion Services that may be available in the
 future is to use Onion Service keypair to self-validate an HTTPS certificate:
@@ -242,6 +284,11 @@ certificate. That would:
 Instead, it's better to use the Onion Service keypair to act as a CA that then
 certifies a separate key pair to be used with HTTPS.
 
+Similar to the self-signed certificate proposal, this approach would have
+limited adoption if only as small number of applications implement it -- such
+as the Tor Browser --, except if endorsed by many stakeholders in the form of a
+specification -- like the SOOC proposal discussed below.
+
 [^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key agreement scheme no to be confused with [Ed25519][].
 [^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][]
                        and [Support Ed25519 and Ed448][] threads for details.
@@ -266,11 +313,16 @@ very limited circumstances, we shall not care about signatures at all",
 allowing clients to [disable self-signed certificate warnings when visiting
 .onion sites][].
 
-See [this SOOC document][] for details.
+The main difference between the SOOC proposal and to simply start allowing
+self-signed certificates is that SOOC is aimed to be an IETF proposal that
+could gain momentum and hence have a greater chance to be adopt by many
+different vendors.
+
+See [the SOOC document][] for details.
 
 [Same Origin Onion Certificates]: https://github.com/alecmuffett/onion-dv-certificate-proposal
 [disable self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
-[this SOOC document]: https://docs.google.com/document/d/1xE5eaDMiOKphDxijK9tfIWHUB-h-fTG8tb3laofXLSc/edit#heading=h.dphbi0rss5tj
+[the SOOC document]: https://docs.google.com/document/d/1xE5eaDMiOKphDxijK9tfIWHUB-h-fTG8tb3laofXLSc/edit#heading=h.dphbi0rss5tj
 
 ## DANE for .onion
 
