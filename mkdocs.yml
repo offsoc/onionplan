@@ -45,7 +45,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
-copyright: Copyright &copy; 2022 The Tor Project Inc. See LICENSE for details.
+copyright: Copyright &copy; 2023 The Tor Project Inc. See LICENSE for details.
 
 extra:
   generator: false
