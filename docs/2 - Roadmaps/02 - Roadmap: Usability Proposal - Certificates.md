@@ -7,7 +7,7 @@
 
 [TOC]
 
-## Summary
+## Executive Summary
 
 1. All existing [certificate proposals][] are non-conflicting!
 2. That means they could be pursued in parallel, so there's no block in here
@@ -87,8 +87,38 @@ Onion-only CAs                        | Low                      | Medium       
 ## Enhancements for the Tor Browser
 
 Additionally to implementing new methods for HTTPS certification, users could
-benefit from Tor Browser improvements in the UI widgets resposible for
+benefit from Tor Browser improvements in the UI widgets responsible for
 displaying connection security information.
+
+#### Enhanced User Interface (UI) indicators
+
+Announcing that a connection "is secure" can have ambiguous meanings depending
+on how it's presented. Maybe it will be intrinsically ambiguous if presented by
+a single piece of user interface, since at this level the user can't know if
+the "connection is secure" because of the Onion Service connection and also for
+the additional HTTPS connection:
+
+1. The Onion Service connection is kind of _self-authenticating_ since the
+   public key and the URL are tied together and the connection is peer-to-peer
+   encrypted. But at the same time _it's not self-authenticating_ since there's no
+   intrinsic way to authenticate the onionsite with the entity it declares to
+   represent. This further authentication needs to be done externally, with
+   many existing ways.
+
+2. In the other hand, HTTPS certificates use an entirely different model of
+   Certificate Authority-based authentication, where an authenticated
+   relationship is established between the site and a DNS-based name -- or
+   sometimes also with legal documents in case of Extended Validation (EV)
+   certs are used. A TLS connection is also peer-to-peer encrypted, but the
+   authentication is somehow "external" and "hierarchical" (in the sense that it
+   depends on an external and hierarchical chain of trust implemented with
+   built-in Certificate Authorities keys in a browser).
+
+While each model works satisfactorily well on their application domains, mixing
+both together in a single bit of UX may generate different, often ambiguous
+interpretations.
+
+### Different scenarios
 
 As pointed by [this comment about previously-tested scenarios][], some
 additional results could be considered to expand the [current behavior][], like
@@ -108,7 +138,8 @@ HTTP(S) Onion + HTTP  Content        | Onion Warning Icon
 HTTP(S) Onion + HTTPS Content        | Onion Icon
 HTTPS   Onion + HTTP  Form           | Onion Icon + Warning Popup on Form Submit
 
-Perhaps the Onion Icon could be customized to have a different appearance according to the scenario.
+Perhaps the Onion Icon could be customized to have a different appearance
+according to the scenario.
 
 It's also important to discuss whether to [disable self-signed certificate
 warnings when visiting .onion sites][], considering the consequences for the
