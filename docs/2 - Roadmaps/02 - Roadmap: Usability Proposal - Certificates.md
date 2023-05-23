@@ -47,7 +47,8 @@ Proposal                              | Engineering effort       | Operation eff
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | High                     | Medium                  | High                    |
-Self-signed X.509 for .onion          | Very High                | None                    | Very High               |
+Self-signed certificates              | Very High                | None                    | Very High               |
+Self-signed X.509 from .onion         | Very High                | None                    | Very High               |
 Same Origin Onion Certificates (SOOC) | High                     | None                    | Very High               |
 DANE for .onion                       | High                     | None                    | Very High               |
 Onion-only CAs                        | Low                      | High                    | High                    |
@@ -60,7 +61,8 @@ Proposal                              | Engineering challenge    | Operation cha
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | Low                      | Low                     | Medium (adoption)       |
-Self-signed X.509 for .onion          | High                     | None                    | High                    |
+Self-signed certificates              | High                     | None                    | High                    |
+Self-signed X.509 from .onion         | High                     | None                    | High                    |
 Same Origin Onion Certificates (SOOC) | Low                      | None                    | High                    |
 DANE for .onion                       | Low                      | None                    | High                    |
 Onion-only CAs                        | High                     | High                    | High                    |
@@ -73,7 +75,8 @@ Proposal                              | Engineering risks        | Operation ris
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
 ACME for .onion                       | Low                      | Low                     | Medium                  |
-Self-signed X.509 for .onion          | High                     | None                    | ?                       |
+Self-signed certificates              | High                     | None                    | ?                       |
+Self-signed X.509 from .onion         | High                     | None                    | ?                       |
 Same Origin Onion Certificates (SOOC) | Low                      | None                    | ?                       |
 DANE for .onion                       | High                     | None                    | ?                       |
 Onion-only CAs                        | Low                      | Medium                  | ?                       |
