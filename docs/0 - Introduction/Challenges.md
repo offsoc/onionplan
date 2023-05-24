@@ -55,7 +55,7 @@ The rest of this research deals with **how to get these in place**!
 
 ## Current context
 
-As of December 2022,
+As of May 2023,
 
 * The usability improvements of Onion Services still presents outstanding
   challenges that are being discussed for years. Now that the [protocol v3][] is
@@ -67,14 +67,19 @@ As of December 2022,
 * But the roadmap seems to be stalled, not only for the lack of developers but
   also because we're missing a "perfect" solution that we never (and may never)
   find.
-* There's no Onion Service team at Tor: right now Onion Service
-  development is split in multiple teams with their own existing roadmaps.
-* At the same time, Tor cannot be responsible for things like domain issuance:
+* Now there's an Onion Service Working Group at Tor, which takes care of
+  converging Onion Service development happening on multiple teams at Tor.
+* In terms of governance, Tor cannot be responsible for things like domain issuance:
   it cannot be authoritative (Tor just makes the software, don't run the
   network and cannot issue Onion Names) and it's a non-profit (cannot have a
   revenue out of Onion Names issuance), which makes even harder to decide who
   else could be responsible (or finding solutions that do not rely on any
   authoritative instance) for it and how development could be sustained.
+* Part of The Onion Plan was incorporated into Tor's Strategic Plan for 2023:
+    * _Goal 2 (product) - Objective 2 (any person on the planet be able to use Tor
+      to access any online service)_:
+        * Key Result 1 - _Health of onion services its improved, onion names plan
+          draft is concluded_.
 
 Converging the planning, the fundraising strategy and an adoption campaign can
 help put things moving forward again.
