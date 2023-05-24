@@ -36,7 +36,7 @@ This research has the following major sections:
 The overall plan is also split into roadmap tracks that may be worked by
 distinct, integrated teams:
 
-1. Health: DoS protections, performance improvements etc.
+1. Network Layer: DoS protections, performance improvements etc.
 2. Usability: Onion Names, Tor Browser improvements etc.
 3. Tooling: Onionbalance, Onionprobe, Oniongroove etc.
 4. Outreach: documentation, support, usage/adoption campaigns etc.

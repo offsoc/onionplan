@@ -1,4 +1,4 @@
-# Health Roadmap
+# Network Layer Roadmap
 
 * Status: DRAFT
 * Version: v2023.Q2
@@ -25,7 +25,7 @@
 
 ## Metrics
 
-* Needs input from the Network Health Team for what can be included here.
+* Needs input from the Network, Network Health and Metrics Teams for what can be included here.
 
 ## Relevant DoS-related issues
 
