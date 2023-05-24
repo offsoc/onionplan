@@ -78,7 +78,7 @@ mindmap
 ```
 -->
 
-![Mindmap](assets/mindmap.png)
+![Mindmap](../assets/mindmap.png)
 
 ## Terminology
 
