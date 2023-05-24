@@ -44,6 +44,37 @@ distinct, integrated teams:
 Fundraising projects can integrate all or some of these items by proposing an
 ***Onion Service Enhancement Package***.
 
+```mermaid
+mindmap
+  root((The Onion Plan))
+    Network Layer
+      Health
+        DoS Defenses
+        Performance
+        Metrics
+      Arti
+    Usability
+      Certificates
+      Service Discovery
+        Address Translation
+        Onion Names
+    Applications
+      Development
+        Libraries
+        Documentation
+      Operation
+        Onionbalance
+        Onionprobe
+        Oniongroove
+      Use
+        Messaging
+        File sharing
+        Etc
+    Outreach
+      Campaigns
+      Support
+```
+
 ## Terminology
 
 This research relies on specific [Terminology][] about [Onion Services][]
