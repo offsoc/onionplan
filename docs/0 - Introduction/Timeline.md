@@ -1,8 +1,8 @@
-# Onion Services Timeline
+# Timeline
 
 ## Index
 
-[[_TOC_]]
+[[TOC]]
 
 ## About
 
