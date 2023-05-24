@@ -44,6 +44,8 @@ distinct, integrated teams:
 Fundraising projects can integrate all or some of these items by proposing an
 ***Onion Service Enhancement Package***.
 
+<!-- Not supported yet by Onion MkDocs -->
+<!--
 ```mermaid
 mindmap
   root((The Onion Plan))
@@ -74,6 +76,9 @@ mindmap
       Campaigns
       Support
 ```
+-->
+
+![Mindmap](assets/mindmap.png)
 
 ## Terminology
 
