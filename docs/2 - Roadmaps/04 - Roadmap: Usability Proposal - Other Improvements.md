@@ -12,9 +12,16 @@
 This document tracks other relevant usability improvements, mostly related to
 user experience for tools like [Tor Browser][].
 
+Needs input from UX and Applications Teams on what to include in the roadmap.
+
 [Tor Browser]: https://www.torproject.org/download/
 
 ## Tor Browser
+
+### Quality Assurance
+
+* Quality Assurance for Tor Browser regarding Onion Services (initial workload
+  estimate for 2 moths full time during 2023).
 
 ### Onion-Location for Tor Browser
 

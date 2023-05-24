@@ -1,7 +1,7 @@
 # Outreach Roadmap
 
 * Status: DRAFT
-* Version: v2022.Q4
+* Version: v2023.Q2
 
 ## Index
 
@@ -73,6 +73,12 @@ and usage.
   look like: will Onion Services become a norm (e.g. how the web has moved to
   HTTPS) or mainly reserved for specific use cases (e.g. whistleblowing, file
   sharing)?
+* Online campaigns talking about onions, their features.
+* A shift in the discourse: gathering arguments for promoting the technology:
+  anonymity is only one of many interesting Onion Service properties.
+* Onion Services 20th Anniversary Campaign? We could think about some
+  "anniversary media campaign" along the year, considering things happening
+  like PoW protection, ACME for Onions etc.
 
 ## Resources
 

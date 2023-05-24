@@ -35,6 +35,8 @@ Year | Technology or relevant event
 2022 | [CA/B Forum Ballot SC54][]: Onion Cleanup
 2022 | [DoS and the Onion Services Resource Coalition][]
 2023 | [ACME for Onions][]
+2023 | [Proposal 327][] (Proof-of-Work) [merged (#40634)][]
+2023 | Onion Services 20th Anniversary
 
 ## Applications
 
@@ -66,6 +68,8 @@ Year | Application
 [CA/B Forum Ballot SC54]: https://cabforum.org/2022/03/24/ballot-sc54-onion-cleanup/
 [DoS and the Onion Services Resource Coalition]: https://blog.torproject.org/tor-network-ddos-attack/
 [ACME for Onions]: https://acmeforonions.org
+[Proposal 327]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt
+[merged (#40634)]: https://gitlab.torproject.org/tpo/core/tor/-/issues/40634
 
 [Onionshare]: https://support.torproject.org/onionservices/v2-deprecation/
 [GlobaLeaks]: https://en.wikipedia.org/wiki/GlobaLeaks

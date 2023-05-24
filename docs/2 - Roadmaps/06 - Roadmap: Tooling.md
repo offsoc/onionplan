@@ -74,24 +74,49 @@ and API.
 
 ### Onionbalance (scaling)
 
+* Needs to [define a new maintainer](https://gitlab.torproject.org/tpo/core/onionbalance/-/issues/10).
 * Improvements package. Which
   [issues](https://gitlab.torproject.org/tpo/core/onionbalance/-/issues) to
   include?
 
 ### Onionprobe (metrics)
 
-* Improvements package. Which
+* [Onionprobe][]: a tool for testing and monitoring status of Tor Onion Services.
+* There are many improvements towards making it kind of a multi-tool for Onion Services testing and debugging.
+* For 2023, the initial workload estimate for Onionprobe sums up to 1 month full time dedication.
+* Improvements package need to be defined. Which
   [issues](https://gitlab.torproject.org/tpo/onion-services/onionprobe/-/issues)
   to include?
 
+[Onionprobe]: https://tpo.pages.torproject.net/onion-services/onionprobe/
+
 ### Oniongrove (management)
 
-* Review specs.
-* Create the [threat model](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/2).
-* Finish [deployment research](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/1).
-* Initial implementation.
+* [Oniongroove][]: a suite for Onion Services deployment.
+* Right now it's only an specification, and we hope to make a prototype still on 2023.
+* It should probably be built with Arti from start.
+* For 2023, the initial workload estimate for Onionprobe sums up to 2 months full time dedication,
+  which could be concentrated in:
+    * Reviewing specs.
+    * Creating the [threat model](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/2).
+    * Finishing [deployment research](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/1).
+    * Doing the initial proof of concept implementation.
+
+[Oniongroove]: https://tpo.pages.torproject.net/onion-services/oniongroove/
 
 ### Vanguards (protections)
 
 * Improvements package. Which
   [issues](https://github.com/mikeperry-tor/vanguards/issues) to include?
+
+### Other
+
+* [Stem][]: seems not to be maintained, but many Onion Services applications
+  depends on it.
+* Interesting contributions from the community:
+    * [https://github.com/bugfest/tor-controller][]
+    * [https://codeberg.org/systemfailure.net/ansible_onion_services][]
+
+[Stem]: https://stem.torproject.org/
+[https://github.com/bugfest/tor-controller]: https://github.com/bugfest/tor-controller
+[https://codeberg.org/systemfailure.net/ansible_onion_services]: https://codeberg.org/systemfailure.net/ansible_onion_services

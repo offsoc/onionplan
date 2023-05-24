@@ -9,7 +9,12 @@
 
 ## DoS defenses
 
-* Focus on needed develop to mitigate DoS.
+* Focus on needed develop to mitigate DoS:
+    * [Tor is slow right now. Here is what is happening. | The Tor Project](https://blog.torproject.org/tor-network-ddos-attack/)
+    * [prop327: Implement PoW over Introduction Circuits (#40634) · Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
+      * UX issue: mobile clients would no be able to solve fast enough (maybe only
+        the high end will). Needs more discussion on how PoW would impact
+        legitimate mobile users during an ongoing DoS.
 * Needs input from the Network Team for what can be included here.
 * Might include deliverable from the "Onion Services resource coalition"
   project.
@@ -50,7 +55,8 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 
 ## Onion Service support in Arti
 
-See [Arti 1.1.3 release notes](https://blog.torproject.org/arti_113_released/).
+See Arti's [1.1.3](https://blog.torproject.org/arti_113_released/) and
+[1.1.4](https://blog.torproject.org/arti_114_released/) release notes.
 
 ## Relevant issue boards
 

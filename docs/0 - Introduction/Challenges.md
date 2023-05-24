@@ -2,7 +2,20 @@
 
 ## Index
 
-[TOC]
+[[TOC]
+
+## About
+
+* **What**: The Onion Plan is an _applied research_ to _help and facilitate_
+  Onion Services improvement.
+* **Why**: discussions often gets easily dispersed and buried; there's a need
+  to keep track of many options and how to translate those into funding
+  projects.
+* **How**: collecting and analyzing proposals; building roadmap scenarios.
+* **Who**: it's a multi-team effort and everyone can collaborate. Currently
+  it's happening mostly on Community and Network teams.
+* **When**: discussions on Onion Service improvements happens for years and
+  years; we started organizing it during 2022.
 
 ## Objectives
 

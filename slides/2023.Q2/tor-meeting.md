@@ -17,16 +17,21 @@ slides:
 ## Session goals
 
 1. Inform the community about what we've done, what we plan to do,
-  the challenges ahead and the open questions about Onion Services.
+   the challenges ahead and the open questions about Onion Services.
 2. And then get some input from people :)
 
 ## Onion Plan?
 
-* **What**: The Onion Plan is an _applied research_ to _help and facilitate_ Onion Services improvement.
-* **Why**: discussions often gets easily dispersed and buried; there's a need to keep track of many options and how to translate those into funding projects.
+* **What**: The Onion Plan is an _applied research_ to _help and facilitate_
+  Onion Services improvement.
+* **Why**: discussions often gets easily dispersed and buried; there's a need
+  to keep track of many options and how to translate those into funding
+  projects.
 * **How**: collecting and analyzing proposals; building roadmap scenarios.
-* **Who**: it's a multi-team effort and everyone can collaborate. Currently it's happening mostly on Community and Network teams.
-* **When**: discussions on Onion Service improvements happens for years and years; we started organizing it during 2022.
+* **Who**: it's a multi-team effort and everyone can collaborate. Currently
+  it's happening mostly on Community and Network teams.
+* **When**: discussions on Onion Service improvements happens for years and
+  years; we started organizing it during 2022.
 
 # Retrospective
 
@@ -173,8 +178,14 @@ Onion-only CAs                        | Low                      | Medium       
 
 ## Certificates - Next Steps
 
-* Continue to pursuing [ACME for Onions][]: trying to connect Q Misell with Let's Encrypt. This alternative has the minimal effort for Tor, since the specs are being [funded by OTF][] and Let's Encrypt may implement a version for themselves.
-* Some Onion Service operators may not like to have their .onion addresses published into CT Logs, so having an alternative .onion-only Certificate Authority is also being considered, but that requires a lot more effort to implement beyond having an [ACME for Onions][] implementation.
+* Continue to pursuing [ACME for Onions][]: trying to connect Q Misell with
+  Let's Encrypt. This alternative has the minimal effort for Tor, since the
+  specs are being [funded by OTF][] and Let's Encrypt may implement a version for
+  themselves.
+* Some Onion Service operators may not like to have their .onion addresses
+  published into CT Logs, so having an alternative .onion-only Certificate
+  Authority is also being considered, but that requires a lot more effort to
+  implement beyond having an [ACME for Onions][] implementation.
 
 [funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
 
@@ -224,14 +235,17 @@ Phase Technology     Censorship resistance
 
 ## Service Discovery - Next Steps
 
-* Current goal is not to implement any of this, but first to create a feasible roadmap proposal.
-* Need more research time to progress. **No time is allocated right now to do this, despite being an strategic priority for 2023**.
+* Current goal is not to implement any of this, but first to create a feasible
+  roadmap proposal.
+* Need more research time to progress. **No time is allocated right now to do
+  this, despite being an strategic priority for 2023**.
 * Still need to discuss roadmap with the Arti (and maybe with the C Tor) team.
 
 ## User Experience
 
 * UX improvements for Tor Browser and mobile.
-* Quality Assurance for Tor Browser regarding Onion Services (initial workload estimate for 2 moths full time during 2023).
+* Quality Assurance for Tor Browser regarding Onion Services (initial workload
+  estimate for 2 moths full time during 2023).
 * May need input from UX and Applications Teams on what to include in the plan.
 
 # Tooling
@@ -279,8 +293,11 @@ Onion support work for organizations working on human rights:
 ## Online campaigns
 
 * Online campaigns talking about onions, their features.
-* A shift in the discourse: gathering arguments for promoting the technology: anonymity is only one of many interesting Onion Service properties.
-* Onion Services 20th Anniversary Campaign? We could think about some "anniversary media campaign" along the year, considering things happening like PoW protection, ACME for Onions etc.
+* A shift in the discourse: gathering arguments for promoting the technology:
+  anonymity is only one of many interesting Onion Service properties.
+* Onion Services 20th Anniversary Campaign? We could think about some
+  "anniversary media campaign" along the year, considering things happening
+  like PoW protection, ACME for Onions etc.
 
 # Summary
 
@@ -290,13 +307,15 @@ Onion support work for organizations working on human rights:
 
 * Keeping discussions well documented.
 
-* We are only X% (halfway?) there. The underlying layer exists but now needs plenty of usability improvements in many areas.
+* We are only X% (halfway?) there. The underlying layer exists but now needs
+  plenty of usability improvements in many areas.
 
 ## Opportunities
 
 * Turn Onion Services into a platform for other solutions/platforms.
 
-* Wide adoption of Onion Services technologies may lead to network growth and increase the number of relays.
+* Wide adoption of Onion Services technologies may lead to network growth and
+  increase the number of relays.
 
 # Q&A
 

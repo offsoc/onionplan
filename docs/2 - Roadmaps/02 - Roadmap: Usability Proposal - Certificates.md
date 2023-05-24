@@ -22,6 +22,24 @@
 
 [certificate proposals]: ../1%20-%20Proposals/Usability/Certification.md
 
+## Current evaluation
+
+By the current evaluation, [ACME for Onions][] seems like the best option so
+far, since it opens two possibilities:
+
+1. Adoption by existing Certificate Authorities such as Let's Encrypt.  This
+   alternative has the minimal effort for Tor, since the specs are being
+   [funded by OTF][] and Let's Encrypt may implement a version for themselves.
+
+2. Running an .onion-only CA. Some Onion Service operators may not like to have
+   their .onion addresses published into CT Logs, so having an alternative
+   .onion-only Certificate Authority is also being considered, but that requires a
+   lot more effort to implement beyond having an [ACME for Onions][]
+   implementation.
+
+[ACME for Onions]: https://acmeforonions.org
+[funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
+
 ## Development cycle
 
 Development can be split into the following levels:
