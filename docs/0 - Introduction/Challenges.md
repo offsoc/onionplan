@@ -68,7 +68,7 @@ As of May 2023,
   also because we're missing a "perfect" solution that we never (and may never)
   find.
 * Now there's an Onion Service Working Group at Tor, which takes care of
-  converging Onion Service development happening on multiple teams at Tor.
+  converging Onion Service development happening on multiple teams.
 * In terms of governance, Tor cannot be responsible for things like domain issuance:
   it cannot be authoritative (Tor just makes the software, don't run the
   network and cannot issue Onion Names) and it's a non-profit (cannot have a

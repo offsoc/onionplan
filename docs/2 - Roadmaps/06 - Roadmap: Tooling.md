@@ -101,6 +101,10 @@ and API.
     * Creating the [threat model](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/2).
     * Finishing [deployment research](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/1).
     * Doing the initial proof of concept implementation.
+* Points of attention:
+    * Tools should be planned to be as compatible as possible with real-world
+      devops actual technology toolkit.
+    * Maintenance of different DevOps tech flavors could be outsourced
 
 [Oniongroove]: https://tpo.pages.torproject.net/onion-services/oniongroove/
 
