@@ -47,12 +47,12 @@ for Onion Service libraries:
 
 Additionally:
 
-* Libraries should have good documentation for newcomers (that can be
-  hard to do until the library is stable enough).
-* Some simple examples need to be provided, for learning purposes or
-  as boilerplates for more complex applications.
-* Having bindings for popular languages like Python and JavaScript.
-  Maybe a library could be distributed as a binary with those bindings.
+* [ ] Libraries should have good documentation for newcomers (that can be
+      hard to do until the library is stable enough).
+* [ ] Some simple examples need to be provided, for learning purposes or
+      as boilerplates for more complex applications.
+* [ ] Having bindings for popular languages like Python and JavaScript.
+      Maybe a library could be distributed as a binary with those bindings.
 
 For reference, [Stem][] and [txtorcon][] are good examples: they're easy
 to install, relatively easy to develop and both have good documentation
