@@ -38,7 +38,7 @@ distinct, integrated teams:
 
 1. Network Layer: DoS protections, performance improvements etc.
 2. Usability: Onion Names, Tor Browser improvements etc.
-3. Tooling: Onionbalance, Onionprobe, Oniongroove etc.
+3. Applications: softwares and libraries for using Onion Services technology.
 4. Outreach: documentation, support, usage/adoption campaigns etc.
 
 Fundraising projects can integrate all or some of these items by proposing an
