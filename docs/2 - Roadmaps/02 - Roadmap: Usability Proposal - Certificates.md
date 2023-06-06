@@ -142,10 +142,15 @@ proxy their requests through Tor:
     * No CAA field check is done.
     * Pros:
         * That means just an ACME API transaction to have a certificate.
+        * Smaller implementation complexity.
+        * Support for wildcard certificates.
     * Cons:
         * The lack of `http-01` and `tls-alpn-01` challenges means that
           Onion Services split into a Tor frontend proxy and a backend
-          HTTPS connector will have trouble ...
+          HTTPS connector will need additional logic in the client side
+          in order to obtain a certificate, but this can be fixed by
+          (re-)generating certificates in a dedicated box to be later
+          deployed into production machines.
         * Having no CAA check may not reduce the risk of certificate missuance,
           but in practice:
             * Those certificates would be ineffective to run MITM attacks in the
