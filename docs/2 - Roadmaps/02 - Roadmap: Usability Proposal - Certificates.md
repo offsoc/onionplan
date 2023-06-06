@@ -7,7 +7,9 @@
 
 [TOC]
 
-## Executive Summary
+## Proposals evaluation
+
+### Summary
 
 1. All existing [certificate proposals][] are non-conflicting!
 2. That means they could be pursued in parallel, so there's no block in here
@@ -22,27 +24,9 @@
 
 [certificate proposals]: ../1%20-%20Proposals/Usability/Certification.md
 
-## Current evaluation
+### Development cycle
 
-By the current evaluation, [ACME for Onions][] seems like the best option so
-far, since it opens two possibilities:
-
-1. Adoption by existing Certificate Authorities such as Let's Encrypt.  This
-   alternative has the minimal effort for Tor, since the specs are being
-   [funded by OTF][] and Let's Encrypt may implement a version for themselves.
-
-2. Running an .onion-only CA. Some Onion Service operators may not like to have
-   their .onion addresses published into CT Logs, so having an alternative
-   .onion-only Certificate Authority is also being considered, but that requires a
-   lot more effort to implement beyond having an [ACME for Onions][]
-   implementation.
-
-[ACME for Onions]: https://acmeforonions.org
-[funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
-
-## Development cycle
-
-Development can be split into the following levels:
+Development can be split into the following stage:
 
 1. Engineering: work to implement the proposal at the client side in various
    places (clients, libraries, standards etc).
@@ -57,59 +41,99 @@ Level requirement:
   need engineering and governance work.
 * Proposals that are only engineered may remain in a prototype stage.
 
-## Effort
+### Requirements and prioritizations
+
+1. Prioritize what can be done without client or library modifications, as
+   these are harder to implement, maintain, upstream and standardize.
+2. Minimize effort, challenges and risks.
+3. Consider the _paths of least resistance_ when analyzing a solution.
+
+Overall assessment criteria: the highest value on each stage (engineering,
+operation and governance).
+
+### Effort
 
 Effort estimates the amount of work involved for each level.
 
 Proposal                              | Engineering effort       | Operation effort        | Governance effort       | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
-ACME for .onion                       | High                     | Medium                  | High                    |
-Self-signed certificates              | Very High                | None                    | Very High               |
-Self-signed X.509 from .onion         | Very High                | None                    | Very High               |
-Same Origin Onion Certificates (SOOC) | High                     | None                    | Very High               |
-DANE for .onion                       | High                     | None                    | Very High               |
-Onion-only CAs                        | Low                      | High                    | High                    |
+ACME for .onion                       | High                     | Medium                  | High                    | High
+Self-signed certificates              | Very High                | None                    | Very High               | Very High
+Self-signed X.509 from .onion         | Very High                | None                    | Very High               | Very High
+Same Origin Onion Certificates (SOOC) | High                     | None                    | Very High               | Very High
+DANE for .onion                       | High                     | None                    | Very High               | Very High
+Onion-only CAs                        | Low                      | High                    | High                    | High
 
-## Challenge
+### Challenge
 
 Estimate the difficulty in solving open questions while implementing a given proposal.
 
 Proposal                              | Engineering challenge    | Operation challenge     | Governance challenge    | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
-ACME for .onion                       | Low                      | Low                     | Medium (adoption)       |
-Self-signed certificates              | High                     | None                    | High                    |
-Self-signed X.509 from .onion         | High                     | None                    | High                    |
-Same Origin Onion Certificates (SOOC) | Low                      | None                    | High                    |
-DANE for .onion                       | Low                      | None                    | High                    |
-Onion-only CAs                        | High                     | High                    | High                    |
+ACME for .onion                       | Low                      | Low                     | Medium (adoption by CAs)| Medium
+Self-signed certificates              | High                     | None                    | High                    | High
+Self-signed X.509 from .onion         | High                     | None                    | High                    | High
+Same Origin Onion Certificates (SOOC) | Low                      | None                    | High                    | High
+DANE for .onion                       | Low                      | None                    | High                    | High
+Onion-only CAs                        | High                     | High                    | High                    | High
 
-## Risk
+### Risk
 
 Estimates the risk involved in the proposal not be successfully implemented in a given level.
 
 Proposal                              | Engineering risks        | Operation risks         | Governance risks        | Overall assessment
 --------------------------------------|--------------------------|-------------------------|-------------------------|--------------------
 Existing CA validation                | None (already done)      | None (already there)    | None (already done)     | None
-ACME for .onion                       | Low                      | Low                     | Medium                  |
-Self-signed certificates              | High                     | None                    | ?                       |
-Self-signed X.509 from .onion         | High                     | None                    | ?                       |
-Same Origin Onion Certificates (SOOC) | Low                      | None                    | ?                       |
-DANE for .onion                       | High                     | None                    | ?                       |
-Onion-only CAs                        | Low                      | Medium                  | ?                       |
+ACME for .onion                       | Low                      | Low                     | Medium                  | Medium
+Self-signed certificates              | High                     | None                    | ?                       | High
+Self-signed X.509 from .onion         | High                     | None                    | ?                       | High
+Same Origin Onion Certificates (SOOC) | High                     | None                    | ?                       | High
+DANE for .onion                       | High                     | None                    | ?                       | High
+Onion-only CAs                        | Low                      | Medium                  | ?                       | Medium
 
-## Requirements and prioritizations
+### Conclusion
 
-1. Prioritize what can be done without client or library modifications, as
-   these are harder to implement, maintain, upstream and standardize.
-2. Consider the _paths of least resistance_ when pursuing a solution.
+By the current evaluation, "ACME for .onion" seems like the best option so
+far, since it
 
-## Enhancements for the Tor Browser
+1. Has **High** effort, whereas others have **Very High** effort (except for
+   "Onion-only CAs" which is also **High** but it's not as general as the "ACME
+   for .onion").
+2. Faces **Medium** challenges, whereas others have **Very High**.
+2. Faces **Medium** risks, whereas others have **Very High** effort
+   (except for "Onion-only CAs" which is also **Medium** but it's not as
+   general as the "ACME for .onion").
+
+It also opens two possibilities:
+
+1. Adoption by existing Certificate Authorities such as Let's Encrypt.  This
+   alternative has the minimal effort for Tor, since there are already specs
+   being [funded by OTF][] and Let's Encrypt may implement a version for
+   themselves.
+
+2. Running an .onion-only CA. Some Onion Service operators may not like to have
+   their .onion addresses published into CT Logs, so having an alternative
+   .onion-only Certificate Authority is also being considered, but that requires a
+   lot more effort to implement beyond having an ACME for .onion implementation,
+   but having this implementation paves the way for the "Onion-only CAs" proposal.
+
+As stated in the [certificate proposals][] document, there are two existing and
+similar proposals for bringing .onions to ACME, and [ACME for Onions][]
+seems to be the one in a more mature state.
+
+[ACME for Onions]: https://acmeforonions.org
+[funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
+
+## Tor Browser Enhancements
 
 Additionally to implementing new methods for HTTPS certification, users could
 benefit from Tor Browser improvements in the UI widgets responsible for
 displaying connection security information.
+
+These improvements may be done in parallel with bringing certificate automation
+to Onion Services.
 
 #### Enhanced User Interface (UI) indicators
 

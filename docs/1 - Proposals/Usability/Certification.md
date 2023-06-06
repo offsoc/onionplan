@@ -154,7 +154,7 @@ Existing proposals to bring ACME for Onion Services are discussed below.
     * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
     * [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
 
-[draft-misell-acme-onion-00]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
+[draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
 
 ### ACME for Onions
 
@@ -163,7 +163,7 @@ Existing proposals to bring ACME for Onion Services are discussed below.
     * [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
     * [Work funded by OTF](https://www.opentech.fund/internet-freedom-news/april-2023/#acme)
 
-[draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
+[draft-misell-acme-onion-00]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
 
 ## Self-signed certificates
 
