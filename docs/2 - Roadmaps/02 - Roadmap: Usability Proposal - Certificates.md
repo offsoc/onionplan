@@ -138,27 +138,27 @@ complexity for the initial implementation by not requiring the ACME Server to
 proxy their requests through Tor:
 
 * Phase 0:
-  * Only `onion-csr-01` is implemented.
-  * No CAA field check is done.
-  * Pros:
-    * That means just an ACME API transaction to have a certificate.
-  * Cons:
-    * The lack of `http-01` and `tls-alpn-01` challenges means that
-      Onion Services split into a Tor frontend proxy and a backend
-      HTTPS connector will have trouble ...
-    * Having no CAA check may not reduce the risk of certificate missuance,
-      but in practice:
-        * Those certificates would be ineffective to run MITM attacks in the
-          Onion Server.
-        * They could be detected by CT Logs (for CAs using this technology).
+    * Only `onion-csr-01` is implemented.
+    * No CAA field check is done.
+    * Pros:
+        * That means just an ACME API transaction to have a certificate.
+    * Cons:
+        * The lack of `http-01` and `tls-alpn-01` challenges means that
+          Onion Services split into a Tor frontend proxy and a backend
+          HTTPS connector will have trouble ...
+        * Having no CAA check may not reduce the risk of certificate missuance,
+          but in practice:
+            * Those certificates would be ineffective to run MITM attacks in the
+              Onion Server.
+            * They could be detected by CT Logs (for CAs using this technology).
 * Phase 1:
-  * Challenges implemented: `http-01`.
+    * Challenges implemented: `http-01`.
 * Phase 2:
-  * Challenges implemented: `tls-alpn-01`.
+    * Challenges implemented: `tls-alpn-01`.
 * Phase 3 (Optional):
-  * CAA descriptor field checking is enabled for `http-01` and `tls-alpn-01`.
+    * CAA descriptor field checking is enabled for `http-01` and `tls-alpn-01`.
 * Phase 4 (Optional):
-  * CAA descriptor field checking is enabled for `onion-csr-01`.
+    * CAA descriptor field checking is enabled for `onion-csr-01`.
 
 ## Tor Browser Enhancements
 
