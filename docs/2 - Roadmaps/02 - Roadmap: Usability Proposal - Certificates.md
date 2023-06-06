@@ -138,7 +138,9 @@ complexity for the initial implementation by not requiring the ACME Server to
 proxy their requests through Tor:
 
 * Phase 0:
-    * Only `onion-csr-01` is implemented.
+    * Goal: Reduce a Certificate Authority (CA) problem into an Operation
+      (DevOps) problem.
+    * ACME `onion-csr-01` challenge is implemented.
     * No CAA field check is done.
     * Pros:
         * That means just an ACME API transaction to have a certificate.
@@ -157,9 +159,9 @@ proxy their requests through Tor:
               Onion Server.
             * They could be detected by CT Logs (for CAs using this technology).
 * Phase 1:
-    * Challenges implemented: `http-01`.
+    * ACME Challenges implemented: `http-01`.
 * Phase 2:
-    * Challenges implemented: `tls-alpn-01`.
+    * ACME Challenges implemented: `tls-alpn-01`.
 * Phase 3 (Optional):
     * CAA descriptor field checking is enabled for `http-01` and `tls-alpn-01`.
 * Phase 4 (Optional):
