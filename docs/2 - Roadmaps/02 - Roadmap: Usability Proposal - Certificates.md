@@ -18,6 +18,7 @@
     1. Each proposal feasibility.
     2. Available resources.
     3. Results.
+    4. Double check if a proposal does not bring any serious issues.
 4. Then some prioritization/decision is needed.
 5. This document presents a summarized comparison between proposals.
 6. This needs further review and discussion.
@@ -123,6 +124,13 @@ As stated in the [certificate proposals][] document, there are two existing and
 similar proposals for bringing .onions to ACME, and [ACME for Onions][]
 seems to be the one in a more mature state.
 
+If this proposal cannot get traction in the CA space, then it's still possible
+to consider other [certificate proposals][].
+
+In short, [ACME for Onions][] is a proposal that can be implemented and/or
+maintained with less effort from Tor's side and won't depend on changes in
+applications and libraries (it would work out of the box for TLS clients).
+
 [ACME for Onions]: https://acmeforonions.org
 [funded by OTF]: https://www.opentech.fund/internet-freedom-news/april-2023/#acme
 
@@ -166,6 +174,34 @@ proxy their requests through Tor:
     * CAA descriptor field checking is enabled for `http-01` and `tls-alpn-01`.
 * Stage 4 (Optional):
     * CAA descriptor field checking is enabled for `onion-csr-01`.
+
+Rationale:
+
+* "Inclusion of onion certificate into current ACME system face the difficulty
+  of requiring the certificate authority's ACME to connect to Tor network for
+  checking"
+  ([statement source](https://github.com/cabforum/servercert/issues/433)).
+* But a CA would not be required to implement all the challenges introduced by
+  [ACME for Onions][] or the [CAA descriptor field][] check.
+* The [CA/B baseline requirements][] does not require CAA checking for
+  .onion addresses (Section 3.2.2.8), neither requires that a CA implements all
+  challenges (Appendix B).
+* Then a CA could start by offering .onion certificates through ACME with only the
+  `onion-csr-01` challenge and no CAA checking, which means the CA would not
+  need to connect to Tor to check an .onion and issue a certificate.
+* So a CA might start by implementing a subset of the [ACME for Onions][] draft
+  spec, which would involve automating the `onion-csr-01` challenge.
+* That would not require any change in the [CA/B baseline requirements][]; and
+  no major changes in the [ACME for Onions][] spec would be needed, shielding
+  the roadmap from any uncertainties in the processes happening either at CA/B or
+  at the IETF.
+* In summary, the baseline requirements already allows CAs to issue a cert
+  for an .onion by only receiving the CSR and the signed nonce, and ACME would
+  just be the automation method chosen by the CA; and CAA checking is not
+  currently required for .onion addresses.
+
+[CAA descriptor field]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/343-rend-caa.txt
+[CA/B baseline requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.6.pdf
 
 ## Tor Browser Enhancements
 
