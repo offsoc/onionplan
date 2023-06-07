@@ -7,7 +7,7 @@
 DEPENDENCIES="make mkdocs python3-pip"
 
 # PyPI dependencies
-DEPENDENCIES_PIP="mkdocs-material"
+DEPENDENCIES_PIP="mkdocs-material mkdocs-redirects mkdocs-awesome-pages-plugin"
 
 # Check for sudo
 if [ "`whoami`" != "root" ]; then

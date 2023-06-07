@@ -1,1 +1,1 @@
-docs/4 - About/CREDITS.md
+docs/about/credits.md

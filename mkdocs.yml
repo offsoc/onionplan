@@ -40,6 +40,34 @@ extra_css:
 plugins:
   - search
 
+  - awesome-pages:
+      collapse_single_pages: true
+
+  - redirects:
+     redirect_maps:
+       '0 - Introduction/Challenges.md'                                        : 'intro/challenges.md'
+       '0 - Introduction/Research.md'                                          : 'intro/research.md'
+       '0 - Introduction/Timeline.md'                                          : 'intro/timeline.md'
+       '1 - Proposals/Usability/Certification.md'                              : 'proposals/usability/certificates.md'
+       '1 - Proposals/Usability/Discovery/Address-Translation.md'              : 'proposals/usability/discovery/translation.md'
+       '1 - Proposals/Usability/Discovery/Onion-Names.md'                      : 'proposals/usability/discovery/onion-names.md'
+       '1 - Proposals/Usability/Discovery/README.md'                           : 'proposals/usability/discovery/README.md'
+       '1 - Proposals/Usability/README.md'                                     : 'proposals/usability/README.md'
+       '2 - Roadmaps/01 - Roadmap: Network Layer Proposal.md'                  : 'roadmaps/network.md'
+       '2 - Roadmaps/01 - Roadmap: Health Proposal.md'                         : 'roadmaps/network.md'
+       '2 - Roadmaps/02 - Roadmap: Usability Proposal - Certificates.md'       : 'roadmaps/certificates.md'
+       '2 - Roadmaps/03 - Roadmap: Usability Proposal - Service Discovery.md'  : 'roadmaps/discovery.md'
+       '2 - Roadmaps/04 - Roadmap: Usability Proposal - Other Improvements.md' : 'roadmaps/other.md'
+       '2 - Roadmaps/05 - Roadmap: Outreach.md'                                : 'roadmaps/outreach.md'
+       '2 - Roadmaps/06 - Roadmap: Applications.md'                            : 'roadmaps/applications.md'
+       '2 - Roadmaps/06 - Roadmap: Tooling.md'                                 : 'roadmaps/applications.md'
+       '3 - Appendixes/01 - Appendix: Proposal 279 fixes and improvements.md'  : 'appendixes/prop279.md'
+       '3 - Appendixes/02 - Appendix: Specs for DNS-based .onion records.md'   : 'appendixes/dns.md'
+       '3 - Appendixes/03 - Appendix: Low-hanging fruit.md'                    : 'appendixes/low-hanging.md'
+       '4 - About/CREDITS.md'                                                  : 'about/credits.md'
+       '4 - About/Contact.md'                                                  : 'about/contact.md'
+       '4 - About/LICENSE.md'                                                  : 'about/license.md'
+
 markdown_extensions:
   - footnotes
   - pymdownx.tasklist:

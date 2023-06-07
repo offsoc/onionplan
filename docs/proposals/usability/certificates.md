@@ -1,4 +1,4 @@
-# Certification
+# Certificates
 
 ## Index
 
@@ -204,7 +204,7 @@ of applications like Tor Browser, except if by pursuing some standardization
 such as the SOOC proposal below.
 
 [disabling self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
-[different scenarios]: ../1%20-%20Roadmaps/02%20-%20Roadmap:%20Usability%20Proposal%20-%20Certificates.md
+[different scenarios]: ../../roadmaps/certificates.md
 
 ## Self-signed X.509 from .onion (self-signed by the .onion address)
 
