@@ -27,6 +27,7 @@ Status:
 * Mobile clients may not be able to solve fast enough (maybe only the high end
   will). Needs more discussion on how PoW would impact legitimate mobile users
   during an ongoing DoS.
+* [Needs end-user documentation](https://gitlab.torproject.org/tpo/web/community/-/issues/312).
 
 ### Relevant DoS-related issues
 
