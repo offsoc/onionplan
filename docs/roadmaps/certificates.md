@@ -139,7 +139,9 @@ applications and libraries (it would work out of the box for TLS clients).
 As the previous section concluded, the [ACME for Onions][] proposal seems to be
 the one with better chances to succeed.
 
-This section gives a roadmap example on how it could be implemented.
+This section gives a roadmap example on how it could be implemented, while a
+detailed analysis on ACME for Onions is [available in a special
+appendix](../appendixes/acme.md).
 
 To ease adoption by Certificate Authorities (CAs), it's worth reducing the
 complexity for the initial implementation by not requiring the ACME Server to

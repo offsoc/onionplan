@@ -163,6 +163,8 @@ Existing proposals to bring ACME for Onion Services are discussed below.
     * [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
     * [Work funded by OTF](https://www.opentech.fund/internet-freedom-news/april-2023/#acme)
 
+A detailed analysis on ACME for Onions is [available in a special appendix](../../appendixes/acme.md).
+
 [draft-misell-acme-onion-00]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
 
 ## Self-signed certificates
