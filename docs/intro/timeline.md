@@ -41,12 +41,14 @@ Year | Technology or relevant event
 ## Applications
 
 Year | Application
------|----------------------------------------------------------------------
+-----|---------------------------------------------------------------------------
 2010 | [GlobaLeaks][]
 2010 | [Ricochet][]
 2013 | [SecureDrop][]
 2014 | [Onionshare][]
 2015 | [Onionbalance][]
+2021 | [Ricochet-Refresh][] (first stable release with Onion Services v3 support)
+2021 | [Gosling][]
 
 [Onion Services]: https://community.torproject.org/onion-services/
 [rendezvous]: https://gitweb.torproject.org/tor.git/commit/?id=3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
@@ -76,3 +78,5 @@ Year | Application
 [SecureDrop]: https://en.wikipedia.org/wiki/SecureDrop
 [Onionbalance]: https://gitlab.torproject.org/tpo/core/onionbalance/-/commit/a8b970c7799a106440facd0ab9f0b19220a16e57
 [Ricochet]: https://github.com/ricochet-im/ricochet/commit/8bf50c6d07bd61122828ed6870dadd1a52bd5794
+[Ricochet-Refresh]: https://ricochetrefresh.net
+[Gosling]: https://github.com/blueprint-freespeech/gosling/
