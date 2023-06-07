@@ -48,6 +48,7 @@ Year | Application
 2014 | [Onionshare][]
 2015 | [Onionbalance][]
 2017 | [Briar][]
+2019 | [Wahay][]
 2021 | [Ricochet-Refresh][] (first stable release with Onion Services v3 support)
 2021 | [Gosling][]
 2022 | [Quiet][]
@@ -82,5 +83,6 @@ Year | Application
 [Ricochet]: https://github.com/ricochet-im/ricochet/commit/8bf50c6d07bd61122828ed6870dadd1a52bd5794
 [Ricochet-Refresh]: https://ricochetrefresh.net
 [Gosling]: https://github.com/blueprint-freespeech/gosling/
+[Wahay]: https://wahay.org
 [Quiet]: https://tryquiet.org
 [Briar]: https://briarproject.org
