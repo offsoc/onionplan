@@ -7,14 +7,15 @@
 
 [TOC]
 
-## Intro
+## Introduction
 
 The [ACME for Onions][] proposal for automating the issuance of X.509
 certificates for .onion addresses is composed of a [internet draft][] and
 reference code.
 
-[ACME for Onions][] is [introduced in the proposals section][] and 
-a suggested planning for it's implementation is [done in the certificates rodamap document][].
+[ACME for Onions][] is [introduced in the proposals section][] and a suggested
+planning for it's implementation is [done in the certificates rodamap
+document][].
 
 This document contains an evaluation on the proposal in the point of view
 of an implementation plan, and assumes that the reader knows the content
@@ -110,7 +111,7 @@ According to the [RFC 8555][] (ACME Standard) Section 4[^acme-challenges],
 > client has completed. The server then validates that the client has completed
 > the challenges.
 
-[^acme-challenges]: And further detailed on Sections 7.1.4 and 8.
+[^acme-challenges]: And further detailed on [RFC 8555][] Sections 7.1.4 and 8.
 
 Example: say one controls the following addresses:
 
