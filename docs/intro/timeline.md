@@ -47,8 +47,10 @@ Year | Application
 2013 | [SecureDrop][]
 2014 | [Onionshare][]
 2015 | [Onionbalance][]
+2017 | [Briar][]
 2021 | [Ricochet-Refresh][] (first stable release with Onion Services v3 support)
 2021 | [Gosling][]
+2022 | [Quiet][]
 
 [Onion Services]: https://community.torproject.org/onion-services/
 [rendezvous]: https://gitweb.torproject.org/tor.git/commit/?id=3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
@@ -80,3 +82,5 @@ Year | Application
 [Ricochet]: https://github.com/ricochet-im/ricochet/commit/8bf50c6d07bd61122828ed6870dadd1a52bd5794
 [Ricochet-Refresh]: https://ricochetrefresh.net
 [Gosling]: https://github.com/blueprint-freespeech/gosling/
+[Quiet]: https://tryquiet.org
+[Briar]: https://briarproject.org
