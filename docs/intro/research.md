@@ -27,10 +27,10 @@
 
 This research has the following major sections:
 
-1. **Proposals**: an inventory on all ideas an existing research on _usability
+1. **Proposals**: an inventory on all ideas an existing research on _enhancement
    proposals_.
-2. **Roadmaps**: where some of the usability proposals are selected and arranged in
-   development phases inside _roadmap proposals_.
+2. **Roadmaps**: where some of the enhancement proposals are selected and
+   arranged in development phases inside _roadmap proposals_.
 3. **Appendixes**: in-depth discussion of usability and roadmap proposals.
 
 The overall plan is also split into roadmap tracks that may be worked by
