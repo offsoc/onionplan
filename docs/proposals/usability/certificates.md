@@ -105,9 +105,11 @@ version][]) for the Issuance and Management of Publicly‐Trusted Certificates
 (since Version 1.7.4, released in 2021) establishes two validation methods to ensure
 that someone request the certificate really control a given .onion address:
 
-1. An "Agreed‑Upon Change to Website", where the service operator must include
-   some secret at the `/.well‐known/pki‐validation` in the site.
-2. Checking of a Certificate Signing Request (CSR) signed by the Onion Service
+1. An "Agreed‑Upon Change to Website" (manually or via [ACME][]), where the
+   service operator must include some secret, such as at the
+   `/.well-known/pki-validation` of the site.
+2. TLS [using ALPN][].
+3. Checking of a Certificate Signing Request (CSR) signed by the Onion Service
    private key and containing an specific cryptographic nonce (i.e, a shared
    secret to be used only once), like using the [onion-csr][] tool.
 
@@ -125,8 +127,10 @@ identifiable information during the purchase of the certificates.
 [extended for Onion Services v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
 [DigiCert providing only Extended Validation (EV) certs]: https://www.digicert.com/blog/ordering-a-onion-certificate-from-digicert
 [HARICA providing only Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
-[CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.4.pdf
+[CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.6.pdf
 [repository version]: https://github.com/cabforum/servercert/blob/main/docs/BR.md
+[ACME]: https://datatracker.ietf.org/doc/html/rfc8555
+[using ALPN]: https://www.rfc-editor.org/rfc/rfc8737.html
 [onion-csr]: https://github.com/HARICA-official/onion-csr
 
 ## ACME for .onion (CA-validated)
@@ -150,22 +154,36 @@ Existing proposals to bring ACME for Onion Services are discussed below.
 
 ### ACME Onion Identifier Validation Extension
 
-* [draft-suchan-acme-onion-00][] - Automated Certificate Management Environment (ACME) Onion Identifier Validation Extension:
-    * [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
-    * [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
+The "Automated Certificate Management Environment (ACME) Onion Identifier
+Validation Extension" internet draft ([draft-suchan-acme-onion-00][])
+was proposed on 2022.05 and is the first known proposal to bring ACME
+for .onion addresses.
+
+As of 20230607, this internet draft is in the expired state.
+
+References:
+
+* [Relevant mail threads](https://mailarchive.ietf.org/arch/browse/acme/?q=draft-suchan-acme-onion-00.txt)
+* [orangepizza/acme-onion-doc: docs about standardize handling onion address in acme context](https://github.com/orangepizza/acme-onion-doc)
 
 [draft-suchan-acme-onion-00]: https://datatracker.ietf.org/doc/draft-suchan-acme-onion/
 
 ### ACME for Onions
 
-* [draft-misell-acme-onion-00][] - Automated Certificate Management Environment (ACME) Extensions for ".onion" Domain Names:
-    * [ACME for .onion domains](https://acmeforonions.org/)
-    * [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
-    * [Work funded by OTF](https://www.opentech.fund/internet-freedom-news/april-2023/#acme)
+The "Automated Certificate Management Environment (ACME) Extensions for
+".onion" Domain Names" ([draft-misell-acme-onion][]) is the second known
+proposal to bring ACME for .onion addresses.
 
-A detailed analysis on ACME for Onions is [available in a special appendix](../../appendixes/acme.md).
+A detailed analysis on ACME for Onions is [available in a special
+appendix](../../appendixes/acme.md).
 
-[draft-misell-acme-onion-00]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
+References:
+
+* [ACME for Onions](https://acmeforonions.org/)
+* [AS207960/acme-onion](https://github.com/AS207960/acme-onion)
+* [Work funded by OTF](https://www.opentech.fund/internet-freedom-news/april-2023/#acme)
+
+[draft-misell-acme-onion]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
 
 ## Self-signed certificates
 
@@ -449,6 +467,9 @@ References:
   clients to have _only_ this type of CA installed (but in that case it might
   not accept valid certificates issued by regular CAs, with advantages and
   disadvantages)
+* [Proposal for automated onion service certificate issuance based on fully
+  qualified onion service key signed certificate request][], where this
+  proposal is sent to the CA/B Forum.
 
 [Certificate Revocation Lists (CRLs)]: https://en.wikipedia.org/wiki/Certificate_revocation_list
 [OCSP]: https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol
@@ -456,6 +477,7 @@ References:
 [CT Logs]: https://certificate.transparency.dev/
 [Self-signed X.509 for .onion]: self-signed-x509-for-onion-self-signed-by-the-onion-address
 [Proposal for Bring Accessible TLS Supports to All Onion Services]: https://gitlab.torproject.org/tpo/core/torspec/-/issues/171
+[Proposal for automated onion service certificate issuance based on fully qualified onion service key signed certificate request]: https://github.com/cabforum/servercert/issues/433
 
 ## Further references
 
