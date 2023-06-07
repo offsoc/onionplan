@@ -9,15 +9,33 @@
 
 ## DoS defenses
 
-* Focus on needed develop to mitigate DoS:
-    * [Tor is slow right now. Here is what is happening. | The Tor Project](https://blog.torproject.org/tor-network-ddos-attack/)
-    * [prop327: Implement PoW over Introduction Circuits (#40634) · Tor · GitLab](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
-      * UX issue: mobile clients would no be able to solve fast enough (maybe only
-        the high end will). Needs more discussion on how PoW would impact
-        legitimate mobile users during an ongoing DoS.
-* Needs input from the Network Team for what can be included here.
-* Might include deliverable from the "Onion Services resource coalition"
-  project.
+### The problem
+
+* [Tor is slow right now. Here is what is happening. | The Tor Project](https://blog.torproject.org/tor-network-ddos-attack/)
+
+### Proposal 327
+
+About:
+
+* [proposals/327-pow-over-intro.txt · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt)
+* [Proposal: A First Take at PoW Over Introduction Circuits](https://lists.torproject.org/pipermail/tor-dev/2020-April/014215.html)
+
+Status:
+
+* Implemented on Tor 0.4.8.1-alpha as part of the "Onion Services resource
+  coalition" sponsored work.
+* Mobile clients may not be able to solve fast enough (maybe only the high end
+  will). Needs more discussion on how PoW would impact legitimate mobile users
+  during an ongoing DoS.
+
+### Relevant DoS-related issues
+
+* [Design a PoW scheme for HS DoS defence (#134) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/134)
+* [prop327: Implement PoW over Introduction Circuits (#40634) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
+* [Understand code performance of onion services under DoS (#33704) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33704)
+* [Research  approaches for improving the availability of services under DoS  (#31223) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/31223)
+* [attacker can force intro point rotation by ddos (#26294) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294)
+* [DoS resistence measures from C tor (#351) · Arti](https://gitlab.torproject.org/tpo/core/arti/-/issues/351)
 
 ## Performance improvements
 
@@ -26,15 +44,6 @@
 ## Metrics
 
 * Needs input from the Network, Network Health and Metrics Teams for what can be included here.
-
-## Relevant DoS-related issues
-
-* [Design a PoW scheme for HS DoS defence (#134) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/134)
-* [prop327: Implement PoW over Introduction Circuits (#40634) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40634)
-* [Understand code performance of onion services under DoS (#33704) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/33704)
-* [Research  approaches for improving the availability of services under DoS  (#31223) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/31223)
-* [attacker can force intro point rotation by ddos (#26294) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/26294)
-* [DoS resistence measures from C tor (#351) · Arti](https://gitlab.torproject.org/tpo/core/arti/-/issues/351)
 
 ## Non DoS-related health improvements for Onion Services
 
