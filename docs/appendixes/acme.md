@@ -248,7 +248,7 @@ Maybe it could have an item about service abuse prevention:
 3. In case of Tor-enabled ACME client connections, should it be REQUIRED that
    clients don't reuse the same Tor context (daemon, environment etc) from
    the one running the Onion Service? I.e, launch a new Tor process for the ACME
-   client.
+   client to avoid correlation attacks.
 
 ### Conclusion
 
