@@ -15,7 +15,14 @@ reference code.
 
 [ACME for Onions][] is [introduced in the proposals section][] and a suggested
 planning for it's implementation is [done in the certificates rodamap
-document][].
+document][]. It consists mainly of:
+
+1. The [internet draft][].
+2. The [certbot-onion][] `onion-csr-01` authenticator plugin for [Certbot][].
+3. Tor Spec's [Proposal 343][] for the CAA descriptor fields.
+4. The needed [changes in C Tor][] codebase implementing the CAA descriptor fields.
+5. A reference implementation in [Björn](https://github.com/as207960/bjorn).
+6. A reference CA [with the ACME API](https://acme.api.acmeforonions.org).
 
 This document contains an evaluation on the proposal in the point of view
 of an implementation plan, and assumes that the reader knows the content
@@ -28,6 +35,10 @@ adopting [ACME for Onions][] by just implementing a subset of the spec.
 [internet draft]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
 [introduced in the proposals section]: ../proposals/usability/certificates.md#acme-for-onions
 [done in the certificates rodamap document]: ../roadmaps/certificates.md#acme-for-onions-roadmapping
+[certbot-onion]: https://pypi.org/project/certbot-onion/
+[certbot]: https://certbot.eff.org/
+[Proposal 343]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/343-rend-caa.txt
+[changes in C Tor]: https://gitlab.torproject.org/tpo/core/tor/-/merge_requests/716
 
 ## Challenges
 
