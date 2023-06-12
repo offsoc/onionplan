@@ -190,8 +190,11 @@ But is CAA really needed for Onion Services?
     to contact service operators and to report issues by using the `iodef`,
     `contactemail` and `contactphone` properties (see [RFC 6844][] for details).
 
-  * Retrieving this information would only need a library that can retrieve and
-    decode Onion Service descriptors.
+  * Retrieving this information by a CA would only need a library that can retrieve and
+    decode Onion Service descriptors, so no extreme complexity added in the overall
+    certification procedure. But note that currently there's no guarantee that a CA
+    would check CAA fields for .onion addresses since currently this is not enforced
+    by the current CA/B baseline requirements.
 
 * What matters most during the initial implementation is whether ACME providers
   will be in practice required to do such checking. If they do, then
