@@ -183,18 +183,18 @@ But is CAA really needed for Onion Services?
 
 * To be in the safe side, however, there's no harm in keeping CAA fields in
   the IETF spec and in the torspec ([prop343][]) for the following reasons:
-  * If CA/B start to recommend or require CAA checking for .onion addresses,
-    the specs would already indicate how that can be done.
+    * If CA/B start to recommend or require CAA checking for .onion addresses,
+      the specs would already indicate how that can be done.
 
-  * CAA is not only used during certificate issuance.  It also establishes ways
-    to contact service operators and to report issues by using the `iodef`,
-    `contactemail` and `contactphone` properties (see [RFC 6844][] for details).
+    * CAA is not only used during certificate issuance.  It also establishes ways
+      to contact service operators and to report issues by using the `iodef`,
+      `contactemail` and `contactphone` properties (see [RFC 6844][] for details).
 
-  * Retrieving this information by a CA would only need a library that can retrieve and
-    decode Onion Service descriptors, so no extreme complexity added in the overall
-    certification procedure. But note that currently there's no guarantee that a CA
-    would check CAA fields for .onion addresses since currently this is not enforced
-    by the current CA/B baseline requirements.
+    * Retrieving this information by a CA would only need a library that can retrieve and
+      decode Onion Service descriptors, so no extreme complexity added in the overall
+      certification procedure. But note that currently there's no guarantee that a CA
+      would check CAA fields for .onion addresses since currently this is not enforced
+      by the current CA/B baseline requirements.
 
 * What matters most during the initial implementation is whether ACME providers
   will be in practice required to do such checking. If they do, then
