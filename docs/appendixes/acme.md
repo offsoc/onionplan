@@ -186,7 +186,7 @@ But is CAA really needed for Onion Services?
   * If CA/B start to recommend or require CAA checking for .onion addresses,
     the specs would already indicate how that can be done.
 
-  * CAA is not only used during certificate issuance.  It also stablishes ways
+  * CAA is not only used during certificate issuance.  It also establishes ways
     to contact service operators and to report issues by using the `iodef`,
     `contactemail` and `contactphone` properties (see [RFC 6844][] for details).
 
