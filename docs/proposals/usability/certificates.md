@@ -49,7 +49,13 @@ hard to solve.
 [HTTP/3]: https://en.wikipedia.org/wiki/HTTP/3
 
 [^http3-availability]: But not [HTTP/3][] yet, since it uses UDP not available
-                       via Tor (as of 2023-05).
+                       via Tor (as of 2023-05). The [HTTP/2][] standard does not
+                       require encryption, but
+                       [all major browsers require encryption for HTTP/2][]
+                       and [encryption for HTTP/3 is required by default][].
+
+[all major browsers require encryption for HTTP/2]: https://http2.github.io/faq/#does-http2-require-encryption
+[encryption for HTTP/3 is required by default]: https://www.cloudflare.com/learning/performance/what-is-http3/
 
 ## Overview
 
