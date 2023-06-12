@@ -193,9 +193,6 @@ But is CAA really needed for Onion Services?
   * Retrieving this information would only need a library that can retrieve and
     decode Onion Service descriptors.
 
- that Certificate Authorities can programmatically
-    contact service operators to report issues.
-
 * What matters most during the initial implementation is whether ACME providers
   will be in practice required to do such checking. If they do, then
   implementation complexity might increase, as the ACME Server will need to use
