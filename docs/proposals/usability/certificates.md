@@ -34,7 +34,7 @@ enhancements, such as:
 
 3. [It also opens up new opportunities such as payment processing][], _"as current
    PCI DSS requirements do not allow non-standard TLS"_[^pci-dss-tls] and may
-   only work with certificates having some sort of validation[^pci-dss-signed].
+   only work with certificates having some sort of validation[^pci-dss-self-signed].
 
 4. It could be argued that this is also security-in-depth by having yet another
    layer of encryption atop of other existing encryption layers. Even if the
