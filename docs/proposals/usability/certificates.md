@@ -19,7 +19,7 @@ transactions.
 ## Benefits
 
 It may be argued that Onion Services connections are already
-_self-authenticated_, -- since the public key and the URL are tied together and
+_self-authenticated_ -- since the public key and the URL are tied together and
 the connection is peer-to-peer encrypted --, and thus making the need for HTTPS
 pointless, or at most giving only an impression on users of additional security.
 
@@ -32,7 +32,10 @@ enhancements, such as:
 2. Allows for the usage of [HTTP/2][], since some browsers only support it if on
    HTTPS[^http3-availability].
 
-2. It could be argued that this is also security-in-depth by having yet another
+3. [It also opens up new opportunities such as payment processing][], _"as current
+   PCI DSS requirements do not allow non-standard TLS"_[^pci-dss-tls][^pci-dss-signed].
+
+4. It could be argued that this is also security-in-depth by having yet another
    layer of encryption atop of other existing encryption layers. Even if the
    theoretical gain in terms of interception and tampering resistance is not
    relevant, it would still allow for service operators to split their encryption
@@ -47,6 +50,13 @@ hard to solve.
 [Content Security Policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 [HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
 [HTTP/3]: https://en.wikipedia.org/wiki/HTTP/3
+[It also opens up new opportunities such as payment processing]: https://lists.torproject.org/pipermail/tor-dev/2023-April/014833.html
+[all major browsers require encryption for HTTP/2]: https://http2.github.io/faq/#does-http2-require-encryption
+[encryption for HTTP/3 is required by default]: https://www.cloudflare.com/learning/performance/what-is-http3/
+[PCI-DSS]: https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
+[PCI-DSS v4.0]: https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf
+[Rendezvous v3 protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
+[merge request]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/merge_requests
 
 [^http3-availability]: But not [HTTP/3][] yet, since it uses UDP not available
                        via Tor (as of 2023-05). The [HTTP/2][] standard does not
@@ -54,8 +64,25 @@ hard to solve.
                        [all major browsers require encryption for HTTP/2][]
                        and [encryption for HTTP/3 is required by default][].
 
-[all major browsers require encryption for HTTP/2]: https://http2.github.io/faq/#does-http2-require-encryption
-[encryption for HTTP/3 is required by default]: https://www.cloudflare.com/learning/performance/what-is-http3/
+[^pci-dss-tls]: See [PCI-DSS 4.0][] - Appendix G - Term "Strong Cryptography" - page 355, which
+                points only to "industry tested and accepted algorithms". While we could argue
+                that [PCI-DSS 4.0][] is not precise enough about which _transmission protocols_
+                might be used, it may be the case that the encryption used by the Onion Services'
+                [Rendezvous v3 protocol][] is not (yet) part of an "industry standard" (needs someone
+                to carefully review this claim and open a [merge request][] to update this information).
+                It also may be the case that [PCI-DSS][] compliance may be hard to get for a system
+                that employs only the [Rendezvous v3 protocol][] to transmit cardholder data between
+                an user and an Onion Service, without TLS atop of it. And users might not trust
+                the connection if not over TLS, or if their browser does not show certificate information.
+
+[^pci-dss-self-signed]: It's worth note that, while [PCI-DSS][] does allow for
+                        the use of self-signed certificates (see [PCI-DSS 4.0][] - Requirement 4.2 -
+                        Applicability Notes - page 106), in practice that's only applicable for
+                        internal links within an organization, since users would hardly trust a
+                        self-signed certificate for doing online purchases as their browsers would show
+                        warning messages. Recommendation (see [PCI-DSS 4.0][] - Requirement 4.2 -
+                        Guidance - page 106) goes instead towards a certificate trusted by a
+                        Certificate Authority.
 
 ## Overview
 
