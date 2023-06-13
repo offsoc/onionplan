@@ -33,7 +33,8 @@ enhancements, such as:
    HTTPS[^http3-availability].
 
 3. [It also opens up new opportunities such as payment processing][], _"as current
-   PCI DSS requirements do not allow non-standard TLS"_[^pci-dss-tls][^pci-dss-signed].
+   PCI DSS requirements do not allow non-standard TLS"_[^pci-dss-tls] and may
+   only work with certificates having some sort of validation[^pci-dss-signed].
 
 4. It could be argued that this is also security-in-depth by having yet another
    layer of encryption atop of other existing encryption layers. Even if the
@@ -75,10 +76,13 @@ hard to solve.
                 an user and an Onion Service, without TLS atop of it. And users might not trust
                 the connection if not over TLS, or if their browser does not show certificate information.
 
-[^pci-dss-self-signed]: It's worth note that, while [PCI-DSS][] does allow for
-                        the use of self-signed certificates (see [PCI-DSS 4.0][] - Requirement 4.2 -
-                        Applicability Notes - page 106), in practice that's only applicable for
-                        internal links within an organization, since users would hardly trust a
+[^pci-dss-self-signed]: It's worth note that [PCI-DSS][] does allow for
+                        the use of self-signed certificates under some special conditions
+                        that may exclude some of the proposals in this document (see [PCI-DSS 4.0][] - Requirement 4.2 -
+                        Applicability Notes - page 106). In practice, this is
+                        only applicable for internal links within an organization or for clients and libraries that
+                        have the custom Certificate Authorities' root keys on it's keystores and that matches the
+                        standard requirements. And users would hardly trust a
                         self-signed certificate for doing online purchases as their browsers would show
                         warning messages. Recommendation (see [PCI-DSS 4.0][] - Requirement 4.2 -
                         Guidance - page 106) goes instead towards a certificate trusted by a
