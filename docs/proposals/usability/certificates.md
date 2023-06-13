@@ -47,6 +47,35 @@ enhancements, such as:
 The following discussion is not yet conclusive, and the problem space may be
 hard to solve.
 
+[^http3-availability]: But not [HTTP/3][] yet, since it uses UDP not available
+                       via Tor (as of 2023-05). The [HTTP/2][] standard does not
+                       require encryption, but
+                       [all major browsers require encryption for HTTP/2][]
+                       and [encryption for HTTP/3 is required by default][].
+
+[^pci-dss-tls]: See [PCI-DSS v4.0][] - Appendix G - Term "Strong Cryptography" - page 355, which
+                points only to "industry tested and accepted algorithms". While we could argue
+                that [PCI-DSS v4.0][] is not precise enough about which _transmission protocols_
+                might be used, it may be the case that the encryption used by the Onion Services'
+                [Rendezvous v3 protocol][] is not (yet) part of an "industry standard" (needs someone
+                to carefully review this claim and open a [merge request][] to update this information).
+                It also may be the case that [PCI-DSS][] compliance may be hard to get for a system
+                that employs only the [Rendezvous v3 protocol][] to transmit cardholder data between
+                an user and an Onion Service, without TLS atop of it. And users might not trust
+                the connection if not over TLS, or if their browser does not show certificate information.
+
+[^pci-dss-self-signed]: It's worth note that [PCI-DSS][] does allow for
+                        the use of self-signed certificates under some special conditions
+                        that may exclude some of the proposals in this document (see [PCI-DSS v4.0][] - Requirement 4.2 -
+                        Applicability Notes - page 106). In practice, this is
+                        only applicable for internal links within an organization or for clients and libraries that
+                        have the custom Certificate Authorities' root keys on it's keystores and that matches the
+                        standard requirements. And users would hardly trust a
+                        self-signed certificate for doing online purchases as their browsers would show
+                        warning messages. Recommendation (see [PCI-DSS v4.0][] - Requirement 4.2 -
+                        Guidance - page 106) goes instead towards a certificate trusted by a
+                        Certificate Authority.
+
 [Secure cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#security
 [Content Security Policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 [HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
@@ -58,35 +87,6 @@ hard to solve.
 [PCI-DSS v4.0]: https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf
 [Rendezvous v3 protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
 [merge request]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/merge_requests
-
-[^http3-availability]: But not [HTTP/3][] yet, since it uses UDP not available
-                       via Tor (as of 2023-05). The [HTTP/2][] standard does not
-                       require encryption, but
-                       [all major browsers require encryption for HTTP/2][]
-                       and [encryption for HTTP/3 is required by default][].
-
-[^pci-dss-tls]: See [PCI-DSS 4.0][] - Appendix G - Term "Strong Cryptography" - page 355, which
-                points only to "industry tested and accepted algorithms". While we could argue
-                that [PCI-DSS 4.0][] is not precise enough about which _transmission protocols_
-                might be used, it may be the case that the encryption used by the Onion Services'
-                [Rendezvous v3 protocol][] is not (yet) part of an "industry standard" (needs someone
-                to carefully review this claim and open a [merge request][] to update this information).
-                It also may be the case that [PCI-DSS][] compliance may be hard to get for a system
-                that employs only the [Rendezvous v3 protocol][] to transmit cardholder data between
-                an user and an Onion Service, without TLS atop of it. And users might not trust
-                the connection if not over TLS, or if their browser does not show certificate information.
-
-[^pci-dss-self-signed]: It's worth note that [PCI-DSS][] does allow for
-                        the use of self-signed certificates under some special conditions
-                        that may exclude some of the proposals in this document (see [PCI-DSS 4.0][] - Requirement 4.2 -
-                        Applicability Notes - page 106). In practice, this is
-                        only applicable for internal links within an organization or for clients and libraries that
-                        have the custom Certificate Authorities' root keys on it's keystores and that matches the
-                        standard requirements. And users would hardly trust a
-                        self-signed certificate for doing online purchases as their browsers would show
-                        warning messages. Recommendation (see [PCI-DSS 4.0][] - Requirement 4.2 -
-                        Guidance - page 106) goes instead towards a certificate trusted by a
-                        Certificate Authority.
 
 ## Overview
 
