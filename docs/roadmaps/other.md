@@ -21,7 +21,7 @@ Needs input from UX and Applications Teams on what to include in the roadmap.
 ### Quality Assurance
 
 * Quality Assurance for Tor Browser regarding Onion Services (initial workload
-  estimate for 2 moths full time during 2023).
+  estimate for 2 months full time during 2023).
 
 ### Onion-Location for Tor Browser
 
