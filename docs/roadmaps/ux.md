@@ -31,7 +31,7 @@ Services usability from the User Experience (UX) perspective:
 ### Quality Assurance
 
 * Quality Assurance for Tor Browser regarding Onion Services (initial workload
-  estimate for 2 moths full time during 2023.Q3 - 2024.Q2).
+  estimate for 2 months full time during 2023.Q3 - 2024.Q2).
 
 ### Onion-Location for Tor Browser
 
