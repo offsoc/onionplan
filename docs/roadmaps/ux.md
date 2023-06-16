@@ -1,4 +1,4 @@
-# Usability Roadmap - Other Improvements
+# Usability Roadmap - User Experience (UX)
 
 * Status: DRAFT
 * Version: v2023.Q2
@@ -16,12 +16,22 @@ Needs input from UX and Applications Teams on what to include in the roadmap.
 
 [Tor Browser]: https://www.torproject.org/download/
 
+## Existing research
+
+This section contain references on some existing research to improve Onion
+Services usability from the User Experience (UX) perspective:
+
+* 2018 - [How Do Tor Users Interact with Onion Services? - sec18-onion-services.pdf](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf):
+    * [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg)
+* 2017 - [Take Part in a Study to Help Improve Onion Services | The Tor Project](https://blog.torproject.org/take-part-study-help-improve-onion-services/)
+    * [Onion service interaction](https://nymity.ch/onion-services/)
+
 ## Tor Browser
 
 ### Quality Assurance
 
 * Quality Assurance for Tor Browser regarding Onion Services (initial workload
-  estimate for 2 moths full time during 2023).
+  estimate for 2 moths full time during 2023.Q3 - 2024.Q2).
 
 ### Onion-Location for Tor Browser
 

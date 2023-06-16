@@ -67,6 +67,7 @@ plugins:
        '4 - About/CREDITS.md'                                                  : 'about/credits.md'
        '4 - About/Contact.md'                                                  : 'about/contact.md'
        '4 - About/LICENSE.md'                                                  : 'about/license.md'
+       'roadmaps/other.md'                                                     : 'docs/roadmaps/ux.md'
 
 markdown_extensions:
   - footnotes
