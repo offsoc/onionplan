@@ -55,7 +55,11 @@ Needs input from UX and Applications Teams on what to include in the roadmap.
 This section contain references on some existing research to improve Onion
 Services usability from the User Experience (UX) perspective:
 
-* 2018 - [How Do Tor Users Interact with Onion Services? - sec18-onion-services.pdf](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf):
-    * [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg)
-* 2017 - [Take Part in a Study to Help Improve Onion Services | The Tor Project](https://blog.torproject.org/take-part-study-help-improve-onion-services/)
-    * [Onion service interaction](https://nymity.ch/onion-services/)
+* 2018:
+    * [How Do Tor Users Interact with Onion Services? - sec18-onion-services.pdf](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf):
+        * [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg).
+* 2017:
+    * [Take Part in a Study to Help Improve Onion Services | The Tor Project](https://blog.torproject.org/take-part-study-help-improve-onion-services/):
+        * [Onion service interaction](https://nymity.ch/onion-services/).
+    * [Leakage of .onion at the DNS Root: Measurements, Causes, and Countermeasures](https://seal.cs.ucf.edu/doc/tnet17.pdf)
+      ([discussion](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/53)).
