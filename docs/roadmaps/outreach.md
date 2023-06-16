@@ -85,6 +85,16 @@ and usage.
 * There's a [generic training resource][] to introduce onion services to human
   rights and media organizations.
 * Idea to have [printables for offline trainings][].
+* [Street team kit][].
 
 [generic training resource]: https://gitlab.torproject.org/tpo/community/training/-/raw/master/2022/onion-services/intro-onion-service-2022.odp?inline=false
 [printables for offline trainings]: https://community.torproject.org/outreach/kit/
+[Street team kit]: https://community.torproject.org/outreach/kit/
+
+## Existing discussions
+
+This section contain references on some existing research to improve Onion
+Services adoption from the outreach perspective.
+
+* 2015 - [Nine Questions about Hidden Services | The Tor Project](https://blog.torproject.org/nine-questions-about-hidden-services/)
+* 2014 - [Some thoughts on Hidden Services | The Tor Project](https://blog.torproject.org/some-thoughts-hidden-services/)

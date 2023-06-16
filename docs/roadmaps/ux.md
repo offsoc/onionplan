@@ -16,16 +16,6 @@ Needs input from UX and Applications Teams on what to include in the roadmap.
 
 [Tor Browser]: https://www.torproject.org/download/
 
-## Existing research
-
-This section contain references on some existing research to improve Onion
-Services usability from the User Experience (UX) perspective:
-
-* 2018 - [How Do Tor Users Interact with Onion Services? - sec18-onion-services.pdf](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf):
-    * [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg)
-* 2017 - [Take Part in a Study to Help Improve Onion Services | The Tor Project](https://blog.torproject.org/take-part-study-help-improve-onion-services/)
-    * [Onion service interaction](https://nymity.ch/onion-services/)
-
 ## Tor Browser
 
 ### Quality Assurance
@@ -59,3 +49,13 @@ Services usability from the User Experience (UX) perspective:
 * [Verify features that are made "HTTPS-only" should be available on .onion sites as well (#21728)](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21728)
 * [Setting Origin: null header still breaks CORS in Tor Browser 9.5 (#32865)](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/32865)
 * [document.referrer leaks hidden service to clearnet service. (#25484)](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/25484)
+
+## Existing research
+
+This section contain references on some existing research to improve Onion
+Services usability from the User Experience (UX) perspective:
+
+* 2018 - [How Do Tor Users Interact with Onion Services? - sec18-onion-services.pdf](https://nymity.ch/onion-services/pdf/sec18-onion-services.pdf):
+    * [USENIX Security '18 - How Do Tor Users Interact With Onion Services? - YouTube](https://www.youtube.com/watch?v=MYR4sB3wPOg)
+* 2017 - [Take Part in a Study to Help Improve Onion Services | The Tor Project](https://blog.torproject.org/take-part-study-help-improve-onion-services/)
+    * [Onion service interaction](https://nymity.ch/onion-services/)
