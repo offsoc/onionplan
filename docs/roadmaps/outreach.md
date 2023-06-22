@@ -35,6 +35,8 @@ and usage.
 * Above page needs to be elaborated to highlight all
   [arguments](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/166)
   for promoting Onion Services.
+* Tor is useful especially in places where it is banned / more difficult to use.
+* Onion Services as a mean to push content online, not just access.
 
 ## Publish training resources (on community portal)
 
@@ -62,9 +64,11 @@ and usage.
   wishes to deploy an onion service or onionize their website can reach out.
 * We need to ask ourselves: how can Onion Services be useful and relevant in
   different contexts.
+* Offering an user an onion service address is protecting them.
 
 ## Run campaigns
 
+* Onion/Tor = Web 4.
 * Brainstorm campaigns around Onion Services, similar to how
   `#MoreOnionsPorFavor` which encouraged the adoption of Onion-Location.
 * Reaching out to groups and organizations that we believe can benefit from
@@ -79,6 +83,10 @@ and usage.
 * Onion Services 20th Anniversary Campaign? We could think about some
   "anniversary media campaign" along the year, considering things happening
   like PoW protection, ACME for Onions etc.
+* Changing the narrative around Onion Services going beyond anonymity (e.g.
+  less hijackable / tamperable).
+* The more Human Rights organizations adopting, the easier is shifting the
+  discourse to the "good" stuff.
 
 ## Resources
 
