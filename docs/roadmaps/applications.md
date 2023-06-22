@@ -83,8 +83,10 @@ and API.
 
 * [Onionprobe][]: a tool for testing and monitoring status of Tor Onion Services.
 * There are many improvements towards making it kind of a multi-tool for Onion Services testing and debugging.
-* For 2023, the initial workload estimate for Onionprobe sums up to 1 month full time dedication.
-* Improvements package need to be defined. Which
+* For 2023.Q3 to 2024.Q2, the initial workload estimate for Onionprobe sums up
+  to 1 month full time dedication.
+* Improvements package
+  [need to be defined](https://gitlab.torproject.org/tpo/onion-services/onionprobe/-/issues/79). Which
   [issues](https://gitlab.torproject.org/tpo/onion-services/onionprobe/-/issues)
   to include?
 
@@ -95,12 +97,12 @@ and API.
 * [Oniongroove][]: a suite for Onion Services deployment.
 * Right now it's only an specification, and we hope to make a prototype still on 2023.
 * It should probably be built with Arti from start.
-* For 2023, the initial workload estimate for Onionprobe sums up to 2 months full time dedication,
-  which could be concentrated in:
+* For 2023.Q3 to 2024.Q2, the initial workload estimate for Onionprobe sums up
+  to 1 month of full time dedication, which could be concentrated in:
     * Reviewing specs.
     * Creating the [threat model](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/2).
     * Finishing [deployment research](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/1).
-    * Doing the initial proof of concept implementation.
+    * Doing the initial [proof of concept implementation](https://gitlab.torproject.org/tpo/onion-services/oniongroove/-/issues/3).
 * Points of attention:
     * Tools should be planned to be as compatible as possible with real-world
       devops actual technology toolkit.
