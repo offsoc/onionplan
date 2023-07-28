@@ -142,8 +142,10 @@ for the third.
 
 ## CAA
 
-This section discusses the Certification Authority Authorization (CAA)
+This section discusses the [Certification Authority Authorization (CAA)][]
 descriptor field.
+
+[Certification Authority Authorization (CAA)]: https://en.wikipedia.org/wiki/DNS_Certification_Authority_Authorization
 
 ### Cleverness
 
