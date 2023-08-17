@@ -12,8 +12,11 @@ This document is an incomplete summary of the main milestones in the history of
 ## The technology
 
 Year | Technology or relevant event
------|----------------------------------------------------------------------
-2003 | Onion Services v2 spec ([rendezvous][])
+-----|-----------------------------------------------------------------------
+2003 | Hidden Service draft spec ([rendezvous][])
+2004 | Hidden Service initial implementation on tor 0.0.6pre1 - 2004-04-08
+2005 | New Hidden Service descriptor format on tor 0.1.1.2-alpha - 2005-07-15
+2007 | Hidden Service v2 implementation on tor 0.2.0.7-alpha - 2007-09-21
 2013 | [Proposal 224][] (Next Generation of Onion Services)
 2014 | HTTPS certificates ([facebook][])
 2014 | Vanity addresses   ([facebook][])
@@ -34,9 +37,10 @@ Year | Technology or relevant event
 2021 | [Onion Services v2 final deprecation][] ([v2 deprecation timeline][])
 2022 | [CA/B Forum Ballot SC54][]: Onion Cleanup
 2022 | [DoS and the Onion Services Resource Coalition][]
-2023 | [ACME for Onions][]
+2023 | [ACME for Onions][] Internet Draft
 2023 | [Proposal 327][] (Proof-of-Work) [merged (#40634)][]
-2023 | Onion Services 20th Anniversary
+2023 | Onion Services 20th Anniversary (counting from the draft spec)
+2024 | Onion Services 20th Anniversary (counting from the initial implementation)
 
 ## Applications
 
@@ -54,7 +58,7 @@ Year | Application
 2022 | [Quiet][]
 
 [Onion Services]: https://community.torproject.org/onion-services/
-[rendezvous]: https://gitweb.torproject.org/tor.git/commit/?id=3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
+[rendezvous]: https://gitlab.torproject.org/tpo/core/tor/-/commit/3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
 [facebook]: https://blog.torproject.org/facebook-hidden-services-and-https-certs/
 [cloudflare]: https://blog.cloudflare.com/cloudflare-onion-service/
 [CA/B Forum Ballot 144]: https://cabforum.org/2015/02/18/ballot-144-validation-rules-dot-onion-names/
