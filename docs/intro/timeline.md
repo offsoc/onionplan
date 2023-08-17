@@ -12,7 +12,7 @@ This document is an incomplete summary of the main milestones in the history of
 ## The technology
 
 Year | Technology or relevant event
------|-----------------------------------------------------------------------
+-----|---------------------------------------------------------------------------
 2003 | Hidden Service draft spec ([rendezvous][])
 2004 | Hidden Service initial implementation on tor 0.0.6pre1 - 2004-04-08
 2005 | New Hidden Service descriptor format on tor 0.1.1.2-alpha - 2005-07-15
