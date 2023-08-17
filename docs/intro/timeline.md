@@ -20,13 +20,13 @@ Year | Technology or relevant event
 2013 | [Proposal 224][] (Next Generation of Onion Services)
 2014 | HTTPS certificates ([facebook][])
 2014 | Vanity addresses   ([facebook][])
-2015 | Onion Services v3 initial development (Tor 0.3.0.1-alpha)
 2015 | [CA/B Forum Ballot 144][]: validation rules for .onion names
 2015 | [.onion addresses reserved by the IETF][] ([RFC 7686][])
-2016 | [Proposal 279][]
+2016 | Onion Services v3 initial development on tor 0.3.0.1-alpha - 2016-12-19
+2016 | [Proposal 279][] (A Name System API for Tor Onion Services)
 2017 | CA/B Forum Ballots [198][] and [201][]: .onion revisions
-2017 | Onion Services v3 spec
-2018 | Onion Services v3 release (Tor 0.3.2.9)
+2017 | [Onion Services v3 spec][]
+2018 | Onion Services v3 release on tor 0.3.2.9 - 2018-01-09
 2018 | Alt-Svc ([cloudflare][])
 2020 | Onion-Location ([TBB 9.5][])
 2020 | Onion Authentication ([TBB 9.5][])
@@ -69,6 +69,7 @@ Year | Application
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
 [198]: https://cabforum.org/2017/05/08/ballot-198-onion-revisions/
 [201]: https://cabforum.org/2017/06/08/2427/
+[Onion Services v3 spec]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
 [Onion Services v2 final deprecation]: https://support.torproject.org/onionservices/v2-deprecation/
 [CA/B Forum Ballot SC27v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
 [#MoreOnionsPorfavor]: https://blog.torproject.org/more-onions-porfavor/
