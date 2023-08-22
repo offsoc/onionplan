@@ -224,8 +224,11 @@ incorporated as officially supported by Tor.
 
 ### Meeting notes
 
+* [OSUX - Onion service user experience problems](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Amsterdam/Notes/OSUX)
+  from the [2017 Amsterdam](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Amsterdam).
+
 * [IntegratingOnions](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/Notes/IntegratingOnions)
-  from [2017 Montreal Meeting](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/).
+  from the [2017 Montreal Meeting](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/).
 
 ### Procedures
 
