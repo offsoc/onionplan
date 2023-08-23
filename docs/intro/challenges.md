@@ -47,9 +47,8 @@ While some of these properties are already implemented for [Tor Onion
 Services][], there are still some building blocks and enhancements
 still missing:
 
-1. Built-in DoS resistance.
-2. Pluggable discoverability (multiple naming systems).
-3. Many other enhancements in usability and tooling.
+1. Pluggable discoverability (multiple naming systems).
+2. Many other enhancements in usability and tooling.
 
 The rest of this research deals with **how to get these in place**!
 

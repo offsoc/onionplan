@@ -22,12 +22,9 @@ About:
 
 Status:
 
-* Implemented on Tor 0.4.8.1-alpha as part of the "Onion Services resource
+* Implemented on Tor 0.4.8.4 as part of the "Onion Services resource
   coalition" sponsored work.
-* Mobile clients may not be able to solve fast enough (maybe only the high end
-  will). Needs more discussion on how PoW would impact legitimate mobile users
-  during an ongoing DoS.
-* [Needs end-user documentation](https://gitlab.torproject.org/tpo/web/community/-/issues/312).
+* Check the [PoW FAQ](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/Documentation/PoW-FAQ) for details.
 
 ### Relevant DoS-related issues
 
