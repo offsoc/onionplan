@@ -128,9 +128,13 @@ The [CA/Browser Forum][], a [consortium that produces guidelines for X.509
 (TLS/HTTPS) certification][], created [validation rules for Onion Service v2
 addresses][] (in 2015), later [extended for Onion Services v3][] (in 2020),
 standardizing the way [Certificate Authorities][] can issue certificates for
-.onion addresses and supports wildcards.
+.onion addresses and supports wildcards[^cab-historical].
 
 Only a few commercial providers currently provide this service[^existing-certifiers].
+
+[^cab-historical]: For a historical background on Domain Validation (DV) certs,
+                   check the CA/B forum thread
+                   [DV issuance for next-generation onion services][].
 
 [^existing-certifiers]: As of January 2023, there are only two CAs issuing
                         certificates for .onion domains:
@@ -162,6 +166,7 @@ identifiable information during the purchase of the certificates.
 [consortium that produces guidelines for X.509 (TLS/HTTPS) certification]: https://en.wikipedia.org/wiki/CA/Browser_Forum
 [validation rules for Onion Service v2 addresses]: https://cabforum.org/2015/02/18/ballot-144-validation-rules-dot-onion-names/
 [extended for Onion Services v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
+[DV issuance for next-generation onion services]: https://archive.cabforum.org/pipermail/public/2017-November/012451.html
 [DigiCert providing only Extended Validation (EV) certs]: https://www.digicert.com/blog/ordering-a-onion-certificate-from-digicert
 [HARICA providing only Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
 [CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.6.pdf
@@ -515,6 +520,14 @@ References:
 [Self-signed X.509 for .onion]: self-signed-x509-for-onion-self-signed-by-the-onion-address
 [Proposal for Bring Accessible TLS Supports to All Onion Services]: https://gitlab.torproject.org/tpo/core/torspec/-/issues/171
 [Proposal for automated onion service certificate issuance based on fully qualified onion service key signed certificate request]: https://github.com/cabforum/servercert/issues/433
+
+## Custom CAs
+
+There are also discussions about how to properly manage custom Certificate
+Authorities, i.e, those not distributed in TLS libraries by default (such as
+the certificate store in a web browser):
+
+* [.onion indicator for non-self-signed but non-trusted sites (#27636) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/27636)
 
 ## Further references
 
