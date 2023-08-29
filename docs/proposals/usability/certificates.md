@@ -26,8 +26,8 @@ pointless, or at most giving only an impression on users of additional security.
 But having valid HTTPS connection in Onion Services could enable many other
 enhancements, such as:
 
-1. Some browser features are available only with HTTPS, like [Content Security
-   Policy][] (CSP) and [Secure cookies][].
+1. Some browser features are available only with HTTPS, like [Secure
+   Contexts][], [Content Security Policy][] (CSP) and [Secure cookies][].
 
 2. Allows for the usage of [HTTP/2][], since some browsers only support it if on
    HTTPS[^http3-availability].
@@ -76,6 +76,7 @@ hard to solve.
                         Guidance - page 106) goes instead towards a certificate trusted by a
                         Certificate Authority.
 
+[Secure Contexts]: https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts
 [Secure cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#security
 [Content Security Policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 [HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
