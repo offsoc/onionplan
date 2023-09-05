@@ -174,7 +174,7 @@ But is CAA really needed for Onion Services?
 * So in a first look it seems that there's no added benefit in having CAA for
   .onion addresses, but maybe this analysis is missing something.
 
-* What happens is that CAs are are required to do CAA checking due to a CA/B
+* What happens is that CAs are required to do CAA checking due to a CA/B
   requirement after [ballot 187][] was approved (see the [announcement][]).
   This means that transposing the CAA DNS resource records could be an
   improvement in the future for CAs wishing (or required) to do this check also
