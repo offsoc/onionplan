@@ -244,10 +244,12 @@ To be in the safe side, however,
 This section is a work-in-progress scenario evaluation for ways that CAA
 descriptor fields can be checked during issuance/validation or evaluation.
 
-Please refer to the following threads for the related discussion:
+Please also refer to the following related discussions and presentations:
 
 * [Options to get CAA without operating a whole Tor client · Issue #2 · AS207960/acme-onion](https://github.com/AS207960/acme-onion/issues/2)
 * [[Acme] Obtaining the Tor hidden service descriptor for draft-ietf-acme-onion](https://mailarchive.ietf.org/arch/msg/acme/LMYC_Ou41E_9RuaVSYPr7SIhCCc/)
+* [[cabf\_validation] Draft Minutes of Validation Subcommittee - Sept. 7, 2023](https://lists.cabforum.org/pipermail/validation/2023-September/001927.html)
+* [CAA and ACME for Onions](https://magicalcodewit.ch/cabf-2023-09-07-slides/) (slides discussing approaches for checking CAA fields)
 
 #### For the CAA field check
 
