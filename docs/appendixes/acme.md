@@ -1,7 +1,7 @@
 # ACME for Onions Evaluation
 
 * Status: DRAFT
-* Version: v2023.Q2
+* Version: v2023.Q3
 
 ## Index
 
@@ -10,8 +10,8 @@
 ## Introduction
 
 The [ACME for Onions][] proposal for automating the issuance of X.509
-certificates for .onion addresses is composed of a [internet draft][] and
-reference code.
+certificates for .onion addresses is composed of a [internet draft][],
+a Tor specification ([Proposal 343][]) and reference code.
 
 [ACME for Onions][] is [introduced in the proposals section][] and a suggested
 planning for it's implementation is [done in the certificates rodamap
@@ -28,11 +28,14 @@ This document contains an evaluation on the proposal in the point of view
 of an implementation plan, and assumes that the reader knows the content
 of the [internet draft][].
 
-The main concerns here is to evaluate whether it's possible for CA's to start
-adopting [ACME for Onions][] by just implementing a subset of the spec.
+The main goals here are to:
+
+1. Contribute to the discussion and support the [internet draft][] adoption.
+2. Evaluate whether it's possible for Certificate Authorities (CAs) to start
+   adopting [ACME for Onions][] by just implementing a subset of the spec.
 
 [ACME for Onions]: https://acmeforonions.org/
-[internet draft]: https://datatracker.ietf.org/doc/draft-misell-acme-onion/
+[internet draft]: https://datatracker.ietf.org/doc/draft-ietf-acme-onion/00/
 [introduced in the proposals section]: ../proposals/usability/certificates.md#acme-for-onions
 [done in the certificates rodamap document]: ../roadmaps/certificates.md#acme-for-onions-roadmapping
 [certbot-onion]: https://pypi.org/project/certbot-onion/
@@ -158,21 +161,31 @@ Onion Service information directly in the descriptor.
 
 But is CAA really needed for Onion Services?
 
-* It's way more difficult to impersonate on .onion than HTTPS. The way to
-  effectively do it is to control the Onion Service keys.
+* For the case of Onion Service impersonation (rogue operators):
+  * It's way more difficult to impersonate on .onion than HTTPS. The way to
+    effectively do it is to control the Onion Service keys.
 
-* And basically, if one controls the .onion keys already controls the
-  descriptor and hence the `caa` fields.
+  * And basically, if one controls the .onion keys already controls the
+    descriptor and hence the `caa` fields. Mandatory CAA check won't prevent
+    such attackers from getting a certificate.
 
-* Maybe an exception would be if the attacker is able to inject arbitrary
-  content in an Onion Service (like injecting HTML and custom paths) in order
-  to be able to solve a `http-01` challenge for a fake X.509 CSR. But even if that
-  succeeds, the attacker could only use this certificate if also controlling the
-  Onion Service keys and the service itself. And CT Logs could also play a role
-  detecting rogue certificates.
+  * Maybe an exception would be if the attacker is able to inject arbitrary
+    content in an Onion Service (like injecting HTML and custom paths) in order
+    to be able to solve a `http-01` challenge for a fake X.509 CSR. But even if that
+    succeeds, the attacker could only use this certificate if also controlling the
+    Onion Service keys and the service itself. And CT Logs could also play a role
+    detecting rogue certificates.
 
-* So in a first look it seems that there's no added benefit in having CAA for
-  .onion addresses, but maybe this analysis is missing something.
+* For the case of rogue Certificate Authorities:
+  * Without CAA, it may happen that some rogue DV certificate issued by a rogue
+    CA remain undetected, but this certificate will be innocuous since the
+    .onion private key is also needed in order to serve an Onion Service
+    application through a CA-validated TLS connection.
+
+So, in a first look, it seems that:
+
+* There's no added benefit in having CAA for .onion addresses, but maybe this
+  analysis is missing something.
 
 * What happens is that CAs are required to do CAA checking due to a CA/B
   requirement after [ballot 187][] was approved (see the [announcement][]).
@@ -180,22 +193,26 @@ But is CAA really needed for Onion Services?
   improvement in the future for CAs wishing (or required) to do this check also
   for .onion addresses.
 
-* But this check is currently not required for .onion addresses:
-    * CAA ([RFC 6844][]) probably does not apply to .onion (an Special-Use Domain Name
-      per [RFC 7686][]), since CAA refers to "domains" as "DNS Domain Name" and
-      "Domain Name" as "A DNS Domain Name as specified in [STD13]." ([RFC 6844][] section
-      2.2). We could argue that CAA does not apply to .onion due to both RFCs 6844
-      and 7686.
-    * In fact, the [CA/B baseline requirements][] states that:
+And this check is currently not required for .onion addresses:
 
-      > 3.2.2.8 CAA Records
-      >
-      > As part of the Certificate issuance process, the CA MUST retrieve and
-      > process CAA records in accordance with RFC 8659 for each dNSName in the
-      > subjectAltName extension that does not contain an Onion Domain Name.
+* CAA ([RFC 6844][]) probably does not apply to .onion (an Special-Use Domain Name
+  per [RFC 7686][]), since CAA refers to "domains" as "DNS Domain Name" and
+  "Domain Name" as "A DNS Domain Name as specified in [STD13]." ([RFC 6844][] section
+  2.2). We could argue that CAA does not apply to .onion due to both RFCs 6844
+  and 7686.
 
-* To be in the safe side, however, there's no harm in keeping CAA fields in
-  the IETF spec and in the torspec ([prop343][]) for the following reasons:
+* In fact, the [CA/B baseline requirements][] states that:
+
+  > 3.2.2.8 CAA Records
+  >
+  > As part of the Certificate issuance process, the CA MUST retrieve and
+  > process CAA records in accordance with RFC 8659 for each dNSName in the
+  > subjectAltName extension that does not contain an Onion Domain Name.
+
+To be in the safe side, however,
+
+* There's no harm in keeping CAA fields in the IETF spec and in the torspec
+  ([prop343][]) for the following reasons:
     * If CA/B start to recommend or require CAA checking for .onion addresses,
       the specs would already indicate how that can be done.
 
@@ -213,7 +230,8 @@ But is CAA really needed for Onion Services?
   will be in practice required to do such checking. If they do, then
   implementation complexity might increase, as the ACME Server will need to use
   the Tor network to retrieve the certificate, or at least have some built-in
-  logic to fetch descriptors directly from the HSDirs.
+  logic to fetch descriptors directly from the `HSDirs`. Client side logic might
+  also increase a bit.
 
 [ballot 187]: https://archive.cabforum.org/pipermail/public/2017-March/009988.html
 [announcement]: https://cabforum.org/2017/03/08/ballot-187-make-caa-checking-mandatory/
@@ -221,12 +239,209 @@ But is CAA really needed for Onion Services?
 [RFC 7686]: https://datatracker.ietf.org/doc/html/rfc7686
 [prop343]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/343-rend-caa.txt
 
+### Scenarios
+
+This section is a work-in-progress scenario evaluation for ways that CAA
+descriptor fields can be checked during issuance/validation or evaluation.
+
+Please refer to the following threads for the related discussion:
+
+* [Options to get CAA without operating a whole Tor client · Issue #2 · AS207960/acme-onion](https://github.com/AS207960/acme-onion/issues/2)
+* [[Acme] Obtaining the Tor hidden service descriptor for draft-ietf-acme-onion](https://mailarchive.ietf.org/arch/msg/acme/LMYC_Ou41E_9RuaVSYPr7SIhCCc/)
+
+#### For the CAA field check
+
+##### 1. Using a memory-safe Tor implementation whenever needed (like Arti)
+
+It's worth note that Tor has a memory safe implementation called [Arti][], which
+has Onion Service client support an can be used to get .onion descriptors from
+the `HSDirs` whenever (and if) needed.
+
+* Pros:
+    * Code safety is ensured.
+    * Can be run in a security enclave, away from the main validation logic.
+* Cons:
+    * Need to bootstrap a Tor client.
+    * Complexity involved in fetching a descriptor (timeouts etc).
+
+[Arti]: https://gitlab.torproject.org/tpo/core/arti/
+
+##### 2. Using a special Onion Service descriptor library, reducing the need to bootstrap a full Tor connection
+
+It seems also possible to devise a way to fetch .onion descriptors without
+having to bootstrap a Tor connection, but only doing something simpler, like
+getting the consensus, calculating the `HSDir` hashring and connecting directly
+to one of the relays (single hop) to do a `HSFETCH`.
+
+* Pros:
+    * Code safety is ensured even more.
+    * Can be run in a security enclave, away from the main validation logic.
+    * No need to bootstrap a full Tor connection.
+* Cons:
+    * Still some complexity involved in fetching a descriptor (timeouts etc).
+
+That could be done by a small set of crates/libraries, way smaller than [Arti][].
+
+This whole descriptor fetching seems to have a very low attack surface, and
+could even run in some sort of security enclave, away from the main validation
+code.
+
+Would then be mostly a matter of dealing with connectivity issues, similar to
+what happens when a DNS zone is unavailable or something like that, yielding
+into a validation failure after some attempts.
+
+##### 3. Onion Service descriptor (and hence CAA) being sent directly via the ACME API
+
+There's no practical difference, in terms of CAA, between publishing an
+.onion descriptor to the `HSDirs` and sending it directly into the
+ACME validation, as some parameter in the API request.
+
+* Pros:
+    * No need to use a Tor client at all.
+    * No need to rely in `HSDirs` (they don't offer any extra guarantees for
+      .onion descriptors).
+* Cons:
+    * May need an amendment in the [internet draft][].
+
+There's nothing special in the Hidden Service Directory system in terms of being
+authoritative of anything. It's a hashring where everybody can upload stuff up
+to a given size and formatted according to a given specification. If you have
+an [Ed25519][] keypair and other basic requirements (such as a computer, unblocked
+internet connection), then you can build and upload a descriptor into the
+`HSDir`. It's very different from DNS, where you need credentials etc.  While DNS
+is a centralized and hierarchical system, `HSDirs` are decentralized and
+non-hierarchical, having the .onion addressing space consisting of
+collision-resistant[^collision-resistance] public [Ed25519][] keys. An .onion
+address is self-authenticating, and don't need an authoritative service for
+doing any additional authentication.
+
+[Ed25519]: https://ed25519.cr.yp.to/
+
+[^collision-resistance]: See [Ed25519][] for details.
+
+So if CAA check is mandatory, there's no difference in an .onion publishing
+this descriptor in a `HSDir` an sending it directly into and ACME certificate
+request: the same data a Tor daemon would publish to the `HSDir` can instead be
+sent directly to the ACME request.
+
+But there's a huge difference: the non-`HSDir` approach is much cheaper for the
+CA: everything is already sent into the certificate issuance API request. The
+CA won't need to have any Tor software installed, and won't need to reach the
+Tor network.
+
+What's interesting here is that this touches in something Aaron Gable from
+[Let's Encrypt][] commented right after the Internet Draft was submitted:
+
+> 1. Obviously it's valuable for this draft to standardize a method that is
+> already accepted by the CA/BF. But in the long term there's no need to use
+> a CSR as the transport mechanism for a random token, a public key, and a
+> signature -- moving away from x509 for this would be nice in the long term.
+> Probably out-of-scope for this document, but worth discussing.
+>
+> 2. The primary benefit of the onion-csr-01 method is that it allows the CA
+> to perform domain control validation without operating a Tor client.
+> However, this benefit is obviated entirely by the need to operate a Tor
+> client to check for CAA in the hidden service descriptor. It seems likely
+> that there are CAs which have avoided implementing HTTP-01 and TLS-ALPN-01
+> for .onion due to the need to operate a Tor client; these same CAs may have
+> been willing to implement ONION-CSR-01, but now will not due to the CAA
+> mechanism.
+>
+> -- https://mailarchive.ietf.org/arch/msg/acme/-puOLP_LXNILKIfDjKt1RO-qm5I/
+
+[Let's Encrypt]: https://letsencrypt.org
+
+We are focusing in arguments for 2, but if the descriptor is sent along the
+ACME request, then we don't even need a CSR for the transport mechanism (item
+1).
+
+And this approach does not only work for `onion-csr-01`, but also for `http-01`
+and `tls-alpn-01`, as CAA can be checked _before_ any connection is made
+(directly in the API request).
+
+So one approach would be to do the CAA check without fetching a descriptor from a
+`HSDir` (since it does not make anything safer, only more complex and expensive),
+using the same argument that a CSR is not really necessary either and could be
+replace by something else in the future.
+
+This is a good alternative for doing the CAA check without the need to connect
+to the Tor network in order to issue an .onion certificate.
+
+Going further down, not everything in the descriptor would be necessary, like
+introduction points, Proof of Work parameters, etc: what is mainly needed is
+the relevant CAA properties, which could be basically just parameters into the
+API call (like `iodef`, `contactemail` and `contactphone`).  This could also
+eliminate all the complexities involved for the cases where an Onion Service
+descriptor is protected by a layer of Onion Authorization credentials.
+
+But for the sake of _consistence_ with the existing [CA/B baseline
+requirements][] and [RFC 6844][], it might be interesting to provide a
+descriptor anyway, since it's the equivalent document to a DNS CAA Resource
+Record.
+
+This might need an amendment in the Internet Draft, but seems to be the most
+efficient thing to do if CAA is going to be specified for Onion Services, being
+it a mandatory check or not.
+
+Would adopting this approach make CAA fields in the _published_ Onion Service
+descriptors unnecessary? Maybe not: CAA for .onion could be validated during
+certificate issuance through the ACME API, but still be available in the .onion
+descriptor, as _"CAA records MAY be used by Certificate Evaluators as a
+possible indicator of a security policy violation"_[^caa-evaluators].
+
+[^caa-evaluators]: See [RFC 6844][] (CAA Resource Record), Introduction.
+
+##### 4. No check is done
+
+For completeness, the case where no CAA check is done is also considered.
+
+* Pros:
+    * Less complexity for both ACME clients and servers.
+    * Certificates are issued quickly.
+* Cons:
+    * During validation:
+        * Seems like there's no harm in not doing a check with respect to
+            certificate misissuance.
+        * It may be easier to flood an ACME server with requests if an attacker
+          only need to generate keys, and not publish descriptors; but rate
+          limiting can be implemented with other methods.
+    * During evaluation:
+        * Depends on what is being evaluated; may be harmless if the goal is to
+            check certificate misissuance; but may not be good if Certificate
+            Evaluators are looking for `iodef`/`contactemail`/`contactphone`
+            properties.
+
+#### For the CAA field check requirement
+
+##### 1. CAA check is required during issuance/validation
+
+* Pros:
+    * ?
+* Cons:
+    * May reduce the number of interested CAs in offering automated .onion certification.
+    * No additional security improvement for the certification stage.
+
+##### 2. CAA check is not required
+
+* Pros:
+    * CAs can start adopting the spec in a faster pace, like implementing onion-csr-01
+        without CAA checking.
+    * CAA can still be configured by Onion Service operators and checked by
+        Certificate Evaluators.
+* Cons:
+    * ?
+
 ### Conclusion
 
 * In summary, an ACME Server offering only the `onion-csr-01` challenge for
   .onion addresses and without the CAA descriptor field check would be way
   easier to implement and to maintain, but without excluding CA's wishing
   to implement the full spec.
+
+* As of September 2023, it may be too early to make CAA checking mandatory for
+  .onion, and CAs may need to time adopt the technology incrementally.
+  Time is needed to evaluate more the pros and cons with different
+  stakeholders.
 
 * It also might work to include somewhere (maybe on [prop343][]) that Onion
   Service operators aren't required to set CAA descriptor fields in order
@@ -257,12 +472,13 @@ Maybe it could have an item about service abuse prevention:
    addresses and request certificates for those. What could work instead (and that
    would be worth mentioning) is that implementors would be interested to adopt
    some of the [existing DoS protections for Onion Services][] and specially the
-   upcoming [Proof-Of-Work (PoW) defense mechanism][] released on Tor
-   0.4.8.1-alpha. So the network layer already have protections against abuse, but
-   those need to be enabled server side.
+   upcoming [Proof-Of-Work (PoW) defense mechanism][] from [Proposal 327][]
+   released on Tor 0.4.8.1-alpha. So the network layer already have protections
+   against abuse, but those need to be enabled server side.
 
 [existing DoS protections for Onion Services]: https://community.torproject.org/onion-services/advanced/dos/
-[Proof-Of-Work (PoW) defense mechanism]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt
+[Proof-Of-Work (PoW) defense mechanism]: https://gitlab.torproject.org/tpo/onion-services/onion-support/-/wikis/Documentation/PoW-FAQ
+[Proposa 327]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt
 
 ### On requests through the Tor network
 
