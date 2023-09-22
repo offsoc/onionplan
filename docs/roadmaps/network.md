@@ -62,8 +62,13 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 
 ## Onion Service support in Arti
 
-See Arti's [1.1.3](https://blog.torproject.org/arti_113_released/) and
-[1.1.4](https://blog.torproject.org/arti_114_released/) release notes.
+Check:
+
+* Arti's [1.1.3](https://blog.torproject.org/arti_113_released/) and
+  [1.1.4](https://blog.torproject.org/arti_114_released/) release notes for
+  initial client implementation.
+* Arti's [1.1.8](https://blog.torproject.org/arti_118_released/): for Onion service
+  server infrastructure.
 
 ## Relevant issue boards
 
