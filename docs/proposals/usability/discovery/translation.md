@@ -71,7 +71,9 @@ it's offering content to a client.
 The [Onion-Location][] method was introduced on [Tor Browser 9.5][] as a way
 for service operators announce their Onion Services in their regular HTTPS
 sites. It's specified under [tor-browser-spec][]'s [Proposal 100][] -
-"Onion redirects using Onion-Location HTTP header".
+"Onion redirects using Onion-Location HTTP header". The [ticket about
+implementing Onion-Location][] also has important discussions about this
+specific approach as well as servide discovery in general.
 
 Service discovery happens in the HTTP level, either as an HTTP Header or as an
 HTML `<meta>` tag. This means that users need first to access the regular site
@@ -89,6 +91,7 @@ available.
 [Tor Browser]: https://tb-manual.torproject.org/
 [tor-browser-spec]: https://gitlab.torproject.org/tpo/applications/tor-browser-spec
 [Proposal 100]: https://gitlab.torproject.org/tpo/applications/tor-browser-spec/-/blob/main/proposals/100-onion-location-header.txt
+[ticket about implementing Onion-Location]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21952
 
 ### Alt-Svc
 
