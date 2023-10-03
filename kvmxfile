@@ -173,7 +173,7 @@ domain="example.org"
 arch="amd64"
 
 # Box distribution when bootstraping a new image
-version="bullseye"
+version="bookworm"
 
 # Debian mirror
 mirror="https://deb.debian.org/debian/"

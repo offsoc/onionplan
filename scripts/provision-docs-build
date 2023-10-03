@@ -21,6 +21,7 @@ $SUDO apt-get update && $SUDO apt-get dist-upgrade -y && \
 # Install dependencies
 $SUDO apt install -y $DEPENDENCIES || exit 1
 
-# Install python dependencies
-# The --break-system-packages needs to be replaced by venv at some point
-pip3 install --break-system-packages $DEPENDENCIES_PIP || exit 1
+# Try to install twice since the --break-system-packages is a new option.
+# This approach needs to be replaced by venv at some point:
+# https://gitlab.torproject.org/rhatto/onion-mkdocs/-/issues/1
+pip3 install $DEPENDENCIES_PIP || pip3 install --break-system-packages $DEPENDENCIES_PIP || exit 1
