@@ -7,6 +7,7 @@ name = "pypi"
 mkdocs-material = "*"
 mkdocs-redirects = "*"
 mkdocs-awesome-pages-plugin = "*"
+mkdocstrings = {extras = ["python"], version = "*"}
 
 [dev-packages]
 
