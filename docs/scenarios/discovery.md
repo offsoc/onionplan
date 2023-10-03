@@ -1,6 +1,5 @@
-# Usability Roadmap - Service Discovery
+# Usability Roadmap Scenarios - Service Discovery
 
-* Status: DRAFT
 * Version: v2023.Q2
 * Companion slides: [2022.Q4/discovery.pdf][] and [2022.Q4/discovery-technical.pdf][].
 

@@ -1,6 +1,5 @@
-# Usability Roadmap - User Experience (UX)
+# Usability Roadmap Scenarios - User Experience (UX)
 
-* Status: DRAFT
 * Version: v2023.Q2
 
 ## Index

@@ -54,18 +54,18 @@ The rest of this research deals with **how to get these in place**!
 
 ## Current context
 
-As of May 2023,
+As of September 2023,
 
 * The usability improvements of Onion Services still presents outstanding
   challenges that are being discussed for years. Now that the [protocol v3][] is
-  successfully deployed, it may be the time to think in the roadmap for the next
-  steps.
+  successfully deployed, it's a good time to think in the roadmap scenarios
+  for the next steps.
 * There's a common feeling similar to when the privacy-aware internet was
   moving from HTTP to HTTPS, but now with Onion Services! Perhaps not in the
   same scale, but still related in terms of scope.
-* But the roadmap seems to be stalled, not only for the lack of developers but
-  also because we're missing a "perfect" solution that we never (and may never)
-  find.
+* For some desired features, the roadmap seems to be stalled, not only for the
+  lack of developers but also because we're missing a "perfect" solution that
+  we never (and may never) find.
 * Now there's an Onion Service Working Group at Tor, which takes care of
   converging Onion Service development happening on multiple teams.
 * In terms of governance, Tor cannot be responsible for things like domain issuance:

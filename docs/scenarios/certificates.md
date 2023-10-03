@@ -1,6 +1,5 @@
-# Usability Roadmap - Certificates
+# Usability Roadmap Scenarios - Certificates
 
-* Status: DRAFT
 * Version: v2023.Q2
 
 ## Index

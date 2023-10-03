@@ -1,6 +1,5 @@
-# Outreach Roadmap
+# Outreach Roadmap Scenarios
 
-* Status: DRAFT
 * Version: v2023.Q2
 
 ## Index

@@ -37,7 +37,7 @@ The main goals here are to:
 [ACME for Onions]: https://acmeforonions.org/
 [internet draft]: https://datatracker.ietf.org/doc/draft-ietf-acme-onion/00/
 [introduced in the proposals section]: ../proposals/usability/certificates.md#acme-for-onions
-[done in the certificates rodamap document]: ../roadmaps/certificates.md#acme-for-onions-roadmapping
+[done in the certificates rodamap document]: ../scenarios/certificates.md#acme-for-onions-roadmapping
 [certbot-onion]: https://pypi.org/project/certbot-onion/
 [certbot]: https://certbot.eff.org/
 [Proposal 343]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/343-rend-caa.txt

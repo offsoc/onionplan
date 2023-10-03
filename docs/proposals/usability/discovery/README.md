@@ -51,8 +51,8 @@ they try to solve. In this documentation they're grouped by:
     * Blockchain-based (like Namecoin).
     * Other P2P-based (like GNUnet's LSD).
 
-[Address translation]: Address-Translation
-[Onion Names]: Onion-Names
+[Address translation]: translation.md
+[Onion Names]: onion-names.md
 
 ## Coexistence between proposals
 

@@ -9,10 +9,10 @@
 This section summarizes the relevant proposals related to improve Onion
 Services usability by offering:
 
-1. [Certification](Certification): to
+1. [Certification](certificates.md): to
    securely tie a TLS/HTTPS certificate (and optionally an organization) to a
    given onion service.
-2. [Service discovery](Discovery): address
+2. [Service discovery](discovery/README.md): address
    translation or alternative naming systems for censorship and forgery
    resistant name discovery/lookup.
 
@@ -32,7 +32,7 @@ These specs does not exist right now. Creating them is part of the plan.
 ## Towards prioritization criteria
 
 Having valid proposals is just part of the plan: prioritizing which ones should
-be implemented first is the next step in roadmapping. Here we give some suggestions:
+be considered first is the next step in roadmapping. Here we give some suggestions:
 
 0. Rule out experimental or disruptive technology.
 1. What can be implement by Tor developers?

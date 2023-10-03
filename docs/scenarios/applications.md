@@ -1,6 +1,5 @@
-# Applications Roadmap
+# Applications Roadmap Scenarios
 
-* Status: DRAFT
 * Version: v2023.Q2
 
 ## Index

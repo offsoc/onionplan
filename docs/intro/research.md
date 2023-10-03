@@ -29,11 +29,11 @@ This research has the following major sections:
 
 1. **Proposals**: an inventory on all ideas an existing research on _enhancement
    proposals_.
-2. **Roadmaps**: where some of the enhancement proposals are selected and
-   arranged in development phases inside _roadmap proposals_.
-3. **Appendixes**: in-depth discussion of usability and roadmap proposals.
+2. **Scenarios**: where some of the enhancement proposals are selected and
+   arranged in development phases inside _roadmap scenarios_.
+3. **Appendixes**: in-depth discussion of proposals and scenarios.
 
-The overall plan is also split into roadmap tracks that may be worked by
+The overall plan is also split into research tracks that may be worked by
 distinct, integrated teams:
 
 1. Network Layer: DoS protections, performance improvements etc.
