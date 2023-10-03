@@ -3,10 +3,10 @@
 #
 
 compile:
-	mkdocs build
+	pipenv run mkdocs build
 
 serve:
-	mkdocs serve
+	pipenv run mkdocs serve
 
 watch:
 	@./scripts/watch

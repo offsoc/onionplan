@@ -14,6 +14,6 @@ cd $BASEDIR
 
 # Dispatch
 while inotifywait -r $WATCHED; do
-  #mkdocs build
+  #make compile
   kvmx ssh make -C /srv/shared compile
 done

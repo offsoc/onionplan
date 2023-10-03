@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+mkdocs-material = "*"
+mkdocs-redirects = "*"
+mkdocs-awesome-pages-plugin = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "*"
