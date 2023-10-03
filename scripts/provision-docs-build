@@ -22,4 +22,5 @@ $SUDO apt-get update && $SUDO apt-get dist-upgrade -y && \
 $SUDO apt install -y $DEPENDENCIES || exit 1
 
 # Install python dependencies
-pip3 install $DEPENDENCIES_PIP || exit 1
+# The --break-system-packages needs to be replaced by venv at some point
+pip3 install --break-system-packages $DEPENDENCIES_PIP || exit 1
