@@ -1,15 +1,1 @@
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[packages]
-mkdocs-material = "*"
-mkdocs-redirects = "*"
-mkdocs-awesome-pages-plugin = "*"
-mkdocstrings = {extras = ["python"], version = "*"}
-
-[dev-packages]
-
-[requires]
-python_version = "*"
+vendors/onion-mkdocs/Pipfile
