@@ -1,8 +1,11 @@
 pages:
   image: debian:bookworm
   script:
-    - scripts/provision-docs-build
-    - make compile
+    - apt-get update
+    - apt-get install -y git
+    - git submodule update --init --recursive
+    - vendors/onion-mkdocs/scripts/onion-mkdocs-provision-build
+    - make onion-mkdocs-compile
   artifacts:
     paths:
       - public

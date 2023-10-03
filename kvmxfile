@@ -75,7 +75,7 @@ shared_folders="shared:.:/srv/shared"
 #provision_command="/usr/local/share/kvmx/provision/debian/development"
 #provision_command="/usr/local/share/kvmx/provision/debian/trashman"
 #provision_command="/usr/local/share/kvmx/provision/debian/desktop-basic"
-provision_command="git -C /srv/shared submodule update --init --recursive && /usr/local/share/kvmx/provision/debian/development && /srv/shared/scripts/provision-docs-host && /srv/shared/scripts/provision-docs-build && /srv/shared/vendors/onion-tex-slim/scripts/provision-docs-build"
+provision_command="git -C /srv/shared submodule update --init --recursive && /usr/local/share/kvmx/provision/debian/development && /srv/shared/vendors/onion-mkdocs/scripts/onion-mkdocs-provision-host && /srv/shared/vendors/onion-mkdocs/scripts/onion-mkdocs-provision-build && /srv/shared/vendors/onion-tex-slim/scripts/onion-tex-slim-provision-build"
 
 # Startup command
 #startup_command="/path/to/custom/command"
