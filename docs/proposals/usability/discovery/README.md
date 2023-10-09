@@ -129,8 +129,12 @@ Anyway, even if the [Proposal 279][] and it's existing implementations are
 under research, they offer a concrete way to build service discovery supporting
 many methods and technologies.
 
+Check for the [Proposal 279 fixes and improvements][] appendix for a detailed
+analysis in what still needs to be addressed.
+
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
 [Tor Control Protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/control-spec.txt
+[Proposal 279 fixes and improvements]: ../../appendixes/prop279.md
 
 ## Official and non-official support
 

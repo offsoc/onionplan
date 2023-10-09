@@ -164,8 +164,12 @@ by either:
 In any case, currently there seems to be no formal proposal to standardize this
 method.
 
+Check the [Specs for DNS-based .onion records][] appendix for a detailed
+discussion.
+
 [RFC 1464]: https://www.rfc-editor.org/rfc/rfc1464
 [RFC 2782]: https://datatracker.ietf.org/doc/html/rfc2782
+[Specs for DNS-based .onion records]: ../../../appendixes/dns.md
 
 ## Certificate Transparency (CT Logs) based
 

@@ -78,7 +78,7 @@ Alternatives:
            that it should be accessed by some protocol like `https`. How to
            accommodate entries for `http` for even other services? One solution is to use
            a composite `service` fields like `onion-https`, `onion-http` etc, exactly like
-           the [convention used][] by [Onion Router][].
+           the [convention used][] by [OnionRouter][].
         3. Cannot include a signature from the .onion key (no Onion Service
            self-authentication property).
 3. Use a custom `ONION` RR by submitting an RFC proposal to the IETF.
