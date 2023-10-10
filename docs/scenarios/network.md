@@ -68,6 +68,8 @@ Check:
   initial client implementation.
 * Arti's [1.1.8](https://blog.torproject.org/arti_118_released/): for Onion service
   server infrastructure.
+* Arti's [1.1.9](https://blog.torproject.org/arti_119_released/): Assembling
+  the onions.
 
 ## Relevant issue boards
 
