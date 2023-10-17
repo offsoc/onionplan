@@ -287,7 +287,7 @@ setting, like the following:
 It's important to note that the current (as of 2023-04-04) Onion Services v3
 specification does not allow the Master Onion Service identity key to be used
 for purposes other than generating blinded signing keys (see Section 1.9 from
-the [rend-spec-v3.txt][]):
+the [rend-spec-v3][]):
 
 > Master (hidden service) identity key -- A master signing keypair
 >   used as the identity for a hidden service.  This key is long
@@ -304,10 +304,10 @@ also be used to:
 1. Sign the required DNS entries.
 2. Derive long-term (1 year?) blinded keys to be used to sign the DNS, maybe
    using the same approach described by Appendix A (`[KEYBLIND]`) from
-   [rend-spec-v3.txt][] but covering the needed use case of a long-term key, i.e,
+   [rend-spec-v3][] but covering the needed use case of a long-term key, i.e,
    depending in a long-term nonce and not in `[TIME-PERIODS]`.
 
-[rend-spec-v3.txt]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
+[rend-spec-v3]: https://spec.torproject.org/rend-spec-v3
 
 ### Keeping the self-authentication property
 

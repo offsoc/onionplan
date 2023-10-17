@@ -69,7 +69,7 @@ Year | Application
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
 [198]: https://cabforum.org/2017/05/08/ballot-198-onion-revisions/
 [201]: https://cabforum.org/2017/06/08/2427/
-[Onion Services v3 spec]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt
+[Onion Services v3 spec]: https://spec.torproject.org/rend-spec-v3
 [Onion Services v2 final deprecation]: https://support.torproject.org/onionservices/v2-deprecation/
 [CA/B Forum Ballot SC27v3]: https://cabforum.org/2020/02/20/ballot-sc27v3-version-3-onion-certificates/
 [#MoreOnionsPorfavor]: https://blog.torproject.org/more-onions-porfavor/

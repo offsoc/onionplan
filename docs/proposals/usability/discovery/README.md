@@ -240,7 +240,7 @@ incorporated as officially supported by Tor.
 
 ### Specs and proposals
 
-* `[HUMANE-HSADDRESSES-REFS]` from [rend-spec-v3.txt](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/rend-spec-v3.txt).
+* `[HUMANE-HSADDRESSES-REFS]` from [rend-spec-v3](https://spec.torproject.org/rend-spec-v3).
 * [Drafting a proposal for mnemonic onion URLs](https://archives.seul.org/or/dev/Dec-2011/msg00034.html).
 * The [.onion nym system](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/ideas/xxx-onion-nyms.txt).
 
