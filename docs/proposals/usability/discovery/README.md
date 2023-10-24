@@ -1,4 +1,4 @@
-# Service discovery
+# Onion Discovery
 
 ## Index
 
@@ -7,15 +7,16 @@
 ## About
 
 This document organizes knowledge about the various proposed service discovery
-an naming systems for Onion Services.
+for Onion Services, including naming systems.
 
-This page is meant to be used by researchers and developers interested in this
-topic as well as to aid decision-making and roadmapping.
+This page is meant to be used by researchers, developers and anyone else
+interested in this topic as well as to aid decision-making and roadmapping.
 
-## What is service discovery?
+## What is Onion Discovery?
 
-In the context of Onion Services, discovery means a way that users can easily
-get the right .onion address for the site or service they want to access.
+In the context of Onion Services, service discovery means a way that users can
+easily get the right .onion address for the site or service they want to
+access.
 
 It is basically a way to map the big random-looking onion addresses into human
 readable names.
@@ -27,9 +28,12 @@ For example you can imagine the following useful map:
 That way, users can just write `torproject` in their browser instead of having
 to remember that big string.
 
-While it's possible to use the so-called _Naming Systems_ to provide a way for this
-discovery, there are also techniques where the regular site (like `torproject.org`)
-can itself announce it's .onion counterpart.
+While it's possible to use the so-called _Naming Systems_ to provide a way for
+this discovery, there are also techniques where the regular site (like
+`torproject.org`) can itself announce it's .onion counterpart. We call this
+broad range of techniques to translate semantically meaningful names into Onion
+Services addresses as "Onion Discovery", i.e, Onion Discovery is service
+discovery for Onion Services.
 
 There are many proposals out there describing how this discovery can be done,
 which are categorized and described below.
