@@ -69,7 +69,7 @@ Tor Browser addon          | Other      | -                                     
 ## Ruleset-based
 
 * Ruleset-based Onion Names depends on trust, which is delegated in that
-  namespace to the organization managing the ruleset (Secure Drop).
+  namespace to the organization managing the ruleset.
 * Criteria about who controls each ruleset can be:
   * User-based: equivalent to sharing bookmarks. Trust the authors. But how to
     assign namespaces?
@@ -80,16 +80,23 @@ Tor Browser addon          | Other      | -                                     
 
 ### Onion Names for SecureDrop
 
+[Onion Names for SecureDrop](https://securedrop.org/news/introducing-onion-names-securedrop/).
+is the first implementation of a ruleset-based approach and is maintained by 
+[Secure Drop](https://securedrop.org/).
+
+It's limited in the namespace it can use, so it does not conflict with other
+discovery methods.
+
 Since mid-2022 it's is [integrated in Tor Browser
 core](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40458)
 and there's a proposal to edit (and maybe share) rulesets directly in the Tor
 Browser interface.
 
-It's actually the first implementation and should be limited in the namespace
-it can use so it does not conflict with other discovery methods.
+### User-supplied petnames
 
-For more information, check
-[Introducing Onion Names for SecureDrop](https://securedrop.org/news/introducing-onion-names-securedrop/).
+Another proposal for rulesets is to [rely on user-supplied petnames instead of
+onion addresses in URL
+bar](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40845).
 
 ## Blockchain-based
 
