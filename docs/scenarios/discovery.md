@@ -1,4 +1,4 @@
-# Usability Roadmap Scenarios - Service Discovery
+# Usability Roadmap Scenarios - Onion Discovery
 
 * Version: v2023.Q2
 * Companion slides: [2022.Q4/discovery.pdf][] and [2022.Q4/discovery-technical.pdf][].
@@ -159,7 +159,7 @@ Browser** or Firefox.
    resistant than a direct block in the site from the point of view of a Tor
    exit node (which would render the `Onion-Location` and the `Alt-Svc` methods
    useless).
-3. Service discovery usually involves additional roundtrips.
+3. Onion Discovery usually involves additional roundtrips.
 4. Do not work with .onion-only sites.
 
 ### Opportunities
@@ -210,7 +210,7 @@ Tor NS API:
             * REQUIRE that plugins use Tor to do their queries if those are made
               outside their local network, to increase privacy and censorship
               resistance.
-            * Allow for wildcard plugins to enable opportunistic service discovery.
+            * Allow for wildcard plugins to enable opportunistic Onion Discovery.
             * Keep the "priority" config in order to allow multiple plugins handling
               discoveries of regular domains using different methods.
 2. Implement the Tor NS API on C Tor if it's possible to include that in the C
