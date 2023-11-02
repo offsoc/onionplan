@@ -27,22 +27,57 @@ But having valid HTTPS connection in Onion Services could enable many other
 enhancements, such as:
 
 1. Some browser features are available only with HTTPS, like [Secure
-   Contexts][], [Content Security Policy][] (CSP) and [Secure cookies][].
+   Contexts][], [Content Security Policy][] (CSP), [Secure cookies][],
+   [WebAuthn][], [WebRTC][] and [PaymentRequest][].
 
-2. Allows for the usage of [HTTP/2][], since some browsers only support it if on
-   HTTPS[^http3-availability].
+2. A user may be using a browser that isn't the Tor browser.  For
+   example on iOS there is only Safari, and in such cases the browser
+   will not be aware of the different semantics of security for an onion
+   site, and won't allow the use of secure browser features (such as
+   secure cookies). This limits the kind of web apps people can develop
+   on onionsites as many modern browser APIs mentioned above.
 
-3. [It also opens up new opportunities such as payment processing][], _"as current
+3. Allows for the usage of [HTTP/2][], since some browsers only support it if
+   on HTTPS[^http3-availability]. In the future, HTTP2 and HTTP3 may only
+   work with TLS, and thus valid certificates.
+
+4. [It also opens up new opportunities such as payment processing][], _"as current
    PCI DSS requirements do not allow non-standard TLS"_[^pci-dss-tls] and may
    only work with certificates having some sort of validation[^pci-dss-self-signed].
+   Payments card networks require HTTPS for a payment to be taken. So if
+   someone wants to do that over an onion site they would need a TLS
+   certificate.
 
-4. It could be argued that this is also security-in-depth by having yet another
+5. It could be argued that this is also security-in-depth by having yet another
    layer of encryption atop of other existing encryption layers. Even if the
    theoretical gain in terms of interception and tampering resistance is not
    relevant, it would still allow for service operators to split their encryption
    keys in different servers -- like one with the Onion Service keys and a backend
    having the TLS keys, thus making a compromise in one of the servers exposing
    only the cryptographic material of one of the communication layers.
+
+6. The Tor daemon that hosts the onion site might not be the final
+   computer in the chain. In larger organizations, deployment concerns
+   may result in plain HTTP traveling across their network from the Tor
+   daemon to the final web server. Having HTTPs protects those hops in
+   the chain. This is something that distributed setups may need. The same
+   could be said for a web browser using Tor SOCKS proxy somewhere else on the
+   network.
+
+7. Non-web based applications, such as IMAP/POP/SMTP etc. can benefit
+   from certificates being valid.
+
+8. There is simply too much software that isn't aware of onionsites,
+   and trying to force HTTP-over-Onion to be as secure as HTTPS-over-TCP
+   creates a compatibility mess of things which do and don't know about
+   the semantics.
+
+9. There is value in exposing the existence of an onion site via [CT
+   Logs][]. If someone navigates to the plain web version of a site, and is
+   presented with a certificate containing a Subject Alternative Name (SAN) for
+   both the plain web and the onion site that provides a strong cryptographic
+   guarantee that they are the same site. Effectively this would replace the
+   Onion-Location header with something more authenticated[^non-ct-logs].
 
 The following discussion is not yet conclusive, and the problem space may be
 hard to solve.
@@ -76,9 +111,26 @@ hard to solve.
                         Guidance - page 106) goes instead towards a certificate trusted by a
                         Certificate Authority.
 
+[^non-ct-logs]: However, the argument about revealing an onion site that would like
+                to remain hidden, is a real one. For those services, it could
+                be considered options such as a non-[CT Logs][] issuing CA that may not be in
+                the "valid" set, but operated by a friendly to Tor organization, which is
+                added to Tor Browser as a valid certifier. The standards space may be
+                moving towards requiring CT log submissions at some point, so this is
+                something to keep an eye on. Another possibility would be to consider
+                writing a standard for hashing onion site names in [CT Logs][], so they can
+                be verified, but not revealed (such as what WhatsApp did in their
+                [Auditable Key Directory][]). Such a standard could take years to
+                get to place of usefulness, and probably encounter
+                resistance. Otherwise, the only option for such a service operator is
+                to have a self-signed certificate, or none at all.
+
 [Secure Contexts]: https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts
 [Secure cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#security
 [Content Security Policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+[WebAuthn]: https://w3c.github.io/webauthn/
+[WebRTC]: https://webrtc.org/
+[PaymentRequest]: https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest
 [HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
 [HTTP/3]: https://en.wikipedia.org/wiki/HTTP/3
 [It also opens up new opportunities such as payment processing]: https://lists.torproject.org/pipermail/tor-dev/2023-April/014833.html
@@ -88,6 +140,7 @@ hard to solve.
 [PCI-DSS v4.0]: https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf
 [Rendezvous v3 protocol]: https://spec.torproject.org/rend-spec-v3
 [merge request]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/merge_requests
+[Auditable Key Directory]: https://engineering.fb.com/2023/04/13/security/whatsapp-key-transparency/
 
 ## Overview
 
