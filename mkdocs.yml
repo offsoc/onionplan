@@ -16,8 +16,8 @@ theme:
   name               : material
   collapse_navigation: true
   titles_only        : false
-  #logo: assets/onion-services.png
   logo: assets/tor-logo1x.png
+  favicon: assets/favicon.png
   palette:
 
     # Palette toggle for light mode
