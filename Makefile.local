@@ -1,0 +1,5 @@
+#
+# Custom Makefile for The Onion Plan
+#
+
+ONION_MKDOCS_PATH = vendors/onion-mkdocs
