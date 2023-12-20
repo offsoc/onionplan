@@ -117,15 +117,16 @@ optionally take advantage of DNSSEC.
 
 ### Using HTTPS records
 
-The [draft-ietf-dnsop-svcb-https-11][] introduces a "Service binding and
-parameter specification via the DNS (DNS SVCB and HTTPS RRs)". In other words,
-it specifies a new [DNS resource record called HTTPS][] that allows service
-operators add entries in the DNS specifying various parameters relates to TLS
-connections, like those currently done via [HTTP Strict Transport Security (STS)][].
+[RFC 9460][] (from [draft-ietf-dnsop-svcb-https-11][]) introduces a "Service
+binding and parameter specification via the DNS (DNS SVCB and HTTPS RRs)".
+In other words, it specifies a new [DNS resource record called HTTPS][] that
+allows service operators add entries in the DNS specifying various parameters
+relates to TLS connections, like those currently done via [HTTP Strict
+Transport Security (STS)][].
 Check [this article][] for an introduction and [this one][] for an overview
 about the HTTPS RRs security benefits and attack surface.
 
-If that proposal succeeds, t may open the possibility to [use HTTPS records for
+This standard opens the possibility to [use HTTPS records for
 Onion Services][] in a way that clients such as Tor Browser to establish HTTPS
 connections directly to Onion Services in a transparent way: users would still
 be presented to the regular domain name of a service (such as `torproject.org`)
@@ -142,6 +143,7 @@ This specification is still in the draft stage and client software still don't
 fully support it, but recent Firefox versions [shows HTTPS RRs in about:networking][]
 (added in [this commit][]).
 
+[RFC 9460]: https://www.rfc-editor.org/rfc/rfc9460.html
 [RFC 1035]: https://datatracker.ietf.org/doc/html/rfc1035
 [draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/11/
 [use HTTPS records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
