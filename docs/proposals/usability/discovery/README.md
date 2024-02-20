@@ -138,7 +138,7 @@ analysis in what still needs to be addressed.
 
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
 [Tor Control Protocol]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/control-spec.txt
-[Proposal 279 fixes and improvements]: ../../appendixes/prop279.md
+[Proposal 279 fixes and improvements]: ../../../appendixes/prop279.md
 
 ## Official and non-official support
 
