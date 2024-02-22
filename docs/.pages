@@ -1,6 +1,6 @@
 nav:
-  - Intro: README.md
-  - Introduction: intro
+  - Start: README.md
+  - Preamble: preamble
   - proposals
   - scenarios
   - appendixes
