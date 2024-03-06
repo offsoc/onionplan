@@ -81,7 +81,7 @@ Tor Browser addon          | Other      | -                                     
 ### Onion Names for SecureDrop
 
 [Onion Names for SecureDrop](https://securedrop.org/news/introducing-onion-names-securedrop/).
-is the first implementation of a ruleset-based approach and is maintained by 
+is the first implementation of a ruleset-based approach and is maintained by
 [Secure Drop](https://securedrop.org/).
 
 It's limited in the namespace it can use, so it does not conflict with other
@@ -458,3 +458,85 @@ To be evaluated.
 
 * Need to keep list (or hashes) of visited onions on the client's machine.
 
+### Human Friendly Memorable Mappings
+
+#### Description
+
+This approach is currently just a few ideas in how to encode .onion addresses
+using symbols that are easier to memorize:
+
+* Whole phrases as checksums?
+* Generating images from the addresses? With an algorithm with special
+  statistical properties to ensure acceptable security (like enough variance in
+  the generated images).
+* Checksums used together with [vanity addresses][]? So people could memorize just
+  the checksum and the vanity portion of the address, like a sequence of emojis
+  plus a 6 to 8 chars word. In that case, how long should be the emoji sequence?
+
+[vanity addresses]: https://community.torproject.org/onion-services/advanced/vanity-addresses/
+
+#### Security Properties
+
+Far from being used to show a limitation in the Onion Service technology, the
+difficulty to represent an .onion address in a human-friendly way could
+actually show it's strength.
+
+We can compare the Onion Service address space, or just the "Onion Space", with
+other addressing systems, applications and mappings.
+
+The following table is a rough sketch that attempts to summarize some
+"human-friendly mappings" and it's applications:
+
+| Applications           | Address space size     | Example mapping type    | Example mapping size   | Collision-resistance               |
+| ---------------------- | ---------------------- | ----------------------- | ---------------------- | ---------------------------------- |
+| IPv4, Tor bridge lines |  32 bits               | Symbols/Emojis          | 4                      | Total with enough symbols/emojis   |
+| [Geocoding][]          | ~48 bits (?)           | Base32                  | 9                      | Fails for nearby addresses         |
+| [Geocoding][]          | ~48 bits (?)           | Word tuples             | 3 - 5                  | Fails for nearby addresses         |
+| Tor Onion Services v2  |  80 bits               | ?                       | ?                      | ?                                  |
+| IPv6                   | 128 bits               | ?                       | ?                      | ?                                  |
+| Tor Onion Services v3  | 256 bits               | ?                       | ?                      | ?                                  |
+
+Space size:
+
+* Mapping size refers to the number of elements in the symbol space needed to
+  represent (or to be a sufficiently secure checksum for) an address.
+* Emojis currently falls in the 32 bit space range (smaller than "street space"
+  addressing, i.e, it's a space smaller than our geographic space); emojis can in
+  theory be used to represent (or summarize) longer sequences, but that depends
+  on both the emoji set size and the maximum length an average user could
+  memorize.
+* Base32 and word tuples are useful for representing geographic locations in
+  a small string, such as an URL parameter. They can be human-memorable if the
+  coordinates aren't too precise.
+* We don't have anything (as far as I'm aware) from Onion Services v2 onwards.
+  I've heard about some people memorizing .onion v2 addresses, but that's not
+  a comfortable thing to do for everyone.
+* The Onionspace is way bigger than the IPv6 space, so why it's a hard problem
+  to create a human-memorable "checksum" or alias!
+
+Onion Names versus other mappings:
+
+* If the human friendly mapping fully represents (i.e. unambiguously, uniquely)
+  the address, it's basically equivalent with an Onion Name (of the same
+  size?), and effectively works as an alias to that address. In that case,
+  the Onion Name has an advantage over other mappings since it can have
+  a meaning related to the Onion Service purpose.
+* But if the mapping only partially represents the address, it works mainly as
+  a "checksum", and that case the mapping is not collision-resistant, as it's
+  possible to find two or more addresses having the same mapping.
+
+Collision-resistance:
+
+* For geocoding, collisions depends on the grid resolution when it's done as a
+  mapping over a discrete grid. Depending on the grid partition algorithm and
+  the resolution in use, points in the surface of earth that are close enough to
+  each other tend to have similar (or even the same) representation.
+
+[Geocoding]: https://en.wikipedia.org/wiki/Geocode
+
+#### Drawbacks
+
+This needs further research, to answer questions such as:
+
+* What is the length range (and symbol space size) to consider as inside the
+  "human friendly" region?
