@@ -489,12 +489,12 @@ The following table is a rough sketch that attempts to summarize some
 
 | Applications           | Address space size     | Example mapping type    | Example mapping size   | Collision-resistance               |
 | ---------------------- | ---------------------- | ----------------------- | ---------------------- | ---------------------------------- |
-| IPv4, Tor bridge lines |  32 bits               | Symbols/Emojis          | 4                      | Total with enough symbols/emojis   |
-| [Geocoding][]          | ~48 bits (?)           | Base32                  | 9                      | Fails for nearby addresses         |
-| [Geocoding][]          | ~48 bits (?)           | Word tuples             | 3 - 5                  | Fails for nearby addresses         |
-| Tor Onion Services v2  |  80 bits               | ?                       | ?                      | ?                                  |
-| IPv6                   | 128 bits               | ?                       | ?                      | ?                                  |
-| Tor Onion Services v3  | 256 bits               | ?                       | ?                      | ?                                  |
+| IPv4, Tor bridge lines |   32 bits              | Symbols/Emojis          | 4                      | Total with enough symbols/emojis   |
+| [Geocoding][]          |  ~48 bits (?)          | Base32                  | 9                      | Fails for nearby addresses         |
+| [Geocoding][]          |  ~48 bits (?)          | Word tuples             | 3 - 5                  | Fails for nearby addresses         |
+| Tor Onion Services v2  |   80 bits              | ?                       | ?                      | ?                                  |
+| IPv6                   |  128 bits              | ?                       | ?                      | ?                                  |
+| Tor Onion Services v3  | ~256 bits              | ?                       | ?                      | ?                                  |
 
 Space size:
 
