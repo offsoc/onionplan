@@ -92,6 +92,9 @@ core](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40458)
 and there's a proposal to edit (and maybe share) rulesets directly in the Tor
 Browser interface.
 
+The rulesets are maintained in [this
+repository](https://github.com/freedomofpress/securedrop-https-everywhere-ruleset).
+
 ### User-supplied petnames
 
 Another proposal for rulesets is to [rely on user-supplied petnames instead of
