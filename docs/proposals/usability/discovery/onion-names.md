@@ -24,7 +24,7 @@ Regarding namespace allocation, there are many possible options, including (but
 not limiting to):
 
 1. Allocate second-level domains atop of the existing `.onion` ([RFC 7686][]), such
-   as what happens with Secure Drop Onion Names (`.securedrop.tor.onion`).
+   as what happens with [SecureDrop][] Onion Names (`.securedrop.tor.onion`).
 2. Use whichever TLD provided by each Onion Names solution.
 3. Use a second-level domains atop of the proposed `.alt` top-level
    ([draft-ietf-dnsop-alt-tld-08][]).
@@ -73,7 +73,7 @@ Tor Browser addon          | Other      | -                                     
 * Criteria about who controls each ruleset can be:
   * User-based: equivalent to sharing bookmarks. Trust the authors. But how to
     assign namespaces?
-  * Organization/federation based: like Secure Drop: list instances from a widely
+  * Organization/federation based: like [SecureDrop][]: list instances from a widely
     known and relevant platform. Trust the organization. How could be a criteria
     and process for a widely known and relevant organization to have it's ruleset
     namespace?
@@ -82,7 +82,7 @@ Tor Browser addon          | Other      | -                                     
 
 [Onion Names for SecureDrop](https://securedrop.org/news/introducing-onion-names-securedrop/).
 is the first implementation of a ruleset-based approach and is maintained by
-[Secure Drop](https://securedrop.org/).
+[SecureDrop][].
 
 It's limited in the namespace it can use, so it does not conflict with other
 discovery methods.
@@ -94,6 +94,8 @@ Browser interface.
 
 The rulesets are maintained in [this
 repository](https://github.com/freedomofpress/securedrop-https-everywhere-ruleset).
+
+[SecureDrop]: https://securedrop.org
 
 ### User-supplied petnames
 
