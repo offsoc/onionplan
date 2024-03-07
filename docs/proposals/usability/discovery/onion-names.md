@@ -87,7 +87,8 @@ is the first implementation of a ruleset-based approach and is maintained by
 It's limited in the namespace it can use, so it does not conflict with other
 discovery methods.
 
-Since mid-2022 it's is [integrated in Tor Browser
+It was [originally implemented using HTTPS-Everywhere][], and since mid-2022
+it's is [integrated in Tor Browser
 core](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40458)
 and there's a proposal to edit (and maybe share) rulesets directly in the Tor
 Browser interface.
@@ -96,6 +97,7 @@ The rulesets are maintained in [this
 repository](https://github.com/freedomofpress/securedrop-https-everywhere-ruleset).
 
 [SecureDrop]: https://securedrop.org
+[originally implemented using HTTPS-Everywhere]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/28005
 
 ### User-supplied petnames
 
