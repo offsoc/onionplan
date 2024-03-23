@@ -4,10 +4,6 @@ Address translation proposals are those which basically links a "traditional"
 domain name with and Onion Service address. Linkage can be uni or
 bi-directional.
 
-## Index
-
-[TOC]
-
 ## Opportunistic discoverability
 
 See [this discussion][] for an example about how opportunistic service

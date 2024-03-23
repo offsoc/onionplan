@@ -2,10 +2,6 @@
 
 * Version: v2023.Q2
 
-## Index
-
-[TOC]
-
 ## About
 
 This document outlines the outreach strategy for [Onion Services][] adoption

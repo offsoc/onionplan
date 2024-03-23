@@ -2,10 +2,6 @@
 
 * Version: v2023.Q2
 
-## Index
-
-[TOC]
-
 ## Introduction
 
 This roadmap deals with tools and libraries for Onion Services.

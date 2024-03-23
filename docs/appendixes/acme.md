@@ -3,10 +3,6 @@
 * Status: DRAFT
 * Version: v2023.Q3
 
-## Index
-
-[TOC]
-
 ## Introduction
 
 The [ACME for Onions][] proposal for automating the issuance of X.509

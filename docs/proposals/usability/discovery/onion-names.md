@@ -1,9 +1,5 @@
 # Onion Names
 
-## Index
-
-[TOC]
-
 ## About
 
 Onion Names are human-memorable mappings to Onion Service addresses.

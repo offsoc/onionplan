@@ -2,10 +2,6 @@
 
 * Version: v2023.Q2
 
-## Index
-
-[TOC]
-
 ## Summary
 
 This document tracks other relevant usability improvements, mostly related to

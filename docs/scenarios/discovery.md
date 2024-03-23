@@ -6,10 +6,6 @@
 [2022.Q4/discovery.pdf]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery.pdf
 [2022.Q4/discovery-technical.pdf]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/blob/main/slides/2022.Q4/discovery-technical.pdf
 
-## Index
-
-[TOC]
-
 ## Summary
 
 * **Focus:** ***human-friendly*** names for Onion Services with ***HTTPS

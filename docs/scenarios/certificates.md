@@ -2,10 +2,6 @@
 
 * Version: v2023.Q2
 
-## Index
-
-[TOC]
-
 ## Proposals evaluation
 
 ### Summary

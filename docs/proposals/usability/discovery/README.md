@@ -1,9 +1,5 @@
 # Onion Discovery
 
-## Index
-
-[TOC]
-
 ## About
 
 This document organizes knowledge about the various proposed service discovery

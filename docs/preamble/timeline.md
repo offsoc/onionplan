@@ -1,9 +1,5 @@
 # Timeline
 
-## Index
-
-[TOC]
-
 ## About
 
 This document is an incomplete summary of the main milestones in the history of

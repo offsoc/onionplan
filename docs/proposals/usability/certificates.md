@@ -1,9 +1,5 @@
 # Certificates
 
-## Index
-
-[TOC]
-
 ## About
 
 This document tracks existing procedures or proposals for integrating and

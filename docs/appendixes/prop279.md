@@ -13,10 +13,6 @@ written.
 
 [Proposal 279]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/279-naming-layer-api.txt
 
-## Index
-
-[TOC]
-
 ## Allocation
 
 The following allocation criteria might be more related to governance -- what

@@ -1,9 +1,5 @@
 # The challenges
 
-## Index
-
-[TOC]
-
 ## About
 
 * **What**: The Onion Plan is an _applied research_ to _help and facilitate_

@@ -1,9 +1,5 @@
 # Usability intro
 
-## Index
-
-[TOC]
-
 ## About
 
 This section summarizes the relevant proposals related to improve Onion

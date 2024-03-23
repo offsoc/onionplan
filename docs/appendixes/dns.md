@@ -10,10 +10,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to
 be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14).
 
-## Index
-
-[TOC]
-
 ## Requirements
 
 1. DNSSEC should be mandatory?
