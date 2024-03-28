@@ -113,7 +113,7 @@ optionally take advantage of DNSSEC.
 
 ### Using HTTPS records
 
-[RFC 9460][] (from [draft-ietf-dnsop-svcb-https-11][]) introduces a "Service
+[RFC 9460][] (from [draft-ietf-dnsop-svcb-https-12][]) introduces a "Service
 binding and parameter specification via the DNS (DNS SVCB and HTTPS RRs)".
 In other words, it specifies a new [DNS resource record called HTTPS][] that
 allows service operators add entries in the DNS specifying various parameters
@@ -135,13 +135,27 @@ service operators would need only to add the `HTTPS` resource record in their
 DNS zone, without the need to change their existing web applications to include
 an [Alt-Svc Header][] in the HTTP responses.
 
-This specification is still in the draft stage and client software still don't
-fully support it, but recent Firefox versions [shows HTTPS RRs in about:networking][]
-(added in [this commit][]).
+This specification is recent and not all client support may be supporting it,
+although the [use of HTTPS resource records][] is increasing.
+
+Firefox support, and hence potential Tor Browser support:
+
+* Recent versions already [shows HTTPS RRs in about:networking][] (added in [this commit][]).
+* HTTPS resolution was added on [Firefox 92][]. Related tickets:
+    * [1623126 - Implement HTTPSSVC](https://bugzilla.mozilla.org/show_bug.cgi?id=1623126)
+    * [1721132 - Enabling HTTPS RR on release](https://bugzilla.mozilla.org/show_bug.cgi?id=1721132)
+* But as of March 2024, it seems [only to work through DNS over HTTPS (DoH)][].
+* Check [tpo/applications/tor-browser#30753][] about enabling DoH in Tor
+  Browser, including benefits and downsides.
+
+Chrome, in the other hand, [seems not to be fully supporting it][], which can
+make adoption harder for clients such as [Brave][]. But Safari seems to be
+fully supporting it, which means [WebKit][] is probably supporting it, paving
+the way for [Onion Browser][] support it as well.
 
 [RFC 9460]: https://www.rfc-editor.org/rfc/rfc9460.html
 [RFC 1035]: https://datatracker.ietf.org/doc/html/rfc1035
-[draft-ietf-dnsop-svcb-https-11]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/11/
+[draft-ietf-dnsop-svcb-https-12]: https://datatracker.ietf.org/doc/draft-ietf-dnsop-svcb-https/12/
 [use HTTPS records for Onion Services]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [DNS resource record called HTTPS]: https://developer.mozilla.org/en-US/docs/Glossary/https_rr
 [HTTP Strict Transport Security (STS)]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
@@ -149,6 +163,14 @@ fully support it, but recent Firefox versions [shows HTTPS RRs in about:networki
 [this one]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
 [shows HTTPS RRs in about:networking]: https://bugzilla.mozilla.org/show_bug.cgi?id=1667356
 [this commit]: https://hg.mozilla.org/integration/autoland/rev/c0e399e7d495
+[use of HTTPS resource records]: https://blog.apnic.net/2023/12/18/use-of-https-resource-records/
+[Firefox 92]: https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/92#http
+[only to work through DNS over HTTPS (DoH)]: https://serverfault.com/questions/1151933/how-does-a-web-browser-use-a-https-or-svcb-dns-resource-record-rr
+[tpo/applications/tor-browser#30753]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753
+[seems not to be fully supporting it]: https://github.com/Fyrd/caniuse/issues/6091#issuecomment-1819649621
+[Brave]: https://brave.com
+[WebKit]: https://webkit.org
+[Onion Browser]: https://onionbrowser.com
 
 ### Specific Onion Service DNS entry
 
