@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Provision script for local builds.
+#
+
+# Parameters
+DIRNAME="`dirname $0`"
+BASEDIR="$DIRNAME/.."
+
+# Make sure submodules are initialized
+git -C $BASEDIR submodule update --init --recursive
+
+# Make sure the  vendors folder is available
+mkdir -p $BASEDIR/vendors
+
+# Fetch an up-to-date Onion MkDocs codebase
+if [ -e "vendors/onion-mkdocs" ]; then
+  git clone https://gitlab.torproject.org/tpo/web/onion-mkdocs.git $BASEDIR/vendors/onion-mkdocs
+else
+  git -C $BASEDIR/vendors/onion-mkdocs pull
+fi
+
+# Build
+$BASEDIR/vendors/onion-mkdocs/scripts/onion-mkdocs-provision-host
+$BASEDIR/vendors/onion-mkdocs/scripts/onion-mkdocs-provision-build
+$BASEDIR/vendors/onion-tex-slim/scripts/onion-tex-slim-provision-build
