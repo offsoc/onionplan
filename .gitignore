@@ -1,3 +1,4 @@
 .htpasswd
-public
 .cache
+public
+vendors/onion-mkdocs
