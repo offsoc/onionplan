@@ -1,3 +1,7 @@
 ---
 include:
-  - local: '.gitlab-ci-pages.yml'
+  project: tpo/web/onion-mkdocs
+  file: .gitlab-ci-base.yml
+
+pages:
+  extends: .onion-mkdocs-clone
