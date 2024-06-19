@@ -14,7 +14,7 @@ git -C $BASEDIR submodule update --init --recursive
 mkdir -p $BASEDIR/vendors
 
 # Fetch an up-to-date Onion MkDocs codebase
-if [ -e "vendors/onion-mkdocs" ]; then
+if [ ! -e "vendors/onion-mkdocs" ]; then
   git clone https://gitlab.torproject.org/tpo/web/onion-mkdocs.git $BASEDIR/vendors/onion-mkdocs
 else
   git -C $BASEDIR/vendors/onion-mkdocs pull
