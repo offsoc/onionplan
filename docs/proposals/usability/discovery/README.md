@@ -158,19 +158,21 @@ proposals with the following types:
 ### Common for both Traditional address translation and Onion Names
 
 Property                       | Type     | Description                                                                                             | Source
--------------------------------|----------|---------------------------------------------------------------------------------------------------------|------------------------------------
+-------------------------------|----------|---------------------------------------------------------------------------------------------------------|---------------------------------------
 Privacy-enhanced queries       | Required | Querying for an address does not leaks user-identifiable information                                    | This document
 Self-authentication            | Desired  | Approaches that lose the self-authenticating property should have a high bar for deployment[^self-auth] | This document
 Censorship resistance          | Desired  | Censorship-resistant service discovery (censors cannot block lookup)                                    | This document
-Human-friendliness             | Required | Support for names that are easy to remember and to type                                                  | [Sauteed Week - Applications][]
+Human-friendliness             | Required | Support for names that are easy to remember and to type                                                 | [Sauteed Week - Applications][]
 Discoverability                | ?        | ?                                                                                                       | [Sauteed Week - Applications][]
 Anonymity                      | ?        | ?                                                                                                       | [Sauteed Week - Applications][]
 Hijacking resistance           | ?        | ?                                                                                                       | [OnionV3ux - 2018 Mexico Meeting][]
 State on client system         | ?        | ?                                                                                                       | [OnionV3ux - 2018 Mexico Meeting][]
 Usable                         | ?        | Implementation has good usability                                                                       | [OnionV3ux - 2018 Mexico Meeting][]
+Fingerprinting resistance      |          |                                                                                                         | [tpo/applications/tor-browser#42736][]
 
 [Sauteed Week - Applications]: https://gitlab.torproject.org/rhatto/sauteed-week/-/blob/main/docs/applications.md
 [OnionV3ux - 2018 Mexico Meeting]: https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2018/2018MexicoCity/Notes/OnionV3ux
+[tpo/applications/tor-browser#42736]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42736
 [^self-auth]: That means we're looking for discovery approaches where the
               .onion address is signed by the Onion Service privkey, so it's possible to
               check that the Onion Service operator(s) asserted the relationship between
