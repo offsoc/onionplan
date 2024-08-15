@@ -38,6 +38,7 @@ Year | Technology or relevant event
 2023 | [Proposal 327][] (Proof-of-Work) [merged (#40634)][]
 2023 | Onion Services 20th Anniversary (counting from the draft spec)
 2024 | Onion Services 20th Anniversary (counting from the initial implementation)
+2024 | [initial Onion Services implementation in Arti][]
 
 ## Applications
 
@@ -79,6 +80,7 @@ Year | Application
 [ACME for Onions]: https://acmeforonions.org
 [Proposal 327]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt
 [merged (#40634)]: https://gitlab.torproject.org/tpo/core/tor/-/issues/40634
+[initial Onion Services implementation in Arti]: https://blog.torproject.org/arti_1_1_12_released/
 
 [Onionshare]: https://support.torproject.org/onionservices/v2-deprecation/
 [GlobaLeaks]: https://en.wikipedia.org/wiki/GlobaLeaks
