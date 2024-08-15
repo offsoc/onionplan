@@ -14,6 +14,5 @@
   external links and other signs of age.
 * [Free Haven's Selected Papers in Anonymity](https://www.freehaven.net/anonbib/)
   lists the most relevant papers that lead to Onion Services development.
-* [The Once and Future Onion |
-  SpringerLink](https://link.springer.com/chapter/10.1007/978-3-319-66402-6_3):
+* [The Once and Future Onion](https://link.springer.com/chapter/10.1007/978-3-319-66402-6_3):
   includes a historic overview of Onion Services technology.
