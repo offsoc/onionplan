@@ -5,6 +5,10 @@
 This document is an incomplete summary of the main milestones in the history of
 [Onion Services][].
 
+For a historical overview, check [The Once and Future Onion][] article.
+
+[The Once and Future Onion]: https://link.springer.com/chapter/10.1007/978-3-319-66402-6_3
+
 ## The technology
 
 Year | Technology or relevant event
