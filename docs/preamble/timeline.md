@@ -7,6 +7,7 @@ This document is an incomplete summary of the main milestones in the history of
 
 For a historical overview, check [The Once and Future Onion][] article.
 
+[Onion Services]: https://community.torproject.org/onion-services/
 [The Once and Future Onion]: https://link.springer.com/chapter/10.1007/978-3-319-66402-6_3
 
 ## The technology
@@ -44,22 +45,6 @@ Year | Technology or relevant event
 2024 | Onion Services 20th Anniversary (counting from the initial implementation)
 2024 | [initial Onion Services implementation in Arti][]
 
-## Applications
-
-Year | Application
------|---------------------------------------------------------------------------
-2010 | [GlobaLeaks][]
-2010 | [Ricochet][]
-2013 | [SecureDrop][]
-2014 | [Onionshare][]
-2015 | [Onionbalance][]
-2017 | [Briar][]
-2019 | [Wahay][]
-2021 | [Ricochet-Refresh][] (first stable release with Onion Services v3 support)
-2021 | [Gosling][]
-2022 | [Quiet][]
-
-[Onion Services]: https://community.torproject.org/onion-services/
 [The Eternity Service]: https://www.cl.cam.ac.uk/~rja14/eternity/eternity.html
 [Reply Onions]: https://www.onion-router.net/Publications/IH-1996.pdf
 [rendezvous]: https://gitlab.torproject.org/tpo/core/tor/-/commit/3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
@@ -85,6 +70,21 @@ Year | Application
 [Proposal 327]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt
 [merged (#40634)]: https://gitlab.torproject.org/tpo/core/tor/-/issues/40634
 [initial Onion Services implementation in Arti]: https://blog.torproject.org/arti_1_1_12_released/
+
+## Applications
+
+Year | Application
+-----|---------------------------------------------------------------------------
+2010 | [GlobaLeaks][]
+2010 | [Ricochet][]
+2013 | [SecureDrop][]
+2014 | [Onionshare][]
+2015 | [Onionbalance][]
+2017 | [Briar][]
+2019 | [Wahay][]
+2021 | [Ricochet-Refresh][] (first stable release with Onion Services v3 support)
+2021 | [Gosling][]
+2022 | [Quiet][]
 
 [Onionshare]: https://support.torproject.org/onionservices/v2-deprecation/
 [GlobaLeaks]: https://en.wikipedia.org/wiki/GlobaLeaks
