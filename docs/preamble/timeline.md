@@ -9,6 +9,7 @@ This document is an incomplete summary of the main milestones in the history of
 
 Year | Technology or relevant event
 -----|---------------------------------------------------------------------------
+1996 | [The Eternity Service][] and [Reply Onions][] designs
 2003 | Hidden Service draft spec ([rendezvous][])
 2004 | Hidden Service initial implementation on tor 0.0.6pre1 - 2004-04-08
 2005 | New Hidden Service descriptor format on tor 0.1.1.2-alpha - 2005-07-15
@@ -54,6 +55,8 @@ Year | Application
 2022 | [Quiet][]
 
 [Onion Services]: https://community.torproject.org/onion-services/
+[The Eternity Service]: https://www.cl.cam.ac.uk/~rja14/eternity/eternity.html
+[Reply Onions]: https://www.onion-router.net/Publications/IH-1996.pdf
 [rendezvous]: https://gitlab.torproject.org/tpo/core/tor/-/commit/3d538f6d702937c23bec33b3bdd62ff9fba9d2a3
 [facebook]: https://blog.torproject.org/facebook-hidden-services-and-https-certs/
 [cloudflare]: https://blog.cloudflare.com/cloudflare-onion-service/
