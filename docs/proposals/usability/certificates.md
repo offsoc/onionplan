@@ -423,7 +423,7 @@ specification -- like the SOOC proposal discussed below.
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
 [Self-authenticating TLS Certificates for Onion Services]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services
 [PKCS#11 modules]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11
-[Authority Information Access (AIA)][]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
+[Authority Information Access (AIA)]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
 [add support for self-signed HTTPS onion sites derived from onion service's ed25519 key]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/18696
 [How do Ed5519 keys work?]: https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/
 [prop220]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/220-ecc-id-keys.txt
