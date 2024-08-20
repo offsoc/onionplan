@@ -111,7 +111,7 @@ hard to solve.
                 to remain hidden, is a real one. For those services, it could
                 be considered options such as a non-[CT Logs][] issuing CA that may not be in
                 the "valid" set, but operated by a friendly to Tor organization, which is
-                added to Tor Browser as a valid certifier. The standards space may be
+                added to [Tor Browser][] as a valid certifier. The standards space may be
                 moving towards requiring CT log submissions at some point, so this is
                 something to keep an eye on. Another possibility would be to consider
                 writing a standard for hashing onion site names in [CT Logs][], so they can
@@ -137,6 +137,7 @@ hard to solve.
 [Rendezvous v3 protocol]: https://spec.torproject.org/rend-spec-v3
 [merge request]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/merge_requests
 [Auditable Key Directory]: https://engineering.fb.com/2023/04/13/security/whatsapp-key-transparency/
+[Tor Browser]: https://tb-manual.torproject.org
 
 ## Overview
 
@@ -156,10 +157,12 @@ Proposal                              | Pros                                    
 --------------------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------
 Existing CA validation                | None (already implemented)              | None (already implemented)
 ACME for .onion                       | No need for client/lib implementation   | Depends on a CA willing to implement
-Self-signed X.509 for .onion          | No CA-reliance for .onion, self-auth.   | Very hard to maintain and standardize, currently Ed25519 is unsupported by major browsers
+Self-signed X.509 for .onion          | No CA-reliance for .onion, self-auth.   | Very hard to maintain and standardize, currently [Ed25519][] is unsupported by major browsers
 Same Origin Onion Certificates (SOOC) | No CA-reliance for .onion               | Very hard to maintain and standardize
 DANE for .onion                       | No CA-reliance for any domain or .onion | Very hard to implement and maintain
 Onion-only CAs                        | Simplify CA-reliance                    | Needs to convince existing CAs or trusted parties to maintain a whole CA organization and infrastructure
+
+[Ed25519]: http://ed25519.cr.yp.to
 
 ### Main implementation characteristics
 
@@ -282,7 +285,7 @@ References:
 This proposal consists in basically allowing for the use of self-signed
 certificates with Onion Services:
 
-1. For the Tor Browser and other software maintained by Tor, this would consist
+1. For the [Tor Browser][] and other software maintained by Tor, this would consist
    in [disabling self-signed certificate warnings when visiting .onion
    sites][].
 2. For third party software, this would probably require patches or
@@ -305,14 +308,14 @@ indicators and hints are needed:
    authenticated.
 
 There are already sketches for [different scenarios][] for how various user
-interface hints and indicators could exist for Tor Browser and other software
+interface hints and indicators could exist for [Tor Browser][] and other software
 maintained by Tor, as well as existing certificate proposals that can change
 the certificate landscape for Onion Services in the future, which could be
 adopted by operators instead of relying on self-signed certs.
 
 But all these enhancements would still limit the practical application domain
 of this proposal, since it would be readily available only to a small set
-of applications like Tor Browser, except if by pursuing some standardization
+of applications like [Tor Browser][], except if by pursuing some standardization
 such as the SOOC proposal below.
 
 [disabling self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
@@ -325,11 +328,14 @@ future is to use Onion Service keypair to self-validate an HTTPS certificate:
 
 * The [Onion x509][] is an example in how a CA self-signed by an .onion could
   be constructed.
+* As an alternative, there's also the [Self-authenticating TLS Certificates for
+  Onion Services][] proposal relying on [PKCS#11 modules][] or [Authority
+  Information Access (AIA)][] extensions.
 * There's also a ticket requesting to [add support for self-signed HTTPS onion
-  sites derived from onion service's ed25519 key][].
+  sites derived from onion service's ed25519 key][] in the [Tor Browser][].
 
-For an overview of Ed25519, check [How do Ed5519 keys work?][]. For details
-about how Tor implements Ed25519, check [prop220][] (and [rend-spec-v3][]
+For an overview of [Ed25519][], check [How do Ed5519 keys work?][]. For details
+about how Tor implements [Ed25519][], check [prop220][] (and [rend-spec-v3][]
 for how it implements at the Onion Services level).
 
 This proposal has the advantage to not rely on Certificate Authorities, but the
@@ -383,7 +389,7 @@ Baseline Requirements][]:
 In summary, implementing this proposal would require pushing at least two
 specification changes:
 
-1. A ballot with CA/B Forum about including Ed25519 support.
+1. A ballot with CA/B Forum about including [Ed25519][] support.
 2. An update in the Onion Services v3 spec, allowing the Onion Service identity
    keys to either:
     1. Also act as Certificate Authority root keys for the service.
@@ -405,14 +411,19 @@ certifies a separate key pair to be used with HTTPS.
 
 Similar to the self-signed certificate proposal, this approach would have
 limited adoption if only as small number of applications implement it -- such
-as the Tor Browser --, except if endorsed by many stakeholders in the form of a
+as the [Tor Browser][] --, except if endorsed by many stakeholders in the form of a
 specification -- like the SOOC proposal discussed below.
 
 [^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key agreement scheme no to be confused with [Ed25519][].
-[^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][]
-                       and [Support Ed25519 and Ed448][] threads for details.
+[^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][],
+                       [Support Ed25519 and Ed448][] and
+                       [[Servercert-wg] Ed25519 certificates][]
+                       threads for details.
 
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
+[Self-authenticating TLS Certificates for Onion Services]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services
+[PKCS#11 modules]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11
+[Authority Information Access (AIA)][]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
 [add support for self-signed HTTPS onion sites derived from onion service's ed25519 key]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/18696
 [How do Ed5519 keys work?]: https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/
 [prop220]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/220-ecc-id-keys.txt
@@ -424,6 +435,7 @@ specification -- like the SOOC proposal discussed below.
 [Ed25519]: http://ed25519.cr.yp.to
 [Request For CertBot To Support The Signing of Ed25519 Certificates]: https://community.letsencrypt.org/t/request-for-certbot-to-support-the-signing-of-ed25519-certificates/157638
 [Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868/6
+[[Servercert-wg] Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
 
 ## Same Origin Onion Certificates (SOOC)
 
