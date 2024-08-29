@@ -49,4 +49,3 @@ plugins:
       'intro/research.md'                                                     : 'preamble/research.md'
       'intro/timeline.md'                                                     : 'preamble/timeline.md'
       'proposals/usability/discovery/translation.md'                          : 'proposals/usability/discovery/onion-association.md'
-
