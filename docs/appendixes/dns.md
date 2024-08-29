@@ -1,7 +1,7 @@
 # Specs for DNS-based .onion records
 
 * Status: DRAFT
-* Version: v2023.Q2
+* Version: v2024.Q3
 
 Documents options, requirements etc to be considered when creating a
 specification for Onion Services address entries using the DNS.
@@ -18,28 +18,33 @@ be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14).
 4. Entries should be signed using the Onion Service private key?
 5. Entries should signed using the HTTPS private key?
 6. Should implement additional censorship resistance measures?
+7. Should this be [coupled with TLS ECH][] (Encrypted Client Hello) to hide the domain
+   request from a passive adversary when establishing connections to remote endpoints?
 
 [DNS-over-HTTPS (DoH)]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
 [DNS-over-TLS (DoT)]: https://en.wikipedia.org/wiki/DNS_over_TLS
+[coupled with TLS ECH]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42144
 
 ## Record types
 
 Alternatives:
 
-1. Adopt the [proposed HTTPS record][], in the hope that it gets approved so no
-   need for an additional record is needed.
+1. Adopt the [proposed HTTPS record][] which is now [RFC 9460][], so no
+   additional record type is needed.
     1. Pros:
         1. No need to work on specs.
         2. Reuses an existing an compatible proposal.
     2. Cons:
-        1. Proposal might not get approved and the field stays as a non-standard.
-        2. Seems highly dependent on whether [RFC 7686][] will be honored by clients to
+        1. Seems highly dependent on whether [RFC 7686][] will be honored by clients to
            either use or skip .onion addresses found in HTTPS DNS records.
-        3. Still needs a further and thorough security analysis to evaluate it's
+        2. Still needs a further and thorough security analysis to evaluate it's
            security properties, attack scenarios and mitigations (see [this
            initial discussion about HTTPS RRs][]).
-        4. Cannot include a signature from the .onion key (no Onion Service
+        3. Cannot include a signature from the .onion key (no Onion Service
            self-authentication property).
+        4. As of 2024-08-29, it seems like major web browsers require queries
+           to be done through [DNS-over-HTTPS (DoH)][] in other to look for
+           this field.
 2. Use`TXT` records ([RFC 1464][]):
     1. Pros:
         1. Minimum work on specs.
@@ -94,6 +99,7 @@ Alternatives:
 
 [proposed HTTPS record]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
+[RFC 9460]: https://datatracker.ietf.org/doc/rfc9460/
 [RFC 7686]: https://www.rfc-editor.org/info/rfc7686
 [RFC 1464]: https://www.rfc-editor.org/rfc/rfc1464
 [RFC 2782]: https://datatracker.ietf.org/doc/html/rfc2782
@@ -335,7 +341,7 @@ resolution procedure (quoting @ahf from an e-mail exchange):
 ### Onion Service address leakage into the DNS
 
 This approach does leak info to the DNS, but the whole point in doing this is
-to publish the relationship betwen a regular domain and the .onion address for
+to publish the relationship between a regular domain and the .onion address for
 operators that want to have this feature.
 
 This behavior MUST be documented and DNS-based address discovery MUST be
@@ -383,6 +389,11 @@ Some of these techniques could be mitigated by relying on [DNS-over-HTTPS
 [Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10]: https://datatracker.ietf.org/doc/html/draft-irtf-pearg-censorship#name-dns-interference
 
 ## References
+
+### DoH and ECH
+
+* [Support Encrypted Client Hello (#42144) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42144#note_3068126)
+* [Think about using DNS over HTTPS for Tor Browser (#30753) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753)
 
 ### SOCKS
 
