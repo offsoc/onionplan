@@ -133,10 +133,37 @@ but Tor-capable clients would automatically and transparently upgrade the
 connection to the Onion Service version, similar to what the [Alt-Svc][] method
 does.
 
-The advantage of the HTTPS DNS record over the [Alt-Svc][] method is that
-service operators would need only to add the `HTTPS` resource record in their
-DNS zone, without the need to change their existing web applications to include
-an [Alt-Svc Header][] in the HTTP responses.
+#### Advantages
+
+The advantages of the HTTPS DNS record over the [Alt-Svc][] method are:
+
+1. Service operators would need only to add the `HTTPS` resource record in
+   their DNS zone, without the need to change their existing web applications
+   to include an [Alt-Svc Header][] in the HTTP responses.
+2. TLS connections could benefit from [TLS Encrypted Client Hello (ECH)][] as a
+   way of hiding the domain request from a passive adversary when establishing
+   connections to remote endpoints. But note that, as of 2024-08, ECH is
+   still a draft proposal (although) it's already being [pushed hard and deployed by vendors][]
+
+[TLS Encrypted Client Hello (ECH)]: https://datatracker.ietf.org/doc/draft-ietf-tls-esni/
+[pushed hard and deployed by vendors]: https://blog.cloudflare.com/encrypted-client-hello/
+
+#### Disadvantages
+
+As of 2024-08, it seems like major web browsers require queries to be done
+through [DNS-over-HTTPS (DoH)][] in other to look for this field. But this
+might lead to additional centralization, since [DoH is not widely deployed yet][]
+and browsers might come with just a few DoH server options by default.
+
+This is discussed in more detail at:
+
+* [Support Encrypted Client Hello (#42144) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42144)
+* [Think about using DNS over HTTPS for Tor Browser (#30753) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30753)
+
+[DNS-over-HTTPS (DoH)]: https://en.wikipedia.org/wiki/DNS_over_HTTPS
+[DoH is not widely deployed yet]: https://dnsprivacy.org/public_resolvers/#dns-over-https-doh
+
+#### Support
 
 This specification is recent and not all client support may be supporting it,
 although the [use of HTTPS resource records][] is increasing.
@@ -155,6 +182,11 @@ Chrome, in the other hand, [seems not to be fully supporting it][], which can
 make adoption harder for clients such as [Brave][]. But Safari seems to be
 fully supporting it, which means [WebKit][] is probably supporting it, paving
 the way for [Onion Browser][] support it as well.
+
+#### Further discussion
+
+Check the [Specs for DNS-based .onion records][] appendix for a detailed
+discussion.
 
 [RFC 9460]: https://www.rfc-editor.org/rfc/rfc9460.html
 [RFC 1035]: https://datatracker.ietf.org/doc/html/rfc1035

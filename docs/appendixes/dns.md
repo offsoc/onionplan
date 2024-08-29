@@ -4,24 +4,26 @@
 * Version: v2024.Q3
 
 Documents options, requirements etc to be considered when creating a
-specification for Onion Services address entries using the DNS.
+specification for [Onion Services address entries using the DNS][].
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to
 be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14).
 
+[Onion Services address entries using the DNS]: ../proposals/usability/discovery/onion-association.md#dns-or-dnssec-based
+
 ## Requirements
 
 1. DNSSEC should be mandatory?
-2. Resolution should happen only via [DNS-over-HTTPS (DoH)][] or [DNS-over-TLS (DoT)][]?
-3. Support for bi-directionality?
-4. Entries should be signed using the Onion Service private key?
-5. Entries should signed using the HTTPS private key?
-6. Should implement additional censorship resistance measures?
+2. Support for bi-directionality?
+3. Entries should be signed using the Onion Service private key?
+4. Entries should signed using the HTTPS private key?
+5. Should implement additional censorship resistance measures?
+6. Resolution should happen only via [DNS-over-HTTPS (DoH)][] or [DNS-over-TLS (DoT)][]?
 7. Should this be [coupled with TLS ECH][] (Encrypted Client Hello) to hide the domain
    request from a passive adversary when establishing connections to remote endpoints?
 
-[DNS-over-HTTPS (DoH)]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
+[DNS-over-HTTPS (DoH)]: https://en.wikipedia.org/wiki/DNS_over_HTTPS
 [DNS-over-TLS (DoT)]: https://en.wikipedia.org/wiki/DNS_over_TLS
 [coupled with TLS ECH]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42144
 
@@ -42,9 +44,10 @@ Alternatives:
            initial discussion about HTTPS RRs][]).
         3. Cannot include a signature from the .onion key (no Onion Service
            self-authentication property).
-        4. As of 2024-08-29, it seems like major web browsers require queries
+        4. As of 2024-08, it seems like major web browsers require queries
            to be done through [DNS-over-HTTPS (DoH)][] in other to look for
-           this field.
+           this field:
+           * [Firefox DNS-over-HTTPS][].
 2. Use`TXT` records ([RFC 1464][]):
     1. Pros:
         1. Minimum work on specs.
@@ -97,6 +100,7 @@ Alternatives:
         2. May take a long time to be a standard.
         3. Even if gets approved, may take time for software to implement (ossification)?
 
+[Firefox DNS-over-HTTPS]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
 [proposed HTTPS record]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
 [this initial discussion about HTTPS RRs]: https://emilymstark.com/2020/10/24/strict-transport-security-vs-https-resource-records-the-showdown.html
 [RFC 9460]: https://datatracker.ietf.org/doc/rfc9460/
@@ -389,6 +393,10 @@ Some of these techniques could be mitigated by relying on [DNS-over-HTTPS
 [Section 5.1.1. DNS Interference from draft-irtf-pearg-censorship-10]: https://datatracker.ietf.org/doc/html/draft-irtf-pearg-censorship#name-dns-interference
 
 ## References
+
+### DNS
+
+* [DNS Privacy Project :: dnsprivacy.org](https://dnsprivacy.org/)
 
 ### DoH and ECH
 
