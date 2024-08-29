@@ -1,7 +1,7 @@
 # ACME for Onions Evaluation
 
 * Status: DRAFT
-* Version: v2023.Q3
+* Version: v2024.Q3
 
 ## Introduction
 
@@ -31,13 +31,19 @@ The main goals here are to:
    adopting [ACME for Onions][] by just implementing a subset of the spec.
 
 [ACME for Onions]: https://acmeforonions.org/
-[internet draft]: https://datatracker.ietf.org/doc/draft-ietf-acme-onion/00/
+[internet draft]: https://datatracker.ietf.org/doc/draft-ietf-acme-onion/03/
 [introduced in the proposals section]: ../proposals/usability/certificates.md#acme-for-onions
 [done in the certificates rodamap document]: ../scenarios/certificates.md#acme-for-onions-roadmapping
 [certbot-onion]: https://pypi.org/project/certbot-onion/
 [certbot]: https://certbot.eff.org/
 [Proposal 343]: https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/343-rend-caa.txt
 [changes in C Tor]: https://gitlab.torproject.org/tpo/core/tor/-/merge_requests/716
+
+## Overview
+
+For an overview, check the [ACME for Onions Session notes from the 2024 Tor Meeting][].
+
+[ACME for Onions Session notes from the 2024 Tor Meeting][]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/update-on-the-acme-for-onions-rfc
 
 ## Challenges
 
@@ -222,6 +228,9 @@ To be in the safe side, however,
       would check CAA fields for .onion addresses since currently this is not enforced
       by the current CA/B baseline requirements.
 
+    * It would maintain full compliance and completeness with other standards,
+      such as [CA/B baseline requirements][].
+
 * What matters most during the initial implementation is whether ACME providers
   will be in practice required to do such checking. If they do, then
   implementation complexity might increase, as the ACME Server will need to use
@@ -266,6 +275,16 @@ the `HSDirs` whenever (and if) needed.
 
 ##### 2. Using a special Onion Service descriptor library, reducing the need to bootstrap a full Tor connection
 
+!!! note
+
+    This scenario was not available in the [first draft][], but was
+    [included in the first revision][] after [suggested by Tor][],
+    and now is part of [Section 6.4 from the 3rd draft][].
+
+[first draft]: https://www.ietf.org/archive/id/draft-ietf-acme-onion-02.html
+[suggested by Tor]: https://www.ietf.org/archive/id/draft-ietf-acme-onion-02.html
+[Section 6.4 from the 3rd draft]: https://www.ietf.org/archive/id/draft-ietf-acme-onion-03.html#name-alternative-in-band-present
+
 It seems also possible to devise a way to fetch .onion descriptors without
 having to bootstrap a Tor connection, but only doing something simpler, like
 getting the consensus, calculating the `HSDir` hashring and connecting directly
@@ -299,7 +318,11 @@ ACME validation, as some parameter in the API request.
     * No need to rely in `HSDirs` (they don't offer any extra guarantees for
       .onion descriptors).
 * Cons:
-    * May need an amendment in the [internet draft][].
+    * ~~May need an amendment in the [internet draft][]~~
+      (this was [included in the first revision][]).
+    * None that we could recall.
+
+[included in the first revision]: https://author-tools.ietf.org/iddiff?url2=draft-ietf-acme-onion-01
 
 There's nothing special in the Hidden Service Directory system in terms of being
 authoritative of anything. It's a hashring where everybody can upload stuff up
