@@ -99,6 +99,7 @@ Alternatives:
         1. A lot more work involved in drafting a standard and evaluating all corner cases.
         2. May take a long time to be a standard.
         3. Even if gets approved, may take time for software to implement (ossification)?
+4. Use [synthetic DNSSEC for labels within .onion][].
 
 [Firefox DNS-over-HTTPS]: https://support.mozilla.org/en-US/kb/firefox-dns-over-https
 [proposed HTTPS record]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41325
@@ -110,6 +111,7 @@ Alternatives:
 [convention used]: https://github.com/ehloonion/onionmx/blob/master/SRV.md
 [OnionRouter]: https://github.com/ehloonion/onionrouter
 [assigned by IANA]: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
+[synthetic DNSSEC for labels within .onion]: https://gitlab.torproject.org/tpo/onion-services/onionplan/-/issues/4
 
 ## Implementation considerations
 
