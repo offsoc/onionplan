@@ -39,7 +39,7 @@ which are categorized and described below.
 There are many ways to sort all proposals, especially by what type of problems
 they try to solve. In this documentation they're grouped by:
 
-1. [Address translation][]: links a "traditional" domain name with an Onion
+1. [Onion Association][]: links a "traditional" domain name with an Onion
    Service address. Examples:
     * Onion-Location Header.
     * Sauteed Onions.
@@ -51,7 +51,7 @@ they try to solve. In this documentation they're grouped by:
     * Blockchain-based (like Namecoin).
     * Other P2P-based (like GNUnet's LSD).
 
-[Address translation]: translation.md
+[Onion Association]: onion-association.md
 [Onion Names]: onion-names.md
 
 ## Coexistence between proposals

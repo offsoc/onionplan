@@ -1,8 +1,11 @@
-# Traditional address translation
+# Onion Association
 
-Address translation proposals are those which basically links a "traditional"
-domain name with and Onion Service address. Linkage can be uni or
-bi-directional.
+Onion Association proposals are those which basically links a "traditional"
+(i.e, DNS-based) domain names with an Onion Service address. Linkage can be
+uni or bi-directional.
+
+They might also be referred here as "Traditional Address Translation", to
+distinguish then from [Onion Names](onion-names.md).
 
 ## Opportunistic discoverability
 

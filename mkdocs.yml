@@ -20,7 +20,7 @@ plugins:
       '0 - Introduction/Research.md'                                          : 'preamble/research.md'
       '0 - Introduction/Timeline.md'                                          : 'preamble/timeline.md'
       '1 - Proposals/Usability/Certification.md'                              : 'proposals/usability/certificates.md'
-      '1 - Proposals/Usability/Discovery/Address-Translation.md'              : 'proposals/usability/discovery/translation.md'
+      '1 - Proposals/Usability/Discovery/Address-Translation.md'              : 'proposals/usability/discovery/onion-association.md'
       '1 - Proposals/Usability/Discovery/Onion-Names.md'                      : 'proposals/usability/discovery/onion-names.md'
       '1 - Proposals/Usability/Discovery/README.md'                           : 'proposals/usability/discovery/README.md'
       '1 - Proposals/Usability/README.md'                                     : 'proposals/usability/README.md'
@@ -48,3 +48,5 @@ plugins:
       'intro/challenges.md'                                                   : 'preamble/challenges.md'
       'intro/research.md'                                                     : 'preamble/research.md'
       'intro/timeline.md'                                                     : 'preamble/timeline.md'
+      'proposals/usability/discovery/translation.md'                          : 'proposals/usability/discovery/onion-association.md'
+

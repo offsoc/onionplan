@@ -137,7 +137,7 @@ for the third.
 
 [CA/B baseline requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.6.pdf
 [RFC 8555]: https://datatracker.ietf.org/doc/html/rfc8555
-[Sauteed Onions]: ../proposals/usability/discovery/translation.md#sauteed-onions
+[Sauteed Onions]: ../proposals/usability/discovery/onion-association.md#sauteed-onions
 
 ## CAA
 
