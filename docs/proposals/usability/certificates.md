@@ -579,7 +579,7 @@ References:
 [OCSP]: https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol
 [OCSP Stapling]: https://en.wikipedia.org/wiki/OCSP_stapling
 [CT Logs]: https://certificate.transparency.dev/
-[Self-signed X.509 for .onion]: #self-signed-x509-for-onion-self-signed-by-the-onion-address
+[Self-signed X.509 for .onion]: #self-signed-x509-from-onion-self-signed-by-the-onion-address
 [Proposal for Bring Accessible TLS Supports to All Onion Services]: https://gitlab.torproject.org/tpo/core/torspec/-/issues/171
 [Proposal for automated onion service certificate issuance based on fully qualified onion service key signed certificate request]: https://github.com/cabforum/servercert/issues/433
 
