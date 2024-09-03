@@ -43,7 +43,7 @@ The main goals here are to:
 
 For an overview, check the [ACME for Onions Session notes from the 2024 Tor Meeting][].
 
-[ACME for Onions Session notes from the 2024 Tor Meeting][]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/update-on-the-acme-for-onions-rfc
+[ACME for Onions Session notes from the 2024 Tor Meeting]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/update-on-the-acme-for-onions-rfc
 
 ## Challenges
 
