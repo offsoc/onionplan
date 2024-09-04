@@ -285,9 +285,15 @@ References:
 This proposal consists in basically allowing for the use of self-signed
 certificates with Onion Services:
 
-1. For the [Tor Browser][] and other software maintained by Tor, this would consist
+1. For the [Tor Browser][] and other software maintained by Tor,
+   as well as third-party browsers, this would consist
    in [disabling self-signed certificate warnings when visiting .onion
-   sites][].
+   sites][]. As an alternative, there's also the [Self-authenticating TLS
+   Certificates for Onion Services][] proposal relying on [PKCS#11 modules][]
+   or [Authority Information Access (AIA)][] extensions, which could handle
+   self-signed certificates matching the Onion Service address without the need
+   to merge this logic directly in the applications, as it would remain decoupled
+   in a PKCS#11 module, thus being easier to maintain.
 2. For third party software, this would probably require patches or
    documentation instructing users to accept non-CA signed certificates when
    accessing Onion Services, which is very hard to provide and to maintain
@@ -316,7 +322,7 @@ adopted by operators instead of relying on self-signed certs.
 But all these enhancements would still limit the practical application domain
 of this proposal, since it would be readily available only to a small set
 of applications like [Tor Browser][], except if by pursuing some standardization
-such as the SOOC proposal below.
+such as the [SOOC](#same-origin-onion-certificates-sooc) proposal below.
 
 [disabling self-signed certificate warnings when visiting .onion sites]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/13410
 [different scenarios]: ../../scenarios/certificates.md
@@ -328,9 +334,10 @@ future is to use Onion Service keypair to self-validate an HTTPS certificate:
 
 * The [Onion x509][] is an example in how a CA self-signed by an .onion could
   be constructed.
-* As an alternative, there's also the [Self-authenticating TLS Certificates for
-  Onion Services][] proposal relying on [PKCS#11 modules][] or [Authority
-  Information Access (AIA)][] extensions.
+* The [Self-authenticating TLS Certificates for Onion Services][] proposal
+  mentioned above, that relies on [PKCS#11 modules][] or [Authority Information
+  Access (AIA)][] extensions could also be used to work with a X.509
+  certificate directly derived from the .onion keypair.
 * There's also a ticket requesting to [add support for self-signed HTTPS onion
   sites derived from onion service's ed25519 key][] in the [Tor Browser][].
 
