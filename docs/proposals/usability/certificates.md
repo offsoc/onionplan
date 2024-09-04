@@ -424,7 +424,7 @@ specification -- like the SOOC proposal discussed below.
 [^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key agreement scheme no to be confused with [Ed25519][].
 [^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][],
                        [Support Ed25519 and Ed448][] and
-                       [[Servercert-wg] Ed25519 certificates][]
+                       [(Servercert-wg) Ed25519 certificates][]
                        threads for details.
 
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
@@ -442,7 +442,7 @@ specification -- like the SOOC proposal discussed below.
 [Ed25519]: http://ed25519.cr.yp.to
 [Request For CertBot To Support The Signing of Ed25519 Certificates]: https://community.letsencrypt.org/t/request-for-certbot-to-support-the-signing-of-ed25519-certificates/157638
 [Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868/6
-[[Servercert-wg] Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
+[(Servercert-wg) Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
 
 ## Same Origin Onion Certificates (SOOC)
 
