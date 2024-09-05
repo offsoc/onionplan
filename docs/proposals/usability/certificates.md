@@ -285,8 +285,7 @@ References:
 This proposal consists in basically allowing for the use of self-signed
 certificates with Onion Services:
 
-1. For the [Tor Browser][] and other software maintained by Tor,
-   as well as third-party browsers, this would consist
+1. For web applications like the [Tor Browser][], this would consist
    in [disabling self-signed certificate warnings when visiting .onion
    sites][]. As an alternative, there's also the [Self-authenticating TLS
    Certificates for Onion Services][] proposal relying on [PKCS#11 modules][]
@@ -294,10 +293,12 @@ certificates with Onion Services:
    self-signed certificates matching the Onion Service address without the need
    to merge this logic directly in the applications, as it would remain decoupled
    in a PKCS#11 module, thus being easier to maintain.
-2. For third party software, this would probably require patches or
-   documentation instructing users to accept non-CA signed certificates when
-   accessing Onion Services, which is very hard to provide and to maintain
-   for a wide ranging of tools.
+2. For other applications -- like the [TorVPN][] and third-party software --,
+   this would probably require patches or documentation instructing users to
+   accept non-CA signed certificates when accessing Onion Services, which is
+   very hard to provide and to maintain for a wide ranging of tools.
+
+[TorVPN]: https://gitlab.torproject.org/tpo/applications/vpn/
 
 This proposal _would not provide_:
 
