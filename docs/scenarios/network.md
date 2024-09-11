@@ -1,6 +1,6 @@
 # Network Layer Roadmap Scenarios
 
-* Version: v2023.Q2
+* Version: v2024.Q3
 
 ## DoS defenses
 
@@ -55,6 +55,15 @@ Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/)
 * ['Hidden' Authenticatd Onion Services (#119) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119)
 * [prop224: Implement offline keys for v3 onion services (#29054) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054)
 
+## Relevant metrics feature requests
+
+* [Add backend ID when exposing circuitid with HiddenServiceExportCircuitID (#32428) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/32428)
+    * [Create new directive HiddenServiceExportStats. (#32690) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/32690)
+    * [Add an optional flag for the export circuit id protocol on the port-by-port basis (#40530) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40530)
+    * [Tor should provide a mechanism for hidden services to differentiate authorized clients and circuits (#4700) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/4700)
+    * [Add features improving onion services' interaction with Tor. (#32511) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/32511)
+* [Additional metricsport stats for various stages of onionservice handshake (#40717) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/40717)
+
 ## Onion Service support in Arti
 
 Check:
@@ -66,6 +75,14 @@ Check:
   server infrastructure.
 * Arti's [1.1.9](https://blog.torproject.org/arti_119_released/): Assembling
   the onions.
+* [Arti 1.2.7: onion services, RPC, and more](https://blog.torproject.org/arti_1_2_7_released/)
+* [Arti 1.2.6: onion services, RPC, and more](https://blog.torproject.org/arti_1_2_6_released/)
+* [Arti 1.2.5: onion services development, security fixes](https://blog.torproject.org/arti_1_2_5_released/)
+* [Arti 1.2.4: onion services development, security fixes](https://blog.torproject.org/arti_1_2_4_released/)
+* [Arti 1.2.3 (security release)](https://blog.torproject.org/arti_1_2_3_released/)
+* [Arti 1.2.2: onion services development](https://blog.torproject.org/arti_1_2_2_released/)
+* [Arti 1.2.1: onion services development](https://blog.torproject.org/arti_1_2_1_released/)
+* [Arti 1.2.0: onion services development](https://blog.torproject.org/arti_1_2_0_released/)
 
 ## Relevant issue boards
 
