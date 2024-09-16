@@ -485,6 +485,9 @@ Advantages:
 
 * Could be used by other browsers as well (such as Brave).
 
+* Could be used with any software, library or Operating System with [PKCS#11][]
+  support.
+
 Disadvantages:
 
 * In the short-to-mid term this would not be supported on OpenSSL
@@ -498,8 +501,18 @@ Disadvantages:
 * Operators currently using self-signed certs would need to migrate to new
   certificates.
 
+References:
+
+* [namecoin/pkcs11mod: Go library for creating pkcs11 modules](https://github.com/namecoin/pkcs11mod):
+    * [pkcs11mod progress: Windows, macOS, certutil support, and more!](https://www.namecoin.org/2022/06/13/pkcs11mod-windows-macos-certutil.html)
+* [Consistent PKCS #11 support in Red Hat Enterprise Linux 8](https://www.redhat.com/en/blog/consistent-pkcs-11-support-red-hat-enterprise-linux-8).
+* OpenSSL support for [PKCS#11][]:
+    * [OpenSC/libp11: PKCS#11 wrapper library](https://github.com/OpenSC/libp11) ([libengine-pkcs11-openssl](https://tracker.debian.org/pkg/libp11) on [Debian][])
+
 [Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services
 [PKCS#11 modules]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11
+[PKCS#11]: https://en.wikipedia.org/wiki/PKCS_11
+[Debian]: https://www.debian.org
 
 ## Same Origin Onion Certificates (SOOC)
 
