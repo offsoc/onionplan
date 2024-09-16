@@ -450,7 +450,9 @@ specification -- like the SOOC proposal discussed below.
                        [letsencrypt/boulder issue 3649][];
                        [Request For CertBot To Support The Signing of Ed25519 Certificates][] and
                        [Support Ed25519 and Ed448][] forum threads.
-                       On IETF, [Ed25519][] is already standardized as part of [RFC 8410][].
+                       On IETF, [EdDSA][] and [Ed25519][] are standardized on
+                       [RFC 8032][], and have Algorithm Identifiers for X.509
+                       Public Key Infrastructure as part of [RFC 8410][].
 
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
 [Authority Information Access (AIA)]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
@@ -469,6 +471,7 @@ specification -- like the SOOC proposal discussed below.
 [(Servercert-wg) Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
 [cabforum/servercert issue #451]: https://github.com/cabforum/servercert/issues/451
 [letsencrypt/boulder issue 3649]: https://github.com/letsencrypt/boulder/issues/3649
+[RFC 8032]: https://datatracker.ietf.org/doc/html/rfc8032
 [RFC 8410]: https://datatracker.ietf.org/doc/html/rfc8410
 
 ## Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module
