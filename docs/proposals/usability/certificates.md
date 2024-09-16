@@ -282,21 +282,34 @@ References:
 
 ## Self-signed certificates
 
-This proposal consists in basically allowing for the use of self-signed
+This proposal basically consists in allowing the use of self-signed
 certificates with Onion Services:
 
 1. For web applications like the [Tor Browser][], this would consist
    in [disabling self-signed certificate warnings when visiting .onion
    sites][]. As an alternative, there's also the [Self-authenticating TLS
-   Certificates for Onion Services][] proposal relying on [PKCS#11 modules][]
-   or [Authority Information Access (AIA)][] extensions, which could handle
-   self-signed certificates matching the Onion Service address without the need
-   to merge this logic directly in the applications, as it would remain decoupled
-   in a PKCS#11 module, thus being easier to maintain.
+   Certificates for Onion Services using a PKCS#11 module][] discussed
+   below and relying on [PKCS#11 modules][] or [Authority Information Access
+   (AIA)][] extensions, which could handle self-signed certificates matching
+   the Onion Service address without the need to merge this logic directly in
+   the applications, as it would remain decoupled in a PKCS#11 module, thus
+   being easier to maintain.
 2. For other applications -- like the [TorVPN][] and third-party software --,
    this would probably require patches or documentation instructing users to
    accept non-CA signed certificates when accessing Onion Services, which is
    very hard to provide and to maintain for a wide ranging of tools.
+
+!!! note "Supported key types"
+
+    In this proposal, any key types supported by applications could be used.
+
+    In case of popular web browsers, the [CA/B Baseline Requirements][]
+    must be taken into account, which as of 2024-09 only allows for
+    RSA or ECDSA keys.
+
+    It could also be possible to use self-signed certs using [Ed25519][],
+    which is discussed below and currently not widely supported by
+    browsers.
 
 [TorVPN]: https://gitlab.torproject.org/tpo/applications/vpn/
 
@@ -331,14 +344,11 @@ such as the [SOOC](#same-origin-onion-certificates-sooc) proposal below.
 ## Self-signed X.509 from .onion (self-signed by the .onion address)
 
 Another option for having HTTPS in Onion Services that may be available in the
-future is to use Onion Service keypair to self-validate an HTTPS certificate:
+future is to use Onion Service keypair to self-validate an HTTPS certificate
+using [Ed25519][] directly:
 
 * The [Onion x509][] is an example in how a CA self-signed by an .onion could
   be constructed.
-* The [Self-authenticating TLS Certificates for Onion Services][] proposal
-  mentioned above, that relies on [PKCS#11 modules][] or [Authority Information
-  Access (AIA)][] extensions could also be used to work with a X.509
-  certificate directly derived from the .onion keypair.
 * There's also a ticket requesting to [add support for self-signed HTTPS onion
   sites derived from onion service's ed25519 key][] in the [Tor Browser][].
 
@@ -351,7 +361,9 @@ disadvantage that needs additional logic both server and client side to make it
 work, since a CA would needed to be installed for every visited Onion Service
 using this scheme.
 
-It's important to note that the current (as of 2023-04-04) Onion Services v3
+### On using .onion keys for certification
+
+It's important to note that the current (as of 2024-09) Onion Services v3
 specification does not allow the Master Onion Service identity key to be used
 for purposes other than generating blinded signing keys (see Section 1.9 from
 the [rend-spec-v3][]):
@@ -363,6 +375,8 @@ the [rend-spec-v3][]):
 >   and [SUBCRED]. The public key is encoded in the ".onion"
 >   address according to [NAMING].
 >   KP_hs_id, KS_hs_id.
+
+### On Ed25519 certificates support in browsers
 
 Also, while [many TLS libraries support the Ed25519 signing scheme][] used for
 certificates (like in [OpenSSL since version 1.1.1][]), [major web browsers
@@ -393,6 +407,8 @@ Baseline Requirements][]:
 >   or NIST P‐521 elliptic curve.
 >
 > No other algorithms or key sizes are permitted.
+
+### Implementing X.509 certs derived from the .onion keypair
 
 In summary, implementing this proposal would require pushing at least two
 specification changes:
@@ -429,8 +445,6 @@ specification -- like the SOOC proposal discussed below.
                        threads for details.
 
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
-[Self-authenticating TLS Certificates for Onion Services]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services
-[PKCS#11 modules]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11
 [Authority Information Access (AIA)]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
 [add support for self-signed HTTPS onion sites derived from onion service's ed25519 key]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/18696
 [How do Ed5519 keys work?]: https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/
@@ -444,6 +458,48 @@ specification -- like the SOOC proposal discussed below.
 [Request For CertBot To Support The Signing of Ed25519 Certificates]: https://community.letsencrypt.org/t/request-for-certbot-to-support-the-signing-of-ed25519-certificates/157638
 [Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868/6
 [(Servercert-wg) Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
+
+## Self-authenticating TLS Certificates for Onion Services using a PCKS#11 module
+
+The [Self-authenticating TLS Certificates for Onion Services using a PKCS#11
+module][] proposal mentioned above, that relies on [PKCS#11 modules][] or
+[Authority Information Access (AIA)][] extensions, could also be used to work
+with a X.509 certificate directly derived from the .onion keypair.
+
+But contrary to the previous proposal, it would not need to use [Ed25519][]: it
+would support a signature scheme where an [Ed25519][] private key could sign an
+ECDSA key. This [Ed25519][] signature could either be created using the .onion
+private key itself or a fresh [Ed25119][] subkey, thus avoiding key reuse.
+
+Advantages:
+
+* Would reduce logic in the Tor Browser by a well-established API.
+
+* Does not need to use [Ed25519][] X.509 certificates: can work with ECDSA
+  which are fully supported by major browsers according to the
+  [CA/B Baseline Requirements][], and maybe could even work with RSA.
+
+* Seems future-proof as [PCKS#11 modules][] are widely used.
+
+* No reliance on the CA-model (and hence has increased censorship resistance).
+
+* Could be used by other browsers as well (such as Brave).
+
+Disadvantages:
+
+* In the short-to-mid term this would not be supported on OpenSSL
+  (as of 2024-09, support [PKCS#11 modules][] is still underway).
+
+* System-wide support would depend on how each Operating System could support
+  this custom module. So could be hard to add this to [TorVPN][]. But anyway,
+  [TorVPN][] can't validate existing self-signed .onion certs either, as
+  of 2024-09.
+
+* Operators currently using self-signed certs would need to migrate to new
+  certificates.
+
+[Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module]: https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services
+[PKCS#11 modules]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11
 
 ## Same Origin Onion Certificates (SOOC)
 
@@ -603,8 +659,11 @@ the certificate store in a web browser):
 
 ### Meeting notes
 
-* [IntegratingOnions](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/Notes/IntegratingOnions)
-  from [2017 Montreal Meeting](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/).
+* From the [2024 Lisbon Meeting](https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/):
+    * [Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module](https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/self-auth-certs-for-onion-services).
+    * [An update on the ACME for onions RFC](https://gitlab.torproject.org/tpo/team/-/wikis/Meetings/2024/Lisbon/update-on-the-acme-for-onions-rfc).
+* From the [2017 Montreal Meeting](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/):
+    * [IntegratingOnions](https://gitlab.torproject.org/tpo/team/-/wikis/meetings/2017/2017Montreal/Notes/IntegratingOnions).
 
 ### Blog posts
 
