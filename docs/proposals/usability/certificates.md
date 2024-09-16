@@ -459,7 +459,7 @@ specification -- like the SOOC proposal discussed below.
 [Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868/6
 [(Servercert-wg) Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
 
-## Self-authenticating TLS Certificates for Onion Services using a PCKS#11 module
+## Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module
 
 The [Self-authenticating TLS Certificates for Onion Services using a PKCS#11
 module][] proposal mentioned above, that relies on [PKCS#11 modules][] or
@@ -479,7 +479,7 @@ Advantages:
   which are fully supported by major browsers according to the
   [CA/B Baseline Requirements][], and maybe could even work with RSA.
 
-* Seems future-proof as [PCKS#11 modules][] are widely used.
+* Seems future-proof as [PKCS#11 modules][] are widely used.
 
 * No reliance on the CA-model (and hence has increased censorship resistance).
 
