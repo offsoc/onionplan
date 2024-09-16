@@ -305,13 +305,15 @@ certificates with Onion Services:
 
     In case of popular web browsers, the [CA/B Baseline Requirements][]
     must be taken into account, which as of 2024-09 only allows for
-    RSA or ECDSA keys.
+    [RSA][] or [ECDSA][] keys.
 
     It could also be possible to use self-signed certs using [Ed25519][],
     which is discussed below and currently not widely supported by
     browsers.
 
 [TorVPN]: https://gitlab.torproject.org/tpo/applications/vpn/
+[RSA]: https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+[ECDSA]: https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/
 
 This proposal _would not provide_:
 
@@ -468,16 +470,16 @@ with a X.509 certificate directly derived from the .onion keypair.
 
 But contrary to the previous proposal, it would not need to use [Ed25519][]: it
 would support a signature scheme where an [Ed25519][] private key could sign an
-ECDSA key. This [Ed25519][] signature could either be created using the .onion
+[ECDSA][] key. This [Ed25519][] signature could either be created using the .onion
 private key itself or a fresh [Ed25119][] subkey, thus avoiding key reuse.
 
 Advantages:
 
 * Would reduce logic in the Tor Browser by a well-established API.
 
-* Does not need to use [Ed25519][] X.509 certificates: can work with ECDSA
+* Does not need to use [Ed25519][] X.509 certificates: can work with [ECDSA][]
   which are fully supported by major browsers according to the
-  [CA/B Baseline Requirements][], and maybe could even work with RSA.
+  [CA/B Baseline Requirements][], and maybe could even work with [RSA][].
 
 * Seems future-proof as [PKCS#11 modules][] are widely used.
 
