@@ -440,11 +440,17 @@ limited adoption if only as small number of applications implement it -- such
 as the [Tor Browser][] --, except if endorsed by many stakeholders in the form of a
 specification -- like the SOOC proposal discussed below.
 
-[^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key agreement scheme no to be confused with [Ed25519][].
-[^Ed25519-CA-support]: Check [Request For CertBot To Support The Signing of Ed25519 Certificates][],
-                       [Support Ed25519 and Ed448][] and
-                       [(Servercert-wg) Ed25519 certificates][]
-                       threads for details.
+[^X25519-vs-Ed25519]: They usually just support [X25519][], which is a key
+    agreement scheme not to be confused with [Ed25519][].
+[^Ed25519-CA-support]: This is tracked on [cabforum/servercert issue #451][], which is about
+                       adding [EdDSA][] (and hence [Ed25519][]) support in the
+                       [CA/B Baseline Requirements][]. Check also the related mail thread
+                       [(Servercert-wg) Ed25519 certificates][].
+                       For Let's Encrypt support, check
+                       [letsencrypt/boulder issue 3649][];
+                       [Request For CertBot To Support The Signing of Ed25519 Certificates][] and
+                       [Support Ed25519 and Ed448][] forum threads.
+                       On IETF, [Ed25519][] is already standardized as part of [RFC 8410][].
 
 [Onion x509]: https://gitlab.torproject.org/ahf/onion-x509
 [Authority Information Access (AIA)]: https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1
@@ -457,9 +463,13 @@ specification -- like the SOOC proposal discussed below.
 [OpenSSL since version 1.1.1]: https://blog.pinterjann.is/ed25519-certificates.html
 [X25519]: https://cryptopp.com/wiki/X25519
 [Ed25519]: http://ed25519.cr.yp.to
+[EdDSA]: https://en.wikipedia.org/wiki/EdDSA
 [Request For CertBot To Support The Signing of Ed25519 Certificates]: https://community.letsencrypt.org/t/request-for-certbot-to-support-the-signing-of-ed25519-certificates/157638
-[Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868/6
+[Support Ed25519 and Ed448]: https://community.letsencrypt.org/t/support-ed25519-and-ed448/69868
 [(Servercert-wg) Ed25519 certificates]: https://lists.cabforum.org/pipermail/servercert-wg/2024-June/004646.html
+[cabforum/servercert issue #451]: https://github.com/cabforum/servercert/issues/451
+[letsencrypt/boulder issue 3649]: https://github.com/letsencrypt/boulder/issues/3649
+[RFC 8410]: https://datatracker.ietf.org/doc/html/rfc8410
 
 ## Self-authenticating TLS Certificates for Onion Services using a PKCS#11 module
 
