@@ -222,7 +222,7 @@ identifiable information during the purchase of the certificates.
 [DV issuance for next-generation onion services]: https://archive.cabforum.org/pipermail/public/2017-November/012451.html
 [DigiCert providing only Extended Validation (EV) certs]: https://www.digicert.com/blog/ordering-a-onion-certificate-from-digicert
 [HARICA providing only Domain Validated (DV) certs]: https://harica.gr/en/Products/SSL
-[CA/B Baseline Requirements]: https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.8.6.pdf
+[CA/B Baseline Requirements]: https://cabforum.org/working-groups/server/baseline-requirements/documents/CA-Browser-Forum-TLS-BR-2.0.7.pdf
 [repository version]: https://github.com/cabforum/servercert/blob/main/docs/BR.md
 [ACME]: https://datatracker.ietf.org/doc/html/rfc8555
 [using ALPN]: https://www.rfc-editor.org/rfc/rfc8737.html
@@ -367,7 +367,7 @@ the [rend-spec-v3][]):
 Also, while [many TLS libraries support the Ed25519 signing scheme][] used for
 certificates (like in [OpenSSL since version 1.1.1][]), [major web browsers
 still does not support][] it (as of 2022-12)[^X25519-vs-Ed25519], probably because
-they're not supported[^Ed25519-CA-support] by the current (as of 2022-12) [CA/B
+they're not supported[^Ed25519-CA-support] by the current (as of 2024-09) [CA/B
 Baseline Requirements][]:
 
 > 6.1.1.3 Subscriber Key Pair Generation
