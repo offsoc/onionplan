@@ -95,9 +95,9 @@ available.
 ### Alt-Svc
 
 Similar to [Onion-Location][], the [Alt-Svc][] method also uses an HTTP Header
-(the [Alt-Svc Header][]), which means that the user first need to access the
-regular site before their browser discovers the alternate Onion Service
-address.
+(the [Alt-Svc Header][], specified by [RFC 7838][]), which means that the user
+first need to access the regular site before their browser discovers the
+alternate Onion Service address.
 
 But contrary to [Onion-Location][], the [Alt-Svc][] method:
 
@@ -107,6 +107,7 @@ But contrary to [Onion-Location][], the [Alt-Svc][] method:
 
 [Alt-Svc]: https://blog.cloudflare.com/cloudflare-onion-service/
 [Alt-Svc Header]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
+[RFC 7838]: https://datatracker.ietf.org/doc/html/rfc7838
 
 ## DNS or DNSSEC-based
 

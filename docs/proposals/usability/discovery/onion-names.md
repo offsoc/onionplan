@@ -92,6 +92,15 @@ Browser interface.
 The rulesets are maintained in [this
 repository](https://github.com/freedomofpress/securedrop-https-everywhere-ruleset).
 
+References:
+
+* [Cooking With Onions: Names for your onions | The Tor Project](https://blog.torproject.org/cooking-onions-names-your-onions/)
+* [Introducing Onion Names for SecureDrop](https://securedrop.org/news/introducing-onion-names-securedrop/)
+* [Getting an Onion Name for Your SecureDrop](https://securedrop.org/faq/getting-onion-name-your-securedrop/)
+* [Tor Project | Tor Browser 9.5](https://www.torproject.org/releases/tor-browser-95/) (under "Onion Names" section)
+* [Ruleset Update Channels - HTTPS Everywhere](https://github.com/EFForg/https-everywhere/blob/master/docs/en_US/ruleset-update-channels.md):
+  old documentation when the ruleset was based on the old [HTTPS Everywhere extension](https://www.eff.org/https-everywhere).
+
 [SecureDrop]: https://securedrop.org
 [originally implemented using HTTPS-Everywhere]: https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/28005
 
@@ -105,14 +114,23 @@ bar](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40845).
 
 ### Namecoin
 
-Namecoin is a fork of Bitcoin:
+[Namecoin][] is a fork of Bitcoin:
 
-* [Namecoin timeline for the Tor Browser](https://forum.torproject.net/t/are-there-projected-timelines-for-namecoin-support-being-extended-in-anyway/414)
-* [Namecoin for TLS certificate validation](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/33568)
 * [Namecoin Threat Model](https://www.namecoin.org/dot-bit/security-model/)
 * [Discussion on how merged mining works](https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work),
   [this comment](https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work#comment59897_275) in special.
 * [namecoin/proposals: Standards and Best Practices](https://github.com/namecoin/proposals)
+* Tickets:
+    * [Namecoin for TLS certificate validation (#33568) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/33568)
+    * [Namecoin support for onion sites in Tor Browser (#30558) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/30558)
+    * [Blockchain as Root-CA for human-readable .onion domains (#17040) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/17040)
+    * [Support alternate DNS such as Namecoin/OpenNIC/etc (#10747) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/10747)
+* Discussions:
+    * [Namecoin timeline for the Tor Browser](https://forum.torproject.net/t/are-there-projected-timelines-for-namecoin-support-being-extended-in-anyway/414)
+    * [We need more testers for the Namecoin / Tor Browser Nightly experiment : Namecoin](https://www.reddit.com/r/Namecoin/comments/fjo3qq/we_need_more_testers_for_the_namecoin_tor_browser/)
+    * [Are there projected timelines for namecoin support being extended in anyway? - General Discussion - Tor Project Forum](https://forum.torproject.net/t/are-there-projected-timelines-for-namecoin-support-being-extended-in-anyway/414)
+
+[Namecoin]: https://www.namecoin.org
 
 #### Description
 
