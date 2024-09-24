@@ -484,7 +484,7 @@ with a X.509 certificate directly derived from the .onion keypair.
 But contrary to the previous proposal, it would not need to use [Ed25519][]: it
 would support a signature scheme where an [Ed25519][] private key could sign an
 [ECDSA][] key. This [Ed25519][] signature could either be created using the .onion
-private key itself or a fresh [Ed25119][] subkey, thus avoiding key reuse.
+private key itself or a fresh [Ed25519][] subkey, thus avoiding key reuse.
 
 Advantages:
 
