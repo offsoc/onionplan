@@ -29,7 +29,7 @@ be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14).
 
 ## Record types
 
-Alternatives.
+There are some alternative for which DNS Resource Record type to use.
 
 ### HTTPS/SVCB records
 
@@ -127,7 +127,7 @@ Cons:
 2. May take a long time to be a standard.
 3. Even if gets approved, may take time for software to implement (ossification)?
 
-### 4. Synthetic DNSSEC
+### Synthetic DNSSEC
 
 Use [synthetic DNSSEC for labels within .onion][].
 
