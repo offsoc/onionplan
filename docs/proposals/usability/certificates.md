@@ -501,6 +501,8 @@ Advantages:
 
 * No reliance on the CA-model (and hence has increased censorship resistance).
 
+* No need to use [CT Logs][].
+
 * Could be used by other browsers as well (such as Brave).
 
 * Could be used with any software, library or Operating System with [PKCS#11][]
