@@ -176,7 +176,7 @@ Self-signed X.509 for .onion          | Client or TLS library                   
 Same Origin Onion Certificates (SOOC) | Client or TLS library                      |
 DANE for .onion                       | Client                                     | Portable DNSSEC library
 Onion-only CAs                        | Client or TLS (only needs CA installation) |
-Self-auth certs via PKCS#11 module    | Library ([PKC#11][] module)                |
+Self-auth certs via PKCS#11 module    | Library ([PKCS#11][] module)               |
 
 ## Existing CA validation
 
