@@ -150,17 +150,19 @@ Self-signed X.509 from .onion         | Signed by a "CA" derived from the .onion
 Same Origin Onion Certificates (SOOC) | Self-signed certs                                     | Skip for .onion addresses when conditions match   | Proposal (not yet submitted for specification)
 DANE for .onion                       | Self-signed certs                                     | DNSSEC                                            | Concept, no proposal yet
 Onion-only CAs                        | Checks SAN and an .onion signature in an extension    | CA chain                                          | Concept, no proposal yet
+Self-auth certs via PKCS#11 module    | Checks .onion [Ed25519][] signature in the cert key   | Module returns a custom CA chain                  | Design, prototype available
 
 ### Main pros and cons
 
-Proposal                              | Pros                                    | Cons
---------------------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------
-Existing CA validation                | None (already implemented)              | None (already implemented)
-ACME for .onion                       | No need for client/lib implementation   | Depends on a CA willing to implement
-Self-signed X.509 for .onion          | No CA-reliance for .onion, self-auth.   | Very hard to maintain and standardize, currently [Ed25519][] is unsupported by major browsers
-Same Origin Onion Certificates (SOOC) | No CA-reliance for .onion               | Very hard to maintain and standardize
-DANE for .onion                       | No CA-reliance for any domain or .onion | Very hard to implement and maintain
-Onion-only CAs                        | Simplify CA-reliance                    | Needs to convince existing CAs or trusted parties to maintain a whole CA organization and infrastructure
+Proposal                              | Pros                                                      | Cons
+--------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------
+Existing CA validation                | None (already implemented)                                | None (already implemented)
+ACME for .onion                       | No need for client/lib implementation                     | Depends on a CA willing to implement
+Self-signed X.509 for .onion          | No CA-reliance for .onion, self-auth.                     | Very hard to maintain and standardize, currently [Ed25519][] is unsupported by major browsers
+Same Origin Onion Certificates (SOOC) | No CA-reliance for .onion                                 | Very hard to maintain and standardize
+DANE for .onion                       | No CA-reliance for any domain or .onion                   | Very hard to implement and maintain
+Onion-only CAs                        | Simplify CA-reliance                                      | Needs to convince existing CAs or trusted parties to maintain a whole CA organization and infrastructure
+Self-auth certs via PKCS#11 module    | PKCS#11 is well established, future proof, no CA-reliance | Each Operating System or application would need to configure it; built-in OpenSSL support still underway
 
 [Ed25519]: http://ed25519.cr.yp.to
 
@@ -174,6 +176,7 @@ Self-signed X.509 for .onion          | Client or TLS library                   
 Same Origin Onion Certificates (SOOC) | Client or TLS library                      |
 DANE for .onion                       | Client                                     | Portable DNSSEC library
 Onion-only CAs                        | Client or TLS (only needs CA installation) |
+Self-auth certs via PKCS#11 module    | Library ([PKC#11][] module)                |
 
 ## Existing CA validation
 
