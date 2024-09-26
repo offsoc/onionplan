@@ -245,7 +245,7 @@ Onion Services. It relies on custom DNS entries, CA issued certificates and
 [Certificate Transparency][] (CT) Logs:
 
 * [Sauteed Onions][] project page.
-* [Sauteed Onions draft paper](https://www.sauteed-onions.org/doc/paper.pdf).
+* [Sauteed Onions draft paper](https://www.sauteed-onions.org/doc/paper.pdf) ([version published WPES'22](https://doi.org/10.1145/3559613.3563208)).
 * [Sauteed Onions GitLab group](https://gitlab.torproject.org/tpo/onion-services/sauteed-onions)
   with reference implementations.
 * [Sauteed Week](https://rhatto.pages.torproject.net/sauteed-week/)
