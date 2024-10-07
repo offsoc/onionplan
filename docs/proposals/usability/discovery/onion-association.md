@@ -236,6 +236,13 @@ These logs may however be monitored for other purposes, such as to discover
 domains and services. With some additional conventions, CT Logs can be used
 to establish links between traditional domain names and Onion Service addresses.
 
+[CT Logs][] can be used as a global index of registered domains relying on
+CA-validated certificates. Such index can then be used as a base for searching
+sites as well as onionsites having CA-validated certs.
+
+With some ingenuity, [CT Logs][] can also be used to link regular domains
+with onionsites.
+
 [Certificate Transparency]: https://certificate.transparency.dev/
 
 #### Sauteed Onions
