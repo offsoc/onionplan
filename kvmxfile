@@ -23,7 +23,7 @@ provision_command="/usr/local/share/kvmx/provision/debian/development && /srv/sh
 startup_command="hydractl aperiodic-upgrade"
 
 # Set additional hostfwd mappings
-port_mapping="hostfwd=tcp:127.0.0.1:8031-:80"
+port_mapping="hostfwd=tcp:127.0.0.1:8032-:80"
 
 # Use basebox image as a backing file for overlay images
 # See https://wiki.archlinux.org/index.php/QEMU#Overlay_storage_images
