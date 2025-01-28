@@ -188,7 +188,7 @@ standardizing the way [Certificate Authorities][] can issue certificates for
 
 Only a few commercial providers currently provide this service[^existing-certifiers].
 
-[^cab-historical]: For a historical background on Domain Validation (DV) certs,
+[^cab-historical]: For a historical background on [Domain Validation (DV) certs][dv-certs],
                    check the CA/B forum thread
                    [DV issuance for next-generation onion services][].
 
@@ -196,6 +196,8 @@ Only a few commercial providers currently provide this service[^existing-certifi
                         certificates for .onion domains:
                         [DigiCert providing only Extended Validation (EV) certs][]
                         and [HARICA providing only Domain Validated (DV) certs][].
+
+[dv-certs]: https://en.wikipedia.org/wiki/Domain-validated_certificate
 
 The Appendix B of the [CA/B Baseline Requirements][] (current [repository
 version][]) for the Issuance and Management of Publicly‐Trusted Certificates
