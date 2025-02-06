@@ -50,7 +50,6 @@ plugins:
       'intro/timeline.md'                                                     : 'preamble/timeline.md'
       'proposals/usability/discovery/translation.md'                          : 'proposals/usability/discovery/onion-association.md'
       'preamble/timeline.md'                                                  : 'https://onionservices.torproject.org/technology/timeline'
-      'references.md'                                                         : 'references/README.md'
 
 markdown_extensions:
   # Admonitions
