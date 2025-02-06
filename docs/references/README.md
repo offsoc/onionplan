@@ -2,7 +2,7 @@
 
 Last updated on 2025-02-06.
 
-## Current research
+## Current and recent research
 
 * [Tor Project Research][tor-research]: contains guidelines
   researching [Tor][], tech reports and other resources.
@@ -13,7 +13,7 @@ Last updated on 2025-02-06.
 [tor-research]: https://research.torproject.org/
 [Anonbib]: https://www.freehaven.net/anonbib/
 
-## Curated list of research
+## Curated list of current recent research
 
 Highlights from the [Anonbib][]:
 
