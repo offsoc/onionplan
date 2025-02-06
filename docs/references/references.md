@@ -4,18 +4,18 @@ Last updated on 2025-02-06.
 
 ## Current research
 
-* [Tor Project Research][research]: contains guidelines
+* [Tor Project Research][tor-research]: contains guidelines
   researching [Tor][], tech reports and other resources.
-* [Anonbib - Free Haven's Selected Papers in Anonymity][anonbib]
+* [Anonbib - Free Haven's Selected Papers in Anonymity][Anonbib]
   has recent and past research on [Tor][], including Onion Services.
 
 [Tor]: https://torproject.org
 [tor-research]: https://research.torproject.org/
-[anonbib]: https://www.freehaven.net/anonbib/
+[Anonbib]: https://www.freehaven.net/anonbib/
 
 ## Curated list of research
 
-Highlights from the [Anonbib][anobib]:
+Highlights from the [Anonbib][]:
 
 * 2020:
     * [Bypassing Tor Exit Blocking with Exit Bridge Onion Services](https://dl.acm.org/doi/10.1145/3372297.3417245) (HebTor)
@@ -52,10 +52,10 @@ Historical research:
   the first decade of onion routing and reflects the onion-router.net site
   roughly as it existed circa 2005. As a historical site it may contain dead
   external links and other signs of age.
-* [Anonbib][anonbib] also goes back since 1977, listing the most relevant
+* [Anonbib][] also goes back since 1977, listing the most relevant
   papers that lead to Onion Services development.
 
-Historical highlights from the [Anonbib][anobib]:
+Historical highlights from the [Anonbib][]:
 
 * 2006:
     * [Locating Hidden Servers](https://www.freehaven.net/anonbib/cache/hs-attack06.pdf)
