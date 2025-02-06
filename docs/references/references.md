@@ -1,8 +1,11 @@
 # References
 
+Last updated on 2025-02-06.
+
 ## Current research
 
-* [Tor Project | Research](https://research.torproject.org/).
+* [Tor Project Research](https://research.torproject.org/): contains guidelines
+  researching Tor, tech reports and other resources.
 
 ## Historical
 
@@ -16,3 +19,11 @@
   lists the most relevant papers that lead to Onion Services development.
 * [The Once and Future Onion](https://link.springer.com/chapter/10.1007/978-3-319-66402-6_3):
   includes a historic overview of Onion Services technology.
+
+## Related
+
+Although not focused in the Onion Service, other references might be relevant,
+like those covering anti-censorship:
+
+* [CensorBib](https://censorbib.nymity.ch/): an archive of selected academic
+  research papers on Internet censorship.
