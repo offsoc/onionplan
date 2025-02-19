@@ -12,6 +12,44 @@ transactions.
 
 [Certificate Authorities]: https://en.wikipedia.org/wiki/Certificate_authority
 
+## Introduction
+
+Whenever you browse the internet regularly, the connection between your
+computer and a service is usually encrypted, and the safety of this
+communication happens through the verification of a special type of
+certificate.
+
+With [Onion Services][], the connection is peer-to-peer encrypted by default,
+which means that no additional certificates are needed.
+
+But as the web and other internet technologies mature, certificates are
+starting to be a requirement in order to unleash functionalities, especially in
+web browsers, such as the faster connection protocol [HTTP/2][] and payment
+processing.
+
+That's why it's important to improve the certificate ecosystem to fully support
+[Onion Services][].
+
+This is a hard problem, and an ongoing effort, but there has been some
+important work done to solve this.
+
+The most relevant one should bring automation to the process of issuing
+certificates for Onion Services, through an enhancement in a protocol called
+[ACME][].
+
+The [ACME for Onions][#acme-for-onions] proposal is composed of tools and also
+an [Internet Draft][draft-misell-acme-onion], which hopefully will turn into an
+Internet Standard soon.
+
+We are also looking into other, non-conflicting alternatives that can also be
+used for certification, so service operators can decide which one fits best their
+use case.
+
+Improving the certificate functionality will put Onion Services in parity
+with the modern stack of web development.
+
+[Onion Services]: https://onionservices.torproject.org/technology/
+
 ## Benefits
 
 It may be argued that Onion Services connections are already
@@ -239,16 +277,17 @@ In general, getting certificates from CAs supporting the [CA/B Baseline
 Requirements][] for .onion addresses is still a manual, or in the best-case
 scenario, semi-automated task.
 
-The Automatic Certificate Management Environment (ACME) standard ([RFC 8555][])
-solves part of the automation problem, but currently (as of 2022) it does not
-support the methods for validating Onion Services.
+The Automatic Certificate Management Environment ([ACME][]) standard ([RFC
+8555][]) solves part of the automation problem, but currently (as of 2022) it
+does not support the methods for validating Onion Services.
 
-Having support for .onion address in the ACME standard is the first step for
-projects like [Let's Encrypt][] to offer free certificates for Onion Services,
-without financial transactions.
+Having support for .onion address in the [ACME][] standard is the first step
+for projects like [Let's Encrypt][] to offer free certificates for Onion
+Services, without financial transactions.
 
-Existing proposals to bring ACME for Onion Services are discussed below.
+Existing proposals to bring [ACME][] for Onion Services are discussed below.
 
+[ACME]: https://en.wikipedia.org/wiki/Automatic_Certificate_Management_Environment
 [RFC 8555]: https://www.rfc-editor.org/rfc/rfc8555
 [Let's Encrypt]: https://letsencrypt.org/
 

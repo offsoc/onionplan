@@ -8,9 +8,31 @@ for Onion Services, including naming systems.
 This page is meant to be used by researchers, developers and anyone else
 interested in this topic as well as to aid decision-making and roadmapping.
 
+## Introduction
+
+[Onion Services][] are recognizable by their long addresses. A typical address
+looks like a big string ending in .onion, like
+`2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion`.
+
+This is hard to type, and even harder to memorize.
+
+Having a way to provide human friendly addresses for [Onion Services][] is a long
+awaited feature, and also a hard problem to solve, maybe even harder than
+certificates.
+
+To move things forward, the Onion Discovery research project aims to
+investigate existing proposals and also new, innovative ways to solve this
+problem. We expect that, after doing this research, we'll have a better
+understanding on the pieces involved, the decision criteria to choose the best
+proposals as well as what's should be done in terms of road mapping.
+
+We hope that building one thing at a time will get us there, eventually :)
+
+[Onion Services]: https://onionservices.torproject.org/technology/
+
 ## What is Onion Discovery?
 
-In the context of Onion Services, service discovery means a way that users can
+In the context of [Onion Services][], service discovery means a way that users can
 easily get the right .onion address for the site or service they want to
 access.
 
@@ -29,7 +51,7 @@ this discovery, there are also techniques where the regular site (like
 `torproject.org`) can itself announce it's .onion counterpart. We call this
 broad range of techniques to translate semantically meaningful names into Onion
 Services addresses as "Onion Discovery", i.e, Onion Discovery is service
-discovery for Onion Services.
+discovery for [Onion Services][].
 
 There are many proposals out there describing how this discovery can be done,
 which are categorized and described below.
