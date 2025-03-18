@@ -50,6 +50,10 @@ Needs input from UX and Applications Teams on what to include in the roadmap.
 * [Mobile deep linking for onion addresses (#220) · Onion Support](https://gitlab.torproject.org/tpo/onion-services/onion-support/-/issues/220)
 * [URI scheme for Tor (#41017) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41017#note_3070013)
 
+### Security
+
+* [Verification of onion service integrity (#41041) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041)
+
 ## Existing research
 
 This section contain references on some existing research to improve Onion

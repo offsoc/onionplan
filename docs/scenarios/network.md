@@ -50,7 +50,6 @@ Fixes:
 
 Features, probably only for [arti](https://gitlab.torproject.org/tpo/core/arti/):
 
-* [Verification of onion service integrity (#41041) · Tor Browser](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41041)
 * [Proposal: Hidden Service Revocation (#87) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/87)
 * ['Hidden' Authenticatd Onion Services (#119) · Tor Specifications](https://gitlab.torproject.org/tpo/core/torspec/-/issues/119)
 * [prop224: Implement offline keys for v3 onion services (#29054) · Tor](https://gitlab.torproject.org/tpo/core/tor/-/issues/29054)
