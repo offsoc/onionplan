@@ -1,4 +1,4 @@
-# The Onion Plan
+# The Onion Plan: Onion Services research
 
 A research and ongoing holistic strategy to increase the adoption an enhance
 the usability of [Tor Onion Services][]
