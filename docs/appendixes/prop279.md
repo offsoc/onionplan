@@ -1,4 +1,4 @@
-# Proposal 279 fixes and improvements
+# Onion Plan Appendix: Proposal 279 fixes and improvements
 
 * Status: DRAFT
 * Version: v2022.Q4

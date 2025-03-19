@@ -1,4 +1,4 @@
-# The research
+# The Onion Plan research
 
 * For an overview of the Onion Plan, check the [presentation held at the 2022 Tor
   Meeting][] and the [originating ticket][].

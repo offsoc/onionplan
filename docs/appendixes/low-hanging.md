@@ -1,4 +1,4 @@
-# Low-hanging fruit
+# Onion Plan Appendix: Low-hanging fruit
 
 * Status: DRAFT
 * Version: v2023.Q2

@@ -1,4 +1,4 @@
-# Credits
+# Onion Plan: credits
 
 ## Acknowledgements
 

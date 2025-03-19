@@ -1,0 +1,4 @@
+nav:
+  - Intro: README.md
+  - Certificates: certificates.md
+  - Onion Discovery: discovery

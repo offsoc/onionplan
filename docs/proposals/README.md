@@ -1,4 +1,4 @@
-# Proposals
+# Onion Service Proposals
 
 This section contains known proposals related to [Onion Services][], with the
 purpose of giving basic information and discussion for each proposal, without

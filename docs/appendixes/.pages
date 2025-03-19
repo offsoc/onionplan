@@ -1,0 +1,5 @@
+nav:
+  - ACME for Onions: acme.md
+  - Specs for .onion in the DNS: dns.md
+  - Low-hanging fruit: low-hanging.md
+  - Proposal 279 fixes and improvements: prop279.md

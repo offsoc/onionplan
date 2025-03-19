@@ -1,4 +1,4 @@
-# Specs for DNS-based .onion records
+# Onion Plan Appendix: Specs for DNS-based .onion records
 
 * Status: DRAFT
 * Version: v2024.Q3

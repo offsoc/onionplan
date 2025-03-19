@@ -1,4 +1,4 @@
-# License
+# Onion Plan License
 
 Content on this site is Copyright of The Tor Project, Inc..
 

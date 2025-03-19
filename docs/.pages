@@ -1,8 +1,8 @@
 nav:
   - Intro: README.md
   - Preamble: preamble
-  - proposals
-  - scenarios
-  - appendixes
-  - references
-  - about
+  - Proposals: proposals
+  - Scenarios: scenarios
+  - Appendixes: appendixes
+  - References: references/README.md
+  - About: about

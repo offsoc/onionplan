@@ -1,0 +1,7 @@
+nav:
+  - Applications: applications.md
+  - Certificates: certificates.md
+  - Onion Discovery: discovery.md
+  - Network Layer: network.md
+  - Usability: ux.md
+  - Outreach: outreach.md

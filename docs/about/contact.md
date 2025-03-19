@@ -1,4 +1,4 @@
-# Contact
+# Onion Plan: contact
 
 You can contact the [Onion Support Group][] by reaching out to
 

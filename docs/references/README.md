@@ -1,4 +1,4 @@
-# References
+# Onion Service research references
 
 Last updated on 2025-02-06.
 

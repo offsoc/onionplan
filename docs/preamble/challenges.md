@@ -1,4 +1,4 @@
-# The challenges
+# Onion Service research challenges
 
 ## About
 
