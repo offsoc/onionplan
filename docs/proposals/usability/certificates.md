@@ -37,7 +37,7 @@ The most relevant one should bring automation to the process of issuing
 certificates for Onion Services, through an enhancement in a protocol called
 [ACME][].
 
-The [ACME for Onions][#acme-for-onions] proposal is composed of tools and also
+The [ACME for Onions](#acme-for-onions) proposal is composed of tools and also
 an [Internet Draft][draft-misell-acme-onion], which hopefully will turn into an
 Internet Standard soon.
 
