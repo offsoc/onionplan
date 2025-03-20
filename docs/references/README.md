@@ -37,6 +37,8 @@ neither in the [Anonbib][]:
       Directories | Proceedings of the ACM Web Conference
       2024](https://dl.acm.org/doi/10.1145/3589334.3645591), disclosing an issue
       further mitigated on [C Tor 0.4.8.14][].
+* 2025:
+    * [Optimizing Onionbalance: Improving Scalability and Security for Tor Onion Services](https://dl.acm.org/doi/10.1007/978-3-031-79007-2_25)
 
 [C Tor 0.4.8.14]: https://forum.torproject.org/t/stable-release-0-4-8-14/17242
 
