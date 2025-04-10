@@ -272,7 +272,7 @@ That means:
 That means:
 
 * Transparent access to `http://somesite.some.onion`.
-* Having techincal and governance specs to decide which Onion Names are
+* Having technical and governance specs to decide which Onion Names are
   officially accepted.
 * Allocating a namespace (at `.onion`?) to each proposal.
 * Optionally shipping the implementation into a bundle for distribution.

@@ -327,7 +327,7 @@ ACME validation, as some parameter in the API request.
 There's nothing special in the Hidden Service Directory system in terms of being
 authoritative of anything. It's a hashring where everybody can upload stuff up
 to a given size and formatted according to a given specification. If you have
-an [Ed25519][] keypair and other basic requirements (such as a computer, unblocked
+an [Ed25519][] key pair and other basic requirements (such as a computer, unblocked
 internet connection), then you can build and upload a descriptor into the
 `HSDir`. It's very different from DNS, where you need credentials etc.  While DNS
 is a centralized and hierarchical system, `HSDirs` are decentralized and

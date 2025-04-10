@@ -390,7 +390,7 @@ such as the [SOOC](#same-origin-onion-certificates-sooc) proposal below.
 ## Self-signed X.509 from .onion (self-signed by the .onion address)
 
 Another option for having HTTPS in Onion Services that may be available in the
-future is to use Onion Service keypair to self-validate an HTTPS certificate
+future is to use Onion Service key pair to self-validate an HTTPS certificate
 using [Ed25519][] directly:
 
 * The [Onion x509][] is an example in how a CA self-signed by an .onion could
@@ -414,7 +414,7 @@ specification does not allow the Master Onion Service identity key to be used
 for purposes other than generating blinded signing keys (see Section 1.9 from
 the [rend-spec-v3][]):
 
-> Master (hidden service) identity key -- A master signing keypair
+> Master (hidden service) identity key -- A master signing key pair
 >   used as the identity for a hidden service.  This key is long
 >   term and not used on its own to sign anything; it is only used
 >   to generate blinded signing keys as described in [KEYBLIND]
@@ -454,7 +454,7 @@ Baseline Requirements][]:
 >
 > No other algorithms or key sizes are permitted.
 
-### Implementing X.509 certs derived from the .onion keypair
+### Implementing X.509 certs derived from the .onion key pair
 
 In summary, implementing this proposal would require pushing at least two
 specification changes:
@@ -476,7 +476,7 @@ certificate. That would:
   needed, like a web server.
 * Make it very difficult to manage offline Onion Service master keys.
 
-Instead, it's better to use the Onion Service keypair to act as a CA that then
+Instead, it's better to use the Onion Service key pair to act as a CA that then
 certifies a separate key pair to be used with HTTPS.
 
 Similar to the self-signed certificate proposal, this approach would have
@@ -523,7 +523,7 @@ specification -- like the SOOC proposal discussed below.
 The [Self-authenticating TLS Certificates for Onion Services using a PKCS#11
 module][] proposal mentioned above, that relies on [PKCS#11 modules][] or
 [Authority Information Access (AIA)][] extensions, could also be used to work
-with a X.509 certificate directly derived from the .onion keypair.
+with a X.509 certificate directly derived from the .onion key pair.
 
 But contrary to the previous proposal, it would not need to use [Ed25519][]: it
 would support a signature scheme where an [Ed25519][] private key could sign an

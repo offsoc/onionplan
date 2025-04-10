@@ -187,7 +187,7 @@ Where should DNS queries happen?
           the client to control (at the Tor NS API level).
 2. DNS query originating at the client side as an alternative approach:
     * Pros:
-        * Easier to implement the Tor NS API, as easilly allows the client
+        * Easier to implement the Tor NS API, as easily allows the client
           configuration to control how the opportunistic discovery should
           happen: no need to signal/negotiate that to the exit node.
     * Cons:
@@ -327,7 +327,7 @@ specification does not allow the Master Onion Service identity key to be used
 for purposes other than generating blinded signing keys (see Section 1.9 from
 the [rend-spec-v3][]):
 
-> Master (hidden service) identity key -- A master signing keypair
+> Master (hidden service) identity key -- A master signing key pair
 >   used as the identity for a hidden service.  This key is long
 >   term and not used on its own to sign anything; it is only used
 >   to generate blinded signing keys as described in [KEYBLIND]

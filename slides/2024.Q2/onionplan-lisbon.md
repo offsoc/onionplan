@@ -50,7 +50,7 @@ The Onion Plan is mostly split into four tracks:
 * The current presentation builds up on the previous slides available at
   [https://gitlab.torproject.org/tpo/onion-services/onionplan/-/tree/main/slides][]
 
-![ ](images/slides.png){ width=150px height=150 }
+![ ](2024.Q2/images/slides.png){ width=150px height=150 }
 
 * Watch out for many QR codes ahead!
 
@@ -72,7 +72,7 @@ The Onion Plan is mostly split into four tracks:
 * We unified almost all docs into the Onion Services Ecosystem:
   [https://community.torproject.org/onion-services/ecosystem][].
 
-![ ](images/ecosystem.png){ width=150px height=150px }
+![ ](2024.Q2/images/ecosystem.png){ width=150px height=150px }
 
 * Onion Plan now have a canonical location:
   [https://community.torproject.org/onion-services/ecosystem/research][].
@@ -82,7 +82,7 @@ The Onion Plan is mostly split into four tracks:
 * Amnesty International now available as .onion:
   [http://amnestyl337aduwuvpf57irfl54ggtnuera45ygcxzuftwxjvvmpuzqd.onion][] (and fits well in a QR code!):
 
-![ ](images/amnesty.png){ width=150px height=150px }
+![ ](2024.Q2/images/amnesty.png){ width=150px height=150px }
 
 * Another major project is about to release it's onionsite.
 
@@ -214,15 +214,15 @@ Shall we make a blog post?
 
 Onionprobe -- an Onion Services monitoring tool "from the outside" -- got an enhanced dashboard:
 
-![ ](images/dashboard.png){ height=60% width=60% }
+![ ](2024.Q2/images/dashboard.png){ height=60% width=60% }
 
 ## Network Layer - some numbers
 
-* Lowest, average and max. latencies (descriptor fetches and full conections)
+* Lowest, average and max. latencies (descriptor fetches and full connections)
   for the onionsites we monitor. Ongoing DoS and HSDirs being a bottleneck sometimes.
 * We could discuss how to get better diagnostics and improve the situation.
 
-![ ](images/latencies.png){ width=111px height=171px }
+![ ](2024.Q2/images/latencies.png){ width=111px height=171px }
 
 # Perspectives
 

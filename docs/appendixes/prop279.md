@@ -75,7 +75,7 @@ configure their [own non-standard resolution schemes][] on their systems):
 
 ## Algorithm
 
-* [ ] Require that the algorithm do not apply recursivelly (Section 2.3.1)
+* [ ] Require that the algorithm do not apply recursively (Section 2.3.1)
       ([initial discussion](https://lists.torproject.org/pipermail/tor-dev/2017-March/012077.html)).
 * [ ] Query IDs:
   * [ ] Require that query IDs must be unique (Section 2.5.1)

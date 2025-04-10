@@ -626,7 +626,7 @@ TLD.
 1. User asks the HTTP client to access some address (don't have to be a DNS-based name).
 2. Request is passed to the Tor daemon.
 3. The Tor daemon uses the Tor DNS API to query for the address based on the available plugins.
-4. For DNS-based addreses, story goes like on Phases 1 and 2.
+4. For DNS-based adresses, story goes like on Phases 1 and 2.
 5. For "pure" Onion Names, the appropriate plugin is called. HTTPS certificate
    validation support for this case is not covered in the current proposal.
 
